@@ -8,4 +8,10 @@ Do LLMs show evidence of embodied simulation?
 ## Current Tasks
 
 - [Pecher et al., 2006](https://journals.sagepub.com/doi/full/10.1080/17470210802633255)  
-   - **Modality**: Visual
+   - **Modality**: Visual (Shape + Orientation)
+
+
+## Future Tasks
+
+- [Winter & Bergen, 2012](https://www.cambridge.org/core/journals/language-and-cognition/article/language-comprehenders-represent-object-distance-both-visually-and-auditorily/9320F4D38E43C3EABFAFAAC50259FF40)
+   - **Modality**: Auditory
