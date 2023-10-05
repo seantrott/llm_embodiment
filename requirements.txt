@@ -1,4 +1,4 @@
-https://github.com/facebookresearch/ImageBind.git
+git+https://github.com/facebookresearch/ImageBind.git
 ipython
 pandas
 Pillow
