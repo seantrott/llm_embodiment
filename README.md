@@ -8,8 +8,8 @@ Do LLMs show evidence of embodied simulation?
 ## Setup
 
 ```bash
-    git clone https://github.com/seantrott/llm_embodiment.git
-    pip install -r requirements.txt
+git clone https://github.com/seantrott/llm_embodiment.git
+pip install -r requirements.txt
 ```
 
 ## Current Tasks
@@ -18,7 +18,7 @@ Do LLMs show evidence of embodied simulation?
    - **Modality**: Visual (Shape + Orientation)
 
 ```bash
-    python pecher2006/src/main.py
+python pecher2006/src/main.py
 ```
 
 
