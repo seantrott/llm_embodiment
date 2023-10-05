@@ -10,7 +10,7 @@ Do LLMs show evidence of embodied simulation?
 ```bash
     git clone https://github.com/seantrott/llm_embodiment.git
     pip install -r requirements.txt
-    ```
+```
 
 ## Current Tasks
 
