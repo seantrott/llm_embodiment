@@ -3,10 +3,16 @@
 - [X] test
 - [X] push
 
-- [ ] bash script to run all
+- [X] bash script to run all
 
-- [ ] test loading into R
-- [ ] single plot
+- [X] test loading into R
+- [X] single plot
+
+- [ ] write
+    - [-] methods
+    - [ ] results
+
+- [X] send to Sean
 
 - [ ] image preprocessing
 
