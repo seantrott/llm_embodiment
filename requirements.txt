@@ -6,4 +6,4 @@ requests
 seaborn
 torch
 clip
-open_clip
+open-clip-torch
