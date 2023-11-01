@@ -5,3 +5,5 @@ Pillow
 requests
 seaborn
 torch
+clip
+open_clip
