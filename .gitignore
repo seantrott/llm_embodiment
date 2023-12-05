@@ -2,3 +2,4 @@
 .checkpoints/
 .vscode
 .Rproj.user
+__pycache__/
