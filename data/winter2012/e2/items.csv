@@ -1,0 +1,25 @@
+item,object,sentence_a,sentence_b,image_a,image_b
+1,handgun,"Right next to you, someone fires a handgun.",Someone fires a handgun in the distance.,CRITICAL_01_NEAR.wav,CRITICAL_01_FAR.wav
+2,baby,You hear the baby crying in the crib right in front of you.,"In the day-care centre down the hall, you hear a baby crying.",CRITICAL_02_NEAR.wav,CRITICAL_02_FAR.wav
+3,blender,"In the kitchen, you're using the blender to make a smoothie.",You're woken up by your mum downstairs using the blender.,CRITICAL_03_NEAR.wav,CRITICAL_03_FAR.wav
+4,cat,"As you are petting the cat, it meows.",A cat somewhere in your neighbor's yard meows.,CRITICAL_04_NEAR.wav,CRITICAL_04_FAR.wav
+5,champagne_bottle,You hold the champagne bottle in your hand and pop it open.,"At the opposite end of the restaurant, someone pops a champagne bottle up.",CRITICAL_05_NEAR.wav,CRITICAL_05_FAR.wav
+6,church_bells,"While you're touring the bell tower, the church bells start to ring.","In the neighboring town, the church bells are ringing.",CRITICAL_06_NEAR.wav,CRITICAL_06_FAR.wav
+7,cow,"While you're milking the cow, it starts mooing.","Across the field, the cow starts mooing.",CRITICAL_07_NEAR.wav,CRITICAL_07_FAR.wav
+8,audience,You are standing right in the middle of the applauding audience.,"From outside, you know the concert is over because the audience is applauding.",CRITICAL_08_NEAR.wav,CRITICAL_08_FAR.wav
+9,cuckoo-clock,The cuckoo-clock right above you strikes midnight.,"From the far end of the garden, you hear the cuckoo-clock strike 12.",CRITICAL_09_NEAR.wav,CRITICAL_09_FAR.wav
+10,rooster,You step into the chicken coop and a rooster crows.,"Early in the morning, the rooster down the hill crows.",CRITICAL_10_NEAR.wav,CRITICAL_10_FAR.wav
+11,dog,"Right next to you, the dog is barking.","In your neighbor's yard, a dog is barking.",CRITICAL_11_NEAR.wav,CRITICAL_11_FAR.wav
+12,power_drill,You are drilling a screw into the wall with the power drill.,The construction worker across the street is using a power drill.,CRITICAL_12_NEAR.wav,CRITICAL_12_FAR.wav
+13,hammer,You are using a hammer to pound a nail into the wall.,A construction worker down the hall pounds a nail into the wall.,CRITICAL_13_NEAR.wav,CRITICAL_13_FAR.wav
+14,motorbike,The Harley Davidson right in front of you is rumbling.,"Blocks away, a Harley Davidson is rumbling.",CRITICAL_14_NEAR.wav,CRITICAL_14_FAR.wav
+15,horse,"While you're horseback-riding, your horse neighs.","At the other end of the field, a horse neighs.",CRITICAL_15_NEAR.wav,CRITICAL_15_FAR.wav
+16,jackhammer,You are standing next to a construction worker using a jackhammer.,"Somewhere far away from you, a construction worker is using a jackhammer.",CRITICAL_16_NEAR.wav,CRITICAL_16_FAR.wav
+17,door,"As you walk up to the door, someone knocks on it.",You're sitting upstairs when someone knocks at the front door.,CRITICAL_17_NEAR.wav,CRITICAL_17_FAR.wav
+18,machine_gun,"Right next to you, a machine gun is firing.","In the distance, a machine gun is firing.",CRITICAL_18_NEAR.wav,CRITICAL_18_FAR.wav
+19,sheep,The sheep walks up to you and bleats.,The sheep wanders to the other side of the hill from you and bleats.,CRITICAL_19_NEAR.wav,CRITICAL_19_FAR.wav
+20,frog,"As you hold the frog in your hands, it starts to croak.","At the other end of the pond, a frog starts to croak.",CRITICAL_20_NEAR.wav,CRITICAL_20_FAR.wav
+21,toilet,You stand in front of the toilet and flush it.,Someone upstairs flushes the toilet.,CRITICAL_21_NEAR.wav,CRITICAL_21_FAR.wav
+22,waterfall,You stand next to the waterfall as the water cascades down.,"You stand across the valley from the waterfall, as the water cascades down.",CRITICAL_22_NEAR.wav,CRITICAL_22_FAR.wav
+23,can_of_soda,You quickly open the can of soda.,"Across the bar, a man quickly opens a can of soda.",CRITICAL_23_NEAR.wav,CRITICAL_23_FAR.wav
+24,branches,"As you walk through the forest, branches crack under your feet.","Somewhere off in the forest, branches are cracking under someone's feet.",CRITICAL_24_NEAR.wav,CRITICAL_24_FAR.wav

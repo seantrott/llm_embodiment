@@ -1,0 +1,325 @@
+---
+title: "Reproduction of Zwaan & Pecher 2012 using LMEs"
+author: "Cameron Jones"
+date: "29/11/2023"
+output:
+  html_document: 
+    toc: yes
+    toc_float: yes
+    theme: flatly
+    highlight: kate
+    code_folding: hide
+    number_sections: yes
+    fig_caption: yes
+---
+
+# Setup
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Import files and libraries
+
+```{r}
+library(tidyverse)
+library(lmerTest)
+
+e1a <- read.csv("../data/pecher2012/human_data/Experiment_1a.csv")
+e1b <- read.csv("../data/pecher2012/human_data/Experiment_1b.csv")
+e2a <- read.csv("../data/pecher2012/human_data/Experiment_2a.csv")
+e2b <- read.csv("../data/pecher2012/human_data/Experiment_2b.csv")
+
+```
+
+
+# Experiment 1A
+
+## Descriptive
+
+No ppts
+
+```{r}
+
+n_distinct(e1a$ppt_id)
+
+```
+
+Median rt matches values in paper
+
+```{r}
+
+e1a.correct <- e1a %>%
+  filter(accuracy == 1)
+
+e1a.correct %>%
+  group_by(ppt_id, match) %>%
+  summarize(
+    rt = median(rt)
+  ) %>%
+  group_by(match) %>%
+  summarize(
+    rt = mean(rt)
+  )
+  
+
+```
+
+## ANOVA
+
+```{r}
+
+anova_data <- e1a.correct %>%
+  group_by(ppt_id, match) %>%
+  summarize(median_rt = median(rt)) %>%
+  mutate(
+    ppt_id = factor(ppt_id),
+    match = factor(match)
+  ) %>%
+  ungroup()
+
+summary(aov(median_rt ~ match + Error(factor(ppt_id)), data=anova_data))
+
+```
+
+## Linear Model
+
+```{r}
+
+e1a.clean <- e1a.correct %>%
+  filter(
+    rt > 0.3,
+    rt < 3
+  )
+
+m.e1a.base <- lmer(rt ~ 1 + (1  | ppt_id) + (1  | object),
+                  data=e1a.clean, REML=FALSE)
+
+m.e1a <- lmer(rt ~ match + (1  | ppt_id) + (1  | object),
+                  data=e1a.clean, REML=FALSE)
+
+anova(m.e1a, m.e1a.base)
+
+summary(m.e1a)
+
+```
+
+
+# Experiment 1B
+
+## Descriptive
+
+Note, 1 fewer than ZP, appears to be due to language filtering
+
+```{r}
+
+n_distinct(e1b$ppt_id)
+
+```
+
+Median rt matches values in paper
+
+```{r}
+
+e1b.correct <- e1b %>%
+  filter(accuracy == 1)
+
+e1b.correct %>%
+  group_by(ppt_id, match) %>%
+  summarize(
+    rt = median(rt)
+  ) %>%
+  group_by(match) %>%
+  summarize(
+    rt = mean(rt)
+  )
+  
+
+```
+
+## ANOVA
+
+```{r}
+
+anova_data <- e1b.correct %>%
+  group_by(ppt_id, match) %>%
+  summarize(median_rt = median(rt)) %>%
+  mutate(
+    ppt_id = factor(ppt_id),
+    match = factor(match)
+  ) %>%
+  ungroup()
+
+summary(aov(median_rt ~ match + Error(factor(ppt_id)), data=anova_data))
+
+
+```
+
+## Linear Model
+
+```{r}
+
+e1b.clean <- e1b.correct %>%
+  filter(
+    rt > 0.3,
+    rt < 3
+  )
+
+m.e1b.base <- lmer(rt ~ 1 + (1   | ppt_id) + (1  | object),
+                  data=e1b.clean, REML=FALSE)
+
+m.e1b <- lmer(rt ~ match + (1   | ppt_id) + (1  | object),
+                  data=e1b.clean, REML=FALSE)
+
+anova(m.e1b, m.e1b.base)
+
+summary(m.e1b)
+
+```
+
+
+# Experiment 2A
+
+## Descriptive
+
+No ppts
+
+```{r}
+
+n_distinct(e2a$ppt_id)
+
+```
+
+Median rt matches values in paper
+
+```{r}
+
+e2a.correct <- e2a %>%
+  filter(accuracy == 1)
+
+e2a.correct %>%
+  group_by(ppt_id, match) %>%
+  summarize(
+    rt = median(rt)
+  ) %>%
+  group_by(match) %>%
+  summarize(
+    rt = mean(rt)
+  )
+  
+
+```
+
+## ANOVA
+
+```{r}
+
+anova_data <- e2a.correct %>%
+  group_by(ppt_id, match) %>%
+  summarize(median_rt = median(rt)) %>%
+  mutate(
+    ppt_id = factor(ppt_id),
+    match = factor(match)
+  ) %>%
+  ungroup()
+
+summary(aov(median_rt ~ match + Error(factor(ppt_id)), data=anova_data))
+
+```
+
+## Linear Model
+
+```{r}
+
+e2a.clean <- e2a.correct %>%
+  filter(
+    rt > 0.3,
+    rt < 3
+  )
+
+m.e2a.base <- lmer(rt ~ 1 + (1  | ppt_id) + (1  | object),
+                  data=e2a.clean, REML=FALSE)
+
+m.e2a <- lmer(rt ~ match + (1  | ppt_id) + (1  | object),
+                  data=e2a.clean, REML=FALSE)
+
+anova(m.e2a, m.e2a.base)
+
+summary(m.e2a)
+
+```
+
+
+# Experiment 2B
+
+## Descriptive
+
+No ppts
+
+Note: 1 additional ppt, 
+
+```{r}
+
+n_distinct(e2b$ppt_id)
+
+```
+
+Median rt matches values in paper
+
+```{r}
+
+e2b.correct <- e2b %>%
+  filter(accuracy == 1)
+
+e2b.correct %>%
+  group_by(ppt_id, match) %>%
+  summarize(
+    rt = median(rt)
+  ) %>%
+  group_by(match) %>%
+  summarize(
+    rt = mean(rt)
+  )
+  
+
+```
+
+## ANOVA
+
+```{r}
+
+anova_data <- e2b.correct %>%
+  group_by(ppt_id, match) %>%
+  summarize(median_rt = median(rt)) %>%
+  mutate(
+    ppt_id = factor(ppt_id),
+    match = factor(match)
+  ) %>%
+  ungroup()
+
+summary(aov(median_rt ~ match + Error(factor(ppt_id)), data=anova_data))
+
+```
+
+## Linear Model
+
+```{r}
+
+e2b.clean <- e2b.correct %>%
+  filter(
+    rt > 0.3,
+    rt < 3
+  )
+
+m.e2b.base <- lmer(rt ~ 1 + (1  | ppt_id) + (1  | object),
+                  data=e2b.clean, REML=FALSE)
+
+m.e2b <- lmer(rt ~ match + (1  | ppt_id) + (1  | object),
+                  data=e2b.clean, REML=FALSE)
+
+anova(m.e2b, m.e2b.base)
+
+summary(m.e2b)
+
+```
+

@@ -117,6 +117,23 @@
   file = {/Users/cameron/Documents/Papers/Bibliographies/cogsci_2022_affordances_nlm/Lucy Gauthier (2017) Are distributional representations ready for the real world.pdf;/Users/cameron/Zotero/storage/N64XIQ4E/1705.html}
 }
 
+@misc{moskvichevConceptARCBenchmarkEvaluating2023,
+  title = {The {{ConceptARC Benchmark}}: {{Evaluating Understanding}} and {{Generalization}} in the {{ARC Domain}}},
+  shorttitle = {The {{ConceptARC Benchmark}}},
+  author = {Moskvichev, Arseny and Odouard, Victor Vikram and Mitchell, Melanie},
+  year = {2023},
+  month = may,
+  number = {arXiv:2305.07141},
+  eprint = {2305.07141},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  urldate = {2023-10-12},
+  abstract = {The abilities to form and abstract concepts is key to human intelligence, but such abilities remain lacking in state-of-the-art AI systems. There has been substantial research on conceptual abstraction in AI, particularly using idealized domains such as Raven's Progressive Matrices and Bongard problems, but even when AI systems succeed on such problems, the systems are rarely evaluated in depth to see if they have actually grasped the concepts they are meant to capture. In this paper we describe an in-depth evaluation benchmark for the Abstraction and Reasoning Corpus (ARC), a collection of few-shot abstraction and analogy problems developed by Chollet [2019]. In particular, we describe ConceptARC, a new, publicly available benchmark in the ARC domain that systematically assesses abstraction and generalization abilities on a number of basic spatial and semantic concepts. ConceptARC differs from the original ARC dataset in that it is specifically organized around "concept groups" -- sets of problems that focus on specific concepts and that are vary in complexity and level of abstraction. We report results on testing humans on this benchmark as well as three machine solvers: the top two programs from a 2021 ARC competition and OpenAI's GPT-4. Our results show that humans substantially outperform the machine solvers on this benchmark, showing abilities to abstract and generalize concepts that are not yet captured by AI systems. We believe that this benchmark will spur improvements in the development of AI systems for conceptual abstraction and in the effective evaluation of such systems.},
+  archiveprefix = {arxiv},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning},
+  file = {/Users/cameron/Documents/Papers/Multimodal Computational Models of Language Comprehension/Moskvichev et al_2023_The ConceptARC Benchmark.pdf;/Users/cameron/Zotero/storage/5M6SPYL2/2305.html}
+}
+
 @misc{radfordLearningTransferableVisual2021a,
   title = {Learning {{Transferable Visual Models From Natural Language Supervision}}},
   author = {Radford, Alec and Kim, Jong Wook and Hallacy, Chris and Ramesh, Aditya and Goh, Gabriel and Agarwal, Sandhini and Sastry, Girish and Askell, Amanda and Mishkin, Pamela and Clark, Jack and Krueger, Gretchen and Sutskever, Ilya},
@@ -147,6 +164,24 @@
   file = {/Users/cameron/Zotero/storage/QSBXNYEU/Recchia - 2021 - Teaching Autoregressive Language Models Complex Ta.pdf;/Users/cameron/Zotero/storage/W4K63KMS/2109.html}
 }
 
+@misc{schickToolformerLanguageModels2023,
+  title = {Toolformer: {{Language Models Can Teach Themselves}} to {{Use Tools}}},
+  shorttitle = {Toolformer},
+  author = {Schick, Timo and {Dwivedi-Yu}, Jane and Dess{\`i}, Roberto and Raileanu, Roberta and Lomeli, Maria and Zettlemoyer, Luke and Cancedda, Nicola and Scialom, Thomas},
+  year = {2023},
+  month = feb,
+  number = {arXiv:2302.04761},
+  eprint = {2302.04761},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.2302.04761},
+  urldate = {2023-10-11},
+  abstract = {Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q\textbackslash\&A system, two different search engines, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.},
+  archiveprefix = {arxiv},
+  keywords = {Computer Science - Computation and Language},
+  file = {/Users/cameron/Documents/Papers/Multimodal Computational Models of Language Comprehension/Schick et al_2023_Toolformer.pdf;/Users/cameron/Zotero/storage/FXM88HKY/2302.html}
+}
+
 @article{schuhmannLaion5bOpenLargescale2022,
   title = {Laion-5b: {{An}} Open Large-Scale Dataset for Training next Generation Image-Text Models},
   shorttitle = {Laion-5b},
@@ -172,6 +207,40 @@
   file = {/Users/cameron/Documents/Papers/Multimodal Computational Models of Language Comprehension/Sutton_2019_The bitter lesson.pdf}
 }
 
+@misc{touvronTrainingDataefficientImage2021,
+  title = {Training Data-Efficient Image Transformers \& Distillation through Attention},
+  author = {Touvron, Hugo and Cord, Matthieu and Douze, Matthijs and Massa, Francisco and Sablayrolles, Alexandre and J{\'e}gou, Herv{\'e}},
+  year = {2021},
+  month = jan,
+  number = {arXiv:2012.12877},
+  eprint = {2012.12877},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.2012.12877},
+  urldate = {2023-10-11},
+  abstract = {Recently, neural networks purely based on attention were shown to address image understanding tasks such as image classification. However, these visual transformers are pre-trained with hundreds of millions of images using an expensive infrastructure, thereby limiting their adoption. In this work, we produce a competitive convolution-free transformer by training on Imagenet only. We train them on a single computer in less than 3 days. Our reference vision transformer (86M parameters) achieves top-1 accuracy of 83.1\% (single-crop evaluation) on ImageNet with no external data. More importantly, we introduce a teacher-student strategy specific to transformers. It relies on a distillation token ensuring that the student learns from the teacher through attention. We show the interest of this token-based distillation, especially when using a convnet as a teacher. This leads us to report results competitive with convnets for both Imagenet (where we obtain up to 85.2\% accuracy) and when transferring to other tasks. We share our code and models.},
+  archiveprefix = {arxiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition},
+  file = {/Users/cameron/Documents/Papers/Multimodal Computational Models of Language Comprehension/Touvron et al_2021_Training data-efficient image transformers & distillation through attention.pdf;/Users/cameron/Zotero/storage/59VDIU7S/2012.html}
+}
+
+@misc{wangEnableLanguageModels2023,
+  title = {Enable {{Language Models}} to {{Implicitly Learn Self-Improvement From Data}}},
+  author = {Wang, Ziqi and Hou, Le and Lu, Tianjian and Wu, Yuexin and Li, Yunxuan and Yu, Hongkun and Ji, Heng},
+  year = {2023},
+  month = oct,
+  number = {arXiv:2310.00898},
+  eprint = {2310.00898},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.2310.00898},
+  urldate = {2023-10-11},
+  abstract = {Large Language Models (LLMs) have demonstrated remarkable capabilities in open-ended text generation tasks. However, the inherent open-ended nature of these tasks implies that there is always room for improvement in the quality of model responses. To address this challenge, various approaches have been proposed to enhance the performance of LLMs. There has been a growing focus on enabling LLMs to self-improve their response quality, thereby reducing the reliance on extensive human annotation efforts for collecting diverse and high-quality training data. Recently, prompting-based methods have been widely explored among self-improvement methods owing to their effectiveness, efficiency, and convenience. However, those methods usually require explicitly and thoroughly written rubrics as inputs to LLMs. It is expensive and challenging to manually derive and provide all necessary rubrics with a real-world complex goal for improvement (e.g., being more helpful and less harmful). To this end, we propose an ImPlicit Self-ImprovemenT (PIT) framework that implicitly learns the improvement goal from human preference data. PIT only requires preference data that are used to train reward models without extra human efforts. Specifically, we reformulate the training objective of reinforcement learning from human feedback (RLHF) -- instead of maximizing response quality for a given input, we maximize the quality gap of the response conditioned on a reference response. In this way, PIT is implicitly trained with the improvement goal of better aligning with human preferences. Experiments on two real-world datasets and one synthetic dataset show that our method significantly outperforms prompting-based methods.},
+  archiveprefix = {arxiv},
+  keywords = {Computer Science - Computation and Language},
+  file = {/Users/cameron/Documents/Papers/Multimodal Computational Models of Language Comprehension/Wang et al_2023_Enable Language Models to Implicitly Learn Self-Improvement From Data.pdf;/Users/cameron/Zotero/storage/XRDYVXSV/2310.html}
+}
+
 @article{wangLanguageMediatedObjectCentricRepresentation2020,
   title = {Language-{{Mediated}}, {{Object-Centric Representation Learning}}},
   author = {Wang, Ruocheng and Mao, Jiayuan and Gershman, Samuel J. and Wu, Jiajun},
@@ -181,4 +250,24 @@
   archiveprefix = {arxiv},
   annotation = {ZSCC: 0000003},
   file = {/Users/cameron/Documents/Papers/Multimodal Computational Models of Language Comprehension/Wang et al (2020) Language-Mediated, Object-Centric Representation Learning.pdf;/Users/cameron/Zotero/storage/AAMANQRN/2012.html}
+}
+
+@article{zwaanRevisitingMentalSimulation2012,
+  title = {Revisiting {{Mental Simulation}} in {{Language Comprehension}}: {{Six Replication Attempts}}},
+  shorttitle = {Revisiting {{Mental Simulation}} in {{Language Comprehension}}},
+  author = {Zwaan, Rolf A. and Pecher, Diane},
+  year = {2012},
+  month = dec,
+  journal = {PLOS ONE},
+  volume = {7},
+  number = {12},
+  pages = {e51382},
+  publisher = {{Public Library of Science}},
+  issn = {1932-6203},
+  doi = {10.1371/journal.pone.0051382},
+  urldate = {2023-10-13},
+  abstract = {The notion of language comprehension as mental simulation has become popular in cognitive science. We revisit some of the original empirical evidence for this. Specifically, we attempted to replicate the findings from earlier studies that examined the mental simulation of object orientation, shape, and color, respectively, in sentence-picture verification. For each of these sets of findings, we conducted two web-based replication attempts using Amazon's Mechanical Turk. Our results are mixed. Participants responded faster to pictures that matched the orientation or shape implied by the sentence, replicating the original findings. The effect was larger and stronger for shape than orientation. Participants also responded faster to pictures that matched the color implied by the sentence, whereas the original studies obtained mismatch advantages. We argue that these results support mental simulation theory, show the importance of replication studies, and show the viability of web-based data collection.},
+  langid = {english},
+  keywords = {Bayesian method,Cognition,Eagles,Educational attainment,Experimental psychology,Grammar,Language,Replication studies},
+  file = {/Users/cameron/Documents/Papers/Zwaan_Pecher_2012_Revisiting Mental Simulation in Language Comprehension.pdf}
 }

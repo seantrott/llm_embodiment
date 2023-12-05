@@ -27,6 +27,7 @@ library(tidyverse)
 library(stringr)
 library(ggtext)
 library(xtable)
+library(lmerTest)
 
 datasets <- c("connell2007", "pecher2006", "muraki2021")
 models <- c("ViT-B-32", "ViT-L-14-336", "ViT-H-14", "imagebind")
@@ -35,7 +36,7 @@ fnames <- c()
 
 for (dataset in datasets) {
   for (model in models) {
-    fp <- paste0("../results/", dataset, "/", dataset, "_", model, ".csv")
+    fp <- paste0("../results/", dataset, "/", dataset, "_", model, "_cosine",  ".csv")
     fnames <- c(fnames, fp)
   }
 }
@@ -60,6 +61,62 @@ data <- do.call(rbind,lapply(fnames,read.csv)) %>%
 ```
 
 # Inferential Statistics
+
+## Aggregate Test
+
+```{r}
+
+
+# Initialize empty data frame to store summarized results
+agg_summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (model_name in unique(data$model)) {
+  # Subset the data
+  subset_data <- data %>%
+    filter(model == model_name)
+  
+  # Run t-test
+  result <- summary(lm(probability ~ match + (1 | ), data = subset_data))
+  
+  # Store the summarized t-test result in the data frame
+  agg_summary <- rbind(agg_summary, data.frame(
+    model = model_name,
+    estimate = result$coefficients[2,1],
+    t_value = result$coefficients[2,3],
+    p_value = result$coefficients[2,4]
+  ))
+}
+
+# View the summarized results
+agg_summary <- agg_summary %>%
+  mutate(
+    model = factor(model, levels=c("ViT-B/32", "ViT-L/14", "ViT-H/14", "ImageBind"))
+  )
+
+agg_summary
+
+```
+
+
+Example result for ImageBind
+
+```{r}
+
+summary(lm(probability ~ match, data = data %>% filter(model == "ImageBind")))
+
+```
+
+## By dataset
+
+```{r}
+
+data.frame(round(summary(lm(probability ~ match * dataset, data = data %>% filter(model == "ImageBind")))$coefficients, 3))
+
+```
+
+
+## By Feature type
 
 ```{r}
 
@@ -119,7 +176,11 @@ pivoted_data <- ttest_summary %>%
   ) %>%
 
   pivot_wider(names_from = dataset, values_from = formatted_p, id_cols = model) %>%
-  arrange(model)
+  arrange(model) %>%
+  rename(
+    Model=model
+  ) %>%
+  select(Model, Shape, Color, Orientation)
 
 pivoted_data
 
@@ -130,7 +191,7 @@ pivoted_data
 
 latex_table <- xtable(
   pivoted_data,
-  caption="p-values from t-tests measuring the effect of matching vs mismatching visual features in sentences and images. Imagebind shows an effect of Shape and Color, but not Orientation. CLIP shows no significant effects of visual feature match.",
+  caption="p-values from t-tests comparing matching vs mismatching visual features in sentences and images for various models. Values in bold denote significance (p < 0.05). All models except ViT-B/32 show a significant effect for Shape. ViT-H/14 and ImageBind both show significant effects for Color. None of the models show an effect of Orientation.",
   align = c("l", "l", "r", "r", "r")
   )
 
@@ -172,6 +233,25 @@ custom_labeller <- function(variable, value) {
 
 ```{r}
 
+# Get height of bars
+max_bar <- data %>%
+  group_by(
+    model, dataset, match
+  ) %>%
+  summarize(
+    mean_cl_boot(probability),
+    .groups="drop"
+  ) %>%
+  summarize(
+    ymax = max(ymax)
+  ) %>% 
+  pull(ymax)
+  
+
+```
+
+```{r}
+
 # Add a column for significance stars
 ttest_summary$signif_star <- with(ttest_summary, ifelse(p_value < 0.001, '***', 
                                               ifelse(p_value < 0.01, '**', 
@@ -191,8 +271,8 @@ ttest_summary <- ttest_summary %>%
     ),
     model = factor(model, levels=c("B/32","L/14","H/14","IB")),
     y = case_when(
-      p_value < 0.05 ~ 0.75,
-      T ~ 0.8
+      p_value < 0.05 ~ max_bar - 0.05,
+      T ~ max_bar - 0.03
     )
   )
   
@@ -207,14 +287,18 @@ data_with_signif %>%
       "ViT-H/14" ~ "H/14",
       "ImageBind" ~ "IB"
     ),
-    model = factor(model, levels=c("B/32","L/14","H/14","IB"))
+    model = factor(model, levels=c("B/32","L/14","H/14","IB")),
+    match = case_match(match,
+      "match" ~ "Match",
+      "mismatch" ~ "Mismatch"
+    )
   ) %>%
   ggplot(aes(x = model, y = probability)) +
   stat_summary(aes(fill = match), fun="mean", geom="bar", position="dodge") +
   stat_summary(aes(fill = match), fun.data="mean_cl_boot", geom="errorbar", position=position_dodge(width=0.9), width=0.2) +
   facet_wrap(~dataset, labeller = labeller(dataset = custom_labeller)) +
   theme_minimal(base_size = 16) +  # Use theme_bw with increased base font size
-  scale_fill_manual(values = c("match" = "#1C73C2CC", "mismatch" = "#D32F2FCC")) +  # Custom colors
+  scale_fill_manual(values = c("Match" = "#1C73C2CC", "Mismatch" = "#D32F2FCC")) +  # Custom colors
   theme(
     legend.position = "bottom",
     axis.title = element_text(size = 18),  # Increase axis title size
@@ -223,7 +307,7 @@ data_with_signif %>%
     strip.text = element_markdown()
   ) +
   geom_text(data=ttest_summary, aes(label = signif_star, y = y), vjust = -1, size=6, fontface="plain", color="#222222") +
-  coord_cartesian(ylim=c(0, 0.85)) +
+  coord_cartesian(ylim=c(0, max_bar + 0.05)) +
   labs(x = "Model", y = "Probability", fill = "Match")
 
 ggsave("../manuscript/figures/results.pdf", width = 9, height=5, device="pdf")

@@ -1,0 +1,303 @@
+---
+title: "Reproduction of Winter & Bergen 2012 using LMEs"
+author: "Cameron Jones"
+date: "4/12/2023"
+output:
+  html_document: 
+    toc: yes
+    toc_float: yes
+    theme: flatly
+    highlight: kate
+    code_folding: hide
+    number_sections: yes
+    fig_caption: yes
+---
+
+# Setup
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Import files and libraries
+
+```{r}
+library(tidyverse)
+library(lmerTest)
+
+e1.raw <- read.csv("../data/winter2012/e1/human_data.csv")
+e2.raw <- read.csv("../data/winter2012/e2/human_data.csv")
+
+```
+
+# Experiment 1
+
+## Preprocessing
+
+```{r}
+
+e1 <- e1.raw %>%
+  filter(
+    CRITICAL == "CRITICAL"
+  ) %>%
+  mutate(
+    item_type = ifelse(is.na(LM), "EXPL", "LM"),
+    match = recode(SAME, "SAME"="Match", "DIFF"="Mismatch"),
+    item_id = paste(item_type, ITEM, sep="_")
+  ) %>%
+  separate(
+    CONDITION, c("sentence_type", "image_type")
+  ) %>%
+  rename(
+    ppt_id = Subject,
+    block = Block,
+    item = ITEM,
+    accuracy = Pic.ACC,
+    rt = Pic.RT
+  ) %>%
+  select(
+    ppt_id, block, item_type, item_id, match, sentence_type, image_type, accuracy, rt
+  )
+
+```
+
+## Descriptive
+
+22 ppts did 32 items each
+
+```{r}
+
+e1 %>%
+  group_by(ppt_id) %>%
+  summarize(n_items=n()) %>%
+  group_by(n_items) %>%
+  summarize(n_ppts=n())
+
+
+```
+
+## Preprocess
+
+```{r}
+
+e1.clean <- e1 %>%
+  filter(
+    accuracy == 1,
+    rt > 300,
+    rt < 3000
+  )
+
+```
+
+## Mean RT per match condition
+
+```{r}
+
+e1.clean %>%
+  group_by(match) %>%
+  summarize(mean(rt))
+
+```
+
+## ANOVA
+
+### By subject
+
+```{r}
+
+summary(aov(rt ~ sentence_type * image_type + Error(factor(ppt_id)), data=e1.clean))
+
+```
+
+
+### By item
+
+```{r}
+
+summary(aov(rt ~ sentence_type * image_type + Error(factor(item_id)), data=e1.clean))
+
+```
+
+## Linear Model
+
+### Match effect
+
+```{r}
+
+
+m.e1.base <- lmer(rt ~ 1 + (1  | ppt_id) + (1  | item_id),
+                  data=e1.clean, REML=FALSE)
+
+m.e1 <- lmer(rt ~ match + (1 | ppt_id) + (1 | item_id),
+                  data=e1.clean, REML=FALSE)
+
+anova(m.e1, m.e1.base)
+
+summary(m.e1)
+
+
+```
+
+### Interaction
+
+
+```{r}
+
+
+m.e1.ixn.base <- lmer(rt ~ 1 + sentence_type + image_type + 
+                        (1 | ppt_id) + (1 | item_id),
+                  data=e1.clean, REML=FALSE)
+
+m.e1.ixn <- lmer(rt ~ sentence_type * image_type +
+                   (1 | ppt_id) + (1 | item_id),
+                  data=e1.clean, REML=FALSE)
+
+anova(m.e1.ixn, m.e1.ixn.base)
+
+summary(m.e1.ixn)
+
+
+```
+# Experiment 2
+
+## Preprocessing
+
+```{r}
+
+e2.ppt.ex.acc <- e2.raw %>%
+  group_by(Subject) %>%
+  summarize(acc = mean(SoundOut1.ACC)) %>%
+  arrange(acc) %>%
+  filter(acc < 0.8) %>%
+  pull(Subject)
+
+unique(e2.raw$FirstLanguage)
+
+```
+
+```{r}
+
+e2 <- e2.raw %>%
+  filter(
+    Type == "CRITICAL",
+    !Subject %in% e2.ppt.ex.acc,
+    FirstLanguage %in% c("English", "english")
+  ) %>%
+  mutate(
+    match = recode(SAME, "SAME"="Match", "DIFF"="Mismatch"),
+    item_id = ITEM
+  ) %>%
+  separate(
+    CONDITION, c("sentence_type", "sound_type")
+  ) %>%
+  rename(
+    ppt_id = Subject,
+    block = Block,
+    item = ITEM,
+    accuracy = SoundOut1.ACC,
+    rt = SoundOut1.RT
+  ) %>%
+  select(
+    ppt_id, block, item_id, match, sentence_type, sound_type, accuracy, rt
+  )
+
+```
+
+## Descriptive
+
+32 ppts did 24 items each (after exclusions for language & sound verification accuracy)
+
+```{r}
+
+e2 %>%
+  group_by(ppt_id) %>%
+  summarize(n_items=n()) %>%
+  group_by(n_items) %>%
+  summarize(n_ppts=n())
+
+
+```
+
+## Preprocess
+
+```{r}
+
+e2.clean <- e2 %>%
+  filter(
+    accuracy == 1,
+    rt > 300,
+    rt < 3000
+  )
+
+```
+
+## Mean RT per match condition
+
+```{r}
+
+e2.clean %>%
+  group_by(match) %>%
+  summarize(mean(rt))
+
+```
+
+## ANOVA
+
+### By subject
+
+```{r}
+
+summary(aov(rt ~ sentence_type * sound_type + Error(factor(ppt_id)), data=e2.clean))
+
+```
+
+
+### By item
+
+```{r}
+
+summary(aov(rt ~ sentence_type * sound_type + Error(factor(item_id)), data=e2.clean))
+
+```
+
+## Linear Model
+
+### Match effect
+
+```{r}
+
+
+m.e2.base <- lmer(rt ~ 1 + (1  | ppt_id) + (1  | item_id),
+                  data=e2.clean, REML=FALSE)
+
+m.e2 <- lmer(rt ~ match + (1 | ppt_id) + (1 | item_id),
+                  data=e2.clean, REML=FALSE)
+
+anova(m.e2, m.e2.base)
+
+summary(m.e2)
+
+
+```
+
+### Interaction
+
+```{r}
+
+
+m.e2.ixn.base <- lmer(rt ~ 1 + sentence_type + sound_type + 
+                        (1 | ppt_id) + (1 | item_id),
+                  data=e2.clean, REML=FALSE)
+
+m.e2.ixn <- lmer(rt ~ sentence_type * sound_type +
+                   (1 | ppt_id) + (1 | item_id),
+                  data=e2.clean, REML=FALSE)
+
+anova(m.e2.ixn, m.e2.ixn.base)
+
+summary(m.e2.ixn)
+
+
+```
+
+

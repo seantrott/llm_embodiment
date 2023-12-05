@@ -8,7 +8,7 @@ MODELS=("ViT-B-32" "ViT-L-14-336" "ViT-H-14" "imagebind")
 for dataset in "${DATASETS[@]}"; do
     for model in "${MODELS[@]}"; do
         echo "Running analysis for dataset: $dataset with model: $model"
-        python3 src/main.py --dataset "$dataset" --model "$model"
+        python3 src/main.py --dataset "$dataset" --model "$model" --use-cosine 
         echo "----------------------------------------------------------"
     done
 done

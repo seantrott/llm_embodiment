@@ -1,3 +1,4 @@
+from open_clip.transformer import text_global_pool
 import os
 
 import torch
@@ -6,6 +7,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from PIL import Image, ImageOps, ImageDraw
+from scipy.spatial.distance import cdist, cosine
 from imagebind import data
 from imagebind.models import imagebind_model
 from imagebind.models.imagebind_model import ModalityType
@@ -13,77 +15,8 @@ import clip
 import open_clip
 
 """
-Preprocessing
+Setup Models
 """
-
-def preprocess_image(input_folder, output_folder, target_size=(224,224), padding_color=(255,255,255)):
-    """
-    Preprocesses images by resizing them to a target size and padding if necessary.
-    Saves the processed images in the output folder.
-    
-    Args:
-        input_folder (str): Path to the folder containing original images.
-        output_folder (str): Path to the folder to save preprocessed images.
-        target_size (int, optional): Target size for the image. Default is 224.
-    """
-
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-
-    for filename in os.listdir(input_folder):
-        if filename.endswith(('.jpg', '.jpeg', '.png', '.bmp')):  # Add more formats if needed
-            image_path = os.path.join(input_folder, filename)
-
-            with Image.open(image_path) as img:
-                
-                # Convert to RGB if necessary
-                if img.mode == 'RGBA':
-                    img = Image.alpha_composite(Image.new("RGBA", img.size, padding_color), img)
-                    img = img.convert("RGB")
-                    
-                img_aspect = img.width / img.height
-                target_aspect = target_size[0] / target_size[1]
-
-                # Resize image
-                if img_aspect > target_aspect:
-                    new_width = target_size[0]
-                    new_height = int(target_size[0] / img_aspect)
-                else:
-                    new_height = target_size[1]
-                    new_width = int(target_size[1] * img_aspect)
-                img = img.resize((new_width, new_height), Image.LANCZOS)
-
-                # Pad image
-                left_padding = (target_size[0] - new_width) // 2
-                right_padding = target_size[0] - new_width - left_padding
-                top_padding = (target_size[1] - new_height) // 2
-                bottom_padding = target_size[1] - new_height - top_padding
-
-                padded_img = Image.new("RGB", target_size, color=(255,255,255))
-                padded_img.paste(img, (left_padding, top_padding))
-
-                # Save the preprocessed image
-                filename = filename.split('.')[0] + '.png'
-                save_path = os.path.join(output_folder, filename)
-                padded_img.save(save_path)
-
-# preprocess_image("data/connell2007/images", "data/connell2007/images_processed")
-# preprocess_image("data/pecher2006/images", "data/pecher2006/images_processed")
-# preprocess_image("data/muraki2021/images", "data/muraki2021/images_processed")
-
-
-def expand2square(pil_img, background_color=(255,255,255)):
-    width, height = pil_img.size
-    if width == height:
-        return pil_img
-    elif width > height:
-        result = Image.new(pil_img.mode, (width, width), background_color)
-        result.paste(pil_img, (0, (width - height) // 2))
-        return result
-    else:
-        result = Image.new(pil_img.mode, (height, height), background_color)
-        result.paste(pil_img, ((height - width) // 2, 0))
-        return result
 
 def setup_model(model_name):
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -123,10 +56,15 @@ def setup_model(model_name):
     return model, preprocess, tokenizer, device
 
 
-def analyze_data(model, preprocess, tokenizer, device, csv_path, img_folder):
+
+
+def analyze_data(model, preprocess, tokenizer, device, csv_path, img_folder,
+                 use_cosine=False, modality="vision"):
     df = pd.read_csv(csv_path)
     all_results = []
 
+    # index, item = next(df.iterrows())
+    # item = df.iloc[18]
     for index, item in tqdm(df.iterrows(), total=len(df)):
             
         text_list = [
@@ -143,11 +81,19 @@ def analyze_data(model, preprocess, tokenizer, device, csv_path, img_folder):
             with torch.no_grad():
                 text_features = model.encode_text(text_inputs)
                 image_features = torch.stack([model.encode_image(img_input) for img_input in image_inputs]).squeeze()
-                # image_features /= image_features.norm(dim=-1, keepdim=True)
-                # text_features /= text_features.norm(dim=-1, keepdim=True)
-                # Calculate the similarity
-                results = torch.softmax(
-                    text_features @ image_features.T, dim=-1)
+                
+                if use_cosine:
+                    # Calculate the cosine similarity
+                    results = 1 - cdist(
+                        text_features.detach().numpy(),
+                        image_features.detach().numpy(),
+                        metric='cosine'
+                    )
+                else:
+                    # Calculate the softmax probability
+                    results = torch.softmax(
+                        text_features @ image_features.T, dim=-1)
+
 
         elif isinstance(model, clip.model.CLIP):
 
@@ -156,23 +102,47 @@ def analyze_data(model, preprocess, tokenizer, device, csv_path, img_folder):
             with torch.no_grad():
                 text_features = model.encode_text(text_inputs)
                 image_features = [model.encode_image(img_input) for img_input in image_inputs]
+                
                 # Calculate the similarity
-                results = torch.softmax(
-                    text_features @ torch.stack(image_features).squeeze().T, dim=-1)
+                if use_cosine:
+                    # Calculate the cosine distance
+                    results = 1 - cdist(
+                        text_features.detach().numpy(),
+                        torch.stack(image_features).squeeze().detach().numpy(),
+                        metric='cosine'
+                    )
+                else:
+                    # Calculate the softmax probability
+                    results = torch.softmax(
+                        text_features @ torch.stack(image_features).squeeze().T, dim=-1)
 
         elif isinstance(model, imagebind_model.ImageBindModel):
 
+            # Transform raw data
+            stimuli = {
+                "image": data.load_and_transform_vision_data,
+                "audio": data.load_and_transform_audio_data
+            }[modality](image_paths, device)
+
             inputs = {
                 ModalityType.TEXT: data.load_and_transform_text(text_list, device),
-                ModalityType.VISION: data.load_and_transform_vision_data(image_paths, device),
+                modality: stimuli,
             }
 
             with torch.no_grad():
                 embeddings = model(inputs)
 
-            results = torch.softmax(
-                embeddings[ModalityType.TEXT] @ embeddings[ModalityType.VISION].T, dim=-1)
-            
+                if use_cosine:
+                    # Calculate the cosine distance
+                    results = 1 - cdist(
+                        embeddings[ModalityType.TEXT].detach().numpy(),
+                        embeddings[modality].detach().numpy(),
+                        metric='cosine'
+                    )
+                else:
+                    # Calculate the softmax probability
+                    results = torch.softmax(
+                        embeddings[ModalityType.TEXT] @ embeddings[modality].T, dim=-1)
         else:
             raise ValueError("Model must be either 'clip' or 'imagebind'")
 
@@ -199,6 +169,86 @@ def format_results(df, model_name, dataset):
     melted_df["model"] = model_name
     melted_df["dataset"] = dataset
     return melted_df
+
+
+oc, _, oc_preprocess = open_clip.create_model_and_transforms(
+    "ViT-H-14", pretrained='laion2b_s32b_b79k')
+oc_tokenizer = open_clip.get_tokenizer("ViT-H-14")
+
+oc_no_proj, _,  oc_preprocess = open_clip.create_model_and_transforms(
+    "ViT-H-14", pretrained='laion2b_s32b_b79k')
+oc_no_proj.text_projection = None
+
+imagebind = imagebind_model.imagebind_huge(pretrained=True)
+
+def oc_encode_text(model, text_list, tokenizer=oc_tokenizer):
+    text_inputs = tokenizer(text_list)
+    with torch.no_grad():
+        text_features = model.encode_text(text_inputs)
+    return text_features
+
+def ib_encode_text(model, text_list, device="cpu"):
+    inputs = {
+        ModalityType.TEXT: data.load_and_transform_text(text_list, device),
+    }
+    with torch.no_grad():
+        embeddings = model(inputs)
+    return embeddings[ModalityType.TEXT]
+
+
+text_list = ['There is a table in a old house',
+             'The table appears very large.']
+
+oc_embeddings = oc_encode_text(oc, text_list)
+oc_no_proj_embeddings = oc_encode_text(oc_no_proj, text_list)
+encoded_ib = ib_encode_text(imagebind, text_list)
+
+oc_embeddings.shape
+oc_no_proj_embeddings.shape
+
+# cosine similarities
+a, b = oc_embeddings.detach().numpy()
+cosine(a, b)
+
+a, b = oc_no_proj_embeddings.detach().numpy()
+cosine(a, b)
+
+a, b = encoded_ib.detach().numpy()
+cosine(a, b)
+
+def compare_text_pairs(model, text_list_a, text_list_b, encoding_fn):
+    """
+    Pairwise comparison of text pairs a1,b1, a2,b2 etc
+    """
+    a = encoding_fn(model, text_list_a)
+    b = encoding_fn(model, text_list_b)
+    results = 1 - cdist(
+        a.detach().numpy(),
+        b.detach().numpy(),
+        metric='cosine'
+    )
+    return results
+
+text_list_c = ["There was apple pie on the table",
+             "There was apple pie on the plate."]
+
+text_list_a = ["She placed the apple pie in a baking dish.",
+               "She served a single piece of apple pie on a plate."]
+text_list_b = ["A whole apple pie.",
+               "A slice of apple pie."]
+
+compare_text_pairs(oc_no_proj, text_list_a, text_list_b, oc_encode_text)
+compare_text_pairs(oc, text_list_a, text_list_b, oc_encode_text)
+compare_text_pairs(imagebind, text_list_a, text_list_b, ib_encode_text)
+
+
+
+
+
+
+results = torch.softmax(
+    embeddings[ModalityType.TEXT] @ embeddings[modality].T, dim=-1)
+
 
 
 def results_summary(df):

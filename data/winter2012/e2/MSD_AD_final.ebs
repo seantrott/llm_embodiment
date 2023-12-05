@@ -1,0 +1,2747 @@
+'
+'
+'
+'	\\Wheel\users\bodo\MSD_AD\MSD_AD2.ebs
+'	Generated on: 11/15/2009	16:52:18
+'
+'
+'	This file generated with E-Studio interface.
+'	E-Prime Copyright © 1996-2005 Psychology Software Tools.
+'	ALL RIGHTS RESERVED
+'
+'	Legal use of this experiment script requires a full E-Prime or Runtime License.
+'
+'
+'	Author:
+'		Bodo Winter
+'
+'
+'
+'
+
+Option CStrings On
+Dim ebContext as Context
+
+
+'--------------------------------------------------------------------------
+' Class Declarations
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+'InitImageDisplayDefaults
+'--------------------------------------------------------------------------
+Sub InitImageDisplayDefaults(theImageDisplay As ImageDisplay)
+
+	If theImageDisplay Is Nothing Then Exit Sub
+
+	theImageDisplay.X = "center"
+	theImageDisplay.Y = "center"
+	theImageDisplay.Width = "100%"
+	theImageDisplay.Height = "100%"
+	theImageDisplay.BackColor = CColor("black")
+	theImageDisplay.BackStyle = "opaque"
+	theImageDisplay.BorderColor = CColor("black")
+	theImageDisplay.BorderWidth = CLng("0")
+	theImageDisplay.XAlign = "center"
+	theImageDisplay.YAlign = "center"
+	theImageDisplay.AlignHorizontal = "center"
+	theImageDisplay.AlignVertical = "center"
+	theImageDisplay.ClearAfter = CLogical("No")
+	theImageDisplay.UseSourceColorKey = CLogical("No")
+	theImageDisplay.SourceColorKey = CColor("black")
+	theImageDisplay.MirrorLeftRight = CLogical("No")
+	theImageDisplay.MirrorUpDown = CLogical("No")
+	theImageDisplay.Stretch = CLogical("No")
+
+End Sub
+
+
+
+
+
+'--------------------------------------------------------------------------
+'InitTextDisplayDefaults
+'--------------------------------------------------------------------------
+Sub InitTextDisplayDefaults(theTextDisplay As TextDisplay)
+
+	If theTextDisplay Is Nothing Then Exit Sub
+
+	theTextDisplay.X = "center"
+	theTextDisplay.Y = "center"
+	theTextDisplay.Width = "100%"
+	theTextDisplay.Height = "100%"
+	theTextDisplay.ForeColor = CColor("black")
+	theTextDisplay.BackColor = CColor("white")
+	theTextDisplay.BackStyle = "opaque"
+	theTextDisplay.BorderColor = CColor("black")
+	theTextDisplay.BorderWidth = CLng("0")
+	theTextDisplay.XAlign = "center"
+	theTextDisplay.YAlign = "center"
+	theTextDisplay.AlignHorizontal = "center"
+	theTextDisplay.AlignVertical = "center"
+	theTextDisplay.WordWrap = True
+	theTextDisplay.ClearAfter = CLogical("No")
+	theTextDisplay.FontName = "Courier New"
+	theTextDisplay.FontSize = "18"
+	theTextDisplay.FontBold = CLogical("Yes")
+	theTextDisplay.FontItalic = CLogical("No")
+	theTextDisplay.FontUnderline = CLogical("No")
+	theTextDisplay.FontStrikeout = CLogical("No")
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'--------------------------------------------------------------------------
+'InitSlideStateDefaults
+'--------------------------------------------------------------------------
+Sub InitSlideStateDefaults(theSlideState As SlideState)
+
+	If theSlideState Is Nothing Then Exit Sub
+
+	theSlideState.X = "center"
+	theSlideState.Y = "center"
+	theSlideState.Width = "100%"
+	theSlideState.Height = "100%"
+	theSlideState.BackColor = CColor("white")
+	theSlideState.BackStyle = "opaque"
+	theSlideState.BorderColor = CColor("black")
+	theSlideState.BorderWidth = CLng("0")
+	theSlideState.XAlign = "center"
+	theSlideState.YAlign = "center"
+	theSlideState.ClearAfter = CLogical("No")
+	theSlideState.Enabled = CLogical("Yes")
+
+End Sub
+
+'--------------------------------------------------------------------------
+'InitSlideVisualStimDefaults
+'--------------------------------------------------------------------------
+Sub InitSlideVisualStimDefaults(theSlideVisualStim As SlideVisualStim)
+
+	If theSlideVisualStim Is Nothing Then Exit Sub
+
+	theSlideVisualStim.X = "center"
+	theSlideVisualStim.Y = "center"
+	theSlideVisualStim.Width = "25%"
+	theSlideVisualStim.Height = "25%"
+	theSlideVisualStim.ForeColor = CColor("black")
+	theSlideVisualStim.BackColor = CColor("white")
+	theSlideVisualStim.BackStyle = "opaque"
+	theSlideVisualStim.BorderColor = CColor("black")
+	theSlideVisualStim.BorderWidth = CLng("0")
+	theSlideVisualStim.XAlign = "center"
+	theSlideVisualStim.YAlign = "center"
+	theSlideVisualStim.AlignHorizontal = "center"
+	theSlideVisualStim.AlignVertical = "center"
+
+End Sub
+
+'--------------------------------------------------------------------------
+'InitSlideTextDefaults
+'--------------------------------------------------------------------------
+Sub InitSlideTextDefaults(theSlideText As SlideText)
+
+	If theSlideText Is Nothing Then Exit Sub
+
+	InitSlideVisualStimDefaults theSlideText
+
+	theSlideText.WordWrap = True
+	theSlideText.FontName = "Courier New"
+	theSlideText.FontSize = "18"
+	theSlideText.FontBold = CLogical("Yes")
+	theSlideText.FontItalic = CLogical("No")
+	theSlideText.FontUnderline = CLogical("No")
+	theSlideText.FontStrikeout = CLogical("No")
+
+End Sub
+
+'--------------------------------------------------------------------------
+'InitSlideImageDefaults
+'--------------------------------------------------------------------------
+Sub InitSlideImageDefaults(theSlideImage As SlideImage)
+
+	If theSlideImage Is Nothing Then Exit Sub
+
+	InitSlideVisualStimDefaults theSlideImage
+
+	theSlideImage.Stretch = CLogical("No")
+	theSlideImage.MirrorLeftRight = CLogical("No")
+	theSlideImage.MirrorUpDown = CLogical("No")
+	theSlideImage.UseSourceColorKey = CLogical("No")
+	theSlideImage.SourceColorKey = CColor("black")
+
+End Sub
+
+'--------------------------------------------------------------------------
+'InitSlideSoundBufferDefaults
+'--------------------------------------------------------------------------
+Sub InitSlideSoundBufferDefaults(theSoundBuffer As SoundBuffer)
+
+	If theSoundBuffer Is Nothing Then Exit Sub
+
+	theSoundBuffer.Loop = CLogical("No")
+	theSoundBuffer.StopAfter = CLogical("Yes")
+	theSoundBuffer.StartOffset = "0"
+	theSoundBuffer.StopOffset = "0"
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'--------------------------------------------------------------------------
+'	InitSoundOutBufferDefaults
+'--------------------------------------------------------------------------
+Sub InitSoundOutBufferDefaults(theSoundBuffer As SoundBuffer)
+
+	If theSoundBuffer Is Nothing Then Exit Sub
+
+	theSoundBuffer.Loop = CLogical("No")
+	theSoundBuffer.StopAfter = CLogical("Yes")
+	theSoundBuffer.StartOffset = "0"
+	theSoundBuffer.StopOffset = "0"
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+'--------------------------------------------------------------------------
+' Instance Declarations
+'--------------------------------------------------------------------------
+Dim Display As DisplayDevice
+Dim Sound As SoundDevice
+Dim Keyboard As KeyboardDevice
+Dim Mouse As MouseDevice
+Dim SessionProc As Procedure
+
+Dim MASTER As List
+
+Dim MAIN As Procedure
+
+Dim Pic As ImageDisplay
+Dim PicEchoClients As EchoClientCollection
+
+Dim Sent As TextDisplay
+Dim SentEchoClients As EchoClientCollection
+
+Dim Welcome As TextDisplay
+Dim WelcomeEchoClients As EchoClientCollection
+
+Dim Instructions As TextDisplay
+Dim InstructionsEchoClients As EchoClientCollection
+
+Dim CRITICAL As List
+
+Dim EXPL As List
+
+Dim NORESP As List
+
+Dim LMN2m As List
+
+Dim LMN2mm As List
+
+Dim EXPLmm As List
+
+Dim SHAMm As List
+
+Dim SHAMmm As List
+
+Dim Instructions2 As TextDisplay
+Dim Instructions2EchoClients As EchoClientCollection
+
+Dim Thanks As TextDisplay
+Dim ThanksEchoClients As EchoClientCollection
+
+Dim PRACTICE As List
+
+Dim Instructions4 As TextDisplay
+Dim Instructions4EchoClients As EchoClientCollection
+
+Dim Cross200ms As TextDisplay
+
+Dim Introduction As TextDisplay
+Dim IntroductionEchoClients As EchoClientCollection
+
+Dim MASTEROLD As List
+
+Dim Break As TextDisplay
+Dim BreakEchoClients As EchoClientCollection
+
+Dim practproc As Procedure
+
+Dim Instructions5 As TextDisplay
+Dim Instructions5EchoClients As EchoClientCollection
+
+Dim Psent As TextDisplay
+Dim PsentEchoClients As EchoClientCollection
+
+Dim PCross As TextDisplay
+
+Dim PImage As ImageDisplay
+Dim PImageEchoClients As EchoClientCollection
+
+Dim PFeedback As FeedbackDisplay
+Dim PFeedback_State As SlideState
+Dim PFeedback_SlideText As SlideText
+
+Dim BeginPRACT As TextDisplay
+
+Dim BeginMASTER As TextDisplay
+
+Dim EndMASTER As TextDisplay
+
+Dim BeginMASTER2 As TextDisplay
+
+Dim EndMASTER2 As TextDisplay
+
+Dim Question As TextDisplay
+Dim QuestionEchoClients As EchoClientCollection
+
+Dim Break200ms As TextDisplay
+
+Dim MASTER2 As List
+
+Dim PBreak As TextDisplay
+
+Dim PQUESTION As TextDisplay
+Dim PQUESTIONEchoClients As EchoClientCollection
+
+Dim Break250ms As Wait
+
+Dim Wait1 As Wait
+
+Dim BlackScreen2 As TextDisplay
+
+Dim BlankScreen2 As TextDisplay
+
+Dim BlankScreen3 As TextDisplay
+
+Dim TextDisplay1 As TextDisplay
+
+Dim Instructions3 As TextDisplay
+Dim Instructions3EchoClients As EchoClientCollection
+
+Dim SoundOut1 As SoundOut
+Dim SoundOut1EchoClients As EchoClientCollection
+Dim SoundOut1SoundBuffer As SoundBuffer
+Dim Wait2 As Wait
+
+Dim SoundOut2 As SoundOut
+Dim SoundOut2EchoClients As EchoClientCollection
+Dim SoundOut2SoundBuffer As SoundBuffer
+Dim TextDisplay2 As TextDisplay
+
+Dim TextDisplay3 As TextDisplay
+
+Dim TextDisplay4 As TextDisplay
+
+Dim BlackScreen1 As TextDisplay
+
+Dim EndPRACT As TextDisplay
+
+Dim TextDisplay5 As TextDisplay
+Dim TextDisplay5EchoClients As EchoClientCollection
+
+Dim BlackScreen3 As TextDisplay
+
+Dim Comprehension As TextDisplay
+Dim ComprehensionEchoClients As EchoClientCollection
+
+
+
+'--------------------------------------------------------------------------
+' Package Declare Script
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+' User Script
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+' Package Global Script
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+' Package Routines
+'--------------------------------------------------------------------------
+
+
+
+'--------------------------------------------------------------------------
+' Implementation
+'--------------------------------------------------------------------------
+Sub SessionProc_Run(c as Context)
+	
+	BlackScreen1.Run
+	
+	
+	Welcome.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		WelcomeEchoClients.RemoveAll
+		Welcome.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Welcome.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Welcome.Run
+	
+	
+	Instructions.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		InstructionsEchoClients.RemoveAll
+		Instructions.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Instructions.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Instructions.Run
+	
+	
+	Instructions2.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		Instructions2EchoClients.RemoveAll
+		Instructions2.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Instructions2.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Instructions2.Run
+	
+	TextDisplay1.Run
+	
+	BeginPRACT.Run
+	
+	BlackScreen2.Run
+	PRACTICE.Run c
+	
+	EndPRACT.Run
+	
+	BlackScreen3.Run
+	
+	
+	Instructions4.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		Instructions4EchoClients.RemoveAll
+		Instructions4.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Instructions4.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Instructions4.Run
+	
+	
+	Instructions5.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		Instructions5EchoClients.RemoveAll
+		Instructions5.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Instructions5.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Instructions5.Run
+	
+	BeginMASTER.Run
+	
+	BlankScreen2.Run
+	MASTER.Run c
+	
+	EndMASTER2.Run
+	
+	
+	Thanks.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		ThanksEchoClients.RemoveAll
+		Thanks.InputMasks.Add Keyboard.CreateInputMask("{ANY}", "", CLng(Thanks.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Thanks.Run
+
+	 
+
+
+#If RUNTIME_VERSION_MAJOR > 1  Or (RUNTIME_VERSION_MAJOR = 1 And RUNTIME_VERSION_MINOR >= 2) Then
+	' Log clock timing information
+	c.SetAttrib "Clock.Information", Clock.Information
+#End If
+
+
+	c.Log
+End Sub
+
+Sub MAIN_Run(c as Context)
+	
+	Sent.Text = c.GetAttrib("SENT")
+	
+	Sent.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		SentEchoClients.RemoveAll
+		Sent.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Sent.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Sent.Run
+	c.SetAttrib Sent.Name & ".OnsetDelay", Sent.OnsetDelay
+	c.SetAttrib Sent.Name & ".OnsetTime", Sent.OnsetTime
+	c.SetAttrib Sent.Name & ".DurationError", Sent.DurationError
+	c.SetAttrib Sent.Name & ".RTTime", Sent.RTTime
+	c.SetAttrib Sent.Name & ".ACC", Sent.ACC
+	c.SetAttrib Sent.Name & ".RT", Sent.RT
+	c.SetAttrib Sent.Name & ".RESP", Sent.RESP
+	c.SetAttrib Sent.Name & ".CRESP", Sent.CRESP
+	
+	
+	TextDisplay2.Run
+	
+	Set SoundOut1SoundBuffer = SoundOut1.Buffers(1)
+	SoundOut1SoundBuffer.Filename = c.GetAttrib("SOUNDFILE")
+	SoundOut1SoundBuffer.Load
+	
+	SoundOut1.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		SoundOut1EchoClients.RemoveAll
+		SoundOut1.InputMasks.Add Keyboard.CreateInputMask("jk", c.GetAttrib("RESPONSE"), CLng(SoundOut1.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	SoundOut1.Run
+	c.SetAttrib SoundOut1.Name & ".RTTime", SoundOut1.RTTime
+	c.SetAttrib SoundOut1.Name & ".ACC", SoundOut1.ACC
+	c.SetAttrib SoundOut1.Name & ".RT", SoundOut1.RT
+	c.SetAttrib SoundOut1.Name & ".RESP", SoundOut1.RESP
+	c.SetAttrib SoundOut1.Name & ".CRESP", SoundOut1.CRESP
+	c.SetAttrib SoundOut1.Name & ".Tag", SoundOut1.Tag
+	
+	
+	Comprehension.Text = c.GetAttrib("COMPREHEND")
+	Comprehension.Duration = CLng(c.GetAttrib("COMPR_time"))
+	
+	Comprehension.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		ComprehensionEchoClients.RemoveAll
+		Comprehension.InputMasks.Add Keyboard.CreateInputMask("jk", c.GetAttrib("COMPR_CORR"), CLng(Comprehension.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Comprehension.Run
+	c.SetAttrib Comprehension.Name & ".ACC", Comprehension.ACC
+	c.SetAttrib Comprehension.Name & ".RT", Comprehension.RT
+	
+		Wait2.Run
+	c.SetAttrib Sent.Name & ".OnsetDelay", Sent.OnsetDelay
+	c.SetAttrib Sent.Name & ".OnsetTime", Sent.OnsetTime
+	c.SetAttrib Sent.Name & ".DurationError", Sent.DurationError
+	c.SetAttrib Sent.Name & ".RTTime", Sent.RTTime
+	c.SetAttrib Sent.Name & ".ACC", Sent.ACC
+	c.SetAttrib Sent.Name & ".RT", Sent.RT
+	c.SetAttrib Sent.Name & ".RESP", Sent.RESP
+	c.SetAttrib Sent.Name & ".CRESP", Sent.CRESP
+	
+	c.SetAttrib SoundOut1.Name & ".RTTime", SoundOut1.RTTime
+	c.SetAttrib SoundOut1.Name & ".ACC", SoundOut1.ACC
+	c.SetAttrib SoundOut1.Name & ".RT", SoundOut1.RT
+	c.SetAttrib SoundOut1.Name & ".RESP", SoundOut1.RESP
+	c.SetAttrib SoundOut1.Name & ".CRESP", SoundOut1.CRESP
+	c.SetAttrib SoundOut1.Name & ".Tag", SoundOut1.Tag
+	
+	c.SetAttrib Comprehension.Name & ".ACC", Comprehension.ACC
+	c.SetAttrib Comprehension.Name & ".RT", Comprehension.RT
+	
+
+	c.Log
+End Sub
+
+Sub practproc_Run(c as Context)
+	
+	Psent.Text = c.GetAttrib("SPRACT")
+	
+	Psent.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		PsentEchoClients.RemoveAll
+		Psent.InputMasks.Add Keyboard.CreateInputMask("{SPACE}", "", CLng(Psent.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	Psent.Run
+	
+	TextDisplay3.Run
+	
+	Set SoundOut2SoundBuffer = SoundOut2.Buffers(1)
+	SoundOut2SoundBuffer.Filename = c.GetAttrib("PPRACT")
+	SoundOut2SoundBuffer.Load
+	
+	SoundOut2.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		SoundOut2EchoClients.RemoveAll
+		SoundOut2.InputMasks.Add Keyboard.CreateInputMask("jk", c.GetAttrib("PRACTRESP"), CLng(SoundOut2.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	SoundOut2.Run
+	c.SetAttrib SoundOut2.Name & ".OnsetDelay", SoundOut2.OnsetDelay
+	c.SetAttrib SoundOut2.Name & ".OnsetTime", SoundOut2.OnsetTime
+	c.SetAttrib SoundOut2.Name & ".DurationError", SoundOut2.DurationError
+	c.SetAttrib SoundOut2.Name & ".RTTime", SoundOut2.RTTime
+	c.SetAttrib SoundOut2.Name & ".ACC", SoundOut2.ACC
+	c.SetAttrib SoundOut2.Name & ".RT", SoundOut2.RT
+	c.SetAttrib SoundOut2.Name & ".RESP", SoundOut2.RESP
+	c.SetAttrib SoundOut2.Name & ".CRESP", SoundOut2.CRESP
+	
+	
+	
+	If SoundOut2.ACC = 1 Then
+		'Set the ActiveState to Correct
+		PFeedback.ActiveState = "Correct"
+
+		'Add an observation to the accuracy stats
+		PFeedback.AccStats.AddObservation SoundOut2.Acc
+
+		'Add an observation to the response time stats
+		' unless the user did not respond and the author
+		' does not want us to add the no response RT
+		If Len(SoundOut2.RESP) > 0 Then
+			PFeedback.RTStats.AddObservation SoundOut2.RT
+			PFeedback.CorrectRTStats.AddObservation SoundOut2.RT
+		End If
+	Else
+		'Is it incorrect or no response?
+		If Len(SoundOut2.RESP) > 0 Then
+			'Set the ActiveState to Incorrect
+			PFeedback.ActiveState = "Incorrect"
+
+			'Set the accuracy stats
+			PFeedback.AccStats.AddObservation SoundOut2.Acc
+
+			'Set the RT stats
+			PFeedback.RTStats.AddObservation SoundOut2.RT
+			PFeedback.IncorrectRTStats.AddObservation SoundOut2.RT
+		Else
+			'Set the ActiveState to NoResponse
+			PFeedback.ActiveState = "NoResponse"
+
+			'Does the author want to consider a NoResponse
+			' to sum as an incorrect response in the ACC stats?
+			If PFeedback.CollectNoRespACCStats = True Then
+				PFeedback.AccStats.AddObservation SoundOut2.Acc
+			End If
+		End If
+	End If
+
+	Select Case PFeedback.ActiveState
+		Case "Correct"
+
+
+			Set PFeedback_SlideText = CSlideText(PFeedback.States.Item("Correct").Objects(1))
+			Set PFeedback_SlideText = Nothing
+		Case "Incorrect"
+
+
+			Set PFeedback_SlideText = CSlideText(PFeedback.States.Item("Incorrect").Objects(1))
+			Set PFeedback_SlideText = Nothing
+		Case "NoResponse"
+
+
+			Set PFeedback_SlideText = CSlideText(PFeedback.States.Item("NoResponse").Objects(1))
+			Set PFeedback_SlideText = Nothing
+		Case "Pending"
+
+	End Select
+
+	
+
+	PFeedback.Run
+
+	
+	
+	TextDisplay5.Text = c.GetAttrib("PractQUEST")
+	TextDisplay5.Duration = CLng(c.GetAttrib("PractQ_time"))
+	
+	TextDisplay5.InputMasks.Reset
+	
+	If Keyboard.GetState() = ebStateOpen Then
+		TextDisplay5EchoClients.RemoveAll
+		TextDisplay5.InputMasks.Add Keyboard.CreateInputMask("jk", "", CLng(TextDisplay5.Duration), CLng("1"), ebEndResponseActionTerminate, CLogical("Yes"), "", "", "ResponseMode:All ProcessBackspace:Yes")
+
+	
+	End If
+
+	TextDisplay5.Run
+		Wait1.Run
+	c.SetAttrib SoundOut2.Name & ".OnsetDelay", SoundOut2.OnsetDelay
+	c.SetAttrib SoundOut2.Name & ".OnsetTime", SoundOut2.OnsetTime
+	c.SetAttrib SoundOut2.Name & ".DurationError", SoundOut2.DurationError
+	c.SetAttrib SoundOut2.Name & ".RTTime", SoundOut2.RTTime
+	c.SetAttrib SoundOut2.Name & ".ACC", SoundOut2.ACC
+	c.SetAttrib SoundOut2.Name & ".RT", SoundOut2.RT
+	c.SetAttrib SoundOut2.Name & ".RESP", SoundOut2.RESP
+	c.SetAttrib SoundOut2.Name & ".CRESP", SoundOut2.CRESP
+	
+End Sub
+
+
+
+
+
+'--------------------------------------------------------------------------
+' InitDevices
+'
+'--------------------------------------------------------------------------
+Sub InitDevices(c As Context)
+
+
+
+	SetOSThreadPriority 3
+
+
+	Set Display = New DisplayDevice
+	Display.Name = "Display"
+
+	Dim DisplayDisplayDeviceInfo As DisplayDeviceInfo
+	DisplayDisplayDeviceInfo.XRes = 1280
+	DisplayDisplayDeviceInfo.YRes = 1024
+	DisplayDisplayDeviceInfo.ColorDepth = 16
+	DisplayDisplayDeviceInfo.RefreshRate = 0
+	DisplayDisplayDeviceInfo.NumPages = 0
+	
+	'Load values from context if they exist
+	If c.AttribExists(Display.Name & ".XRes") Then DisplayDisplayDeviceInfo.XRes = CLng(c.GetAttrib(Display.Name & ".XRes"))
+	If c.AttribExists(Display.Name & ".YRes") Then DisplayDisplayDeviceInfo.YRes = CLng(c.GetAttrib(Display.Name & ".YRes"))
+	If c.AttribExists(Display.Name & ".ColorDepth") Then DisplayDisplayDeviceInfo.ColorDepth = CLng(c.GetAttrib(Display.Name & ".ColorDepth"))
+
+	'Open the device, unless the context values indicate otherwise
+	Dim DisplayOpen As Boolean
+	DisplayOpen = True
+	If c.AttribExists(Display.Name & ".Open") Then DisplayOpen = CLogical(c.GetAttrib(Display.Name & ".Open"))
+	If DisplayOpen = True Then
+		Display.Open DisplayDisplayDeviceInfo
+		c.SetAttrib Display.Name & ".RefreshRate", Format$(Display.CalculatedRefreshRate, "0.000")
+	End If
+
+	Set Sound = New SoundDevice
+	Sound.Name = "Sound"
+
+	Dim SoundSoundOutDeviceInfo As SoundDeviceInfo
+	SoundSoundOutDeviceInfo.Channels = 1
+	SoundSoundOutDeviceInfo.SamplesPerSecond = 22050
+	SoundSoundOutDeviceInfo.BitsPerSample = 16
+	'Load values from context if they exist
+	If c.AttribExists(Sound.Name & ".Channels") Then SoundSoundOutDeviceInfo.Channels = CLng(c.GetAttrib(Sound.Name & ".Channels"))
+	If c.AttribExists(Sound.Name & ".SamplesPerSecond") Then SoundSoundOutDeviceInfo.SamplesPerSecond = CLng(c.GetAttrib(Sound.Name & ".SamplesPerSecond"))
+	If c.AttribExists(Sound.Name & ".BitsPerSample") Then SoundSoundOutDeviceInfo.BitsPerSample = CLng(c.GetAttrib(Sound.Name & ".BitsPerSample"))
+
+	'Open the device, unless the context values indicate otherwise
+	Dim SoundOpen As Boolean
+	SoundOpen = True
+	If c.AttribExists(Sound.Name & ".Open") Then SoundOpen = CLogical(c.GetAttrib(Sound.Name & ".Open"))
+	If SoundOpen = True Then
+		Sound.Open SoundSoundOutDeviceInfo
+	End If
+
+	Set Keyboard = New KeyboardDevice
+	Keyboard.Name = "Keyboard"
+
+	Dim KeyboardKeyboardDeviceInfo as KeyboardDeviceInfo
+	KeyboardKeyboardDeviceInfo.CollectionMode = ebPressesOnly
+	KeyboardKeyboardDeviceInfo.CapsLock = ebCapsLockOff
+	KeyboardKeyboardDeviceInfo.NumLock = ebNumLockOn
+	'Load values from context if they exist
+	If c.AttribExists(Keyboard.Name & ".CollectionMode") Then KeyboardKeyboardDeviceInfo.CollectionMode = CLng(c.GetAttrib(Keyboard.Name & ".CollectionMode"))
+	If c.AttribExists(Keyboard.Name & ".CapsLock") Then KeyboardKeyboardDeviceInfo.CapsLock = CLng(c.GetAttrib(Keyboard.Name & ".CapsLock"))
+	If c.AttribExists(Keyboard.Name & ".NumLock") Then KeyboardKeyboardDeviceInfo.NumLock = CLng(c.GetAttrib(Keyboard.Name & ".NumLock"))
+	If c.AttribExists(Keyboard.Name & ".EmulateDeviceName") Then KeyboardKeyboardDeviceInfo.EmulateDeviceName = c.GetAttrib(Keyboard.Name & ".EmulateDeviceName")
+
+	'Open the device, unless the context values indicate otherwise
+	Dim KeyboardOpen As Boolean
+	KeyboardOpen = True
+	If c.AttribExists(Keyboard.Name & ".Open") Then KeyboardOpen = CLogical(c.GetAttrib(Keyboard.Name & ".Open"))
+	If KeyboardOpen = True Then
+		Keyboard.Open KeyboardKeyboardDeviceInfo
+	End If
+
+	Set Mouse = New MouseDevice
+	Mouse.Name = "Mouse"
+
+
+	SetOSThreadPriority 0
+
+End Sub
+
+
+
+'--------------------------------------------------------------------------
+' InitObjects
+'
+'--------------------------------------------------------------------------
+Sub InitObjects(c As Context)
+
+	Set SessionProc = New Procedure
+	SessionProc.Name = "SessionProc"
+	SessionProc.Tag = ""
+	SessionProc.Subroutine = "SessionProc_Run"
+
+	Set MASTER = New List
+	MASTER.Name = "MASTER"
+	MASTER.Tag = ""
+
+	'Initialization for MASTER
+	
+	Set MASTER.Order = New RandomOrder
+	Set MASTER.Deletion = NoDeletion
+	MASTER.ResetEveryRun = False
+
+	' Create the column headings
+	MASTER.AddAttrib "SENT"
+	MASTER.AddAttrib "SOUNDFILE"
+	MASTER.AddAttrib "CONDITION"
+	MASTER.AddAttrib "SAME"
+	MASTER.AddAttrib "RESPONSE"
+	MASTER.AddAttrib "Type"
+	MASTER.AddAttrib "COMPR_CORR"
+	MASTER.Filename = ""
+	MASTER.LoadMethod = ebLoadMethodEmbedded
+
+	MASTER.Load
+
+	Set MASTER.TerminateCondition = Cycles(1)
+	Set MASTER.ResetCondition = Samples(48)
+	MASTER.Reset
+	
+	Set MAIN = New Procedure
+	MAIN.Name = "MAIN"
+	MAIN.Tag = ""
+	MAIN.Subroutine = "MAIN_Run"
+
+	Set Pic = New ImageDisplay
+	Pic.Name = "Pic"
+	Pic.Tag = ""
+
+	Set PicEchoClients = New EchoClientCollection
+
+	InitImageDisplayDefaults Pic
+
+	Pic.BackColor = CColor("white")
+	Pic.Duration = CLng("5000")
+	Pic.TimingMode = ebTimingModeEvent
+	Pic.PreRelease = Val("0")
+
+	Pic.OnsetSync = 1
+	Pic.OffsetSync = 0
+
+	Set Sent = New TextDisplay
+	Sent.Name = "Sent"
+	Sent.Tag = ""
+
+	Set SentEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Sent
+
+	Sent.BackColor = CColor("black")
+	Sent.ForeColor = CColor("white")
+	Sent.Width = "75%"
+	Sent.FontName = "Verdana"
+	Sent.FontSize = "22"
+	Sent.Duration = CLng("-1")
+	Sent.TimingMode = ebTimingModeEvent
+	Sent.PreRelease = Val("0")
+
+	Sent.OnsetSync = 1
+	Sent.OffsetSync = 0
+
+	Set Welcome = New TextDisplay
+	Welcome.Name = "Welcome"
+	Welcome.Tag = ""
+
+	Set WelcomeEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Welcome
+
+	Welcome.Text = "Welcome!\n\n\n\nThank you for participating in this experiment.\n\n\nPlease read the following instructions carefully. If you have any questions: feel" &_ 
+				" free to ask them at any time.\n\n\n\n\nPress SPACE BAR to go to the next screen."
+	Welcome.BackColor = CColor("black")
+	Welcome.ForeColor = CColor("white")
+	Welcome.Width = "75%"
+	Welcome.FontName = "Verdana"
+	Welcome.Duration = CLng("-1")
+	Welcome.TimingMode = ebTimingModeEvent
+	Welcome.PreRelease = Val("0")
+
+	Welcome.OnsetSync = 1
+	Welcome.OffsetSync = 0
+
+	Set Instructions = New TextDisplay
+	Instructions.Name = "Instructions"
+	Instructions.Tag = ""
+
+	Set InstructionsEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Instructions
+
+	Instructions.Text = "What you have to do is very simple.\n\n\nWhen the experiment starts, you are going to see a sentence. Read the sentence carefully. Press SPACE BAR to " &_ 
+				"indicate that you have read and understood the sentence. Then, you will hear a sound.\n\n\n\nYour job is to answer the following question:\n\nIS THIS " &_ 
+				"THE SOUND OF SOMETHING MENTIONED IN THE SENTENCE?\n\n\n\nPress SPACE BAR to continue instructions."
+	Instructions.BackColor = CColor("black")
+	Instructions.ForeColor = CColor("white")
+	Instructions.Width = "75%"
+	Instructions.FontName = "Verdana"
+	Instructions.Duration = CLng("-1")
+	Instructions.TimingMode = ebTimingModeEvent
+	Instructions.PreRelease = Val("0")
+
+	Instructions.OnsetSync = 1
+	Instructions.OffsetSync = 0
+
+	Set CRITICAL = New List
+	CRITICAL.Name = "CRITICAL"
+	CRITICAL.Tag = ""
+
+	'Initialization for CRITICAL
+	
+	Set CRITICAL.Order = New RandomOrder
+	Set CRITICAL.Deletion = NoDeletion
+	CRITICAL.ResetEveryRun = False
+
+	' Create the column headings
+	CRITICAL.AddAttrib "NEAR"
+	CRITICAL.AddAttrib "FAR"
+	CRITICAL.AddAttrib "NEARSOUND"
+	CRITICAL.AddAttrib "FARSOUND"
+	CRITICAL.AddAttrib "ITEM"
+	CRITICAL.AddAttrib "COMPREHEND"
+	CRITICAL.AddAttrib "COMPR_NEAR"
+	CRITICAL.AddAttrib "COMPR_FAR"
+	CRITICAL.AddAttrib "COMPR_time"
+	CRITICAL.Filename = ""
+	CRITICAL.LoadMethod = ebLoadMethodEmbedded
+
+	CRITICAL.Load
+
+	Set CRITICAL.TerminateCondition = Cycles(1)
+	Set CRITICAL.ResetCondition = Samples(24)
+	CRITICAL.Reset
+	
+	Set EXPL = New List
+	EXPL.Name = "EXPL"
+	EXPL.Tag = ""
+
+	'Initialization for EXPL
+	
+	Set EXPL.Order = New RandomOrder
+	Set EXPL.Deletion = NoDeletion
+	EXPL.ResetEveryRun = False
+
+	' Create the column headings
+	EXPL.AddAttrib "NEAR"
+	EXPL.AddAttrib "FAR"
+	EXPL.AddAttrib "BIG"
+	EXPL.AddAttrib "SMALL"
+	EXPL.AddAttrib "ITEM"
+	EXPL.AddAttrib "Q_NEAR"
+	EXPL.AddAttrib "Q_FAR"
+	EXPL.AddAttrib "Q_RESP"
+	EXPL.AddAttrib "Q_DUR"
+	EXPL.AddAttrib "HEADER"
+	EXPL.Filename = ""
+	EXPL.LoadMethod = ebLoadMethodEmbedded
+
+	EXPL.Load
+
+	Set EXPL.TerminateCondition = Cycles(1)
+	Set EXPL.ResetCondition = Samples(16)
+	EXPL.Reset
+	
+	Set NORESP = New List
+	NORESP.Name = "NORESP"
+	NORESP.Tag = ""
+
+	'Initialization for NORESP
+	
+	Set NORESP.Order = New RandomOrder
+	Set NORESP.Deletion = NoDeletion
+	NORESP.ResetEveryRun = False
+
+	' Create the column headings
+	NORESP.AddAttrib "SFILL"
+	NORESP.AddAttrib "PFILL"
+	NORESP.AddAttrib "ITEM"
+	NORESP.AddAttrib "COMPREHEND"
+	NORESP.AddAttrib "COMPR_time"
+	NORESP.AddAttrib "COMPR_RESP"
+	NORESP.Filename = ""
+	NORESP.LoadMethod = ebLoadMethodEmbedded
+
+	NORESP.Load
+
+	Set NORESP.TerminateCondition = Cycles(1)
+	Set NORESP.ResetCondition = Samples(24)
+	NORESP.Reset
+	
+	Set LMN2m = New List
+	LMN2m.Name = "LMN2m"
+	LMN2m.Tag = ""
+
+	'Initialization for LMN2m
+	
+	Set LMN2m.Order = New RandomOrder
+	Set LMN2m.Deletion = NoDeletion
+	LMN2m.ResetEveryRun = False
+
+	' Create the column headings
+	LMN2m.AddAttrib "SFILL"
+	LMN2m.AddAttrib "PFILL"
+	LMN2m.AddAttrib "ITEM"
+	LMN2m.AddAttrib "Q_FILL"
+	LMN2m.AddAttrib "Q_RESP"
+	LMN2m.AddAttrib "Q_DUR"
+	LMN2m.AddAttrib "HEADER"
+	LMN2m.Filename = ""
+	LMN2m.LoadMethod = ebLoadMethodEmbedded
+
+	LMN2m.Load
+
+	Set LMN2m.TerminateCondition = Cycles(1)
+	Set LMN2m.ResetCondition = Samples(16)
+	LMN2m.Reset
+	
+	Set LMN2mm = New List
+	LMN2mm.Name = "LMN2mm"
+	LMN2mm.Tag = ""
+
+	'Initialization for LMN2mm
+	
+	Set LMN2mm.Order = New RandomOrder
+	Set LMN2mm.Deletion = NoDeletion
+	LMN2mm.ResetEveryRun = False
+
+	' Create the column headings
+	LMN2mm.AddAttrib "SFILL"
+	LMN2mm.AddAttrib "PFILL"
+	LMN2mm.AddAttrib "ITEM"
+	LMN2mm.AddAttrib "Q_FILL"
+	LMN2mm.AddAttrib "Q_RESP"
+	LMN2mm.AddAttrib "Q_DUR"
+	LMN2mm.AddAttrib "HEADER"
+	LMN2mm.Filename = ""
+	LMN2mm.LoadMethod = ebLoadMethodEmbedded
+
+	LMN2mm.Load
+
+	Set LMN2mm.TerminateCondition = Cycles(1)
+	Set LMN2mm.ResetCondition = Samples(16)
+	LMN2mm.Reset
+	
+	Set EXPLmm = New List
+	EXPLmm.Name = "EXPLmm"
+	EXPLmm.Tag = ""
+
+	'Initialization for EXPLmm
+	
+	Set EXPLmm.Order = New RandomOrder
+	Set EXPLmm.Deletion = NoDeletion
+	EXPLmm.ResetEveryRun = False
+
+	' Create the column headings
+	EXPLmm.AddAttrib "SFILL"
+	EXPLmm.AddAttrib "PFILL"
+	EXPLmm.AddAttrib "ITEM"
+	EXPLmm.AddAttrib "Q_FILL"
+	EXPLmm.AddAttrib "Q_RESP"
+	EXPLmm.AddAttrib "Q_DUR"
+	EXPLmm.AddAttrib "HEADER"
+	EXPLmm.Filename = ""
+	EXPLmm.LoadMethod = ebLoadMethodEmbedded
+
+	EXPLmm.Load
+
+	Set EXPLmm.TerminateCondition = Cycles(1)
+	Set EXPLmm.ResetCondition = Samples(16)
+	EXPLmm.Reset
+	
+	Set SHAMm = New List
+	SHAMm.Name = "SHAMm"
+	SHAMm.Tag = ""
+
+	'Initialization for SHAMm
+	
+	Set SHAMm.Order = New RandomOrder
+	Set SHAMm.Deletion = NoDeletion
+	SHAMm.ResetEveryRun = False
+
+	' Create the column headings
+	SHAMm.AddAttrib "SFILL"
+	SHAMm.AddAttrib "PFILL"
+	SHAMm.AddAttrib "Q_FILL"
+	SHAMm.AddAttrib "Q_RESP"
+	SHAMm.AddAttrib "Q_DUR"
+	SHAMm.AddAttrib "HEADER"
+	SHAMm.Filename = ""
+	SHAMm.LoadMethod = ebLoadMethodEmbedded
+
+	SHAMm.Load
+
+	Set SHAMm.TerminateCondition = Cycles(1)
+	Set SHAMm.ResetCondition = Samples(48)
+	SHAMm.Reset
+	
+	Set SHAMmm = New List
+	SHAMmm.Name = "SHAMmm"
+	SHAMmm.Tag = ""
+
+	'Initialization for SHAMmm
+	
+	Set SHAMmm.Order = New RandomOrder
+	Set SHAMmm.Deletion = NoDeletion
+	SHAMmm.ResetEveryRun = False
+
+	' Create the column headings
+	SHAMmm.AddAttrib "SFILL"
+	SHAMmm.AddAttrib "PFILL"
+	SHAMmm.AddAttrib "Q_FILL"
+	SHAMmm.AddAttrib "Q_RESP"
+	SHAMmm.AddAttrib "Q_DUR"
+	SHAMmm.AddAttrib "HEADER"
+	SHAMmm.Filename = ""
+	SHAMmm.LoadMethod = ebLoadMethodEmbedded
+
+	SHAMmm.Load
+
+	Set SHAMmm.TerminateCondition = Cycles(1)
+	Set SHAMmm.ResetCondition = Samples(48)
+	SHAMmm.Reset
+	
+	Set Instructions2 = New TextDisplay
+	Instructions2.Name = "Instructions2"
+	Instructions2.Tag = ""
+
+	Set Instructions2EchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Instructions2
+
+	Instructions2.Text = "To indicate that the sound matches the sentence, press \"YES\".\n\nTo indicate that the sound does not match the sentence, press \"NO\".\n\n\n\n\nPres" &_ 
+				"s SPACE BAR to continue to practice session."
+	Instructions2.BackColor = CColor("black")
+	Instructions2.ForeColor = CColor("white")
+	Instructions2.Width = "75%"
+	Instructions2.FontName = "Verdana"
+	Instructions2.Duration = CLng("-1")
+	Instructions2.TimingMode = ebTimingModeEvent
+	Instructions2.PreRelease = Val("0")
+
+	Instructions2.OnsetSync = 1
+	Instructions2.OffsetSync = 0
+
+	Set Thanks = New TextDisplay
+	Thanks.Name = "Thanks"
+	Thanks.Tag = ""
+
+	Set ThanksEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Thanks
+
+	Thanks.Text = "The experiment is over.\n\n\n\n\nThank you SOOOO much!!!\n\nYour participation really is a big help!\n\n\n\nGoodbye..."
+	Thanks.BackColor = CColor("teal")
+	Thanks.ForeColor = CColor("white")
+	Thanks.FontName = "Verdana"
+	Thanks.Duration = CLng("-1")
+	Thanks.TimingMode = ebTimingModeEvent
+	Thanks.PreRelease = Val("0")
+
+	Thanks.OnsetSync = 1
+	Thanks.OffsetSync = 0
+
+	Set PRACTICE = New List
+	PRACTICE.Name = "PRACTICE"
+	PRACTICE.Tag = ""
+
+	'Initialization for PRACTICE
+	
+	Set PRACTICE.Order = New RandomOrder
+	Set PRACTICE.Deletion = NoDeletion
+	PRACTICE.ResetEveryRun = False
+
+	' Create the column headings
+	PRACTICE.AddAttrib "SPRACT", False
+	PRACTICE.AddAttrib "PPRACT", False
+	PRACTICE.AddAttrib "PRACTRESP"
+	PRACTICE.AddAttrib "PractQUEST"
+	PRACTICE.AddAttrib "PractQ_time"
+	PRACTICE.Filename = ""
+	PRACTICE.LoadMethod = ebLoadMethodEmbedded
+
+	PRACTICE.Load
+
+	Set PRACTICE.TerminateCondition = Cycles(1)
+	Set PRACTICE.ResetCondition = Samples(8)
+	PRACTICE.Reset
+	
+	Set Instructions4 = New TextDisplay
+	Instructions4.Name = "Instructions4"
+	Instructions4.Tag = ""
+
+	Set Instructions4EchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Instructions4
+
+	Instructions4.Text = "You have mastered your practice session. If you have any questions, feel free to ask them now.\n\nIn the actual experiment, there will be no feedback " &_ 
+				"\"correct\" or \"incorrect\". Please try to respond accurately.\n\n\nIn the actual experiment that follows, there will be more sentences and images. P" &_ 
+				"lease try to pay attention, read all sentences carefully and respond to the images as fast as possible.\n\nIt is crucial that you try to answer the qu" &_ 
+				"estion \"Is this the sound of something mentioned in the sentence?\" as fast as possible when you recognize the sound.\n\nPress SPACE BAR to continue." &_ 
+				""
+	Instructions4.BackColor = CColor("black")
+	Instructions4.ForeColor = CColor("white")
+	Instructions4.Width = "75%"
+	Instructions4.FontName = "Verdana"
+	Instructions4.Duration = CLng("-1")
+	Instructions4.TimingMode = ebTimingModeEvent
+	Instructions4.PreRelease = Val("0")
+
+	Instructions4.OnsetSync = 1
+	Instructions4.OffsetSync = 0
+
+	Set Cross200ms = New TextDisplay
+	Cross200ms.Name = "Cross200ms"
+	Cross200ms.Tag = ""
+
+	InitTextDisplayDefaults Cross200ms
+
+	Cross200ms.Text = "+"
+	Cross200ms.FontName = "Verdana"
+	Cross200ms.FontSize = "50"
+	Cross200ms.FontBold = CLogical("No")
+	Cross200ms.Duration = CLng("200")
+	Cross200ms.TimingMode = ebTimingModeEvent
+	Cross200ms.PreRelease = Val("0")
+
+	Cross200ms.OnsetSync = 1
+	Cross200ms.OffsetSync = 0
+
+	Set Introduction = New TextDisplay
+	Introduction.Name = "Introduction"
+	Introduction.Tag = ""
+
+	Set IntroductionEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Introduction
+
+	Introduction.Text = "\n\n\nPress SPACE BAR to go to the next screen."
+	Introduction.Width = "75%"
+	Introduction.Height = "75%"
+	Introduction.Duration = CLng("-1")
+	Introduction.TimingMode = ebTimingModeEvent
+	Introduction.PreRelease = Val("0")
+
+	Introduction.OnsetSync = 1
+	Introduction.OffsetSync = 0
+
+	Set MASTEROLD = New List
+	MASTEROLD.Name = "MASTEROLD"
+	MASTEROLD.Tag = ""
+
+	'Initialization for MASTEROLD
+	
+	Set MASTEROLD.Order = New RandomOrder
+	Set MASTEROLD.Deletion = NoDeletion
+	MASTEROLD.ResetEveryRun = False
+
+	' Create the column headings
+	MASTEROLD.AddAttrib "SENT"
+	MASTEROLD.AddAttrib "PIC"
+	MASTEROLD.AddAttrib "CONDITION"
+	MASTEROLD.AddAttrib "SAME"
+	MASTEROLD.AddAttrib "RESPONSE"
+	MASTEROLD.AddAttrib "CRITICAL"
+	MASTEROLD.Filename = ""
+	MASTEROLD.LoadMethod = ebLoadMethodEmbedded
+
+	MASTEROLD.Load
+
+	Set MASTEROLD.TerminateCondition = Cycles(1)
+	Set MASTEROLD.ResetCondition = Samples(104)
+	MASTEROLD.Reset
+	
+	Set Break = New TextDisplay
+	Break.Name = "Break"
+	Break.Tag = ""
+
+	Set BreakEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Break
+
+	Break.Text = "You are half-way through!\n\n\n\nTake a short break... you can stretch or scratch your head or do anything you want.\n\n\n\nWhen you think you are rea" &_ 
+				"dy for the next half press SPACE BAR to continue."
+	Break.Duration = CLng("-1")
+	Break.TimingMode = ebTimingModeEvent
+	Break.PreRelease = Val("0")
+
+	Break.OnsetSync = 1
+	Break.OffsetSync = 0
+
+	Set practproc = New Procedure
+	practproc.Name = "practproc"
+	practproc.Tag = ""
+	practproc.Subroutine = "practproc_Run"
+
+	Set Instructions5 = New TextDisplay
+	Instructions5.Name = "Instructions5"
+	Instructions5.Tag = ""
+
+	Set Instructions5EchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Instructions5
+
+	Instructions5.Text = "Remember:\n\n\nSPACE = I have read and understood the sentence\n\n\"YES\" = the sound matches the sentence\n\n\"NO\" = the sound does not match the se" &_ 
+				"ntence\n\nRed questions = not about the picture!\n\nSentence reading = thoroughly\n\nResponse on sound = as fast as possible\n\nReady???\n\n\n\nWhen y" &_ 
+				"ou press SPACE BAR, the experiment will begin!"
+	Instructions5.BackColor = CColor("black")
+	Instructions5.ForeColor = CColor("white")
+	Instructions5.Width = "75%"
+	Instructions5.FontName = "Verdana"
+	Instructions5.Duration = CLng("-1")
+	Instructions5.TimingMode = ebTimingModeEvent
+	Instructions5.PreRelease = Val("0")
+
+	Instructions5.OnsetSync = 1
+	Instructions5.OffsetSync = 0
+
+	Set Psent = New TextDisplay
+	Psent.Name = "Psent"
+	Psent.Tag = ""
+
+	Set PsentEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Psent
+
+	Psent.BackColor = CColor("black")
+	Psent.ForeColor = CColor("white")
+	Psent.Width = "75%"
+	Psent.FontName = "Verdana"
+	Psent.Duration = CLng("-1")
+	Psent.TimingMode = ebTimingModeEvent
+	Psent.PreRelease = Val("0")
+
+	Psent.OnsetSync = 1
+	Psent.OffsetSync = 0
+
+	Set PCross = New TextDisplay
+	PCross.Name = "PCross"
+	PCross.Tag = ""
+
+	InitTextDisplayDefaults PCross
+
+	PCross.Text = "+"
+	PCross.FontName = "Verdana"
+	PCross.FontSize = "50"
+	PCross.FontBold = CLogical("No")
+	PCross.Duration = CLng("250")
+	PCross.TimingMode = ebTimingModeEvent
+	PCross.PreRelease = Val("0")
+
+	PCross.OnsetSync = 1
+	PCross.OffsetSync = 0
+
+	Set PImage = New ImageDisplay
+	PImage.Name = "PImage"
+	PImage.Tag = ""
+
+	Set PImageEchoClients = New EchoClientCollection
+
+	InitImageDisplayDefaults PImage
+
+	PImage.BackColor = CColor("white")
+	PImage.Duration = CLng("5000")
+	PImage.TimingMode = ebTimingModeEvent
+	PImage.PreRelease = Val("0")
+
+	PImage.OnsetSync = 1
+	PImage.OffsetSync = 0
+
+	Set PFeedback = New FeedbackDisplay
+	PFeedback.Name = "PFeedback"
+	PFeedback.Tag = ""
+
+	PFeedback.ACCDivisor = "1.0"
+	PFeedback.ACCFormat = "Percent"
+	PFeedback.RTDivisor = "1000.0"
+	PFeedback.RTFormat = "###0.000"
+	PFeedback.CorrectRTDivisor = "1000.0"
+	PFeedback.CorrectRTFormat = "###0.000"
+	PFeedback.IncorrectRTDivisor = "1000.0"
+	PFeedback.IncorrectRTFormat = "###0.000"
+	PFeedback.CollectNoRespACCStats = True
+	PFeedback.Duration = CLng("1500")
+	PFeedback.TimingMode = ebTimingModeEvent
+	PFeedback.PreRelease = Val("0")
+
+	PFeedback.OnsetSync = 1
+	PFeedback.OffsetSync = 0
+
+	Set PFeedback_State = New SlideState
+	PFeedback_State.Name = "Correct"
+
+	InitSlideStateDefaults PFeedback_State
+
+	PFeedback_State.BackColor = CColor("black")
+
+	PFeedback.States.Add PFeedback_State, "Correct"
+
+
+	Set PFeedback_SlideText = New SlideText
+	PFeedback_SlideText.Name = "Text1"
+
+	InitSlideTextDefaults PFeedback_SlideText
+
+	PFeedback_SlideText.Text = "Correct!"
+	PFeedback_SlideText.Y = "20%"
+	PFeedback_SlideText.Width = "75%"
+	PFeedback_SlideText.Height = "10%"
+	PFeedback_SlideText.ForeColor = CColor("blue")
+	PFeedback_SlideText.BackStyle = "transparent"
+	PFeedback_SlideText.AlignHorizontal = "left"
+	PFeedback.States.Item("Correct").Objects.Add PFeedback_SlideText, "Text1"
+
+	Set PFeedback_State = New SlideState
+	PFeedback_State.Name = "Incorrect"
+
+	InitSlideStateDefaults PFeedback_State
+
+	PFeedback_State.BackColor = CColor("black")
+
+	PFeedback.States.Add PFeedback_State, "Incorrect"
+
+
+	Set PFeedback_SlideText = New SlideText
+	PFeedback_SlideText.Name = "Text1"
+
+	InitSlideTextDefaults PFeedback_SlideText
+
+	PFeedback_SlideText.Text = "Incorrect"
+	PFeedback_SlideText.Y = "20%"
+	PFeedback_SlideText.Width = "75%"
+	PFeedback_SlideText.Height = "10%"
+	PFeedback_SlideText.ForeColor = CColor("red")
+	PFeedback_SlideText.BackStyle = "transparent"
+	PFeedback_SlideText.AlignHorizontal = "left"
+	PFeedback.States.Item("Incorrect").Objects.Add PFeedback_SlideText, "Text1"
+
+	Set PFeedback_State = New SlideState
+	PFeedback_State.Name = "NoResponse"
+
+	InitSlideStateDefaults PFeedback_State
+
+	PFeedback_State.BackColor = CColor("black")
+
+	PFeedback.States.Add PFeedback_State, "NoResponse"
+
+
+	Set PFeedback_SlideText = New SlideText
+	PFeedback_SlideText.Name = "Text1"
+
+	InitSlideTextDefaults PFeedback_SlideText
+
+	PFeedback_SlideText.Text = "No response detected."
+	PFeedback_SlideText.Y = "20%"
+	PFeedback_SlideText.Width = "75%"
+	PFeedback_SlideText.Height = "10%"
+	PFeedback_SlideText.ForeColor = CColor("red")
+	PFeedback_SlideText.BackStyle = "transparent"
+	PFeedback_SlideText.AlignHorizontal = "left"
+	PFeedback.States.Item("NoResponse").Objects.Add PFeedback_SlideText, "Text1"
+
+	Set PFeedback_State = New SlideState
+	PFeedback_State.Name = "Pending"
+
+	InitSlideStateDefaults PFeedback_State
+
+
+	PFeedback.States.Add PFeedback_State, "Pending"
+
+
+	Set BeginPRACT = New TextDisplay
+	BeginPRACT.Name = "BeginPRACT"
+	BeginPRACT.Tag = ""
+
+	InitTextDisplayDefaults BeginPRACT
+
+	BeginPRACT.Text = "PRACTICE SESSION\nBEGINS NOW"
+	BeginPRACT.BackColor = CColor("teal")
+	BeginPRACT.ForeColor = CColor("white")
+	BeginPRACT.FontName = "Verdana"
+	BeginPRACT.FontSize = "60"
+	BeginPRACT.Duration = CLng("2000")
+	BeginPRACT.TimingMode = ebTimingModeEvent
+	BeginPRACT.PreRelease = Val("0")
+
+	BeginPRACT.OnsetSync = 1
+	BeginPRACT.OffsetSync = 0
+
+	Set BeginMASTER = New TextDisplay
+	BeginMASTER.Name = "BeginMASTER"
+	BeginMASTER.Tag = ""
+
+	InitTextDisplayDefaults BeginMASTER
+
+	BeginMASTER.Text = "EXPERIMENT\nBEGINS NOW"
+	BeginMASTER.BackColor = CColor("teal")
+	BeginMASTER.ForeColor = CColor("white")
+	BeginMASTER.FontName = "Verdana"
+	BeginMASTER.FontSize = "60"
+	BeginMASTER.Duration = CLng("2000")
+	BeginMASTER.TimingMode = ebTimingModeEvent
+	BeginMASTER.PreRelease = Val("0")
+
+	BeginMASTER.OnsetSync = 1
+	BeginMASTER.OffsetSync = 0
+
+	Set EndMASTER = New TextDisplay
+	EndMASTER.Name = "EndMASTER"
+	EndMASTER.Tag = ""
+
+	InitTextDisplayDefaults EndMASTER
+
+	EndMASTER.Text = "BREAK"
+	EndMASTER.BackColor = CColor("teal")
+	EndMASTER.ForeColor = CColor("white")
+	EndMASTER.FontName = "Verdana"
+	EndMASTER.FontSize = "50"
+	EndMASTER.Duration = CLng("2000")
+	EndMASTER.TimingMode = ebTimingModeEvent
+	EndMASTER.PreRelease = Val("0")
+
+	EndMASTER.OnsetSync = 1
+	EndMASTER.OffsetSync = 0
+
+	Set BeginMASTER2 = New TextDisplay
+	BeginMASTER2.Name = "BeginMASTER2"
+	BeginMASTER2.Tag = ""
+
+	InitTextDisplayDefaults BeginMASTER2
+
+	BeginMASTER2.Text = "SECOND HALF\nBEGINS NOW"
+	BeginMASTER2.BackColor = CColor("teal")
+	BeginMASTER2.ForeColor = CColor("white")
+	BeginMASTER2.FontName = "Verdana"
+	BeginMASTER2.FontSize = "50"
+	BeginMASTER2.Duration = CLng("2000")
+	BeginMASTER2.TimingMode = ebTimingModeEvent
+	BeginMASTER2.PreRelease = Val("0")
+
+	BeginMASTER2.OnsetSync = 1
+	BeginMASTER2.OffsetSync = 0
+
+	Set EndMASTER2 = New TextDisplay
+	EndMASTER2.Name = "EndMASTER2"
+	EndMASTER2.Tag = ""
+
+	InitTextDisplayDefaults EndMASTER2
+
+	EndMASTER2.Text = "END"
+	EndMASTER2.BackColor = CColor("teal")
+	EndMASTER2.ForeColor = CColor("white")
+	EndMASTER2.FontName = "Verdana"
+	EndMASTER2.FontSize = "50"
+	EndMASTER2.Duration = CLng("1000")
+	EndMASTER2.TimingMode = ebTimingModeEvent
+	EndMASTER2.PreRelease = Val("0")
+
+	EndMASTER2.OnsetSync = 1
+	EndMASTER2.OffsetSync = 0
+
+	Set Question = New TextDisplay
+	Question.Name = "Question"
+	Question.Tag = ""
+
+	Set QuestionEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Question
+
+	Question.ForeColor = CColor("maroon")
+	Question.Width = "75%"
+	Question.FontSize = "26"
+	Question.FontItalic = CLogical("Yes")
+	Question.TimingMode = ebTimingModeEvent
+	Question.PreRelease = Val("0")
+
+	Question.OnsetSync = 1
+	Question.OffsetSync = 0
+
+	Set Break200ms = New TextDisplay
+	Break200ms.Name = "Break200ms"
+	Break200ms.Tag = ""
+
+	InitTextDisplayDefaults Break200ms
+
+	Break200ms.Text = ""
+	Break200ms.Duration = CLng("200")
+	Break200ms.TimingMode = ebTimingModeEvent
+	Break200ms.PreRelease = Val("0")
+
+	Break200ms.OnsetSync = 1
+	Break200ms.OffsetSync = 0
+
+	Set MASTER2 = New List
+	MASTER2.Name = "MASTER2"
+	MASTER2.Tag = ""
+
+	'Initialization for MASTER2
+	
+	Set MASTER2.Order = New RandomOrder
+	Set MASTER2.Deletion = NoDeletion
+	MASTER2.ResetEveryRun = False
+
+	' Create the column headings
+	MASTER2.AddAttrib "SENT"
+	MASTER2.AddAttrib "PIC"
+	MASTER2.AddAttrib "CONDITION"
+	MASTER2.AddAttrib "SAME"
+	MASTER2.AddAttrib "RESPONSE"
+	MASTER2.AddAttrib "CRITICAL"
+	MASTER2.AddAttrib "QUESTION"
+	MASTER2.AddAttrib "QDURATION"
+	MASTER2.AddAttrib "TYPE"
+	MASTER2.Filename = ""
+	MASTER2.LoadMethod = ebLoadMethodEmbedded
+
+	MASTER2.Load
+
+	Set MASTER2.TerminateCondition = Cycles(1)
+	Set MASTER2.ResetCondition = Samples(16)
+	MASTER2.Reset
+	
+	Set PBreak = New TextDisplay
+	PBreak.Name = "PBreak"
+	PBreak.Tag = ""
+
+	InitTextDisplayDefaults PBreak
+
+	PBreak.Text = ""
+	PBreak.Duration = CLng("200")
+	PBreak.TimingMode = ebTimingModeEvent
+	PBreak.PreRelease = Val("0")
+
+	PBreak.OnsetSync = 1
+	PBreak.OffsetSync = 0
+
+	Set PQUESTION = New TextDisplay
+	PQUESTION.Name = "PQUESTION"
+	PQUESTION.Tag = ""
+
+	Set PQUESTIONEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults PQUESTION
+
+	PQUESTION.ForeColor = CColor("maroon")
+	PQUESTION.Width = "75%"
+	PQUESTION.FontSize = "26"
+	PQUESTION.FontItalic = CLogical("Yes")
+	PQUESTION.TimingMode = ebTimingModeEvent
+	PQUESTION.PreRelease = Val("0")
+
+	PQUESTION.OnsetSync = 1
+	PQUESTION.OffsetSync = 0
+
+	Set Break250ms = New Wait
+	Break250ms.Name = "Break250ms"
+	Break250ms.Tag = ""
+	Break250ms.Duration = CLng("250")
+	Break250ms.TimingMode = ebTimingModeEvent
+	Break250ms.PreRelease = Val("0")
+
+	Break250ms.OnsetSync = 1
+	Break250ms.OffsetSync = 0
+
+	Set Wait1 = New Wait
+	Wait1.Name = "Wait1"
+	Wait1.Tag = ""
+	Wait1.Duration = CLng("500")
+	Wait1.TimingMode = ebTimingModeEvent
+	Wait1.PreRelease = Val("0")
+
+	Wait1.OnsetSync = 1
+	Wait1.OffsetSync = 0
+
+	Set BlackScreen2 = New TextDisplay
+	BlackScreen2.Name = "BlackScreen2"
+	BlackScreen2.Tag = ""
+
+	InitTextDisplayDefaults BlackScreen2
+
+	BlackScreen2.Text = ""
+	BlackScreen2.BackColor = CColor("black")
+	BlackScreen2.ForeColor = CColor("white")
+	BlackScreen2.Duration = CLng("50")
+	BlackScreen2.TimingMode = ebTimingModeEvent
+	BlackScreen2.PreRelease = Val("0")
+
+	BlackScreen2.OnsetSync = 1
+	BlackScreen2.OffsetSync = 0
+
+	Set BlankScreen2 = New TextDisplay
+	BlankScreen2.Name = "BlankScreen2"
+	BlankScreen2.Tag = ""
+
+	InitTextDisplayDefaults BlankScreen2
+
+	BlankScreen2.Text = ""
+	BlankScreen2.BackColor = CColor("black")
+	BlankScreen2.Duration = CLng("50")
+	BlankScreen2.TimingMode = ebTimingModeEvent
+	BlankScreen2.PreRelease = Val("0")
+
+	BlankScreen2.OnsetSync = 1
+	BlankScreen2.OffsetSync = 0
+
+	Set BlankScreen3 = New TextDisplay
+	BlankScreen3.Name = "BlankScreen3"
+	BlankScreen3.Tag = ""
+
+	InitTextDisplayDefaults BlankScreen3
+
+	BlankScreen3.Text = ""
+	BlankScreen3.Duration = CLng("50")
+	BlankScreen3.TimingMode = ebTimingModeEvent
+	BlankScreen3.PreRelease = Val("0")
+
+	BlankScreen3.OnsetSync = 1
+	BlankScreen3.OffsetSync = 0
+
+	Set TextDisplay1 = New TextDisplay
+	TextDisplay1.Name = "TextDisplay1"
+	TextDisplay1.Tag = ""
+
+	InitTextDisplayDefaults TextDisplay1
+
+	TextDisplay1.Text = ""
+	TextDisplay1.BackColor = CColor("black")
+	TextDisplay1.ForeColor = CColor("white")
+	TextDisplay1.Duration = CLng("1000")
+	TextDisplay1.TimingMode = ebTimingModeEvent
+	TextDisplay1.PreRelease = Val("0")
+
+	TextDisplay1.OnsetSync = 1
+	TextDisplay1.OffsetSync = 0
+
+	Set Instructions3 = New TextDisplay
+	Instructions3.Name = "Instructions3"
+	Instructions3.Tag = ""
+
+	Set Instructions3EchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Instructions3
+
+	Instructions3.Text = "Then, there will be some questions about the sentences. To answer the question with \"YES\", press the \"YES\" button. To answer the question with \"N" &_ 
+				"O\", press the \"NO\" button.\n\nIMPORTANT: The questions are not about the pictures and they are not about you! The questions are only about the sent" &_ 
+				"ences. \n\n\n\nIf you are ready, we can begin with 8 practice sentences.\n\n\nPress SPACE to begin.\n"
+	Instructions3.Duration = CLng("-1")
+	Instructions3.TimingMode = ebTimingModeEvent
+	Instructions3.PreRelease = Val("0")
+
+	Instructions3.OnsetSync = 1
+	Instructions3.OffsetSync = 0
+
+	Set SoundOut1 = New SoundOut
+	SoundOut1.Name = "SoundOut1"
+	SoundOut1.Tag = ""
+
+	Set SoundOut1EchoClients = New EchoClientCollection
+	Dim SoundOut1SoundBufferInfo As SoundBufferInfo
+	SoundOut1SoundBufferInfo.MaxLength = 20000
+	SoundOut1SoundBufferInfo.VolumeControl = CLogical("no")
+	SoundOut1SoundBufferInfo.PanControl = CLogical("no")
+	Set SoundOut1SoundBuffer= Sound.CreateBuffer(SoundOut1SoundBufferInfo)
+	SoundOut1.Buffers.Add SoundOut1SoundBuffer
+
+	InitSoundOutBufferDefaults SoundOut1SoundBuffer
+
+	SoundOut1SoundBuffer.EndSoundAction = 0
+	Set SoundOut1SoundBuffer = Nothing
+	SoundOut1.Duration = CLng("5000")
+	SoundOut1.TimingMode = ebTimingModeEvent
+	SoundOut1.PreRelease = Val("0")
+
+	SoundOut1.OnsetSync = 1
+	SoundOut1.OffsetSync = 0
+
+	Set Wait2 = New Wait
+	Wait2.Name = "Wait2"
+	Wait2.Tag = ""
+	Wait2.Duration = CLng("500")
+	Wait2.TimingMode = ebTimingModeEvent
+	Wait2.PreRelease = Val("0")
+
+	Wait2.OnsetSync = 1
+	Wait2.OffsetSync = 0
+
+	Set SoundOut2 = New SoundOut
+	SoundOut2.Name = "SoundOut2"
+	SoundOut2.Tag = ""
+
+	Set SoundOut2EchoClients = New EchoClientCollection
+	Dim SoundOut2SoundBufferInfo As SoundBufferInfo
+	SoundOut2SoundBufferInfo.MaxLength = 20000
+	SoundOut2SoundBufferInfo.VolumeControl = CLogical("no")
+	SoundOut2SoundBufferInfo.PanControl = CLogical("no")
+	Set SoundOut2SoundBuffer= Sound.CreateBuffer(SoundOut2SoundBufferInfo)
+	SoundOut2.Buffers.Add SoundOut2SoundBuffer
+
+	InitSoundOutBufferDefaults SoundOut2SoundBuffer
+
+	SoundOut2SoundBuffer.EndSoundAction = 0
+	Set SoundOut2SoundBuffer = Nothing
+	SoundOut2.Duration = CLng("5000")
+	SoundOut2.TimingMode = ebTimingModeEvent
+	SoundOut2.PreRelease = Val("0")
+
+	SoundOut2.OnsetSync = 1
+	SoundOut2.OffsetSync = 0
+
+	Set TextDisplay2 = New TextDisplay
+	TextDisplay2.Name = "TextDisplay2"
+	TextDisplay2.Tag = ""
+
+	InitTextDisplayDefaults TextDisplay2
+
+	TextDisplay2.Text = ""
+	TextDisplay2.BackColor = CColor("black")
+	TextDisplay2.Duration = CLng("200")
+	TextDisplay2.TimingMode = ebTimingModeEvent
+	TextDisplay2.PreRelease = Val("0")
+
+	TextDisplay2.OnsetSync = 1
+	TextDisplay2.OffsetSync = 0
+
+	Set TextDisplay3 = New TextDisplay
+	TextDisplay3.Name = "TextDisplay3"
+	TextDisplay3.Tag = ""
+
+	InitTextDisplayDefaults TextDisplay3
+
+	TextDisplay3.Text = ""
+	TextDisplay3.BackColor = CColor("black")
+	TextDisplay3.Duration = CLng("200")
+	TextDisplay3.TimingMode = ebTimingModeEvent
+	TextDisplay3.PreRelease = Val("0")
+
+	TextDisplay3.OnsetSync = 1
+	TextDisplay3.OffsetSync = 0
+
+	Set TextDisplay4 = New TextDisplay
+	TextDisplay4.Name = "TextDisplay4"
+	TextDisplay4.Tag = ""
+
+	InitTextDisplayDefaults TextDisplay4
+
+	TextDisplay4.Text = "\n\n\nSOUND"
+	TextDisplay4.Duration = CLng("0")
+	TextDisplay4.TimingMode = ebTimingModeEvent
+	TextDisplay4.PreRelease = Val("0")
+
+	TextDisplay4.OnsetSync = 1
+	TextDisplay4.OffsetSync = 0
+
+	Set BlackScreen1 = New TextDisplay
+	BlackScreen1.Name = "BlackScreen1"
+	BlackScreen1.Tag = ""
+
+	InitTextDisplayDefaults BlackScreen1
+
+	BlackScreen1.Text = ""
+	BlackScreen1.BackColor = CColor("black")
+	BlackScreen1.Duration = CLng("1000")
+	BlackScreen1.TimingMode = ebTimingModeEvent
+	BlackScreen1.PreRelease = Val("0")
+
+	BlackScreen1.OnsetSync = 1
+	BlackScreen1.OffsetSync = 0
+
+	Set EndPRACT = New TextDisplay
+	EndPRACT.Name = "EndPRACT"
+	EndPRACT.Tag = ""
+
+	InitTextDisplayDefaults EndPRACT
+
+	EndPRACT.Text = "PRACTICE SESSION\nENDS NOW"
+	EndPRACT.BackColor = CColor("teal")
+	EndPRACT.ForeColor = CColor("white")
+	EndPRACT.FontName = "Verdana"
+	EndPRACT.FontSize = "60"
+	EndPRACT.Duration = CLng("1000")
+	EndPRACT.TimingMode = ebTimingModeEvent
+	EndPRACT.PreRelease = Val("0")
+
+	EndPRACT.OnsetSync = 1
+	EndPRACT.OffsetSync = 0
+
+	Set TextDisplay5 = New TextDisplay
+	TextDisplay5.Name = "TextDisplay5"
+	TextDisplay5.Tag = ""
+
+	Set TextDisplay5EchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults TextDisplay5
+
+	TextDisplay5.BackColor = CColor("black")
+	TextDisplay5.ForeColor = CColor("red")
+	TextDisplay5.FontName = "Verdana"
+	TextDisplay5.FontSize = "26"
+	TextDisplay5.TimingMode = ebTimingModeEvent
+	TextDisplay5.PreRelease = Val("0")
+
+	TextDisplay5.OnsetSync = 1
+	TextDisplay5.OffsetSync = 0
+
+	Set BlackScreen3 = New TextDisplay
+	BlackScreen3.Name = "BlackScreen3"
+	BlackScreen3.Tag = ""
+
+	InitTextDisplayDefaults BlackScreen3
+
+	BlackScreen3.Text = ""
+	BlackScreen3.BackColor = CColor("black")
+	BlackScreen3.ForeColor = CColor("cyan")
+	BlackScreen3.Duration = CLng("1000")
+	BlackScreen3.TimingMode = ebTimingModeEvent
+	BlackScreen3.PreRelease = Val("0")
+
+	BlackScreen3.OnsetSync = 1
+	BlackScreen3.OffsetSync = 0
+
+	Set Comprehension = New TextDisplay
+	Comprehension.Name = "Comprehension"
+	Comprehension.Tag = ""
+
+	Set ComprehensionEchoClients = New EchoClientCollection
+
+	InitTextDisplayDefaults Comprehension
+
+	Comprehension.BackColor = CColor("black")
+	Comprehension.ForeColor = CColor("red")
+	Comprehension.FontName = "Verdana"
+	Comprehension.FontSize = "26"
+	Comprehension.TimingMode = ebTimingModeEvent
+	Comprehension.PreRelease = Val("0")
+
+	Comprehension.OnsetSync = 1
+	Comprehension.OffsetSync = 0
+
+
+End Sub
+
+
+'--------------------------------------------------------------------------
+' InitPackages
+'
+'--------------------------------------------------------------------------
+Sub InitPackages(c As Context)
+
+End Sub
+
+
+
+'--------------------------------------------------------------------------
+' InitGlobals
+'
+'--------------------------------------------------------------------------
+Sub InitGlobals(c As Context)
+
+End Sub
+
+
+
+'--------------------------------------------------------------------------
+
+
+'--------------------------------------------------------------------------
+'--------------------------------------------------------------------------
+' UnInitGlobals
+'--------------------------------------------------------------------------
+Sub UnInitGlobals()
+End Sub
+'--------------------------------------------------------------------------
+' UnInitDevices
+'--------------------------------------------------------------------------
+Sub UnInitDevices()
+	Display.Close
+	Set Display = Nothing
+	Sound.Close
+
+	Keyboard.Close
+	Set Keyboard = Nothing
+
+	Set Mouse = Nothing
+
+End Sub
+
+
+'--------------------------------------------------------------------------
+'--------------------------------------------------------------------------
+' UnInitPackages
+'--------------------------------------------------------------------------
+Sub UnInitPackages()
+End Sub
+
+
+'--------------------------------------------------------------------------
+' UnInitObjects
+'
+'--------------------------------------------------------------------------
+Sub UnInitObjects()
+
+	Set SessionProc = Nothing
+
+	Set MASTER = Nothing
+
+	Set MAIN = Nothing
+
+	Set Pic = Nothing
+
+	Set PicEchoClients = Nothing
+
+	Set Sent = Nothing
+
+	Set SentEchoClients = Nothing
+
+	Set Welcome = Nothing
+
+	Set WelcomeEchoClients = Nothing
+
+	Set Instructions = Nothing
+
+	Set InstructionsEchoClients = Nothing
+
+	Set CRITICAL = Nothing
+
+	Set EXPL = Nothing
+
+	Set NORESP = Nothing
+
+	Set LMN2m = Nothing
+
+	Set LMN2mm = Nothing
+
+	Set EXPLmm = Nothing
+
+	Set SHAMm = Nothing
+
+	Set SHAMmm = Nothing
+
+	Set Instructions2 = Nothing
+
+	Set Instructions2EchoClients = Nothing
+
+	Set Thanks = Nothing
+
+	Set ThanksEchoClients = Nothing
+
+	Set PRACTICE = Nothing
+
+	Set Instructions4 = Nothing
+
+	Set Instructions4EchoClients = Nothing
+
+	Set Cross200ms = Nothing
+
+	Set Introduction = Nothing
+
+	Set IntroductionEchoClients = Nothing
+
+	Set MASTEROLD = Nothing
+
+	Set Break = Nothing
+
+	Set BreakEchoClients = Nothing
+
+	Set practproc = Nothing
+
+	Set Instructions5 = Nothing
+
+	Set Instructions5EchoClients = Nothing
+
+	Set Psent = Nothing
+
+	Set PsentEchoClients = Nothing
+
+	Set PCross = Nothing
+
+	Set PImage = Nothing
+
+	Set PImageEchoClients = Nothing
+
+	Set PFeedback = Nothing
+
+	Set BeginPRACT = Nothing
+
+	Set BeginMASTER = Nothing
+
+	Set EndMASTER = Nothing
+
+	Set BeginMASTER2 = Nothing
+
+	Set EndMASTER2 = Nothing
+
+	Set Question = Nothing
+
+	Set QuestionEchoClients = Nothing
+
+	Set Break200ms = Nothing
+
+	Set MASTER2 = Nothing
+
+	Set PBreak = Nothing
+
+	Set PQUESTION = Nothing
+
+	Set PQUESTIONEchoClients = Nothing
+
+	Set Break250ms = Nothing
+
+	Set Wait1 = Nothing
+
+	Set BlackScreen2 = Nothing
+
+	Set BlankScreen2 = Nothing
+
+	Set BlankScreen3 = Nothing
+
+	Set TextDisplay1 = Nothing
+
+	Set Instructions3 = Nothing
+
+	Set Instructions3EchoClients = Nothing
+
+	Set SoundOut1 = Nothing
+
+	Set SoundOut1EchoClients = Nothing
+	Set SoundOut1SoundBuffer = Nothing
+
+	Set Wait2 = Nothing
+
+	Set SoundOut2 = Nothing
+
+	Set SoundOut2EchoClients = Nothing
+	Set SoundOut2SoundBuffer = Nothing
+
+	Set TextDisplay2 = Nothing
+
+	Set TextDisplay3 = Nothing
+
+	Set TextDisplay4 = Nothing
+
+	Set BlackScreen1 = Nothing
+
+	Set EndPRACT = Nothing
+
+	Set TextDisplay5 = Nothing
+
+	Set TextDisplay5EchoClients = Nothing
+
+	Set BlackScreen3 = Nothing
+
+	Set Comprehension = Nothing
+
+	Set ComprehensionEchoClients = Nothing
+
+
+End Sub
+
+
+'--------------------------------------------------------------------------
+' Main
+'
+'--------------------------------------------------------------------------
+Sub Main()
+
+	' Create and initialize the default context, data file,
+	' and provide global access to the context.
+	Dim c As Context
+	Set c = New Context
+	Set c.DataFile = New DataFile
+	c.PushNewFrame
+	Set ebContext = c
+
+	' Set the log level names
+	c.SetLogLevelName 1, "Session"
+	c.SetLogLevelName 2, "Block"
+	c.SetLogLevelName 3, "Trial"
+	c.SetLogLevelName 4, "SubTrial"
+	c.SetLogLevelName 5, "LogLevel5"
+	c.SetLogLevelName 6, "LogLevel6"
+	c.SetLogLevelName 7, "LogLevel7"
+	c.SetLogLevelName 8, "LogLevel8"
+	c.SetLogLevelName 9, "LogLevel9"
+	c.SetLogLevelName 10, "LogLevel10"
+
+	' Set standard logging items
+	ebContext.SetAttrib "Experiment", "MSD_AD2"
+	ebContext.SetAttrib "SessionDate", Date$
+	ebContext.SetAttrib "SessionTime", Time$
+	ebContext.SetAttrib "RandomSeed", PRNG.GetSeed()
+	' Set default for GroupNumber
+	c.SetAttrib "Group", "1"
+
+	'Initialize global variables for packages
+	InitGlobals c
+
+	CreateDefaultPort
+
+	If Basic.OS = ebWin32 Then
+		WinActivate "E-Run Experiment Window"
+	End If
+
+	' Get the StartupInfo
+
+	' Set the defaults for all of the StartupInfo
+	If Not c.AttribExists("Subject") Then c.SetAttrib "Subject", "1"
+	If Not c.AttribExists("Session") Then c.SetAttrib "Session", "1"
+	If Not c.AttribExists("Age") Then c.SetAttrib "Age", "0"
+	If Not c.AttribExists("Sex") Then c.SetAttrib "Sex", "male"
+	If Not c.AttribExists("Handedness") Then c.SetAttrib "Handedness", "left"
+	If Not c.AttribExists("FirstLanguage") Then c.SetAttrib "FirstLanguage", ""
+	If Not c.AttribExists("OtherLang") Then c.SetAttrib "OtherLang", ""
+
+	' Determine if StartupInfo.UseDefaults exists and is True/False to override prompts for StartupInfo parameters
+	Dim bStartupInfoUseDefaults As Boolean
+	bStartupInfoUseDefaults = False
+	If c.AttribExists("StartupInfo.UseDefaults") Then bStartupInfoUseDefaults = CLogical(c.GetAttrib("StartupInfo.UseDefaults"))
+	If Not bStartupInfoUseDefaults Then
+
+		Dim vAnswer As Variant
+StartupInfo_Begin:
+
+StartupInfoPrompt_Subject:
+		vAnswer = AskBox("Please enter the Subject Number (1-32767, 0=No Data Logging):", c.GetAttrib("Subject"))
+		If Not IsEmpty(vAnswer) then
+			If Not IsNumeric(vAnswer) then
+				MsgBox "Please enter an integer value"
+				GoTo StartupInfoPrompt_Subject
+			ElseIf CLng(vAnswer) < 0 Then
+				MsgBox "The value for Subject must not be less than 0"
+				GoTo StartupInfoPrompt_Subject
+			ElseIf CLng(vAnswer) > 32767 Then
+				MsgBox "The value for Subject must be not be greater than 32767"
+				GoTo StartupInfoPrompt_Subject
+			End If
+		Else
+			GoTo ExperimentAbort
+		End if
+
+		c.SetAttrib "Subject", CStr(vAnswer)
+
+StartupInfoPrompt_Session:
+		vAnswer = AskBox("Please enter the Session Number (1-32767):", c.GetAttrib("Session"))
+		If Not IsEmpty(vAnswer) then
+			If Not IsNumeric(vAnswer) then
+				MsgBox "Please enter an integer value"
+				GoTo StartupInfoPrompt_Session
+			ElseIf CLng(vAnswer) < 1 Then
+				MsgBox "The value for Session must not be less than 1"
+				GoTo StartupInfoPrompt_Session
+			ElseIf CLng(vAnswer) > 32767 Then
+				MsgBox "The value for Session must be not be greater than 32767"
+				GoTo StartupInfoPrompt_Session
+			End If
+		Else
+			GoTo ExperimentAbort
+		End if
+
+		c.SetAttrib "Session", CStr(vAnswer)
+
+StartupInfoPrompt_Age:
+		vAnswer = AskBox("Please enter Subject's Age (0-150):", c.GetAttrib("Age"))
+		If Not IsEmpty(vAnswer) then
+			If Not IsNumeric(vAnswer) then
+				MsgBox "Please enter an integer value"
+				GoTo StartupInfoPrompt_Age
+			ElseIf CLng(vAnswer) < 0 Then
+				MsgBox "The value for Age must not be less than 0"
+				GoTo StartupInfoPrompt_Age
+			ElseIf CLng(vAnswer) > 150 Then
+				MsgBox "The value for Age must be not be greater than 150"
+				GoTo StartupInfoPrompt_Age
+			End If
+		Else
+			GoTo ExperimentAbort
+		End if
+
+		c.SetAttrib "Age", CStr(vAnswer)
+
+StartupInfoPrompt_Sex:
+		Dim arrayChoicesSex(2)
+		arrayChoicesSex(0) = "male"
+		arrayChoicesSex(1) = "female"
+		vAnswer = SelectBox(, "Please enter Subject's Sex:", arrayChoicesSex)
+		If vAnswer >= 0 then
+			c.SetAttrib "Sex", arrayChoicesSex(vAnswer)
+		Else
+			GoTo ExperimentAbort
+		End If
+
+StartupInfoPrompt_Handedness:
+		Dim arrayChoicesHandedness(2)
+		arrayChoicesHandedness(0) = "left"
+		arrayChoicesHandedness(1) = "right"
+		vAnswer = SelectBox(, "Enter Subject's Handedness:", arrayChoicesHandedness)
+		If vAnswer >= 0 then
+			c.SetAttrib "Handedness", arrayChoicesHandedness(vAnswer)
+		Else
+			GoTo ExperimentAbort
+		End If
+
+StartupInfoPrompt_FirstLanguage:
+		vAnswer = AskBox("What is your first language?", c.GetAttrib("FirstLanguage"))
+		If Not IsEmpty(vAnswer) then
+			If Len(CStr(vAnswer)) > 20 Then
+			MsgBox "The length for FirstLanguage must be not be greater than 20"
+				GoTo StartupInfoPrompt_FirstLanguage
+			End If
+		Else
+			GoTo ExperimentAbort
+		End if
+
+		c.SetAttrib "FirstLanguage", CStr(vAnswer)
+
+StartupInfoPrompt_OtherLang:
+		vAnswer = AskBox("What other languages do you speak?", c.GetAttrib("OtherLang"))
+		If Not IsEmpty(vAnswer) then
+			If Len(CStr(vAnswer)) > 20 Then
+			MsgBox "The length for OtherLang must be not be greater than 20"
+				GoTo StartupInfoPrompt_OtherLang
+			End If
+		Else
+			GoTo ExperimentAbort
+		End if
+
+		c.SetAttrib "OtherLang", CStr(vAnswer)
+
+	End If
+
+
+	'If the attribute Clock.Scale.Override exists
+	'  then use it for to set the Clock.Scale value
+	If c.AttribExists("Clock.Scale.Override") Then
+		Clock.Scale = CDbl(c.GetAttrib("Clock.Scale.Override"))
+	End If
+
+	' Set the Filenames for the data files
+	Dim strFilenameRecovery As String
+	Dim strFilenameEDAT As String
+
+	'If the attribute DataFile.Filename.Override exists
+	'  then use it for the .txt and .edat filenames
+	If c.AttribExists("DataFile.Filename.Override") Then
+
+		' Set the default Data Filename
+		strFilenameRecovery = CStr(c.GetAttrib("DataFile.Filename.Override")) & ".txt"
+		strFilenameEDAT = CStr(c.GetAttrib("DataFile.Filename.Override")) & ".edat"
+
+	Else
+
+		' Set the default Data Filename
+		strFilenameRecovery = CStr(c.GetAttrib("Experiment")) & "-" & CStr(c.GetAttrib("Subject")) & "-" & CStr(c.GetAttrib("Session")) & ".txt"
+		strFilenameEDAT = CStr(c.GetAttrib("Experiment")) & "-" & CStr(c.GetAttrib("Subject")) & "-" & CStr(c.GetAttrib("Session")) & ".edat"
+
+	End If
+
+	'Set the name of the data file
+	c.DataFile.Filename = strFilenameRecovery
+
+	' If we are logging data, then prompt to overwrite the data file if it exists
+	If CLng(c.GetAttrib("Subject")) <> 0 Then
+		If FileExists(c.DataFile.Filename) Or FileExists(strFilenameEDAT) Then
+			If ebYes <> MsgBox("WARNING: The data file and/or recovery file already exists:\nFILE: " & c.DataFile.Filename & "\n\nDo you want to overwrite?", ebYesNo + ebQuestion) Then
+				GoTo ExperimentAbort
+			End If
+		End If
+	End If
+
+	' Initialize all system devices, packages, and objects
+	InitDevices c
+	InitPackages c
+	InitObjects c
+
+	' If we are logging data, then open the datafile
+	If CLng(c.GetAttrib("Subject")) <> 0 Then
+		c.DataFile.Open
+		c.LogHeader
+	End If
+
+
+
+#If RUNTIME_VERSION_MAJOR > 1  Or (RUNTIME_VERSION_MAJOR = 1 And RUNTIME_VERSION_MINOR >= 2) Then
+	' Log clock timing information
+	c.SetAttrib "Clock.Information", Clock.Information
+#End If
+
+	' Start the running of the Experiment
+	SessionProc.Run c
+
+	' Clean up the context and close the datafile
+	If CLng(c.GetAttrib("Subject")) <> 0 Then
+		c.DataFile.Close
+		' Attempt to convert the recovery file into a data file
+		Dim nConvert As Long
+		nConvert = c.DataFile.Convert(ebProgressSimple)
+		If nConvert = 0 Then
+			' Settings in E-Studio are set to not remove E-Recovery file
+		Else
+			' The datafile failed to convert!
+			MsgBox "ERROR: The datafile did not convert!\nFILE: " & c.DataFile.Filename & "\n\nIt is recommended that you recover your data with the E-Recovery utility"
+			MsgBox c.DataFile.GetLastErrorMessage()
+		End If
+	End If
+ExperimentFinish:
+
+	UnInitObjects
+
+	UnInitPackages
+	UnInitDevices
+
+	UnInitGlobals
+
+ExperimentAbort:
+
+	' Clean up the context
+	c.PopFrame
+	Set c = Nothing
+	Set ebContext = Nothing
+
+	DestroyDefaultPort
+
+End Sub
+
+
+[DataSection_MASTER(1)]
+Weight	Nested	Procedure	SENT	SOUNDFILE	CONDITION	SAME	RESPONSE	Type	COMPR_CORR
+6	CRITICAL	MAIN	\[NEAR\]	\[NEARSOUND\]	NEAR/LOUD	SAME	j	CRITICAL	\[COMPR_NEAR\]
+6	CRITICAL	MAIN	\[NEAR\]	\[FARSOUND\]	NEAR/QUIET	DIFF	j	CRITICAL	\[COMPR_NEAR\]
+6	CRITICAL	MAIN	\[FAR\]	\[NEARSOUND\]	FAR/LOUD	DIFF	j	CRITICAL	\[COMPR_FAR\]
+6	CRITICAL	MAIN	\[FAR\]	\[FARSOUND\]	FAR/QUIET	SAME	j	CRITICAL	\[COMPR_FAR\]
+24	NORESP	MAIN	\[SFILL\]	\[PFILL\]			k	FILLER	\[COMPR_RESP\]\0
+
+[DataSection_CRITICAL(1)]
+Weight	Nested	Procedure	NEAR	FAR	NEARSOUND	FARSOUND	ITEM	COMPREHEND	COMPR_NEAR	COMPR_FAR	COMPR_time
+1			Right next to you, someone fires a handgun.	Someone fires a handgun in the distance.	CRITICALS/NEAR/CRITICAL_01_NEAR.wav	CRITICALS/FAR/CRITICAL_01_FAR.wav	1				0
+1			You hear the baby crying in the crib right in front of you.	In the day-care centre down the hall, you hear a baby crying.	CRITICALS/NEAR/CRITICAL_02_NEAR.wav	CRITICALS/FAR/CRITICAL_02_FAR.wav	2				0
+1			In the kitchen, you're using the blender to make a smoothie.	You're woken up by your mum downstairs using the blender.	CRITICALS/NEAR/CRITICAL_03_NEAR.wav	CRITICALS/FAR/CRITICAL_03_FAR.wav	3	Are you woken up by the blender?	k	j	10000
+1			As you are petting the cat, it meows.	A cat somewhere in your neighbor's yard meows.	CRITICALS/NEAR/CRITICAL_04_NEAR.wav	CRITICALS/FAR/CRITICAL_04_FAR.wav	4				0
+1			You hold the champagne bottle in your hand and pop it open.	At the opposite end of the restaurant, someone pops a champagne bottle up.	CRITICALS/NEAR/CRITICAL_05_NEAR.wav	CRITICALS/FAR/CRITICAL_05_FAR.wav	5	Are you holding a bottle in your hand?	j	k	10000
+1			While you're touring the bell tower, the church bells start to ring.	In the neighboring town, the church bells are ringing.	CRITICALS/NEAR/CRITICAL_06_NEAR.wav	CRITICALS/FAR/CRITICAL_06_FAR.wav	6				0
+1			While you're milking the cow, it starts mooing.	Across the field, the cow starts mooing.	CRITICALS/NEAR/CRITICAL_07_NEAR.wav	CRITICALS/FAR/CRITICAL_07_FAR.wav	7	Are you touching the cow?	j	k	10000
+1			You are standing right in the middle of the applauding audience.	From outside, you know the concert is over because the audience is applauding.	CRITICALS/NEAR/CRITICAL_08_NEAR.wav	CRITICALS/FAR/CRITICAL_08_FAR.wav	8				0
+1			The cuckoo-clock right above you strikes midnight.	From the far end of the garden, you hear the cuckoo-clock strike 12.	CRITICALS/NEAR/CRITICAL_09_NEAR.wav	CRITICALS/FAR/CRITICAL_09_FAR.wav	9	Did the clock strike a full hour?	j	j	10000
+1			You step into the chicken coop and a rooster crows.	Early in the morning, the rooster down the hill crows.	CRITICALS/NEAR/CRITICAL_10_NEAR.wav	CRITICALS/FAR/CRITICAL_10_FAR.wav	10				0
+1			Right next to you, the dog is barking.	In your neighbor's yard, a dog is barking.	CRITICALS/NEAR/CRITICAL_11_NEAR.wav	CRITICALS/FAR/CRITICAL_11_FAR.wav	11	Is the dog growling?	k	k	10000
+1			You are drilling a screw into the wall with the power drill.	The construction worker across the street is using a power drill.	CRITICALS/NEAR/CRITICAL_12_NEAR.wav	CRITICALS/FAR/CRITICAL_12_FAR.wav	12				0
+1			You are using a hammer to pound a nail into the wall.	A construction worker down the hall pounds a nail into the wall.	CRITICALS/NEAR/CRITICAL_13_NEAR.wav	CRITICALS/FAR/CRITICAL_13_FAR.wav	13				0
+1			The Harley Davidson right in front of you is rumbling.	Blocks away, a Harley Davidson is rumbling.	CRITICALS/NEAR/CRITICAL_14_NEAR.wav	CRITICALS/FAR/CRITICAL_14_FAR.wav	14				0
+1			While you're horseback-riding, your horse neighs.	At the other end of the field, a horse neighs.	CRITICALS/NEAR/CRITICAL_15_NEAR.wav	CRITICALS/FAR/CRITICAL_15_FAR.wav	15				0
+1			You are standing next to a construction worker using a jackhammer.	Somewhere far away from you, a construction worker is using a jackhammer.	CRITICALS/NEAR/CRITICAL_16_NEAR.wav	CRITICALS/FAR/CRITICAL_16_FAR.wav	16				0
+1			As you walk up to the door, someone knocks on it.	You're sitting upstairs when someone knocks at the front door.	CRITICALS/NEAR/CRITICAL_17_NEAR.wav	CRITICALS/FAR/CRITICAL_17_FAR.wav	17				0
+1			Right next to you, a machine gun is firing.	In the distance, a machine gun is firing.	CRITICALS/NEAR/CRITICAL_18_NEAR.wav	CRITICALS/FAR/CRITICAL_18_FAR.wav	18				0
+1			The sheep walks up to you and bleats.	The sheep wanders to the other side of the hill from you and bleats.	CRITICALS/NEAR/CRITICAL_19_NEAR.wav	CRITICALS/FAR/CRITICAL_19_FAR.wav	19				0
+1			As you hold the frog in your hands, it starts to croak.	At the other end of the pond, a frog starts to croak.	CRITICALS/NEAR/CRITICAL_20_NEAR.wav	CRITICALS/FAR/CRITICAL_20_FAR.wav	20				0
+1			You stand in front of the toilet and flush it.	Someone upstairs flushes the toilet.	CRITICALS/NEAR/CRITICAL_21_NEAR.wav	CRITICALS/FAR/CRITICAL_21_FAR.wav	21	Is the toilet above you?	k	j	10000
+1			You stand next to the waterfall as the water cascades down.	You stand across the valley from the waterfall, as the water cascades down.	CRITICALS/NEAR/CRITICAL_22_NEAR.wav	CRITICALS/FAR/CRITICAL_22_FAR.wav	22				0
+1			You quickly open the can of soda.	Across the bar, a man quickly opens a can of soda.	CRITICALS/NEAR/CRITICAL_23_NEAR.wav	CRITICALS/FAR/CRITICAL_23_FAR.wav	23	Did you open a can of soda slowly?	k	k	10000
+1			As you walk through the forest, branches crack under your feet.	Somewhere off in the forest, branches are cracking under someone's feet.	CRITICALS/NEAR/CRITICAL_24_NEAR.wav	CRITICALS/FAR/CRITICAL_24_FAR.wav	24	Are you in nature?	j	j	10000\0
+
+[DataSection_EXPL(1)]
+Weight	Nested	Procedure	NEAR	FAR	BIG	SMALL	ITEM	Q_NEAR	Q_FAR	Q_RESP	Q_DUR	HEADER
+1			You look at the fire hydrant right in front of you.	You look at the fire hydrant from afar.	EXPL_BIG\\1_EXPL_BIG.bmp	EXPL_SMALL\\1_EXPL_SMALL.bmp	17				0	
+1			Standing in the parking lot, you are looking at your bike up close.	Standing in the parking lot, you are looking at your bike parked far away.	EXPL_BIG\\2_EXPL_BIG.bmp	EXPL_SMALL\\2_EXPL_SMALL.bmp	18				0	
+1			You look at the bowling ball right in front of of you.	You look at the bowling ball from afar.	EXPL_BIG\\3_EXPL_BIG.bmp	EXPL_SMALL\\3_EXPL_SMALL.bmp	19				0	
+1			In the market, you are examining the basket up close.	In the market, you are examining the basket from afar.	EXPL_BIG\\4_EXPL_BIG.bmp	EXPL_SMALL\\4_EXPL_SMALL.bmp	20	Are you standing in a stadium?	Are you standing in a stadium?	k	10000	Question:
+1			You are looking at the police car parked up close.	You are looking at the police car parked far away from you.	EXPL_BIG\\5_EXPL_BIG.bmp	EXPL_SMALL\\5_EXPL_SMALL.bmp	21	Are you looking at an ambulance car?	Are you looking at an ambulance car?	k	10000	Question:
+1			Your eyes are fixed on the Formula 1 race car parked right in front of you.	Your eyes are fixed on the Formula 1 race car parked in the distance.	EXPL_BIG\\6_EXPL_BIG.bmp	EXPL_SMALL\\6_EXPL_SMALL.bmp	22				0	
+1			You are staring at the exit sign right in front of you.	You are staring at the exit sign from a distance.	EXPL_BIG\\7_EXPL_BIG.bmp	EXPL_SMALL\\7_EXPL_SMALL.bmp	23				0	
+1			You stare at the traffic light right in front of you.	You stare at the traffic light from a long way away.	EXPL_BIG\\8_EXPL_BIG.bmp	EXPL_SMALL\\8_EXPL_SMALL.bmp	24				0	
+1			In your garden, you are looking at the lawn-mower up close.	In the park, you are looking at the lawn-mower from a distance.	EXPL_BIG\\9_EXPL_BIG.bmp	EXPL_SMALL\\9_EXPL_SMALL.bmp	25				0	
+1			In the sportstore, you are staring at the basketball just in front of you.	On the court, you are staring at the basketball from a long way off.	EXPL_BIG\\10_EXPL_BIG.bmp	EXPL_SMALL\\10_EXPL_SMALL.bmp	26				0	
+1			Inside the cramped store, you look at the ATM right in front of you.	Inside the warehouse store, you look at the ATM from a distance.	EXPL_BIG\\11_EXPL_BIG.bmp	EXPL_SMALL\\11_EXPL_SMALL.bmp	27				0	
+1			Your eyes are fixed on the Harley Davidson right in front of you.	Your eyes are fixed on the Harley Davidson parked far away from you.	EXPL_BIG\\12_EXPL_BIG.bmp	EXPL_SMALL\\12_EXPL_SMALL.bmp	28				0	
+1			Inside the cramped bar, you are looking at the Coke can up close.	Inside the wide bar, you are looking at the Coke can from a distance.	EXPL_BIG\\13_EXPL_BIG.bmp	EXPL_SMALL\\13_EXPL_SMALL.bmp	29	Are you at a place where people drink?	Are you at a place where people drink?	j	10000	Question:
+1			While shopping for flowers, you see the sunflower right in front of you.	While hiking through the fields, you see the sunflower in the distance.	EXPL_BIG\\14_EXPL_BIG.bmp	EXPL_SMALL\\14_EXPL_SMALL.bmp	30				0	
+1			In your narrow backyard, you stare at the bench right in front of you.	In the spacious park, you stare at the bench from afar.	EXPL_BIG\\15_EXPL_BIG.bmp	EXPL_SMALL\\15_EXPL_SMALL.bmp	31				0	
+1			Inside the room, you are looking at the wheelchair right in front of you.	In the hallway, you are looking at the wheelchair from a long way off.	EXPL_BIG\\16_EXPL_BIG.bmp	EXPL_SMALL\\16_EXPL_SMALL.bmp	32	Are you in a building?	Are you in a building?	j	10000	Question:\0
+
+[DataSection_NORESP(1)]
+Weight	Nested	Procedure	SFILL	PFILL	ITEM	COMPREHEND	COMPR_time	COMPR_RESP
+1			Right at your feet a fire cracker explodes.	NORSP/NORSP_01.wav	NO01		0	
+1			Your friend leaves the room and accidently slams the door right in your face.	NORSP/NORSP_02.wav	NO02		0	
+1			While riding a bus, you suddenly hear another passenger shout "Help!"	NORSP/NORSP_03.wav	NO03		0	
+1			As you are touring the ranch, the cowboy guide next to you cracks his whip.	NORSP/NORSP_04.wav	NO04		0	
+1			As you are petting the donkey, it goes "hee-haw".	NORSP/NORSP_05.wav	NO05		0	
+1			You step inside the shower and listen to the water cascading over you.	NORSP/NORSP_06.wav	NO06		0	
+1			While washing the dishes, you turn on the garbage disposal.	NORSP/NORSP_07.wav	NO07		0	
+1			You are standing next to the loud coffee grinder as it turns on.	NORSP/NORSP_08.wav	NO08		0	
+1			At the other end of the room, your friend snaps his fingers three times.	NORSP/NORSP_09.wav	NO09		0	
+1			Your father uses the dishwasher in the kitchen.	NORSP/NORSP_10.wav	NO10		0	
+1			As you are studying, the hum of the fan lulls you to sleep.	NORSP/NORSP_11.wav	NO11	Is the electric fan switched on?	10000	j
+1			You step inside the shower and listen to the water cascading over you.	NORSP/NORSP_12.wav	NO12		0	
+1			The sound of the airconditioner only is annoying when it's close to you.	NORSP/NORSP_13.wav	NO13		0	
+1			When you put your headphones on, you realize that the song is far too loud.	NORSP/NORSP_14.wav	NO14		0	
+1			You are standing on the beach and listening to the sound of the ocean.	NORSP/NORSP_15.wav	NO15	Are you close to water?	10000	j
+1			You are hiking along the ridge - enjoying the sound of silence.	NORSP/NORSP_16.wav	NO16	Are you in the mountains?	10000	j
+1			Sitting in the auditorium, you are listening to the brass band play.	NORSP/NORSP_17.wav	NO17	Is there a concert?	10000	j
+1			You were just about to leave when you hear a friend call your name.	NORSP/NORSP_18.wav	NO18	Were you about to arrive?	10000	k
+1			While you are cooking, the pleasing sound of the frying food makes you hungry.	NORSP/NORSP_19.wav	NO19		0	
+1			You hear somebody spraying graffiti right around the corner.	NORSP/NORSP_20.wav	NO20		0	
+1			Somewhere down the hill, you hear a bike bell ring.	NORSP/NORSP_21.wav	NO21		0	
+1			From the other end of the hall you hear a kid scream.	NORSP/NORSP_22.wav	NO22	Is the screaming kid close to you?	10000	k
+1			The sound of the dentist's drill is deafening.	NORSP/NORSP_23.wav	NO23	Is the sound of the drill quiet?	10000	k
+1			At the other end of the office, you notice a computer producing a loud beep.	NORSP/NORSP_24.wav	NO24	Are you in a warehouse?	10000	k\0
+
+[DataSection_LMN2m(1)]
+Weight	Nested	Procedure	SFILL	PFILL	ITEM	Q_FILL	Q_RESP	Q_DUR	HEADER
+1			At the beach, you are looking at the goggles in your beach bag.	LM_N2m\\1_LM_N2m.bmp	1			0	
+1			While doing shopping, you are looking at the apple in your shopping bag.	LM_N2m\\2_LM_N2m.bmp	2	Are you buying things?	j	10000	Question:
+1			Inside your friend's room, you are examining the gecko in the terrarium.	LM_N2m\\3_LM_N2m.bmp	3	Is the gecko in a zoo?	k	10000	Question:
+1			You are fixing your eyes on the toothbrush in the bathroom cabinet.	LM_N2m\\4_LM_N2m.bmp	4	Are you at a place where you can wash yourself?	j	10000	Question:
+1			Inside the barn, you are staring at the keys in your mother's hand.	LM_N2m\\5_LM_N2m.bmp	5	Is your mother holding the scythe?	k	10000	Question:
+1			You are taking a look at the memo left in the office.	LM_N2m\\6_LM_N2m.bmp	6			0	
+1			You are examining the tennis racket in your sports bag.	LM_N2m\\7_LM_N2m.bmp	7			0	
+1			You are staring at the lock in her hands.	LM_N2m\\8_LM_N2m.bmp	8			0	
+1			In your kitchen, you are staring at the frying pan.	LM_N2m\\9_LM_N2m.bmp	9			0	
+1			While hiking, you are eyeing the debris in the forest.	LM_N2m\\10_LM_N2m.bmp	10			0	
+1			You are looking at the eye-catching window display from the other side of the shopping mall.	LM_N2m\\11_LM_N2m.bmp	11			0	
+1			You are staring at the jeans at the other end of the fashion store.	LM_N2m\\12_LM_N2m.bmp	12			0	
+1			While listening to classic music, you are noticing the intricate decorations from the far side of the concert hall.	LM_N2m\\13_LM_N2m.bmp	13			0	
+1			From the other side of the fashion store, you are looking at the shorts.	LM_N2m\\14_LM_N2m.bmp	14			0	
+1			You are fixing your eyes on the employee at the end of the hallway.	LM_N2m\\15_LM_N2m.bmp	15			0	
+1			You are having a look at the table on the other side of the factory.	LM_N2m\\16_LM_N2m.bmp	16			0	\0
+
+[DataSection_LMN2mm(1)]
+Weight	Nested	Procedure	SFILL	PFILL	ITEM	Q_FILL	Q_RESP	Q_DUR	HEADER
+1			From across the food store, you are noticing the bananas.	LM_N2mm\\1_LM_N2mm.bmp	1			0	
+1			From the far side of the hotel room, you are looking into the mirror.	LM_N2mm\\2_LM_N2mm.bmp	2	Can you see yourself?	j	10000	Question:
+1			From the far corner of the huge kitchen, you are staring at the soy milk.	LM_N2mm\\3_LM_N2mm.bmp	3	Is the kitchen tiny?	k	10000	Question:
+1			From the other side of the beach, you are glancing at your flippers.	LM_N2mm\\4_LM_N2mm.bmp	4			0	
+1			You are noticing the food stand at the other end of the farmer's market.	LM_N2mm\\5_LM_N2mm.bmp	5			0	
+1			You are looking at the flute in the musician's hand from the opposite side of the stage.	LM_N2mm\\6_LM_N2mm.bmp	6			0	
+1			You are eyeing the pile of wood across the lumber mill.	LM_N2mm\\7_LM_N2mm.bmp	7			0	
+1			You are staring at the lava lamp across the warehouse.	LM_N2mm\\8_LM_N2mm.bmp	8			0	
+1			Inside the locker room, you are looking at your deodorant in the cabinet.	LM_N2mm\\9_LM_N2mm.bmp	9	Are you at a place where people change clothes?	j	10000	Question:
+1			In your living room, you are glancing at the belt in your hand.	LM_N2mm\\10_LM_N2mm.bmp	10			0	
+1			In the office, you are glancing at your table.	LM_N2mm\\11_LM_N2mm.bmp	11			0	
+1			You are examining the orchid in your living room.	LM_N2mm\\12_LM_N2mm.bmp	12			0	
+1			You are eyeing the knives hanging in your kitchen.	LM_N2mm\\13_LM_N2mm.bmp	13			0	
+1			You are fixing your eyes on the poster on your wall.	LM_N2mm\\14_LM_N2mm.bmp	14	Is the poster rolled up?	k	10000	Question:
+1			While taking a rest, you are examining the turtles in the pond.	LM_N2mm\\15_LM_N2mm.bmp	15			0	
+1			You are eyeing the drums in the recording room.	LM_N2mm\\16_LM_N2mm.bmp	16			0	\0
+
+[DataSection_EXPLmm(1)]
+Weight	Nested	Procedure	SFILL	PFILL	ITEM	Q_FILL	Q_RESP	Q_DUR	HEADER
+1			Standing in the library, you look at the atlas in front of you.	EXPLmm\\1_EXPLmm.bmp	1	Are you at a place where people read books?	j	10000	Question:
+1			You notice the motorcycle parked next to you.	EXPLmm\\2_EXPLmm.bmp	2			0	
+1			You have a look at the rugby ball in front of you.	EXPLmm\\3_EXPLmm.bmp	3			0	
+1			While visiting the zoo, you glance at the panda in the cage close by.	EXPLmm\\4_EXPLmm.bmp	4			0	
+1			While scuba-diving, you examine the coral right in front of you.	EXPLmm\\5_EXPLmm.bmp	5	Are you on a boat?	k	10000	Question:
+1			In your living room, you are glancing at the parrot in front of you.	EXPLmm\\6_EXPLmm.bmp	6			0	
+1			You fix your eyes on the fire engine nearby.	EXPLmm\\7_EXPLmm.bmp	7			0	
+1			Your eyes are fixed on the school bus parked close by.	EXPLmm\\8_EXPLmm.bmp	8	Is the school bus driving at the moment?	k	10000	Question:
+1			You are eyeing the warning sign which is a long way ahead of you.	EXPLmm\\9_EXPLmm.bmp	9			0	
+1			Standing at the intersection, you stare at the graffiti on the far wall.	EXPLmm\\10_EXPLmm.bmp	10			0	
+1			In the mall, you are looking at the display dummy from a long way off.	EXPLmm\\11_EXPLmm.bmp	11			0	
+1			Standing on the field, you are looking at the pine tree in the distance.	EXPLmm\\12_EXPLmm.bmp	12			0	
+1			You are looking up at a person standing at the top of the cliff.	EXPLmm\\13_EXPLmm.bmp	13	Are you looking up?	j	10000	Question:
+1			From the alleyway you are glancing at the trashcan far away from you.	EXPLmm\\14_EXPLmm.bmp	14			0	
+1			Inside the zoo area, you are looking at the tiger from afar.	EXPLmm\\15_EXPLmm.bmp	15			0	
+1			You are looking at the elephant from afar.	EXPLmm\\16_EXPLmm.bmp	16			0	\0
+
+[DataSection_SHAMm(1)]
+Weight	Nested	Procedure	SFILL	PFILL	Q_FILL	Q_RESP	Q_DUR	HEADER
+1			Inside the office, you pick up the USB stick on the left of the stapler.	SHAM_N1m\\1_SHAM_N1m.bmp			0	
+1			Inside your friend's room, you wipe the TV which is to the left of the chair.	SHAM_N1m\\2_SHAM_N1m.bmp	Are you visiting your friend?	j	10000	Question:
+1			You put the coat rack to the left of the mirror.	SHAM_N1m\\3_SHAM_N1m.bmp			0	
+1			You pick up the garlic to the left of the cutting board.	SHAM_N1m\\4_SHAM_N1m.bmp			0	
+1			You place your backpack to the left of the cupboard.	SHAM_N1m\\5_SHAM_N1m.bmp	Did you place the backpack to the right of the cupboard?	k	10000	Question:
+1			You pick up your socks which are to the left of your sweater.	SHAM_N1m\\6_SHAM_N1m.bmp			0	
+1			You reach for the glass on the left side of the napkin.	SHAM_N1m\\7_SHAM_N1m.bmp			0	
+1			Sitting at the kitchen table, you take the oatmeal box on the left side of the saltshaker.	SHAM_N1m\\8_SHAM_N1m.bmp	Are you having breakfast?	j	10000	Question:
+1			Inside the beach shop, you look at your snorkel equipment to the left of the scuba gear.	SHAM_N1m\\9_SHAM_N1m.bmp			0	
+1			On the beach, you take the bikini which is lying to the left of your goggles.	SHAM_N1m\\10_SHAM_N1m.bmp			0	
+1			You stare at the towel on the left side of the surfboard.	SHAM_N1m\\11_SHAM_N1m.bmp			0	
+1			Inside the TV room, you put the remote control back to the left of the book.	SHAM_N1m\\12_SHAM_N1m.bmp	Is the book to the right of the remote control?	j	10000	Question:
+1			Inside the stockroom, you pick up the carrots which are lying to the left of the potatoes.	SHAM_N1m\\13_SHAM_N1m.bmp			0	
+1			You place the Indiana Jones action figure to the left of the dinosaur.	SHAM_N1m\\14_SHAM_N1m.bmp			0	
+1			Inside the office supply store, you are looking at the pen which is to the right of the stapler.	SHAM_N1m\\15_SHAM_N1m.bmp			0	
+1			Inside your friend's computer room, you are staring at the webcam attached to the right of the screen.	SHAM_N1m\\16_SHAM_N1m.bmp	Are you inside your cousin's computer room?	k	10000	Question:
+1			Inside the pantry, you are looking at the bananas lying to the right of the oranges.	SHAM_N1m\\17_SHAM_N1m.bmp			0	
+1			You are picking up the cucumber lying to the right of the onions.	SHAM_N1m\\18_SHAM_N1m.bmp			0	
+1			You are picking up the salt shaker which is to the right of the curry powder.	SHAM_N1m\\19_SHAM_N1m.bmp	Did you do something with your hands?	j	10000	Question:
+1			You are taking the orange pepper which is on the right side of the chillis.	SHAM_N1m\\20_SHAM_N1m.bmp			0	
+1			You are slapping the mosquito to the right of the book.	SHAM_N1m\\21_SHAM_N1m.bmp			0	
+1			Standing on the balcony, you are examining the plane flying to the right of the sun.	SHAM_N1m\\22_SHAM_N1m.bmp			0	
+1			You are having a look at the kite flying to the right of the balloon.	SHAM_N1m\\23_SHAM_N1m.bmp			0	
+1			You are placing the coffee machine to the right of the wine bottle.	SHAM_N1m\\24_SHAM_N1m.bmp			0	
+1			From the boat, you glance at the sea turtle which is swimming to the left of the dolphin.	SHAM_N2m\\1_SHAM_N2m.bmp	Are you underwater?	k	10000	Question:
+1			You place the ace of spades to the left of the queen of hearts.	SHAM_N2m\\2_SHAM_N2m.bmp	Are you playing cards?	j	10000	Question:
+1			You use the vending machine which is on the left side of the fire extinguisher.	SHAM_N2m\\3_SHAM_N2m.bmp	Is the fire extinguisher to the right of the vending machine?	j	10000	Question:
+1			Inside the new kitchen, you eye the stove which is to the left of the microwave.	SHAM_N2m\\4_SHAM_N2m.bmp	Is the kitchen old?	k	10000	Question:
+1			Inside the military museum, you examine the canon which is to the left of the tank.	SHAM_N2m\\5_SHAM_N2m.bmp			0	
+1			Your eyes are fixed on the tent erected to the left of the stream.	SHAM_N2m\\6_SHAM_N2m.bmp	Are you in nature?	j	10000	Question:
+1			You pick up your earplugs which are on the left side of the wrist brace.	SHAM_N2m\\7_SHAM_N2m.bmp			0	
+1			Inside the dorm, you fetch your trousers which are lying to the left of the underpants.	SHAM_N2m\\8_SHAM_N2m.bmp			0	
+1			You stare at the spider crawling on the left side of the bodyboard.	SHAM_N2m\\9_SHAM_N2m.bmp			0	
+1			You eye the cocktail placed to the left of the french fries.	SHAM_N2m\\10_SHAM_N2m.bmp			0	
+1			You examine the palm tree growing on the left side of the waterfall.	SHAM_N2m\\11_SHAM_N2m.bmp			0	
+1			Inside your friend's room, you eye the calendar hanging to the left of the fan.	SHAM_N2m\\12_SHAM_N2m.bmp			0	
+1			While hiking, you notice at the big mountain to the left of the volcano.	SHAM_N2m\\13_SHAM_N2m.bmp			0	
+1			In the petting zoo, you reach for the rabbit to the left of the cage.	SHAM_N2m\\14_SHAM_N2m.bmp			0	
+1			You are placing your photo album to the right of the world atlas.	SHAM_N2m\\15_SHAM_N2m.bmp			0	
+1			In the cellar, you are reaching for the peach which is to the right of the dead cockroach.	SHAM_N2m\\16_SHAM_N2m.bmp	Are you on the ground floor?	k	10000	Question:
+1			You are picking up the spoon which is to the right of the soup bowl.	SHAM_N2m\\17_SHAM_N2m.bmp			0	
+1			You are picking up the telephone book which is to the right of the phone.	SHAM_N2m\\18_SHAM_N2m.bmp			0	
+1			You are placing the rice cooker to the right side of the sink.	SHAM_N2m\\19_SHAM_N2m.bmp			0	
+1			While preparing breakfast, you are fetching the eggs which are to the right of the pan.	SHAM_N2m\\20_SHAM_N2m.bmp			0	
+1			You are picking up the novel which has fallen from the right side of the book shelf.	SHAM_N2m\\21_SHAM_N2m.bmp			0	
+1			You are taking a look at the newspaper which is on the right side of the DVD recorder.	SHAM_N2m\\22_SHAM_N2m.bmp			0	Question:
+1			You are picking up the CD to the right side of the joystick.	SHAM_N2m\\23_SHAM_N2m.bmp			0	
+1			Your eyes are fixed on the crack in the wall to the right side of the window.	SHAM_N2m\\24_SHAM_N2m.bmp			0	\0
+
+[DataSection_SHAMmm(1)]
+Weight	Nested	Procedure	SFILL	PFILL	Q_FILL	Q_RESP	Q_DUR	HEADER
+1			You put your purse to the left of the glasses.	SHAM_N1mm\\1_SHAM_N1mm.bmp	Did you put your purse to the left of the glasses?	j	10000	Question:
+1			Inside the storage room, you grab the peppers lying to the left of the sweet potatoes.	SHAM_N1mm\\2_SHAM_N1mm.bmp			0	
+1			You reach for the detergent which is to the left of the bleach.	SHAM_N1mm\\3_SHAM_N1mm.bmp	Is the detergent to the left of the bleach?	j	10000	Question:
+1			Inside the hotel room, you put the sunscreen to the left of the mirror.	SHAM_N1mm\\4_SHAM_N1mm.bmp			0	
+1			You pick up your backpack which is to the left of the flip-flops.	SHAM_N1mm\\5_SHAM_N1mm.bmp	Is your backpack to the right of the flip-flops?	k	10000	Question:
+1			Inside the armory, you take the sword which is on the left side of the shield.	SHAM_N1mm\\6_SHAM_N1mm.bmp			0	
+1			You pick up the blouse which is lying to the left of the trousers.	SHAM_N1mm\\7_SHAM_N1mm.bmp			0	
+1			You look at the sponge which is to the left of the rice cooker.	SHAM_N1mm\\8_SHAM_N1mm.bmp			0	
+1			Inside your office, you pick up the memory stick which is lying on the left side of the computer.	SHAM_N1mm\\9_SHAM_N1mm.bmp			0	
+1			You take the checks which are to the left of the folder.	SHAM_N1mm\\10_SHAM_N1mm.bmp			0	
+1			You pick up the fork which is to the left of the spoon.	SHAM_N1mm\\11_SHAM_N1mm.bmp			0	
+1			You peel off the chewing gum which is stuck on the left side of the keyboard.	SHAM_N1mm\\12_SHAM_N1mm.bmp			0	
+1			Inside the reptile zoo, you look at the lizard which is to the left of the scorpion.	SHAM_N1mm\\13_SHAM_N1mm.bmp	Are you inside a petting zoo?	k	10000	Question:
+1			You examine the phone booth on the left of the lamp post.	SHAM_N1mm\\14_SHAM_N1mm.bmp			0	
+1			You are staring at the car parked to the right of your truck.	SHAM_N1mm\\15_SHAM_N1mm.bmp			0	
+1			You are switching on the coffee machine which is on the right side of the oven.	SHAM_N1mm\\16_SHAM_N1mm.bmp			0	
+1			While sitting in the armchair, you are looking at the light switch on the right side of the wall.	SHAM_N1mm\\17_SHAM_N1mm.bmp			0	
+1			While standing on the cliff, you look at the shark swimming on the right side of the big rock.	SHAM_N1mm\\18_SHAM_N1mm.bmp			0	
+1			While sitting on the porch, you are mesmerized by the moth flying around on the right side of the light bulb.	SHAM_N1mm\\19_SHAM_N1mm.bmp			0	
+1			You are staring at the whale swimming by the right side of the ship.	SHAM_N1mm\\20_SHAM_N1mm.bmp			0	
+1			While lying on the field, you are gazing at the stars on the right side of the moon.	SHAM_N1mm\\21_SHAM_N1mm.bmp	Are you in horizontal position?	j	10000	Question:
+1			You are examining the sign on the right side of the road.	SHAM_N1mm\\22_SHAM_N1mm.bmp			0	
+1			You are taking a look at the vines growing to the right of your balcony.	SHAM_N1mm\\23_SHAM_N1mm.bmp			0	
+1			Standing in front of the congress building, you are examining the American flag flying to the right of the German flag.	SHAM_N1mm\\24_SHAM_N1mm.bmp	Is the American flag flying above the German flag?	k	10000	Question:
+1			Standing at the pond, you look at the worm to the left side of the leech.	SHAM_N2mm\\1_SHAM_N2mm.bmp			0	
+1			You fetch the skateboard which is to the left of the radio.	SHAM_N2mm\\2_SHAM_N2mm.bmp			0	
+1			You take the inline skates which are to the left of the hiking shoes.	SHAM_N2mm\\3_SHAM_N2mm.bmp			0	
+1			Inside the barber shop, you pick up the shaver which is to the left of the scissors.	SHAM_N2mm\\4_SHAM_N2mm.bmp	Are you at a place where hair is cut?	j	10000	Question:
+1			Your eyes are fixed on the brush which is to the left of the body lotion.	SHAM_N2mm\\5_SHAM_N2mm.bmp			0	
+1			You reach for the credit card which is to the left of the earphones.	SHAM_N2mm\\6_SHAM_N2mm.bmp			0	
+1			Inside the electronics store, you take the DVD which is to the left of the video recorder.	SHAM_N2mm\\7_SHAM_N2mm.bmp	Are you in a DVD rental shop?	k	10000	Question:
+1			You pick up the CD which is to the left of the bowl.	SHAM_N2mm\\8_SHAM_N2mm.bmp			0	
+1			You fix your eyes on the soldier who is standing to the left of the artillery.	SHAM_N2mm\\9_SHAM_N2mm.bmp	Is the soldier standing to the left of the artillery?	j	10000	Question:
+1			You have a look at the elephant which is standing to the left of the lion.	SHAM_N2mm\\10_SHAM_N2mm.bmp			0	
+1			You push the stroller to the left of the trashcan.	SHAM_N2mm\\11_SHAM_N2mm.bmp			0	
+1			You examine the newspaper stand on the left side of the flagpole.	SHAM_N2mm\\12_SHAM_N2mm.bmp			0	
+1			Inside the greenhouse, you take the shovel which is to the left of the box.	SHAM_N2mm\\13_SHAM_N2mm.bmp			0	
+1			Your eyes are fixed on the snowman which is to the left of the igloo.	SHAM_N2mm\\14_SHAM_N2mm.bmp			0	
+1			You are staring at the gun attached to the right side of the battle ship.	SHAM_N2mm\\15_SHAM_N2mm.bmp			0	
+1			Sitting in the locker room, you are staring at the soccer ball which is to the right of the soccer shoes.	SHAM_N2mm\\16_SHAM_N2mm.bmp			0	
+1			You are looking at the beautiful fountain on the right end of the mansion's garden.	SHAM_N2mm\\17_SHAM_N2mm.bmp			0	
+1			Standing on the beach, you are fixing your eyes on the catamaran on the right side of the pier.	SHAM_N2mm\\18_SHAM_N2mm.bmp	Is the catamaran on the left side of the pier?	k	10000	Question:
+1			You are having a look at the bear sleeping on the right side of the big grey stone.	SHAM_N2mm\\19_SHAM_N2mm.bmp			0	
+1			Inside the recording room, you are picking up the saxophone which is to the right of the amplifier.	SHAM_N2mm\\20_SHAM_N2mm.bmp			0	
+1			In the camp, you are picking up the lantern which is to the right of the hammock.	SHAM_N2mm\\21_SHAM_N2mm.bmp	Are there tents around you?	j	10000	Question:
+1			You are trimming the grass on the right side of the sidewalk.	SHAM_N2mm\\22_SHAM_N2mm.bmp	Are you inside?	k	10000	Question:
+1			You are fixing your eyes on the canoe parked on the right side of the beach.	SHAM_N2mm\\23_SHAM_N2mm.bmp			0	
+1			You are taking the surfboard which is leaning against the right side of the palm tree.	SHAM_N2mm\\24_SHAM_N2mm.bmp			0	\0
+
+[DataSection_PRACTICE(1)]
+Weight	Nested	Procedure	SPRACT	PPRACT	PRACTRESP	PractQUEST	PractQ_time
+1		practproc	In the beautiful park, the birds are chirping.	PRACT\\1_PRACT.wav	j		0
+1		practproc	Standing in the clearing, you hear your father use a chainsaw.	PRACT\\2_PRACT.wav	j		0
+1		practproc	Your friend lets the box fall down onto the floor.	PRACT\\3_PRACT.wav	j		0
+1		practproc	At the office, you are typing an email for your boss.	PRACT\\4_PRACT.wav	j		0
+1		practproc	On the stage, an angry guy is shouting.	PRACT\\5_PRACT.wav	k		0
+1		practproc	Meteorites are whistling through the air and crashing to the ground.	PRACT\\6_PRACT.wav	k		0
+1		practproc	A car explodes with a tremendous noise.	PRACT\\7_PRACT.wav	k	Did a vehicle explode?	10000
+1		practproc	You are listening to a Madonna song.	PRACT\\8_PRACT.wav	k	Are you listening to classic music?	10000\0
+
+[DataSection_MASTEROLD(1)]
+Weight	Nested	Procedure	SENT	PIC	CONDITION	SAME	RESPONSE	CRITICAL
+2	CRITICAL	MAIN	\[NEAR\]	\[BIG\]	NEAR/BIG	SAME	j	CRITICAL
+2	CRITICAL	MAIN	\[NEAR\]	\[SMALL\]	NEAR/SMALL	DIFF	j	CRITICAL
+2	CRITICAL	MAIN	\[FAR\]	\[BIG\]	FAR/BIG	DIFF	j	CRITICAL
+2	CRITICAL	MAIN	\[FAR\]	\[SMALL\]	FAR/SMALL	SAME	j	CRITICAL
+2	EXPL	MAIN	\[NEAR\]	\[BIG\]	NEAR/BIG	SAME	j	CRITICAL
+2	EXPL	MAIN	\[NEAR\]	\[SMALL\]	NEAR/SMALL	DIFF	j	CRITICAL
+2	EXPL	MAIN	\[FAR\]	\[BIG\]	FAR/BIG	DIFF	j	CRITICAL
+2	EXPL	MAIN	\[FAR\]	\[SMALL\]	FAR/SMALL	SAME	j	CRITICAL
+8	NORESP	MAIN	\[SFILL\]	\[PFILL\]			k	FILLER
+8	LMN2m	MAIN	\[SFILL\]	\[PFILL\]			j	FILLER
+8	LMN2mm	MAIN	\[SFILL\]	\[PFILL\]			k	FILLER
+8	EXPLmm	MAIN	\[SFILL\]	\[PFILL\]			k	FILLER
+28	SHAMm	MAIN	\[SFILL\]	\[PFILL\]			j	FILLER
+28	SHAMmm	MAIN	\[SFILL\]	\[PFILL\]			k	FILLER\0
+
+[DataSection_MASTER2(1)]
+Weight	Nested	Procedure	SENT	PIC	CONDITION	SAME	RESPONSE	CRITICAL	QUESTION	QDURATION	TYPE
+2	CRITICAL	MAIN	\[NEAR\]	\[BIG\]	NEAR/BIG	SAME	j	CRITICAL	\[Q_NEAR\]	\[Q_DUR\]	LANDM
+2	CRITICAL	MAIN	\[NEAR\]	\[SMALL\]	NEAR/SMALL	DIFF	j	CRITICAL	\[Q_NEAR\]	\[Q_DUR\]	LANDM
+2	CRITICAL	MAIN	\[FAR\]	\[BIG\]	FAR/BIG	DIFF	j	CRITICAL	\[Q_FAR\]	\[Q_DUR\]	LANDM
+2	CRITICAL	MAIN	\[FAR\]	\[SMALL\]	FAR/SMALL	SAME	j	CRITICAL	\[Q_FAR\]	\[Q_DUR\]	LANDM
+8	NORESP	MAIN	\[SFILL\]	\[PFILL\]			k	FILLER	\[Q_FILL\]	\[Q_DUR\]	\0
