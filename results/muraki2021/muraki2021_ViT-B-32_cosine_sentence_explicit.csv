@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,axe,,a,a,match,0.786710586067848,ViT-B-32,muraki2021
+2,bat,,a,a,match,0.757631389264398,ViT-B-32,muraki2021
+3,book,,a,a,match,0.9282199252412592,ViT-B-32,muraki2021
+4,bottle,,a,a,match,0.7802894463136775,ViT-B-32,muraki2021
+5,bowl,,a,a,match,0.8354432831604907,ViT-B-32,muraki2021
+6,broom,,a,a,match,0.7275596478691235,ViT-B-32,muraki2021
+7,brush,,a,a,match,0.8101490195344655,ViT-B-32,muraki2021
+8,crayon,,a,a,match,0.6064032361138613,ViT-B-32,muraki2021
+9,decoration,,a,a,match,0.7862401612901682,ViT-B-32,muraki2021
+10,flashlight,,a,a,match,0.8118925730232823,ViT-B-32,muraki2021
+11,fire extinguisher,,a,a,match,0.8737356936703258,ViT-B-32,muraki2021
+12,glass,,a,a,match,0.7621637474957226,ViT-B-32,muraki2021
+13,guitar,,a,a,match,0.8251449226443641,ViT-B-32,muraki2021
+14,gun,,a,a,match,0.86683114778119,ViT-B-32,muraki2021
+15,iron,,a,a,match,0.8357549307129648,ViT-B-32,muraki2021
+16,key,,a,a,match,0.836790047917789,ViT-B-32,muraki2021
+17,nail,,a,a,match,0.892824614884185,ViT-B-32,muraki2021
+18,pen,,a,a,match,0.8802755514804803,ViT-B-32,muraki2021
+19,pencil,,a,a,match,0.8657878380917625,ViT-B-32,muraki2021
+20,plate,,a,a,match,0.8614795583383086,ViT-B-32,muraki2021
+21,salt shaker,,a,a,match,0.8814822908950689,ViT-B-32,muraki2021
+22,pair of scissors,,a,a,match,0.6390102118507947,ViT-B-32,muraki2021
+23,screw,,a,a,match,0.8324517072885672,ViT-B-32,muraki2021
+24,wheel,,a,a,match,0.7784816596808719,ViT-B-32,muraki2021
+1,axe,,a,b,mismatch,0.7970902219280065,ViT-B-32,muraki2021
+2,bat,,a,b,mismatch,0.8097355411561877,ViT-B-32,muraki2021
+3,book,,a,b,mismatch,0.8989171874517895,ViT-B-32,muraki2021
+4,bottle,,a,b,mismatch,0.7874552764187152,ViT-B-32,muraki2021
+5,bowl,,a,b,mismatch,0.8139951184614918,ViT-B-32,muraki2021
+6,broom,,a,b,mismatch,0.7149861495305985,ViT-B-32,muraki2021
+7,brush,,a,b,mismatch,0.8023176602394027,ViT-B-32,muraki2021
+8,crayon,,a,b,mismatch,0.6129935505203221,ViT-B-32,muraki2021
+9,decoration,,a,b,mismatch,0.7567897783458929,ViT-B-32,muraki2021
+10,flashlight,,a,b,mismatch,0.8194818553793604,ViT-B-32,muraki2021
+11,fire extinguisher,,a,b,mismatch,0.8660944279529292,ViT-B-32,muraki2021
+12,glass,,a,b,mismatch,0.7748109140238607,ViT-B-32,muraki2021
+13,guitar,,a,b,mismatch,0.8212767191519468,ViT-B-32,muraki2021
+14,gun,,a,b,mismatch,0.8737646762454123,ViT-B-32,muraki2021
+15,iron,,a,b,mismatch,0.8322872849562153,ViT-B-32,muraki2021
+16,key,,a,b,mismatch,0.8315959296814901,ViT-B-32,muraki2021
+17,nail,,a,b,mismatch,0.8985932797210949,ViT-B-32,muraki2021
+18,pen,,a,b,mismatch,0.8735623667010963,ViT-B-32,muraki2021
+19,pencil,,a,b,mismatch,0.836387850741449,ViT-B-32,muraki2021
+20,plate,,a,b,mismatch,0.8440216552199338,ViT-B-32,muraki2021
+21,salt shaker,,a,b,mismatch,0.8722925743872492,ViT-B-32,muraki2021
+22,pair of scissors,,a,b,mismatch,0.643621103134891,ViT-B-32,muraki2021
+23,screw,,a,b,mismatch,0.814556749177641,ViT-B-32,muraki2021
+24,wheel,,a,b,mismatch,0.7717441495762788,ViT-B-32,muraki2021
+1,axe,,b,b,match,0.7996483463309165,ViT-B-32,muraki2021
+2,bat,,b,b,match,0.8270594599706,ViT-B-32,muraki2021
+3,book,,b,b,match,0.8976679202185112,ViT-B-32,muraki2021
+4,bottle,,b,b,match,0.8127556069075457,ViT-B-32,muraki2021
+5,bowl,,b,b,match,0.762733133505405,ViT-B-32,muraki2021
+6,broom,,b,b,match,0.7814462779490233,ViT-B-32,muraki2021
+7,brush,,b,b,match,0.8327130505875404,ViT-B-32,muraki2021
+8,crayon,,b,b,match,0.6064963702917727,ViT-B-32,muraki2021
+9,decoration,,b,b,match,0.8091631884385919,ViT-B-32,muraki2021
+10,flashlight,,b,b,match,0.8048868422558547,ViT-B-32,muraki2021
+11,fire extinguisher,,b,b,match,0.8508884486149647,ViT-B-32,muraki2021
+12,glass,,b,b,match,0.7817358471016221,ViT-B-32,muraki2021
+13,guitar,,b,b,match,0.8013866440404553,ViT-B-32,muraki2021
+14,gun,,b,b,match,0.8705878814197533,ViT-B-32,muraki2021
+15,iron,,b,b,match,0.8471091145450608,ViT-B-32,muraki2021
+16,key,,b,b,match,0.8516366202958283,ViT-B-32,muraki2021
+17,nail,,b,b,match,0.8514337259472661,ViT-B-32,muraki2021
+18,pen,,b,b,match,0.8697037798500634,ViT-B-32,muraki2021
+19,pencil,,b,b,match,0.8252534528676578,ViT-B-32,muraki2021
+20,plate,,b,b,match,0.83987217346829,ViT-B-32,muraki2021
+21,salt shaker,,b,b,match,0.8686411167856838,ViT-B-32,muraki2021
+22,pair of scissors,,b,b,match,0.584714097681828,ViT-B-32,muraki2021
+23,screw,,b,b,match,0.8090244334531592,ViT-B-32,muraki2021
+24,wheel,,b,b,match,0.8211314791924839,ViT-B-32,muraki2021
+1,axe,,b,a,mismatch,0.7911085182182647,ViT-B-32,muraki2021
+2,bat,,b,a,mismatch,0.7771019580938054,ViT-B-32,muraki2021
+3,book,,b,a,mismatch,0.9208887396155203,ViT-B-32,muraki2021
+4,bottle,,b,a,mismatch,0.8071457832626112,ViT-B-32,muraki2021
+5,bowl,,b,a,mismatch,0.7851537225629688,ViT-B-32,muraki2021
+6,broom,,b,a,mismatch,0.7812459860422291,ViT-B-32,muraki2021
+7,brush,,b,a,mismatch,0.8363067145006977,ViT-B-32,muraki2021
+8,crayon,,b,a,mismatch,0.6199831058960127,ViT-B-32,muraki2021
+9,decoration,,b,a,mismatch,0.8090953644415932,ViT-B-32,muraki2021
+10,flashlight,,b,a,mismatch,0.8007869950905065,ViT-B-32,muraki2021
+11,fire extinguisher,,b,a,mismatch,0.8404070229413123,ViT-B-32,muraki2021
+12,glass,,b,a,mismatch,0.7659205894443708,ViT-B-32,muraki2021
+13,guitar,,b,a,mismatch,0.7938837255045674,ViT-B-32,muraki2021
+14,gun,,b,a,mismatch,0.8723507291798833,ViT-B-32,muraki2021
+15,iron,,b,a,mismatch,0.8591709488765462,ViT-B-32,muraki2021
+16,key,,b,a,mismatch,0.8528213325313083,ViT-B-32,muraki2021
+17,nail,,b,a,mismatch,0.8629345176946476,ViT-B-32,muraki2021
+18,pen,,b,a,mismatch,0.8703573690085655,ViT-B-32,muraki2021
+19,pencil,,b,a,mismatch,0.8416585176847575,ViT-B-32,muraki2021
+20,plate,,b,a,mismatch,0.844578292109972,ViT-B-32,muraki2021
+21,salt shaker,,b,a,mismatch,0.8754898936869906,ViT-B-32,muraki2021
+22,pair of scissors,,b,a,mismatch,0.5855980896576032,ViT-B-32,muraki2021
+23,screw,,b,a,mismatch,0.8300670970633365,ViT-B-32,muraki2021
+24,wheel,,b,a,mismatch,0.822123411282594,ViT-B-32,muraki2021

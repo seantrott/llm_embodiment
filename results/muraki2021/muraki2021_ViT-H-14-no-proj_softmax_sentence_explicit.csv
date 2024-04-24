@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,axe,,a,a,match,1.1576767220060986e-16,ViT-H-14-no-proj,muraki2021
+2,bat,,a,a,match,6.688682674393931e-08,ViT-H-14-no-proj,muraki2021
+3,book,,a,a,match,3.705131845777032e-08,ViT-H-14-no-proj,muraki2021
+4,bottle,,a,a,match,1.1960539913182902e-22,ViT-H-14-no-proj,muraki2021
+5,bowl,,a,a,match,0.9933725595474243,ViT-H-14-no-proj,muraki2021
+6,broom,,a,a,match,0.9993213415145874,ViT-H-14-no-proj,muraki2021
+7,brush,,a,a,match,1.0,ViT-H-14-no-proj,muraki2021
+8,crayon,,a,a,match,3.5865698330292585e-20,ViT-H-14-no-proj,muraki2021
+9,decoration,,a,a,match,1.0,ViT-H-14-no-proj,muraki2021
+10,flashlight,,a,a,match,0.6582939624786377,ViT-H-14-no-proj,muraki2021
+11,fire extinguisher,,a,a,match,1.0,ViT-H-14-no-proj,muraki2021
+12,glass,,a,a,match,0.9999997615814209,ViT-H-14-no-proj,muraki2021
+13,guitar,,a,a,match,0.9999758005142212,ViT-H-14-no-proj,muraki2021
+14,gun,,a,a,match,0.6966939568519592,ViT-H-14-no-proj,muraki2021
+15,iron,,a,a,match,4.621981497621164e-05,ViT-H-14-no-proj,muraki2021
+16,key,,a,a,match,1.180649166837093e-24,ViT-H-14-no-proj,muraki2021
+17,nail,,a,a,match,0.9983458518981934,ViT-H-14-no-proj,muraki2021
+18,pen,,a,a,match,6.318860434895157e-10,ViT-H-14-no-proj,muraki2021
+19,pencil,,a,a,match,1.0,ViT-H-14-no-proj,muraki2021
+20,plate,,a,a,match,1.0,ViT-H-14-no-proj,muraki2021
+21,salt shaker,,a,a,match,1.0,ViT-H-14-no-proj,muraki2021
+22,pair of scissors,,a,a,match,5.5867064929771e-07,ViT-H-14-no-proj,muraki2021
+23,screw,,a,a,match,1.214955209679001e-20,ViT-H-14-no-proj,muraki2021
+24,wheel,,a,a,match,1.0,ViT-H-14-no-proj,muraki2021
+1,axe,,a,b,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+2,bat,,a,b,mismatch,0.9999998807907104,ViT-H-14-no-proj,muraki2021
+3,book,,a,b,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+4,bottle,,a,b,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+5,bowl,,a,b,mismatch,0.006627436727285385,ViT-H-14-no-proj,muraki2021
+6,broom,,a,b,mismatch,0.0006786828744225204,ViT-H-14-no-proj,muraki2021
+7,brush,,a,b,mismatch,3.379673971237729e-11,ViT-H-14-no-proj,muraki2021
+8,crayon,,a,b,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+9,decoration,,a,b,mismatch,1.1750552753042598e-09,ViT-H-14-no-proj,muraki2021
+10,flashlight,,a,b,mismatch,0.3417060673236847,ViT-H-14-no-proj,muraki2021
+11,fire extinguisher,,a,b,mismatch,1.9199296666383425e-11,ViT-H-14-no-proj,muraki2021
+12,glass,,a,b,mismatch,2.6068767056131037e-07,ViT-H-14-no-proj,muraki2021
+13,guitar,,a,b,mismatch,2.4249866328318603e-05,ViT-H-14-no-proj,muraki2021
+14,gun,,a,b,mismatch,0.3033060133457184,ViT-H-14-no-proj,muraki2021
+15,iron,,a,b,mismatch,0.9999537467956543,ViT-H-14-no-proj,muraki2021
+16,key,,a,b,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+17,nail,,a,b,mismatch,0.0016541177174076438,ViT-H-14-no-proj,muraki2021
+18,pen,,a,b,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+19,pencil,,a,b,mismatch,3.8327122725556606e-11,ViT-H-14-no-proj,muraki2021
+20,plate,,a,b,mismatch,4.062721869479664e-27,ViT-H-14-no-proj,muraki2021
+21,salt shaker,,a,b,mismatch,1.0152234608540311e-10,ViT-H-14-no-proj,muraki2021
+22,pair of scissors,,a,b,mismatch,0.9999994039535522,ViT-H-14-no-proj,muraki2021
+23,screw,,a,b,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+24,wheel,,a,b,mismatch,4.276599074870546e-10,ViT-H-14-no-proj,muraki2021
+1,axe,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+2,bat,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+3,book,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+4,bottle,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+5,bowl,,b,b,match,2.2961574863700207e-09,ViT-H-14-no-proj,muraki2021
+6,broom,,b,b,match,1.5311876495616161e-06,ViT-H-14-no-proj,muraki2021
+7,brush,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+8,crayon,,b,b,match,6.40317884972319e-05,ViT-H-14-no-proj,muraki2021
+9,decoration,,b,b,match,2.8889268754994646e-10,ViT-H-14-no-proj,muraki2021
+10,flashlight,,b,b,match,0.5478571653366089,ViT-H-14-no-proj,muraki2021
+11,fire extinguisher,,b,b,match,0.9999669790267944,ViT-H-14-no-proj,muraki2021
+12,glass,,b,b,match,4.326751150074415e-05,ViT-H-14-no-proj,muraki2021
+13,guitar,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+14,gun,,b,b,match,3.049803007082192e-17,ViT-H-14-no-proj,muraki2021
+15,iron,,b,b,match,3.5668531381816138e-06,ViT-H-14-no-proj,muraki2021
+16,key,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+17,nail,,b,b,match,3.6092027803913407e-12,ViT-H-14-no-proj,muraki2021
+18,pen,,b,b,match,0.9762511849403381,ViT-H-14-no-proj,muraki2021
+19,pencil,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+20,plate,,b,b,match,0.8531115055084229,ViT-H-14-no-proj,muraki2021
+21,salt shaker,,b,b,match,3.7133308580794555e-12,ViT-H-14-no-proj,muraki2021
+22,pair of scissors,,b,b,match,0.9945474863052368,ViT-H-14-no-proj,muraki2021
+23,screw,,b,b,match,1.0,ViT-H-14-no-proj,muraki2021
+24,wheel,,b,b,match,0.0018124732887372375,ViT-H-14-no-proj,muraki2021
+1,axe,,b,a,mismatch,3.890401415613116e-16,ViT-H-14-no-proj,muraki2021
+2,bat,,b,a,mismatch,2.276573677836846e-12,ViT-H-14-no-proj,muraki2021
+3,book,,b,a,mismatch,6.4751996135671525e-18,ViT-H-14-no-proj,muraki2021
+4,bottle,,b,a,mismatch,1.130246563008086e-09,ViT-H-14-no-proj,muraki2021
+5,bowl,,b,a,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+6,broom,,b,a,mismatch,0.9999984502792358,ViT-H-14-no-proj,muraki2021
+7,brush,,b,a,mismatch,6.0218154247781985e-12,ViT-H-14-no-proj,muraki2021
+8,crayon,,b,a,mismatch,0.9999359846115112,ViT-H-14-no-proj,muraki2021
+9,decoration,,b,a,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+10,flashlight,,b,a,mismatch,0.45214277505874634,ViT-H-14-no-proj,muraki2021
+11,fire extinguisher,,b,a,mismatch,3.3006050216499716e-05,ViT-H-14-no-proj,muraki2021
+12,glass,,b,a,mismatch,0.9999567270278931,ViT-H-14-no-proj,muraki2021
+13,guitar,,b,a,mismatch,1.1219606577128616e-08,ViT-H-14-no-proj,muraki2021
+14,gun,,b,a,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+15,iron,,b,a,mismatch,0.9999964237213135,ViT-H-14-no-proj,muraki2021
+16,key,,b,a,mismatch,6.176284298881424e-30,ViT-H-14-no-proj,muraki2021
+17,nail,,b,a,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+18,pen,,b,a,mismatch,0.02374883182346821,ViT-H-14-no-proj,muraki2021
+19,pencil,,b,a,mismatch,1.183725384379386e-08,ViT-H-14-no-proj,muraki2021
+20,plate,,b,a,mismatch,0.14688852429389954,ViT-H-14-no-proj,muraki2021
+21,salt shaker,,b,a,mismatch,1.0,ViT-H-14-no-proj,muraki2021
+22,pair of scissors,,b,a,mismatch,0.0054525346495211124,ViT-H-14-no-proj,muraki2021
+23,screw,,b,a,mismatch,1.5802111272927646e-21,ViT-H-14-no-proj,muraki2021
+24,wheel,,b,a,mismatch,0.9981874823570251,ViT-H-14-no-proj,muraki2021

@@ -1,25 +1,25 @@
-sentence_a,object,sentence_b,image_a,image_b
-The lumberjack left his axe sticking in the top of the stump after winning the axe toss. ,axe,The lumberjack left his axe sticking in the side of the stump after winning the axe toss. ,axeH.jpg,axeV.jpg
-Derek swung his bat as the ball approached. ,bat,Derek held his bat high as the ball approached. ,batH.jpg,batV.jpg
-The librarian put the book back on the table. ,book,The librarian put the book back on the shelf.,bookH.jpg,bookV.jpg
-"Jessica stuck the bottle in the wine rack, anticipating a romantic evening.",bottle,"Jessica stuck the bottle in the ice, anticipating a romantic evening.",bottleH.jpg,bottleV.jpg
-James placed the bowl into an open space in the cabinet. ,bowl,James placed the bowl into an open slot in the dishwasher. ,bowlH.jpg,bowlV.jpg
-"Janie grabbed the broom and rode it around the house, pretending it was her horse. ",broom,"Janie grabbed the broom and swept the house, pretending she was Cinderella. ",broomH.jpg,broomV.jpg
-"The teenager placed her brush in the bottom of her bag, looking forward to the party. ",brush,"The teenager held her brush up like a microphone, pretending to be a famous rock star. ",brushH.jpg,brushV.jpg
-The toddler drew a kitty cat with his crayon on his bedroom door. ,crayon,The toddler drew a kitty cat with his crayon on his bedroom floor.,crayonH.jpg,crayonV.jpg
-Laura threw the decoration in the drawer with the clothespin. ,decoration,Laura hung the decoration on the line with the clothespin. ,decorationH.jpg,decorationV.jpg
-The hunter shone the flashlight into the mouth of the cavern. ,flashlight,The hunter shone the flashlight onto the floor of the cavern. ,flashlightH.jpg,flashlightV.jpg
-The race car driver fastened the fire-extinguisher under his seat.,frxtinguisher,The race car driver fastened the fire-extinguisher onto the garage wall. ,frxtinguisherH.jpg,frxtinguisherV.jpg
-The waiter knocked over the wineglass while admiring Maureen's gown. ,glass,The waiter filled the wineglass while admiring Maureen's gown.,glassH.jpg,glassV.jpg
-Mick strummed his guitar as he warmed up for the concert. ,guitar,Mick set his guitar on the rack as he warmed up for the concert. ,guitarH.jpg,guitarV.jpg
-Annie raised the gun to fire at the target.,gun,Annie lowered the gun to place it in the holster.,gunH.jpg,gunV.jpg
-"Frank pressed the iron onto his pants, hoping he wouldn't be late. ",iron,"Frank placed the iron onto the shelf, hoping he wouldn't be late. ",ironH.jpg,ironV.jpg
-The lab assistant put the key to the monkey cage in the lock. ,key,The lab assistant put the key to the monkey cage on the hook. ,keyH.jpg,keyV.jpg
-The carpenter hammered the nail into the wall.,nail,The carpenter hammered the nail into the floor plank.,nailH.jpg,nailV.jpg
-The accountant stuck his pen behind his ear.,pen,The accountant stuck his pen into his pocket protector. ,penH.jpg,penV.jpg
-Rick hurriedly stuck his pencil in the desk drawer. ,pencil,Rick hurriedly stuck his pencil in the coffee mug. ,pencilH.jpg,pencilV.jpg
-Sara situated the expensive plate on its mat on the table.,plate,Sara situated the expensive plate on its holder on the shelf.,plateH.jpg,plateV.jpg
-The anxious little boy knocked the salt shaker over onto the table.,salt,The anxious little boy placed the salt shaker onto the table.,saltH.jpg,saltV.jpg
-Becca used the scissors to carve her initials into the tree.,scissors,Becca used the scissors to carve her initials into the wet concrete.,scissorsH.jpg,scissorsV.jpg
-Jim prepared to insert the screw into the side of the cabinet. ,screw,Jim prepared to insert the screw into the top of the cabinet. ,screwH.jpg,screwV.jpg
-The young husband prepared to place the spare tire into the trunk. ,wheel,The young husband prepared to place the spare tire onto the wheel.,wheelH.jpg,wheelV.jpg
+item,object,object_id,condition_a,condition_b,item_type,sentence_a,sentence_b,media_a,media_b,explicit_a,explicit_b
+1,axe,axe,H,V,,The lumberjack left his axe sticking in the top of the stump after winning the axe toss.,The lumberjack left his axe sticking in the side of the stump after winning the axe toss.,axeH.jpg,axeV.jpg,The axe was horizontal.,The axe was vertical.
+2,bat,bat,H,V,,Derek swung his bat as the ball approached.,Derek held his bat high as the ball approached.,batH.jpg,batV.jpg,The bat was horizontal.,The bat was vertical.
+3,book,book,H,V,,The librarian put the book back on the table.,The librarian put the book back on the shelf.,bookH.jpg,bookV.jpg,The book was horizontal.,The book was vertical.
+4,bottle,bottle,H,V,,"Jessica stuck the bottle in the wine rack, anticipating a romantic evening.","Jessica stuck the bottle in the ice, anticipating a romantic evening.",bottleH.jpg,bottleV.jpg,The bottle was horizontal.,The bottle was vertical.
+5,bowl,bowl,H,V,,James placed the bowl into an open space in the cabinet.,James placed the bowl into an open slot in the dishwasher.,bowlH.jpg,bowlV.jpg,The bowl was horizontal.,The bowl was vertical.
+6,broom,broom,H,V,,"Janie grabbed the broom and rode it around the house, pretending it was her horse.","Janie grabbed the broom and swept the house, pretending she was Cinderella.",broomH.jpg,broomV.jpg,The broom was horizontal.,The broom was vertical.
+7,brush,brush,H,V,,"The teenager placed her brush in the bottom of her bag, looking forward to the party.","The teenager held her brush up like a microphone, pretending to be a famous rock star.",brushH.jpg,brushV.jpg,The brush was horizontal.,The brush was vertical.
+8,crayon,crayon,H,V,,The toddler drew a kitty cat with his crayon on his bedroom door.,The toddler drew a kitty cat with his crayon on his bedroom floor.,crayonH.jpg,crayonV.jpg,The crayon was horizontal.,The crayon was vertical.
+9,decoration,clthspnh,H,V,,Laura threw the decoration in the drawer with the clothespin.,Laura hung the decoration on the line with the clothespin.,decorationH.jpg,decorationV.jpg,The decoration was horizontal.,The decoration was vertical.
+10,flashlight,flashlight,H,V,,The hunter shone the flashlight into the mouth of the cavern.,The hunter shone the flashlight onto the floor of the cavern.,flashlightH.jpg,flashlightV.jpg,The flashlight was horizontal.,The flashlight was vertical.
+11,fire extinguisher,frxtinguisher,H,V,,The race car driver fastened the fire-extinguisher under his seat.,The race car driver fastened the fire-extinguisher onto the garage wall.,frxtinguisherH.jpg,frxtinguisherV.jpg,The fire extinguisher was horizontal.,The fire extinguisher was vertical.
+12,glass,glass,H,V,,The waiter knocked over the wineglass while admiring Maureen's gown.,The waiter filled the wineglass while admiring Maureen's gown.,glassH.jpg,glassV.jpg,The glass was horizontal.,The glass was vertical.
+13,guitar,guitar,H,V,,Mick strummed his guitar as he warmed up for the concert.,Mick set his guitar on the rack as he warmed up for the concert.,guitarH.jpg,guitarV.jpg,The guitar was horizontal.,The guitar was vertical.
+14,gun,gun,H,V,,Annie raised the gun to fire at the target.,Annie lowered the gun to place it in the holster.,gunH.jpg,gunV.jpg,The gun was horizontal.,The gun was vertical.
+15,iron,iron,H,V,,"Frank pressed the iron onto his pants, hoping he wouldn't be late.","Frank placed the iron onto the shelf, hoping he wouldn't be late.",ironH.jpg,ironV.jpg,The iron was horizontal.,The iron was vertical.
+16,key,key,H,V,,The lab assistant put the key to the monkey cage in the lock.,The lab assistant put the key to the monkey cage on the hook.,keyH.jpg,keyV.jpg,The key was horizontal.,The key was vertical.
+17,nail,nail,H,V,,The carpenter hammered the nail into the wall.,The carpenter hammered the nail into the floor plank.,nailH.jpg,nailV.jpg,The nail was horizontal.,The nail was vertical.
+18,pen,pen,H,V,,The accountant stuck his pen behind his ear.,The accountant stuck his pen into his pocket protector.,penH.jpg,penV.jpg,The pen was horizontal.,The pen was vertical.
+19,pencil,pencil,H,V,,Rick hurriedly stuck his pencil in the desk drawer.,Rick hurriedly stuck his pencil in the coffee mug.,pencilH.jpg,pencilV.jpg,The pencil was horizontal.,The pencil was vertical.
+20,plate,plate,H,V,,Sara situated the expensive plate on its mat on the table.,Sara situated the expensive plate on its holder on the shelf.,plateH.jpg,plateV.jpg,The plate was horizontal.,The plate was vertical.
+21,salt shaker,salt,H,V,,The anxious little boy knocked the salt shaker over onto the table.,The anxious little boy placed the salt shaker onto the table.,saltH.jpg,saltV.jpg,The salt shaker was horizontal.,The salt shaker was vertical.
+22,pair of scissors,scissors,H,V,,Becca used the scissors to carve her initials into the tree.,Becca used the scissors to carve her initials into the wet concrete.,scissorsH.jpg,scissorsV.jpg,The pair of scissors was horizontal.,The pair of scissors was vertical.
+23,screw,screw,H,V,,Jim prepared to insert the screw into the side of the cabinet.,Jim prepared to insert the screw into the top of the cabinet.,screwH.jpg,screwV.jpg,The screw was horizontal.,The screw was vertical.
+24,wheel,tire,H,V,,The young husband prepared to place the spare tire into the trunk.,The young husband prepared to place the spare tire onto the wheel.,wheelH.jpg,wheelV.jpg,The wheel was horizontal.,The wheel was vertical.

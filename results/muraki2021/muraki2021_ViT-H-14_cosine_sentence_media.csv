@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,axe,,a,a,match,0.20999778686966275,ViT-H-14,muraki2021
+2,bat,,a,a,match,0.16564848394538423,ViT-H-14,muraki2021
+3,book,,a,a,match,0.21833913164084862,ViT-H-14,muraki2021
+4,bottle,,a,a,match,0.1617219055914917,ViT-H-14,muraki2021
+5,bowl,,a,a,match,0.23284621450792076,ViT-H-14,muraki2021
+6,broom,,a,a,match,0.19335038960045103,ViT-H-14,muraki2021
+7,brush,,a,a,match,0.17084146418220525,ViT-H-14,muraki2021
+8,crayon,,a,a,match,0.07707907728511842,ViT-H-14,muraki2021
+9,decoration,,a,a,match,0.13805482154956694,ViT-H-14,muraki2021
+10,flashlight,,a,a,match,0.23427889197292395,ViT-H-14,muraki2021
+11,fire extinguisher,,a,a,match,0.18365026796900863,ViT-H-14,muraki2021
+12,glass,,a,a,match,0.25774771798083895,ViT-H-14,muraki2021
+13,guitar,,a,a,match,0.14636915464662614,ViT-H-14,muraki2021
+14,gun,,a,a,match,0.21119092971441922,ViT-H-14,muraki2021
+15,iron,,a,a,match,0.2278060832286427,ViT-H-14,muraki2021
+16,key,,a,a,match,0.18327469308058197,ViT-H-14,muraki2021
+17,nail,,a,a,match,0.21371183919733228,ViT-H-14,muraki2021
+18,pen,,a,a,match,0.1822021301396648,ViT-H-14,muraki2021
+19,pencil,,a,a,match,0.17899521805839536,ViT-H-14,muraki2021
+20,plate,,a,a,match,0.21042011760933543,ViT-H-14,muraki2021
+21,salt shaker,,a,a,match,0.17578413199706455,ViT-H-14,muraki2021
+22,pair of scissors,,a,a,match,0.20237810117742228,ViT-H-14,muraki2021
+23,screw,,a,a,match,0.11234733406921271,ViT-H-14,muraki2021
+24,wheel,,a,a,match,0.11928350465090454,ViT-H-14,muraki2021
+1,axe,,a,b,mismatch,0.2276150895883986,ViT-H-14,muraki2021
+2,bat,,a,b,mismatch,0.15773551988579082,ViT-H-14,muraki2021
+3,book,,a,b,mismatch,0.1851889937396345,ViT-H-14,muraki2021
+4,bottle,,a,b,mismatch,0.1965734782477161,ViT-H-14,muraki2021
+5,bowl,,a,b,mismatch,0.17132485629717709,ViT-H-14,muraki2021
+6,broom,,a,b,mismatch,0.1927647385088329,ViT-H-14,muraki2021
+7,brush,,a,b,mismatch,0.20487461194678613,ViT-H-14,muraki2021
+8,crayon,,a,b,mismatch,0.1193217607491519,ViT-H-14,muraki2021
+9,decoration,,a,b,mismatch,0.12520891338973428,ViT-H-14,muraki2021
+10,flashlight,,a,b,mismatch,0.25614982588611923,ViT-H-14,muraki2021
+11,fire extinguisher,,a,b,mismatch,0.1689241014757964,ViT-H-14,muraki2021
+12,glass,,a,b,mismatch,0.22504735933118902,ViT-H-14,muraki2021
+13,guitar,,a,b,mismatch,0.13232203421579414,ViT-H-14,muraki2021
+14,gun,,a,b,mismatch,0.1705371575590504,ViT-H-14,muraki2021
+15,iron,,a,b,mismatch,0.2553152825152667,ViT-H-14,muraki2021
+16,key,,a,b,mismatch,0.1761386169461877,ViT-H-14,muraki2021
+17,nail,,a,b,mismatch,0.1871600980232938,ViT-H-14,muraki2021
+18,pen,,a,b,mismatch,0.1945843751557661,ViT-H-14,muraki2021
+19,pencil,,a,b,mismatch,0.14368773945653157,ViT-H-14,muraki2021
+20,plate,,a,b,mismatch,0.11161244393768,ViT-H-14,muraki2021
+21,salt shaker,,a,b,mismatch,0.23114521371238395,ViT-H-14,muraki2021
+22,pair of scissors,,a,b,mismatch,0.19313700901401487,ViT-H-14,muraki2021
+23,screw,,a,b,mismatch,0.1218611016936686,ViT-H-14,muraki2021
+24,wheel,,a,b,mismatch,0.11811834474783423,ViT-H-14,muraki2021
+1,axe,,b,b,match,0.23105191261046365,ViT-H-14,muraki2021
+2,bat,,b,b,match,0.1697956314872906,ViT-H-14,muraki2021
+3,book,,b,b,match,0.2127957573280549,ViT-H-14,muraki2021
+4,bottle,,b,b,match,0.2144038459338502,ViT-H-14,muraki2021
+5,bowl,,b,b,match,0.16181370193451028,ViT-H-14,muraki2021
+6,broom,,b,b,match,0.2206362209625492,ViT-H-14,muraki2021
+7,brush,,b,b,match,0.19950802162083026,ViT-H-14,muraki2021
+8,crayon,,b,b,match,0.07846066115544126,ViT-H-14,muraki2021
+9,decoration,,b,b,match,0.11593604655589951,ViT-H-14,muraki2021
+10,flashlight,,b,b,match,0.21660402196962836,ViT-H-14,muraki2021
+11,fire extinguisher,,b,b,match,0.19205273575655024,ViT-H-14,muraki2021
+12,glass,,b,b,match,0.20850984733457267,ViT-H-14,muraki2021
+13,guitar,,b,b,match,0.14951754755910307,ViT-H-14,muraki2021
+14,gun,,b,b,match,0.25567581925299443,ViT-H-14,muraki2021
+15,iron,,b,b,match,0.2610610206804528,ViT-H-14,muraki2021
+16,key,,b,b,match,0.14772338938480933,ViT-H-14,muraki2021
+17,nail,,b,b,match,0.1616672502868779,ViT-H-14,muraki2021
+18,pen,,b,b,match,0.17971942887777215,ViT-H-14,muraki2021
+19,pencil,,b,b,match,0.11473118293021267,ViT-H-14,muraki2021
+20,plate,,b,b,match,0.15370887859339855,ViT-H-14,muraki2021
+21,salt shaker,,b,b,match,0.21746052076381983,ViT-H-14,muraki2021
+22,pair of scissors,,b,b,match,0.16455326937665182,ViT-H-14,muraki2021
+23,screw,,b,b,match,0.11482211173382861,ViT-H-14,muraki2021
+24,wheel,,b,b,match,0.17428497657184794,ViT-H-14,muraki2021
+1,axe,,b,a,mismatch,0.208044691332686,ViT-H-14,muraki2021
+2,bat,,b,a,mismatch,0.16794416681093005,ViT-H-14,muraki2021
+3,book,,b,a,mismatch,0.23374458655263697,ViT-H-14,muraki2021
+4,bottle,,b,a,mismatch,0.19853909401458603,ViT-H-14,muraki2021
+5,bowl,,b,a,mismatch,0.20597627788826078,ViT-H-14,muraki2021
+6,broom,,b,a,mismatch,0.21949001002760515,ViT-H-14,muraki2021
+7,brush,,b,a,mismatch,0.15483687521276723,ViT-H-14,muraki2021
+8,crayon,,b,a,mismatch,0.070253983537923,ViT-H-14,muraki2021
+9,decoration,,b,a,mismatch,0.11905872090122416,ViT-H-14,muraki2021
+10,flashlight,,b,a,mismatch,0.20948378282434987,ViT-H-14,muraki2021
+11,fire extinguisher,,b,a,mismatch,0.18250678995506053,ViT-H-14,muraki2021
+12,glass,,b,a,mismatch,0.23896915912440764,ViT-H-14,muraki2021
+13,guitar,,b,a,mismatch,0.1615554162842745,ViT-H-14,muraki2021
+14,gun,,b,a,mismatch,0.24666894056161137,ViT-H-14,muraki2021
+15,iron,,b,a,mismatch,0.22999421365754946,ViT-H-14,muraki2021
+16,key,,b,a,mismatch,0.15140669431952003,ViT-H-14,muraki2021
+17,nail,,b,a,mismatch,0.17292307651036243,ViT-H-14,muraki2021
+18,pen,,b,a,mismatch,0.16381430972136823,ViT-H-14,muraki2021
+19,pencil,,b,a,mismatch,0.121900013777264,ViT-H-14,muraki2021
+20,plate,,b,a,mismatch,0.19681375589370143,ViT-H-14,muraki2021
+21,salt shaker,,b,a,mismatch,0.1659361696975189,ViT-H-14,muraki2021
+22,pair of scissors,,b,a,mismatch,0.1760534674037324,ViT-H-14,muraki2021
+23,screw,,b,a,mismatch,0.10536680398164822,ViT-H-14,muraki2021
+24,wheel,,b,a,mismatch,0.17449078355519654,ViT-H-14,muraki2021

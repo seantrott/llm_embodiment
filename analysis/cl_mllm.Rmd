@@ -1,0 +1,2228 @@
+---
+title: "Do MLLMs show effects of Embodied Simulation"
+author: "Anonymous"
+date: "10/10/2019"
+output:
+  html_document: 
+    toc: yes
+    toc_float: yes
+    theme: flatly
+    highlight: kate
+    code_folding: hide
+    number_sections: yes
+    fig_caption: yes
+---
+
+# Setup
+
+## Libraries
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(extrafont)
+library(tidyverse)
+library(stringr)
+library(ggtext)
+library(xtable)
+library(lmerTest)
+library(MuMIn)
+
+
+```
+
+## Parameters
+
+```{r}
+
+colors.match <- "#1C73C2CC"
+colors.mismatch <- "#D32F2FCC"
+colors.llm <- "#66cc22cc"
+colors.ib <- "#cc2266cc"
+colors.human <- "#222222cc"
+
+```
+
+## Functions
+
+```{r}
+
+
+load_data <- function(models, datasets, metric, data_types) {
+  
+  fnames <- c()
+  
+  for (dataset in datasets) {
+    for (model in models) {
+      
+      dataset_safe <- str_replace(dataset, "/", "_")
+        
+      fp <- paste0(
+        "../results/", dataset, "/", dataset_safe, "_", model, "_",
+        metric, "_", data_types, ".csv")
+      fnames <- c(fnames, fp)
+    }
+  }
+      
+  data <- do.call(rbind,lapply(fnames,read.csv)) %>%
+    mutate(
+      model = factor(model, levels=models),
+      dataset = case_match(dataset,
+        "connell2007" ~ "Color",
+        "pecher2006" ~ "Shape",
+        "muraki2021" ~ "Orientation",
+        "winter2012/e1" ~ "Size",
+        "winter2012/e2" ~ "Volume"
+      ),
+      dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume")),
+      item_id = case_when(
+        # Deal w/ Shape/LM item stims
+        item_type == "prepositional" ~ paste("EXPL", item, sep="_"),
+        item_type == "landmark" ~ paste("LM", item, sep="_"),
+        TRUE ~ as.character(item),
+      ),
+      quadruplet_id = paste(dataset, item_id, sep="_"),
+      item_id = paste(dataset, item_id, sent_condition, media_condition, sep="_")
+    )
+  
+  return(data)
+}
+
+```
+
+
+```{r}
+
+get_max_min <- function(df) {
+  df_summary <- df %>%
+    group_by(
+      model, dataset, match
+    ) %>%
+    summarize(
+      mean_cl_boot(similarity),
+      .groups="drop"
+    ) %>%
+    summarize(
+      ymin = min(ymin),
+      ymax = max(ymax)
+    )
+  
+  return(
+      list(
+      "ymin" = df_summary %>% pull(ymin),
+      "ymax" = df_summary %>% pull(ymax)
+    )
+  )
+}
+
+```
+
+## Load human data 
+
+### Zwaan & Pecher data
+
+```{r}
+
+# ZP 2012
+zp = rbind(
+  read.csv("../data/pecher2012/human_data/Experiment_1a.csv") %>%
+    mutate(dataset="Orientation", experiment="ZP1A"),
+  read.csv("../data/pecher2012/human_data/Experiment_1b.csv") %>%
+    mutate(dataset="Orientation", experiment="ZP1B"),
+  read.csv("../data/pecher2012/human_data/Experiment_2a.csv") %>%
+    mutate(dataset="Shape", experiment="ZP2A"),
+  read.csv("../data/pecher2012/human_data/Experiment_2b.csv") %>%
+    mutate(dataset="Shape", experiment="ZP2B")
+) %>%
+  mutate(
+    rt = rt * 1000 # convert to ms
+  ) %>%
+  select(
+    ppt_id, item, media_condition, sent_condition, match, accuracy, rt, dataset, experiment
+  )
+
+
+```
+
+### Winter & Bergen E1
+
+```{r}
+
+wb1 <- read.csv("../data/winter2012/e1/human_data.csv") %>%
+  filter(
+    CRITICAL == "CRITICAL"
+  ) %>%
+  separate(
+    CONDITION, c("sentence_type", "image_type")
+  ) %>%
+  mutate(
+    item_type = ifelse(is.na(LM), "EXPL", "LM"),
+    match = recode(SAME, "SAME"="match", "DIFF"="mismatch"),
+    item_id = paste(item_type, ITEM, sep="_"),
+    media_condition = ifelse(image_type == "BIG", "a", "b"),
+    sent_condition = ifelse(sentence_type == "NEAR", "a", "b"),
+    dataset = "Size",
+    experiment = "WB1"
+  ) %>%
+  rename(
+    ppt_id = Subject,
+    block = Block,
+    item = item_id,
+    accuracy = Pic.ACC,
+    rt = Pic.RT
+  ) %>%
+  select(
+    ppt_id, item, media_condition, sent_condition, match, accuracy, rt, dataset, experiment
+  )
+
+
+```
+
+### Winter & Bergen e2
+
+```{r}
+
+wb2.raw <- read.csv("../data/winter2012/e2/human_data.csv")
+
+# Exclude low-acc ppts
+wb2.ppt.ex.acc <- wb2.raw %>%
+  group_by(Subject) %>%
+  summarize(acc = mean(SoundOut1.ACC)) %>%
+  arrange(acc) %>%
+  filter(acc < 0.8) %>%
+  pull(Subject)
+
+
+wb2 <- wb2.raw %>%
+  filter(
+    Type == "CRITICAL",
+    !Subject %in% wb2.ppt.ex.acc,
+    FirstLanguage %in% c("English", "english")
+  ) %>%
+  separate(
+    CONDITION, c("sentence_type", "sound_type")
+  ) %>%
+  mutate(
+    match = recode(SAME, "SAME"="match", "DIFF"="mismatch"),
+    media_condition = ifelse(sound_type == "LOUD", "a", "b"),
+    sent_condition = ifelse(sentence_type == "NEAR", "a", "b"),
+    dataset = "Volume",
+    experiment = "WB2"
+  ) %>%
+  rename(
+    ppt_id = Subject,
+    block = Block,
+    item = ITEM,
+    accuracy = SoundOut1.ACC,
+    rt = SoundOut1.RT
+  ) %>%
+  select(
+    ppt_id, item, media_condition, sent_condition, match, accuracy, rt, dataset, experiment
+  )
+
+```
+
+### Combine human data & filter RT
+
+```{r}
+
+human_data <- rbind(zp, wb1, wb2) %>%
+  mutate(
+    dataset = factor(
+      dataset,
+      levels=c("Shape", "Color", "Orientation", "Size", "Volume")
+    ),
+    quadruplet_id = paste(dataset, item, sep="_"),
+    item_id = paste(
+      dataset, item, sent_condition, media_condition,
+      sep="_"),
+    ppt_id = paste(experiment, ppt_id, sep="_")
+  )  %>%
+  filter(
+    rt > 300,
+    rt < 3000
+  )
+
+```
+
+
+# H1: Does imagebind show match/no-match effect for sentences/images?
+
+```{r}
+
+datasets <- c("connell2007", "pecher2006", "muraki2021", "winter2012/e1", "winter2012/e2")
+models <- c("imagebind")
+metric = "cosine"
+data_types <- "sentence_media"
+
+h1.data <- load_data(models, datasets, metric, data_types)
+
+```
+
+## H1A: Aggregate Test
+
+Significant effect of match vs non-match overall.
+
+```{r}
+
+# Run linear model
+h1.agg <- summary(lmer(similarity ~ match + (1 | quadruplet_id) + 
+                         (1 | dataset), data = h1.data))
+
+summary(h1.agg)
+
+```
+
+
+## H1B-C: By Feature type
+
+Significant effects for color & shape, but not orientation, size, & volume.
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h1.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (dataset_name in unique(h1.data$dataset)) {
+    
+  # Subset the data
+  subset_data <- h1.data %>%
+    filter(dataset == dataset_name)
+  
+  
+  # Run linear model
+  result <- summary(lmer(similarity ~ match + (1 | quadruplet_id),
+                         data = subset_data))
+  
+  # Store the summarized t-test result in the data frame
+  h1.summary <- rbind(h1.summary, data.frame(
+    dataset = dataset_name,
+    estimate = result$coefficients[2,1],
+    df = result$coefficients[2,3],
+    t_value = result$coefficients[2,4],
+    p_value = result$coefficients[2,5]
+  ))
+}
+
+# View the summarized results
+h1.summary <- h1.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume")),
+    signif_star = case_when(
+      p_value < 0.001 ~ "***",
+      p_value < 0.01 ~ "**",
+      p_value < 0.05 ~ "*",
+      TRUE ~ ""
+    )
+  )
+
+h1.summary
+
+```
+
+## Exploratory
+
+### Other models
+
+```{r}
+
+h1.data.all_models <- rbind(
+  h1.data,
+  load_data(
+    c("ViT-H-14", "ViT-L-14-336", "ViT-B-32"),
+    c("connell2007", "pecher2006", "muraki2021", "winter2012/e1"),
+    metric,
+    data_types
+  ),
+  load_data(
+    c("clap"),
+    c("winter2012/e2"),
+    metric,
+    data_types
+  )
+)
+
+```
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h1.am.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (model_name in unique(h1.data.all_models$model)) {
+    
+  # Subset the data
+  subset_data <- h1.data.all_models %>%
+    filter(model == model_name)
+  
+  
+  # Run linear model
+  result <- summary(lmer(similarity ~ match + (1 | quadruplet_id),
+                         data = subset_data))
+  
+  # Store the summarized t-test result in the data frame
+  h1.am.summary <- rbind(h1.am.summary, data.frame(
+    model = model_name,
+    estimate = result$coefficients[2,1],
+    df = result$coefficients[2,3],
+    t_value = result$coefficients[2,4],
+    p_value = result$coefficients[2,5]
+  ))
+}
+
+# View the summarized results
+h1.am.summary <- h1.am.summary %>%
+  mutate(
+  #   dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume")),
+    signif_star = case_when(
+      p_value < 0.001 ~ "***",
+      p_value < 0.01 ~ "**",
+      p_value < 0.05 ~ "*",
+      TRUE ~ ""
+    )
+  )
+
+h1.am.summary
+
+```
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h1.am.bd.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (model_name in unique(h1.data.all_models$model)) {
+  
+  for (dataset_name in unique(h1.data.all_models$dataset)) {
+    
+    # Subset the data
+    subset_data <- h1.data.all_models %>%
+      filter(model == model_name, dataset == dataset_name)
+    
+    if (nrow(subset_data) > 0) {
+    
+      
+      # Run linear model
+      result <- summary(lmer(similarity ~ match + (1 | quadruplet_id),
+                             data = subset_data))
+      
+      # Store the summarized t-test result in the data frame
+      h1.am.bd.summary <- rbind(h1.am.bd.summary, data.frame(
+        model = model_name,
+        dataset = dataset_name,
+        estimate = result$coefficients[2,1],
+        df = result$coefficients[2,3],
+        t_value = result$coefficients[2,4],
+        p_value = result$coefficients[2,5]
+      ))
+    }
+  }
+}
+
+# View the summarized results
+h1.am.bd.summary <- h1.am.bd.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume")),
+    signif_star = case_when(
+      p_value < 0.001 ~ "***",
+      p_value < 0.01 ~ "**",
+      p_value < 0.05 ~ "*",
+      TRUE ~ ""
+    )
+  )
+
+h1.am.bd.summary
+
+```
+
+### Agg effect without Color & Shape?
+
+No.
+
+```{r}
+
+# Run linear model
+eh1.agg <- summary(lmer(similarity ~ match + (1 | quadruplet_id) + 
+                         (1 | dataset), data = h1.data %>%
+                         filter(
+                           dataset %in% c(
+                             "Size", "Volume", "Orientation"
+                           )
+                         )))
+
+summary(eh1.agg)
+
+```
+
+
+## Visualization
+
+```{r}
+
+# Get height of bars
+range = get_max_min(h1.data)
+range$ymin
+range$ymax
+y.signif = range$ymax + 0.01
+
+h1.data %>%
+  ggplot(
+    aes(x = dataset, y = similarity, color=match)) + 
+  stat_summary(
+    geom="pointrange", fun.data="mean_cl_boot",
+    position=position_dodge(width=0.5),
+    size=1
+  ) + 
+  theme_minimal() +
+  scale_color_manual(
+    values = c("match" = colors.match, "mismatch" = colors.mismatch),
+    labels=c("Match", "Mismatch")
+  ) + 
+  labs(
+    y = "Cosine Similarity",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) +
+  geom_text(data=h1.summary %>%
+              mutate(y.signif = y.signif)
+            , aes(label = signif_star, y = y.signif), size=8, vjust=1.2, fontface="plain", color="#222222")
+
+ggsave("../manuscript/cl/figures/h1.pdf", width = 9, height=5, device="pdf")
+
+```
+
+### Other Models
+
+```{r}
+
+# Get height of bars
+range = get_max_min(h1.data.all_models)
+range$ymin
+range$ymax
+y.signif = range$ymax + 0.01
+
+h1.data.all_models %>%
+  ggplot(
+    aes(x = model, y = similarity, color=match)) + 
+  stat_summary(
+    geom="pointrange", fun.data="mean_cl_boot",
+    position=position_dodge(width=0.5),
+    size=1
+  ) + 
+  theme_minimal() +
+  scale_color_manual(
+    values = c("match" = colors.match, "mismatch" = colors.mismatch),
+    labels=c("Match", "Mismatch")
+  ) + 
+  labs(
+    y = "Cosine Similarity",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  facet_wrap(.~dataset) +
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) +
+  geom_text(data=h1.am.bd.summary %>%
+              mutate(y.signif = y.signif)
+            , aes(label = signif_star, y = y.signif), size=8, vjust=1.2, fontface="plain", color="#222222")
+
+ggsave("../manuscript/cl/figures/h1_all.pdf", width = 9, height=5, device="pdf")
+
+```
+
+### Bar
+
+```{r}
+
+# Create a custom labelling function
+custom_labeller <- function(variable, value) {
+  # Replace with your dataset-to-label mapping
+  labels <- c(
+    pecher2006 = "SHAPE\nPecher (2009)",
+    connell2007 = "COLOR\nConnell (2007)",
+    muraki2021 = "ORIENTATION\nStanfield & Zwaan (2001)",
+    winter2012e1 = "SIZE\nWinter & Bergen (2012)",
+    winter2012e2 = "VOLUME\nWinter & Bergen (2012)"
+    # ... add more mappings if needed
+  )
+  
+  # Extract the attribute (the part before \n) and the reference (the part after \n)
+  attribute <- str_extract(labels[value], ".*(?=\n)")
+  reference <- str_extract(labels[value], "(?<=\n).*")
+  
+  # Return the formatted label with attribute in larger font and reference in dark grey
+  return(paste0("<span style='font-size:18pt'>", attribute, "</span><br>&nbsp;<span style='font-size:12pt;color:#666666'>", reference, "</span>"))
+}
+
+```
+
+
+```{r}
+
+# Get height of bars
+max_bar <- h1.data.all_models %>%
+  group_by(
+    model, dataset, match
+  ) %>%
+  summarize(
+    mean_cl_boot(similarity),
+    .groups="drop"
+  ) %>%
+  summarize(
+    ymax = max(ymax)
+  ) %>% 
+  pull(ymax)
+  
+
+```
+
+```{r}
+
+# Add a column for significance stars
+h1.am.bd.summary$signif_star <- with(h1.am.bd.summary, ifelse(p_value < 0.001, '***', 
+                                              ifelse(p_value < 0.01, '**', 
+                                              ifelse(p_value < 0.05, '*', 'ns'))))
+
+# Merge this significance data with your main dataset
+data_with_signif <- merge(h1.data.all_models, h1.am.bd.summary, by = c("model", "dataset"))
+
+h1.am.bd.summary <- h1.am.bd.summary %>%
+  mutate(
+    model = as.character(model),
+    model = case_match(
+      model,
+      c("ViT-B-32", "B/32") ~ "B/32",
+      c("ViT-L-14-336", "L/14") ~ "L/14",
+      c("ViT-H-14", "H/14") ~ "H/14",
+      c("imagebind", "IB") ~ "IB",
+      c("clap", "CLAP") ~ "CLAP"
+    ),
+    model = factor(model, levels=c("B/32","L/14","H/14","IB", "CLAP")),
+    y = case_when(
+      p_value < 0.05 ~ max_bar - 0.1,
+      T ~ max_bar - 0.08
+    )
+  )
+  
+
+# Plot probability vs match for each model, faceted by dataset
+h1.data.all_models %>%
+  mutate(
+    model = as.character(model),
+    model = case_match(
+      model,
+      c("ViT-B-32", "B/32") ~ "B/32",
+      c("ViT-L-14-336", "L/14") ~ "L/14",
+      c("ViT-H-14", "H/14") ~ "H/14",
+      c("imagebind", "IB") ~ "IB",
+      c("clap", "CLAP") ~ "CLAP"
+    ),
+    model = factor(model, levels=c("B/32","L/14","H/14","IB", "CLAP")),
+    match = case_match(match,
+      "match" ~ "Match",
+      "mismatch" ~ "Mismatch"
+    )
+  ) %>%
+  ggplot(aes(x = model, y = similarity)) +
+  stat_summary(aes(fill = match), fun="mean", geom="bar", position=position_dodge(width=0.9)) +
+  stat_summary(aes(fill = match), fun.data="mean_cl_boot", geom="errorbar", position=position_dodge(width=0.9), width=0.2) +
+  facet_wrap(
+    ~dataset,
+    labeller = labeller(dataset = custom_labeller),
+    scales="free_x") +
+  theme_minimal(base_size = 16) +  # Use theme_bw with increased base font size
+  scale_fill_manual(values = c("Match" = "#1C73C2CC", "Mismatch" = "#D32F2FCC")) +  # Custom colors
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    strip.text = element_markdown()
+  ) +
+  geom_text(data=h1.am.bd.summary, aes(label = signif_star, y = y), vjust = -1, size=6, fontface="plain", color="#222222") +
+  ylim(c(0, max_bar + 0.1)) +
+  labs(x = "Model", y = "Cosine Similarity", fill = "Match", color = "Match")
+
+ggsave("../manuscript/cl/figures/h1_bar.pdf", width = 9, height=5, device="pdf")
+
+```
+
+
+# H2: Does imagebind text encoder show match/no-match effect for sentence_explicit?
+
+```{r}
+
+datasets <- c("connell2007", "pecher2006", "muraki2021", "winter2012/e1", "winter2012/e2")
+models <- c("gpt2-large")
+metric = "cosine"
+data_types <- "sentence_explicit"
+
+h2.data <- load_data(models, datasets, metric, data_types)
+
+```
+
+## H2A: Aggregate Test
+
+Significant match effect overall.
+
+```{r}
+
+# Run linear model
+h2.agg <- summary(lmer(similarity ~ match + (1 | quadruplet_id) + 
+                         (1 | dataset), data = h2.data))
+
+summary(h2.agg)
+
+```
+
+## H2B-F: By Feature type
+
+Only shape shows a significant effect.
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h2.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (dataset_name in unique(h2.data$dataset)) {
+    
+  # Subset the data
+  subset_data <- h2.data %>%
+    filter(dataset == dataset_name)
+  
+  
+  # Run linear model
+  result <- summary(lmer(similarity ~ match + (1 | quadruplet_id),
+                         data = subset_data))
+  
+  # Store the summarized t-test result in the data frame
+  h2.summary <- rbind(h2.summary, data.frame(
+    dataset = dataset_name,
+    estimate = result$coefficients[2,1],
+    df = result$coefficients[2,3],
+    t_value = result$coefficients[2,4],
+    p_value = result$coefficients[2,5]
+  ))
+}
+
+# View the summarized results
+h2.summary <- h2.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume")),
+    signif_star = case_when(
+      p_value < 0.001 ~ "***",
+      p_value < 0.01 ~ "**",
+      p_value < 0.05 ~ "*",
+      TRUE ~ ""
+    )
+  )
+
+h2.summary
+
+```
+## Visualization
+
+```{r}
+
+# Get height of bars
+range = get_max_min(h2.data)
+y.signif = range$ymax + 0.05
+
+h2.data %>%
+  ggplot(
+    aes(x = dataset, y = similarity, color=match)) + 
+  stat_summary(
+    geom="pointrange", fun.data="mean_cl_boot",
+    position=position_dodge(width=0.5),
+    size=1
+  ) + 
+  theme_minimal() +
+  scale_color_manual(
+    values = c("match" = colors.match, "mismatch" = colors.mismatch),
+    labels=c("Match", "Mismatch")
+  ) + 
+  labs(
+    y = "Cosine Similarity",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) +
+  geom_text(data=h2.summary %>%
+              mutate(y.signif = y.signif)
+            , aes(label = signif_star, y = y.signif), size=8, vjust=1.2, fontface="plain", color="#222222")
+
+ggsave("../manuscript/cl/figures/h2.pdf", width = 9, height=5, device="pdf")
+
+```
+
+# H3: Does imagebind shared space show match/no-match effect for sentence_explicit?
+
+```{r}
+
+datasets <- c("connell2007", "pecher2006", "muraki2021", "winter2012/e1", "winter2012/e2")
+models <- c("gpt2-large", "imagebind")
+metric = "cosine"
+data_types <- "sentence_explicit"
+
+h3.data <- load_data(models, datasets, metric, data_types) %>%
+  mutate(
+    model = factor(model, levels=c("imagebind", "gpt2-large"))
+  )
+
+```
+
+## H3A: Aggregate Test
+
+IB shows mismatch effect overall. Smaller effect than base TE, but difference is n.s.
+
+```{r}
+
+h3.agg <- summary(lmer(similarity ~ match * model + (1 | quadruplet_id) + 
+                         (1 | dataset), data = h3.data))
+
+summary(h3.agg)
+
+```
+
+
+## H3B-F: By Feature type
+
+IB shows effect for shape only.
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h3.ib.summary <- data.frame()
+h3.model.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (dataset_name in unique(h3.data$dataset)) {
+    
+  # Subset the data
+  subset_data <- h3.data %>%
+    filter(dataset == dataset_name)
+  
+  
+  # Run linear model
+  result <- summary(lmer(similarity ~ match * model + (1 | quadruplet_id),
+                         data = subset_data))
+  
+  # Store the summarized t-test result in the data frame
+  h3.ib.summary <- rbind(h3.ib.summary, data.frame(
+    dataset = dataset_name,
+    estimate = result$coefficients[2,1],
+    df = result$coefficients[2,3],
+    t_value = result$coefficients[2,4],
+    p_value = result$coefficients[2,5]
+  ))
+  
+  h3.model.summary <- rbind(h3.model.summary, data.frame(
+    dataset = dataset_name,
+    estimate = result$coefficients[4,1],
+    df = result$coefficients[4,3],
+    t_value = result$coefficients[4,4],
+    p_value = result$coefficients[4,5]
+  ))
+}
+
+# View the summarized results
+h3.ib.summary <- h3.ib.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume")),
+    signif_star = case_when(
+      p_value < 0.001 ~ "***",
+      p_value < 0.01 ~ "**",
+      p_value < 0.05 ~ "*",
+      TRUE ~ ""
+    )
+  )
+
+h3.ib.summary
+
+```
+
+IB !> TE for any of the features.
+
+```{r}
+
+# View the summarized results
+h3.model.summary <- h3.model.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume")),
+    signif_star = case_when(
+      p_value < 0.001 ~ "***",
+      p_value < 0.01 ~ "**",
+      p_value < 0.05 ~ "*",
+      TRUE ~ ""
+    )
+  )
+
+h3.model.summary
+
+```
+
+## Visualization
+
+```{r}
+
+# Get height of bars
+range = get_max_min(h3.data)
+y.signif = range$ymax + 0.05
+
+h3.data %>%
+  ggplot(
+    aes(x = dataset, y = similarity, color=match)) + 
+  stat_summary(
+    geom="pointrange", fun.data="mean_cl_boot",
+    position=position_dodge(width=0.5),
+    size=1
+  ) + 
+  theme_minimal() +
+  scale_color_manual(
+    values = c("match" = colors.match, "mismatch" = colors.mismatch),
+    labels=c("Match", "Mismatch")
+  ) + 
+  labs(
+    y = "Cosine Similarity",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) +
+  geom_text(data=h3.ib.summary %>%
+              mutate(y.signif = y.signif)
+            , aes(label = signif_star, y = y.signif), size=8, vjust=1.2, fontface="plain", color="#222222")
+
+ggsave("../manuscript/cl/figures/h3.pdf", width = 9, height=5, device="pdf")
+
+```
+
+
+# H4: Does imagebind show match/no-match effect for media_explicit?
+
+
+```{r}
+
+datasets <- c("connell2007", "pecher2006", "muraki2021", "winter2012/e1", "winter2012/e2")
+models <- c("imagebind")
+metric = "cosine"
+data_types <- "explicit_media"
+
+h4.data <- load_data(models, datasets, metric, data_types)
+
+```
+
+## H4A: Aggregate Test
+
+Significant match effect overall.
+
+```{r}
+
+h4.agg <- summary(lmer(similarity ~ match + (1 | quadruplet_id) + 
+                         (1 | dataset), data = h4.data))
+
+summary(h4.agg)
+
+```
+
+## H4B-F: By Feature type
+
+Explicit match effect for color, shape, & orientation. Not volume or size.
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h4.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (dataset_name in unique(h4.data$dataset)) {
+    
+  # Subset the data
+  subset_data <- h4.data %>%
+    filter(dataset == dataset_name)
+  
+  
+  # Run linear model
+  result <- summary(lmer(similarity ~ match + (1 | quadruplet_id),
+                         data = subset_data))
+  
+  # Store the summarized t-test result in the data frame
+  h4.summary <- rbind(h4.summary, data.frame(
+    dataset = dataset_name,
+    estimate = result$coefficients[2,1],
+    df = result$coefficients[2,3],
+    t_value = result$coefficients[2,4],
+    p_value = result$coefficients[2,5]
+  ))
+}
+
+# View the summarized results
+h4.summary <- h4.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume")),
+    signif_star = case_when(
+      p_value < 0.001 ~ "***",
+      p_value < 0.01 ~ "**",
+      p_value < 0.05 ~ "*",
+      TRUE ~ ""
+    )
+  )
+
+h4.summary
+
+```
+
+## Visualization
+
+```{r}
+
+# Get height of bars
+range = get_max_min(h4.data)
+y.signif = range$ymax + 0.05
+
+h4.data %>%
+  ggplot(
+    aes(x = dataset, y = similarity, color=match)) + 
+  stat_summary(
+    geom="pointrange", fun.data="mean_cl_boot",
+    position=position_dodge(width=0.5),
+    size=1
+  ) + 
+  theme_minimal() +
+  scale_color_manual(
+    values = c("match" = colors.match, "mismatch" = colors.mismatch),
+    labels=c("Match", "Mismatch")
+  ) + 
+  labs(
+    y = "Cosine Similarity",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) +
+  geom_text(data=h4.summary %>%
+              mutate(y.signif = y.signif)
+            , aes(label = signif_star, y = y.signif), size=8, vjust=1.2, fontface="plain", color="#222222")
+
+ggsave("../manuscript/cl/figures/h4.pdf", width = 9, height=5, device="pdf")
+
+```
+
+## Combined H2-4 Visualization
+
+### Match vs no-match
+
+
+```{r}
+
+h234.data <- rbind(h3.data %>% mutate(modality="sentence"),
+                   h4.data %>% mutate(modality="image")) %>%
+  mutate(
+    hypothesis = paste0(modality, model)
+  )
+
+h234.summary <- rbind(
+  h2.summary %>% mutate(modality="sentence", model="gpt2-large"),
+  h3.ib.summary %>% mutate(modality="sentence",
+                         model = "imagebind"),
+  h4.summary %>% mutate(modality="image", model="imagebind")
+  ) %>%
+  mutate(
+    hypothesis = paste0(modality, model)
+  )
+
+# Get height of bars
+y.signif = 0.85
+
+h234.data %>%
+  ggplot(
+    aes(x = dataset, y = similarity, color=match)) + 
+  stat_summary(
+    geom="pointrange", fun.data="mean_cl_boot",
+    position=position_dodge(width=0.5),
+    size=1
+  ) + 
+  theme_minimal() +
+  scale_color_manual(
+    values = c("match" = colors.match, "mismatch" = colors.mismatch),
+    labels=c("Match", "Mismatch")
+  ) + 
+  labs(
+    y = "Cosine Similarity",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) +
+  geom_text(data=h234.summary %>%
+              mutate(y.signif = y.signif)
+            , aes(label = signif_star, y = y.signif), size=8, vjust=1.2, fontface="plain", color="#222222") +
+  facet_grid(
+    . ~ hypothesis
+  )
+
+ggsave("../manuscript/cl/figures/h234.pdf", width = 9, height=5, device="pdf")
+
+```
+
+
+```{r}
+
+h234.data.diff <- h234.data %>%
+  group_by(
+    dataset, item, item_type, sent_condition, model, modality, hypothesis
+  ) %>%
+  arrange(match) %>%
+  summarize(
+    s_diff = first(similarity) - last(similarity),
+    .groups="drop"
+  ) %>%
+  mutate(
+    hypothesis = factor(
+      hypothesis,
+      levels = c("imageimagebind","sentenceimagebind","sentencegpt2-large"))
+  )
+
+h234.summary <- rbind(
+  h2.summary %>% mutate(modality="sentence", model="gpt2-large"),
+  h3.ib.summary %>% mutate(modality="sentence",
+                         model = "imagebind"),
+  h4.summary %>% mutate(modality="image", model="imagebind")
+  ) %>%
+  mutate(
+    hypothesis = paste0(modality, model),
+    hypothesis = factor(
+      hypothesis,
+      levels = c("imageimagebind","sentenceimagebind","sentencegpt2-large"))
+  )
+
+# Get height of bars
+y.signif = 0.08
+
+h234.data.diff %>%
+  ggplot(
+    aes(x = dataset, y = s_diff, color=modality)) + 
+  geom_hline(yintercept = 0, color = "#222222", linetype="dashed") +
+  stat_summary(
+    geom="pointrange", fun.data="mean_cl_boot",
+    position=position_dodge(width=0.5),
+    size=1.1, linewidth=1.1
+  ) + 
+  theme_minimal() +
+  scale_color_manual(
+    values = c("image" = colors.ib, "sentence" = colors.llm),
+    labels=c("Media -> Explicit Text", "Implicit Text -> Explicit Text")
+  ) +
+  labs(
+    y = "Match Effect (Cosine)",
+    x = "Sensorimotor Feature",
+    color = "Task"
+  ) + 
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 14, angle = 25, hjust=1),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18),
+    strip.text.x = element_text(size = 18)
+  ) +
+  geom_text(data=h234.summary %>%
+              mutate(y.signif = y.signif)
+            , aes(label = signif_star, y = y.signif), size=8, vjust=1.2, fontface="plain", color="#222222") +
+  facet_grid(
+    . ~ hypothesis
+    ,
+    labeller = function(variable, value) {
+      return(c(
+        "imageimagebind" = "ImageBind",
+        "sentenceimagebind" = "ImageBind",
+        "sentencegpt2-large" = "GPT-2 Large"
+      ))
+    }
+  ) 
+# + guides(color=guide_legend(nrow=2,byrow=TRUE))
+
+ggsave("../manuscript/cl/figures/h234.pdf", width = 9, height=5, device="pdf")
+
+```
+
+## Other Models
+
+```{r}
+
+# Load data for all models
+h234.data.all_models <- rbind(
+  h3.data %>% mutate(modality="sentence"),
+  h4.data %>% mutate(modality="image"),
+  load_data(
+    c("ViT-H-14", "ViT-L-14-336", "ViT-B-32", "imagebind"),
+    c("connell2007", "pecher2006", "muraki2021", "winter2012/e1"),
+    metric,
+    "sentence_explicit"
+  ) %>% mutate(modality="sentence"),
+  load_data(
+    c("clap"),
+    c("winter2012/e2"),
+    metric,
+    "sentence_explicit"
+  ) %>% mutate(modality="sentence"),
+  load_data(
+    c("ViT-H-14", "ViT-L-14-336", "ViT-B-32"),
+    c("connell2007", "pecher2006", "muraki2021", "winter2012/e1"),
+    metric,
+    "explicit_media"
+  ) %>% mutate(modality="image"),
+  load_data(
+    c("clap", "imagebind"),
+    c("winter2012/e2"),
+    metric,
+    "explicit_media"
+  ) %>% mutate(modality="image")
+) %>%
+  mutate(
+    model = as.character(model),
+    model = case_match(
+      model,
+      c("ViT-B-32", "B/32") ~ "B/32",
+      c("ViT-L-14-336", "L/14") ~ "L/14",
+      c("ViT-H-14", "H/14") ~ "H/14",
+      c("imagebind", "IB") ~ "IB",
+      c("clap", "CLAP") ~ "CLAP",
+      c("GPT2", "gpt2-large") ~ "GPT2"
+    ),
+    model = factor(model, levels = c("GPT2", "CLAP", "B/32", "L/14", "H/14", "IB")),
+    match = case_match(match, "match" ~ "Match", "mismatch" ~ "Mismatch"),
+    modality = case_match(modality, "sentence" ~ "Text", "image" ~ "Image")
+  )
+
+
+```
+
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h234.am.bd.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (model_name in unique(h234.data.all_models$model)) {
+  for (modality_name in unique(h234.data.all_models$modality)) {
+    for (dataset_name in unique(h234.data.all_models$dataset)) {
+      # Subset the data
+      subset_data <- h234.data.all_models %>%
+        filter(model == model_name, dataset == dataset_name, modality == modality_name)
+      
+      if (nrow(subset_data) > 0) {
+        # Run linear model
+        result <- summary(lmer(similarity ~ match + (1 | quadruplet_id),
+                               data = subset_data))
+        
+        # Store the summarized t-test result in the data frame
+        h234.am.bd.summary <- rbind(h234.am.bd.summary, data.frame(
+          model = model_name,
+          dataset = dataset_name,
+          modality = modality_name,
+          estimate = result$coefficients[2, 1],
+          df = result$coefficients[2, 3],
+          t_value = result$coefficients[2, 4],
+          p_value = result$coefficients[2, 5]
+        ))
+      }
+    }
+  }
+}
+
+# View the summarized results
+h234.am.bd.summary <- h234.am.bd.summary %>%
+  mutate(
+    dataset = factor(dataset, levels = c("Shape", "Color", "Orientation", "Size", "Volume")),
+    signif_star = case_when(
+      p_value < 0.001 ~ "***",
+      p_value < 0.01 ~ "**",
+      p_value < 0.05 ~ "*",
+      TRUE ~ ""
+    )
+  )
+
+h234.am.bd.summary
+
+```
+
+```{r}
+
+h234.data.all_models.diff <- h234.data.all_models %>%
+  group_by(
+    dataset, model, modality, item, item_type, sent_condition
+  ) %>%
+  arrange(match) %>%
+  summarize(
+    s_diff = first(similarity) - last(similarity),
+    .groups = "drop"
+  )
+
+# Plot difference in similarity for each model, faceted by dataset and modality
+h234.data.all_models.diff %>%
+  ggplot(aes(x = model, y = s_diff, color = modality)) +
+  geom_hline(yintercept = 0, color = "#222222", linetype = "dashed") +
+  stat_summary(
+    geom = "pointrange", fun.data = "mean_cl_boot",
+    position = position_dodge(width = 1),
+    size = 1.1, linewidth = 1.1
+  ) +
+  theme_minimal(base_size = 16) +
+  scale_color_manual(
+    values = c("Image" = colors.ib, "Text" = colors.llm),
+    labels = c("Image -> Explicit Text", "Text -> Explicit Text")
+  ) +
+  labs(
+    y = "Match Effect (Cosine)",
+    x = "Model",
+    color = "Task"
+  ) +
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),
+    axis.text = element_text(size = 16),
+    axis.text.x = element_text(size = 14),
+    strip.text = element_markdown(size = 16)
+  ) +
+  facet_wrap(
+    vars(dataset),
+    scales="free_x",
+    labeller = labeller(dataset = custom_labeller)
+  )
+  # geom_text(
+  #   data = h234.am.bd.summary,
+  #   aes(label = signif_star, y = y),
+  #   size = 6, vjust = -1, fontface = "plain", color = "#222222",
+  #   position = position_dodge(width = 0.5)
+  # ) +
+  # ylim(c(-max_diff - 0.05, max_diff + 0.1))
+
+ggsave("../manuscript/cl/figures/h234_all_diffsim.pdf", width = 12, height = 10, device = "pdf")
+
+```
+
+
+# H5: Does GPT-2 explain human effects?
+
+```{r}
+
+datasets <- c("muraki2021", "pecher2006", "winter2012/e1", "winter2012/e2")
+models <- c("gpt2-large")
+metric = "cosine"
+data_types <- "sentence_explicit"
+
+h5.data <- load_data(models, datasets, metric, data_types)
+
+h5.human_data <- human_data %>%
+  merge(
+    h5.data %>% select(item_id, similarity, model), by="item_id"
+  )
+  
+```
+
+```{r}
+
+h5.human_data %>%
+  group_by(dataset) %>%
+  summarize(
+    n = n(),
+    n_ppt = n_distinct(ppt_id),
+    n_items = n_distinct(quadruplet_id)
+  )
+
+```
+
+
+## H5A: Aggregate
+
+### Reproduction of original result
+
+original match effect is significant.
+
+```{r}
+
+m5.a.base <- lmer(rt ~ 1 + (1  | ppt_id) + 
+                    (1 | quadruplet_id),
+                  data=h5.human_data, REML=FALSE)
+
+m5.a <- lmer(rt ~ match + (1  | ppt_id) + 
+               (1 | quadruplet_id),
+                  data=h5.human_data, REML=FALSE)
+
+anova(m5.a, m5.a.base)
+
+summary(m5.a)
+
+```
+
+
+### GPT-2 baseline
+
+Match effect is significant when controlling for similarity.
+
+Similarity is also significant.
+
+```{r}
+
+m5.a.sim.base <- lmer(rt ~ 1 + similarity + (1  | ppt_id) + 
+                    (1 | quadruplet_id),
+                  data=h5.human_data, REML=FALSE)
+
+m5.a.sim <- lmer(rt ~ match + similarity + (1  | ppt_id) + 
+               (1 | quadruplet_id),
+                  data=h5.human_data, REML=FALSE)
+
+anova(m5.a.sim, m5.a.sim.base)
+
+summary(m5.a.sim)
+
+```
+
+R^2 for both is tiny.
+
+```{r}
+
+r.squaredGLMM(m5.a.sim.base, m5.a.base)
+r.squaredGLMM(m5.a.sim, m5.a.base)
+
+```
+
+## H5B-F: By dataset
+
+Signif match effects everywhere. Signif similarity effects just for shape. 
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h5.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (dataset_name in unique(h5.human_data$dataset)) {
+    
+  # Subset the data
+  subset_data <- h5.human_data %>%
+    filter(dataset == dataset_name)
+  
+  
+  m5.b.sim.base <- lmer(rt ~ 1 + similarity + (1  | ppt_id) + 
+                    (1 | quadruplet_id),
+                  data=subset_data, REML=FALSE)
+
+  m5.b.sim <- lmer(rt ~ match + similarity + (1  | ppt_id) + 
+               (1 | quadruplet_id),
+                  data=subset_data, REML=FALSE)
+  
+  result = summary(m5.b.sim)
+  a5b <- anova(m5.b.sim, m5.b.sim.base)
+  
+  # Store the summarized t-test result in the data frame
+  h5.summary <- rbind(h5.summary, data.frame(
+    dataset = dataset_name,
+    effect = "matchmismatch",
+    estimate = result$coefficients[2,1],
+    df = a5b$Df[2],
+    chisq = a5b$Chisq[2],
+    p_value = a5b$`Pr(>Chisq)`[2]
+  ))
+  
+  # Effects of similarity
+  h5.summary <- rbind(h5.summary, data.frame(
+    dataset = dataset_name,
+    effect = "similarity",
+    estimate = result$coefficients[3,1],
+    df = result$coefficients[3,3],
+    chisq = "-",
+    p_value = result$coefficients[3,5]
+  ))
+}
+
+# View the summarized results
+h5.summary <- h5.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume"))
+  ) %>%
+  arrange(effect)
+
+h5.summary
+
+```
+
+## Visualization
+
+[Note: does the way I've residualized make sense here? If I use the lmer the REs suck up all the variance.]
+
+[CIs are artificially large due to item-wise averaging]
+
+```{r}
+
+h5.human_data$rt_resid <- summary(lm(rt ~ similarity*dataset, data=h5.human_data))$resid
+
+h5.human_data %>%
+  mutate(
+    item_no_match = str_extract(item_id, "[A-z]+_[0-9]+_[ab]")
+  ) %>%
+  group_by(item_no_match, dataset, match) %>%
+  summarize(
+    rt = mean(rt),
+    rt_resid = mean(rt_resid)
+  ) %>%
+  pivot_wider(names_from="match", values_from=c("rt", "rt_resid")) %>%
+  mutate(
+    rt_diff = rt_mismatch - rt_match,
+    rt_resid_diff = rt_resid_mismatch - rt_resid_match
+  ) %>%
+  pivot_longer(
+    cols = c(rt_diff, rt_resid_diff)
+  ) %>%
+  ggplot(aes(x = dataset, y = value, color = name)) + 
+  stat_summary(geom="pointrange", fun.data="mean_cl_boot",
+               position = position_dodge(width=0.5), size=1) +
+  theme_minimal() +
+  scale_color_manual(
+    values = c("rt_diff" = colors.human, "rt_resid_diff" = colors.llm),
+    labels=c("Raw RT", "Residuals")
+  ) + 
+  labs(
+    y = "RT Match Effect (ms)",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  )
+
+```
+
+
+
+# H6: Does imagebind full model explain human effects?
+
+```{r}
+
+datasets <- c("muraki2021", "pecher2006", "winter2012/e1", "winter2012/e2")
+models <- c("imagebind")
+metric = "cosine"
+data_types <- "sentence_media"
+
+h6.data <- load_data(models, datasets, metric, data_types)
+
+h6.human_data <- human_data %>%
+  merge(
+    h6.data %>% select(item_id, similarity, model), by="item_id"
+  )
+
+```
+
+## H6A: Aggregate
+
+Signif effect of match over IB similarity.
+
+```{r}
+
+m6.a.sim.base <- lmer(rt ~ 1 + similarity + (1  | ppt_id) + 
+                    (1 | quadruplet_id),
+                  data=h6.human_data, REML=FALSE)
+
+m6.a.sim <- lmer(rt ~ match + similarity + (1  | ppt_id) + 
+               (1 | quadruplet_id),
+                  data=h6.human_data, REML=FALSE)
+
+anova(m6.a.sim, m6.a.sim.base)
+
+summary(m6.a.sim)
+
+```
+
+
+## H6B-D: By dataset
+
+Match effect survives in each case.
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h6.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (dataset_name in unique(h6.human_data$dataset)) {
+    
+  # Subset the data
+  subset_data <- h6.human_data %>%
+    filter(dataset == dataset_name)
+  
+  
+  m6.b.sim.base <- lmer(rt ~ 1 + similarity + (1  | ppt_id) + 
+                    (1 | quadruplet_id),
+                  data=subset_data, REML=FALSE)
+
+  m6.b.sim <- lmer(rt ~ match + similarity + (1  | ppt_id) + 
+               (1 | quadruplet_id),
+                  data=subset_data, REML=FALSE)
+  
+  result = summary(m6.b.sim)
+  a6b <- anova(m6.b.sim, m6.b.sim.base)
+  
+  # Store the summarized t-test result in the data frame
+  h6.summary <- rbind(h6.summary, data.frame(
+    dataset = dataset_name,
+    estimate = result$coefficients[2,1],
+    df = a6b$Df[2],
+    chisq = a6b$Chisq[2],
+    p_value = a6b$`Pr(>Chisq)`[2]
+  ))
+}
+
+# View the summarized results
+h6.summary <- h6.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume"))
+  )
+
+h6.summary
+
+```
+
+## Visualization
+
+```{r}
+
+h6.human_data$rt_resid <- summary(lm(rt ~ similarity*dataset, data=h6.human_data))$resid
+
+h6.human_data %>%
+  mutate(
+    item_no_match = str_extract(item_id, "[A-z]+_[0-9]+_[ab]")
+  ) %>%
+  group_by(item_no_match, dataset, match) %>%
+  summarize(
+    rt = mean(rt),
+    rt_resid = mean(rt_resid)
+  ) %>%
+  pivot_wider(names_from="match", values_from=c("rt", "rt_resid")) %>%
+  mutate(
+    rt_diff = rt_mismatch - rt_match,
+    rt_resid_diff = rt_resid_mismatch - rt_resid_match
+  ) %>%
+  pivot_longer(
+    cols = c(rt_diff, rt_resid_diff)
+  ) %>%
+  ggplot(aes(x = dataset, y = value, color = name)) + 
+  stat_summary(geom="pointrange", fun.data="mean_cl_boot",
+               position = position_dodge(width=0.5), size=1) +
+  theme_minimal() +
+  scale_color_manual(
+    values = c("rt_diff" = colors.human, "rt_resid_diff" = colors.ib),
+    labels=c("Raw RT", "IB Residuals")
+  ) + 
+  labs(
+    y = "RT Match Effect (ms)",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  )
+
+
+```
+
+## H5-6 Combined Visualization
+
+```{r}
+
+h6.human_data$rt_resid_ib <- summary(lm(rt ~ similarity*dataset, data=h6.human_data))$resid
+
+h6.human_data$rt_resid_te <- summary(lm(rt ~ similarity*dataset, data=h5.human_data))$resid
+
+h6.human_data %>%
+  mutate(
+    item_no_match = str_extract(item_id, "[A-z]+_[0-9]+_[ab]")
+  ) %>%
+  group_by(item_no_match, dataset, match) %>%
+  summarize(
+    rt = mean(rt),
+    rt_resid_ib = mean(rt_resid_ib),
+    rt_resid_te = mean(rt_resid_te)
+  ) %>%
+  pivot_wider(
+    names_from="match",
+    values_from=c("rt", "rt_resid_ib", "rt_resid_te")
+  ) %>%
+  mutate(
+    rt_diff = rt_mismatch - rt_match,
+    rt_resid_ib_diff = rt_resid_ib_mismatch - rt_resid_ib_match,
+    rt_resid_te_diff = rt_resid_te_mismatch - rt_resid_te_match
+  ) %>%
+  pivot_longer(
+    cols = c(rt_diff, rt_resid_te_diff, rt_resid_ib_diff)
+  ) %>%
+  mutate(
+    name = factor(name, levels=c("rt_diff", "rt_resid_te_diff", "rt_resid_ib_diff"))
+  ) %>%
+  ggplot(aes(x = dataset, y = value, color = name)) + 
+  stat_summary(geom="pointrange", fun.data="mean_cl_boot",
+               position = position_dodge(width=0.5), size=1) +
+  theme_minimal() +
+  scale_color_manual(
+    values = c(
+      "rt_diff" = colors.human,
+      "rt_resid_te_diff" = colors.llm,
+      "rt_resid_ib_diff" = colors.ib
+      ),
+    labels=c("Raw RT", "Text Encoder Residuals", "ImageBind Residuals")
+  ) + 
+  labs(
+    y = "RT Match Effect (ms)",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "top",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) + 
+  # guides(color=guide_legend(nrow=2,byrow=TRUE))
+  guides(color=guide_legend(title.position="top", title.hjust = 0.5))
+
+# ggsave("../manuscript/cl/figures/h56.pdf", width = 9, height=5, device="pdf")
+
+```
+
+```{r}
+
+h6.human_data$rt_resid_ib <- summary(lm(rt ~ similarity*dataset, data=h6.human_data))$resid
+
+h6.human_data$rt_resid_te <- summary(lm(rt ~ similarity*dataset, data=h5.human_data))$resid
+
+h6.human_data %>%
+  mutate(
+    item_no_match = str_extract(item_id, "[A-z]+_[0-9]+_[ab]")
+  ) %>%
+  group_by(dataset, match) %>%
+  summarize(
+    rt = mean(rt),
+    rt_resid_ib = mean(rt_resid_ib),
+    rt_resid_te = mean(rt_resid_te),
+    sd_rt = sd(rt),
+    sd_resid_ib = sd(rt_resid_ib),
+    sd_resid_te = sd(rt_resid_te),
+  ) %>%
+  pivot_wider(
+    names_from="match",
+    values_from=c("rt", "rt_resid_ib", "rt_resid_te")
+  ) %>%
+  mutate(
+    rt_diff = rt_mismatch - rt_match,
+    rt_resid_ib_diff = rt_resid_ib_mismatch - rt_resid_te_match,
+    rt_resid_te_diff = rt_resid_ib_mismatch - rt_resid_te_match,
+  ) %>%
+  pivot_longer(
+    cols = c(rt_diff, rt_resid_te_diff, rt_resid_ib_diff)
+  ) %>%
+  mutate(
+    name = factor(name, levels=c("rt_diff", "rt_resid_te_diff", "rt_resid_ib_diff"))
+  ) %>%
+  ggplot(aes(x = dataset, y = value, color = name)) + 
+  stat_summary(geom="pointrange", fun.data="mean_cl_boot",
+               position = position_dodge(width=0.5), size=1) +
+  theme_minimal() +
+  scale_color_manual(
+    values = c(
+      "rt_diff" = colors.human,
+      "rt_resid_te_diff" = colors.llm,
+      "rt_resid_ib_diff" = colors.ib
+      ),
+    labels=c("Raw RT", "Text Encoder Residuals", "ImageBind Residuals")
+  ) + 
+  labs(
+    y = "RT Match Effect (ms)",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "top",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) + 
+  # guides(color=guide_legend(nrow=2,byrow=TRUE))
+  guides(color=guide_legend(title.position="top", title.hjust = 0.5))
+
+ggsave("../manuscript/cl/figures/h56.pdf", width = 9, height=5, device="pdf")
+
+```
+
+```{r}
+
+cis <- h6.human_data %>%
+     group_by(dataset) %>%
+     summarize(
+       sd_rt = sd(rt),
+       n = n(),
+       ci = 1.96 * (sd_rt / sqrt(n))
+     )
+
+h6.human_data %>%
+  mutate(
+    item_no_match = str_extract(item_id, "[A-z]+_[0-9]+_[ab]")
+  ) %>%
+  group_by(dataset, match) %>%
+  summarize(
+    rt = mean(rt),
+    rt_resid_ib = mean(rt_resid_ib),
+    rt_resid_te = mean(rt_resid_te),
+  ) %>%
+  pivot_wider(
+    names_from="match",
+    values_from=c("rt", "rt_resid_ib", "rt_resid_te")
+  ) %>%
+  mutate(
+    rt_diff = rt_mismatch - rt_match,
+    rt_resid_ib_diff = rt_resid_ib_mismatch - rt_resid_te_match,
+    rt_resid_te_diff = rt_resid_ib_mismatch - rt_resid_te_match,
+  ) %>%
+  pivot_longer(
+    cols = c(rt_diff, rt_resid_te_diff, rt_resid_ib_diff),
+    names_to = "measure",
+    values_to = "value"
+  ) %>%
+  mutate(
+    name = factor(measure, levels=c("rt_diff", "rt_resid_te_diff", "rt_resid_ib_diff"))
+  ) %>%
+  merge(cis) %>%
+  ggplot(aes(x = dataset, y = value, color = name)) + 
+  geom_hline(yintercept = 0, color="#222222", linetype="dashed") +
+  geom_pointrange(aes(ymin = value - ci, ymax = value + ci),
+                  position = position_dodge(width=0.5), size=1) +
+  theme_minimal() +
+  scale_color_manual(
+    values = c(
+      "rt_diff" = colors.human,
+      "rt_resid_te_diff" = colors.llm,
+      "rt_resid_ib_diff" = colors.ib
+      ),
+    labels=c("Raw RT", "Text Encoder Residuals", "ImageBind Residuals")
+  ) + 
+  labs(
+    y = "RT Match Effect (ms)",
+    x = "Sensorimotor Feature",
+    color = "Feature Match"
+  ) + 
+  theme(
+    legend.position = "top",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18)
+  ) + 
+  # guides(color=guide_legend(nrow=2,byrow=TRUE))
+  guides(color=guide_legend(title.position="top", title.hjust = 0.5))
+
+ggsave("../manuscript/cl/figures/h56.pdf", width = 9, height=5, device="pdf")
+
+  
+
+```
+
+# H56 All Models
+
+```{r}
+
+h234.all_models.pivot <- h234.data.all_models %>%
+  # filter(item_id == "Color_1_a_a", model=="IB")
+  select(item_id, similarity, model, modality) %>%
+  group_by(item_id, model, modality) %>%
+  summarize(similarity = last(similarity)) %>%
+  pivot_wider(
+    values_from=similarity, names_from=c(model, modality)
+  )
+
+h56.human_data.all_models <- human_data %>%
+  merge(
+    h234.all_models.pivot
+  )
+
+```
+
+```{r}
+
+# Load necessary libraries
+library(ggbeeswarm)
+
+# Define the models and datasets
+models <- c("ViT-H-14", "ViT-L-14-336", "ViT-B-32", "imagebind", "clap", "gpt2-large")
+datasets <- c("pecher2006", "muraki2021", "winter2012/e1", "winter2012/e2")
+modalities <- c("Text", "Image")
+
+# Create an empty dataframe to store the results
+results_df <- data.frame()
+
+# Loop through each dataset, model, and modality
+for (dataset in datasets) {
+  for (model in models) {
+    for (modality in modalities) {
+      # Load the data for the current combination
+      data <- load_data(model, dataset, metric, paste0(tolower(modality), "_explicit"))
+      
+      # Merge with human data
+      merged_data <- merge(human_data, data, by = "item_id")
+      
+      # Calculate residuals
+      merged_data[[paste0("rt_resid_", model, "_", modality)]] <- 
+        residuals(lm(rt ~ get(paste0(model, "_", modality)) * dataset, data = merged_data))
+      
+      # Group by item_no_match, dataset, and match, and calculate means
+      summary_data <- merged_data %>%
+        mutate(item_no_match = str_extract(item_id, "[A-z]+_[0-9]+_[ab]")) %>%
+        group_by(item_no_match, dataset, match) %>%
+        summarize(
+          rt = mean(rt),
+          resid = mean(get(paste0("rt_resid_", model, "_", modality)))
+        )
+      
+      # Calculate differences and store in the results dataframe
+      results_df <- bind_rows(
+        results_df,
+        summary_data %>%
+          pivot_wider(names_from = "match", values_from = c("rt", "resid")) %>%
+          mutate(
+            rt_diff = rt_mismatch - rt_match,
+            resid_diff = resid_mismatch - resid_match
+          ) %>%
+          select(dataset, rt_diff, resid_diff) %>%
+          mutate(
+            model = model,
+            modality = modality
+          )
+      )
+    }
+  }
+}
+
+
+```
+
+# H7: Do models with closer modality integration perform better?
+
+Import data
+
+```{r}
+
+datasets <- c("connell2007", "pecher2006", "muraki2021", "winter2012/e1")
+models <- c("ViT-B-32", "vilt", "bridgetower", "imagebind")
+metric = "softmax"
+data_types <- "sentence_media"
+
+h7.data <- load_data(models, datasets, metric, data_types)
+
+```
+
+## H7A: Match sensitivity
+
+### Aggregate
+
+No overall pairwise interaction effects of any model:match.
+
+#### CLIP vs BT
+
+```{r}
+
+summary(lm(similarity ~ match * model,
+             data = h7.data %>%
+               filter(model %in% c("ViT-B-32", "bridgetower"))
+        ))
+
+```
+
+#### BT vs ViLT
+
+```{r}
+
+summary(lm(similarity ~ match * model,
+             data = h7.data %>%
+               filter(model %in% c("bridgetower", "vilt"))
+        ))
+
+```
+
+
+#### CLIP vs ViLT
+
+```{r}
+
+summary(lm(similarity ~ match * model,
+             data = h7.data %>%
+               filter(model %in% c("ViT-B-32", "vilt"))
+        ))
+
+```
+
+
+### By Feature type
+
+Nor within any dataset
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h7.summary <- data.frame()
+
+model_pairs <- list(
+  c("ViT-B-32", "bridgetower"),
+  c("bridgetower", "vilt"),
+  c("ViT-B-32", "vilt")
+)
+
+# Loop through each unique combination of model and dataset
+for (dataset_name in unique(h7.data$dataset)) {
+  
+  for (model_pair in model_pairs) {
+    
+    model_a <- model_pair[1]
+    model_b <- model_pair[2]
+      
+    # Subset the data
+    subset_data <- h7.data %>%
+      filter(dataset == dataset_name,
+             model %in% model_pair)
+    
+    
+    # Run linear model
+    result <- summary(lm(similarity ~ match * model,
+                           data = subset_data))
+    
+    # Store the summarized t-test result in the data frame
+    h7.summary <- rbind(h7.summary, data.frame(
+      dataset = dataset_name,
+      model_a = model_a,
+      model_b = model_b,
+      estimate = result$coefficients[4,1],
+      t_value = result$coefficients[4,3],
+      p_value = result$coefficients[4,4]
+    ))
+    
+  }
+}
+
+# View the summarized results
+h7.summary <- h7.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume"))
+  )
+
+h7.summary
+
+```
+
+## H7B: Explain human variance
+
+```{r}
+
+h7.human_data <- human_data %>%
+  merge(
+    h7.data %>% select(item_id, similarity, model), by="item_id"
+  )
+
+h7b.vilt <- lmer(rt ~ similarity + (1 | quadruplet_id) + (1 | dataset),
+                      data = h7.human_data %>% filter(model == "vilt"))
+summary(h7b.vilt)
+
+h7b.clip <- lmer(rt ~ similarity + (1 | quadruplet_id) + (1 | dataset),
+                 data = h7.human_data %>% filter(model == "ViT-B-32"))
+summary(h7b.clip)
+
+h7b.bt <- lmer(rt ~ similarity + (1 | quadruplet_id) + (1 | dataset),
+               data = h7.human_data %>% filter(model == "bridgetower"))
+summary(h7b.bt)
+
+
+h7b.ib <- lmer(rt ~ similarity + (1 | quadruplet_id) + (1 | dataset),
+               data = h7.human_data %>% filter(model == "imagebind"))
+summary(h7b.ib)
+
+```
+
+Vilt > CLIP > BT
+
+```{r}
+
+h7b.agg <- data.frame(model=c("clip", "bt", "vilt"),
+           aic=c(
+             summary(h7b.clip)$AICtab,
+             summary(h7b.bt)$AICtab,
+             summary(h7b.vilt)$AICtab,
+           summary(h7b.vilt)$AICtab,
+              )
+)
+
+
+h7b.agg %>%
+  mutate(
+    aic_diff = aic - max(aic)
+  ) %>%
+  ggplot(aes(x = model, y = aic_diff)) + 
+  geom_point(stat="identity")
+
+
+```
+
+### By Feature type
+
+```{r}
+
+# Initialize empty data frame to store summarized results
+h7b.summary <- data.frame()
+
+# Loop through each unique combination of model and dataset
+for (dataset_name in unique(h7.human_data$dataset)) {
+  for (model_name in unique(h7.human_data$model)) {
+      
+    # Subset the data
+    subset_data <- h7.human_data %>%
+      filter(dataset == dataset_name, model==model_name)
+    
+    
+    # Run linear model
+    result <- summary(lmer(rt ~ similarity + (1 | quadruplet_id),
+                           data = subset_data))
+    
+    # Store the summarized t-test result in the data frame
+    h7b.summary <- rbind(h7b.summary, data.frame(
+      dataset = dataset_name,
+      model = model_name,
+      estimate = result$coefficients[2,1],
+      df = result$coefficients[2,3],
+      t_value = result$coefficients[2,4],
+      p_value = result$coefficients[2,5],
+      AIC = result$AICtab
+    ))
+  }
+}
+
+# View the summarized results
+h7b.summary <- h7b.summary %>%
+  mutate(
+    dataset = factor(dataset, levels=c("Shape", "Color", "Orientation", "Size", "Volume"))
+  ) %>%
+  group_by(dataset) %>%
+  mutate(
+    aic_diff = AIC - min(AIC),
+    model = recode(
+      model,
+      "vilt"="ViLT",
+      "bridgetower"="BT",
+      "ViT-B-32"="B/32",
+      "imagebind"="IB"
+    )
+  ) %>% ungroup()
+
+h7b.summary
+
+```
+
+## Visualization
+
+```{r}
+
+h7b.summary %>%
+  group_by(dataset) %>%
+  mutate(
+    aic_diff = AIC - min(AIC),
+    model = recode(
+      model,
+      "vilt"="ViLT",
+      "bridgetower"="BT",
+      "ViT-B-32"="B/32",
+      "imagebind"="IB"
+    )
+  ) %>%
+  ggplot(aes(x = reorder(model, aic_diff), y = aic_diff, color=model)) + 
+  geom_point(stat="identity", size=5) +
+  facet_wrap(. ~ dataset) +
+  theme_minimal() +
+  labs(
+    y = "AIC Difference (vs best model)",
+    x = "Model"
+  ) + 
+  theme(
+    legend.position = "none",
+    axis.title = element_text(size = 18),  # Increase axis title size
+    axis.text = element_text(size = 16),  # Increase axis text size
+    axis.text.x = element_text(size = 16),  # Increase axis text size
+    legend.text = element_text(size = 16),
+    legend.title = element_text(size = 18),
+    strip.text = element_text(size = 18)
+  ) + 
+  # guides(color=guide_legend(nrow=2,byrow=TRUE))
+  guides(color=guide_legend(title.position="top", title.hjust = 0.5))
+
+
+ggsave("../manuscript/cl/figures/h7.pdf", width = 9, height=5, device="pdf")
+
+```
+
+
+

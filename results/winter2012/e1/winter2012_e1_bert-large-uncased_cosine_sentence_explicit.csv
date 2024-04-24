@@ -1,0 +1,129 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,fire hydrant,prepositional,a,a,match,0.8244859567295959,bert-large-uncased,winter2012/e1
+2,bike,prepositional,a,a,match,0.8122174172931319,bert-large-uncased,winter2012/e1
+3,bowling ball,prepositional,a,a,match,0.7799993079138174,bert-large-uncased,winter2012/e1
+4,chair,prepositional,a,a,match,0.7783849514189155,bert-large-uncased,winter2012/e1
+5,police car,prepositional,a,a,match,0.7961058947044366,bert-large-uncased,winter2012/e1
+6,racing car,prepositional,a,a,match,0.7772432682565409,bert-large-uncased,winter2012/e1
+7,stop sign,prepositional,a,a,match,0.7690664632069495,bert-large-uncased,winter2012/e1
+8,no-smoking sign,prepositional,a,a,match,0.8283758607397471,bert-large-uncased,winter2012/e1
+9,lawn-mower,prepositional,a,a,match,0.7995352059889982,bert-large-uncased,winter2012/e1
+10,basketball,prepositional,a,a,match,0.779506699385168,bert-large-uncased,winter2012/e1
+11,water dispenser,prepositional,a,a,match,0.7788921052189186,bert-large-uncased,winter2012/e1
+12,Harley Davidson,prepositional,a,a,match,0.7987204584298786,bert-large-uncased,winter2012/e1
+13,Coke can,prepositional,a,a,match,0.7745834411686614,bert-large-uncased,winter2012/e1
+14,sunflower,prepositional,a,a,match,0.7872893887948504,bert-large-uncased,winter2012/e1
+15,park bench,prepositional,a,a,match,0.7629930082040431,bert-large-uncased,winter2012/e1
+16,wheelchair,prepositional,a,a,match,0.8158638143810532,bert-large-uncased,winter2012/e1
+1,door,landmark,a,a,match,0.7430196534793517,bert-large-uncased,winter2012/e1
+2,cabinet,landmark,a,a,match,0.8131951243006994,bert-large-uncased,winter2012/e1
+3,bat,landmark,a,a,match,0.7721353146514814,bert-large-uncased,winter2012/e1
+4,milk bottle,landmark,a,a,match,0.7949783463043884,bert-large-uncased,winter2012/e1
+5,axe,landmark,a,a,match,0.7346631232114362,bert-large-uncased,winter2012/e1
+6,beer bottle,landmark,a,a,match,0.782625824803131,bert-large-uncased,winter2012/e1
+7,guitar,landmark,a,a,match,0.7471521850348857,bert-large-uncased,winter2012/e1
+8,violin,landmark,a,a,match,0.8218782482052954,bert-large-uncased,winter2012/e1
+9,iPod,landmark,a,a,match,0.7383197584429936,bert-large-uncased,winter2012/e1
+10,frisbee,landmark,a,a,match,0.7807509720529996,bert-large-uncased,winter2012/e1
+11,shampoo bottle,landmark,a,a,match,0.7416947875181938,bert-large-uncased,winter2012/e1
+12,briefcase,landmark,a,a,match,0.8248891407320788,bert-large-uncased,winter2012/e1
+13,olive oil,landmark,a,a,match,0.7811163636528742,bert-large-uncased,winter2012/e1
+14,exit sign,landmark,a,a,match,0.7987046546745168,bert-large-uncased,winter2012/e1
+15,microphone,landmark,a,a,match,0.8106276854253834,bert-large-uncased,winter2012/e1
+16,golf ball,landmark,a,a,match,0.828990183909169,bert-large-uncased,winter2012/e1
+1,fire hydrant,prepositional,a,b,mismatch,0.8216958752339577,bert-large-uncased,winter2012/e1
+2,bike,prepositional,a,b,mismatch,0.7988263323864905,bert-large-uncased,winter2012/e1
+3,bowling ball,prepositional,a,b,mismatch,0.7847763970638301,bert-large-uncased,winter2012/e1
+4,chair,prepositional,a,b,mismatch,0.7507589401489405,bert-large-uncased,winter2012/e1
+5,police car,prepositional,a,b,mismatch,0.7768943042524384,bert-large-uncased,winter2012/e1
+6,racing car,prepositional,a,b,mismatch,0.7594508325640847,bert-large-uncased,winter2012/e1
+7,stop sign,prepositional,a,b,mismatch,0.7756572178887582,bert-large-uncased,winter2012/e1
+8,no-smoking sign,prepositional,a,b,mismatch,0.8303622149824514,bert-large-uncased,winter2012/e1
+9,lawn-mower,prepositional,a,b,mismatch,0.7733374189898469,bert-large-uncased,winter2012/e1
+10,basketball,prepositional,a,b,mismatch,0.7803820737276623,bert-large-uncased,winter2012/e1
+11,water dispenser,prepositional,a,b,mismatch,0.7753486906940793,bert-large-uncased,winter2012/e1
+12,Harley Davidson,prepositional,a,b,mismatch,0.8135283408065669,bert-large-uncased,winter2012/e1
+13,Coke can,prepositional,a,b,mismatch,0.7780896001295169,bert-large-uncased,winter2012/e1
+14,sunflower,prepositional,a,b,mismatch,0.7740376225237392,bert-large-uncased,winter2012/e1
+15,park bench,prepositional,a,b,mismatch,0.7657676064516882,bert-large-uncased,winter2012/e1
+16,wheelchair,prepositional,a,b,mismatch,0.8148662988084939,bert-large-uncased,winter2012/e1
+1,door,landmark,a,b,mismatch,0.7262988043477581,bert-large-uncased,winter2012/e1
+2,cabinet,landmark,a,b,mismatch,0.8015707530369756,bert-large-uncased,winter2012/e1
+3,bat,landmark,a,b,mismatch,0.7773291768394115,bert-large-uncased,winter2012/e1
+4,milk bottle,landmark,a,b,mismatch,0.7904992993939927,bert-large-uncased,winter2012/e1
+5,axe,landmark,a,b,mismatch,0.6983827217212525,bert-large-uncased,winter2012/e1
+6,beer bottle,landmark,a,b,mismatch,0.7766036023002089,bert-large-uncased,winter2012/e1
+7,guitar,landmark,a,b,mismatch,0.7500153198658338,bert-large-uncased,winter2012/e1
+8,violin,landmark,a,b,mismatch,0.8200181647247758,bert-large-uncased,winter2012/e1
+9,iPod,landmark,a,b,mismatch,0.7313930812103155,bert-large-uncased,winter2012/e1
+10,frisbee,landmark,a,b,mismatch,0.7667979233472506,bert-large-uncased,winter2012/e1
+11,shampoo bottle,landmark,a,b,mismatch,0.7362204147044715,bert-large-uncased,winter2012/e1
+12,briefcase,landmark,a,b,mismatch,0.8171890471083847,bert-large-uncased,winter2012/e1
+13,olive oil,landmark,a,b,mismatch,0.7857255700609797,bert-large-uncased,winter2012/e1
+14,exit sign,landmark,a,b,mismatch,0.7982677369697568,bert-large-uncased,winter2012/e1
+15,microphone,landmark,a,b,mismatch,0.7980392052706048,bert-large-uncased,winter2012/e1
+16,golf ball,landmark,a,b,mismatch,0.8292059567200137,bert-large-uncased,winter2012/e1
+1,fire hydrant,prepositional,b,b,match,0.8249804778801483,bert-large-uncased,winter2012/e1
+2,bike,prepositional,b,b,match,0.7791012742821675,bert-large-uncased,winter2012/e1
+3,bowling ball,prepositional,b,b,match,0.8247028158137165,bert-large-uncased,winter2012/e1
+4,chair,prepositional,b,b,match,0.7900933142698954,bert-large-uncased,winter2012/e1
+5,police car,prepositional,b,b,match,0.7957792168270527,bert-large-uncased,winter2012/e1
+6,racing car,prepositional,b,b,match,0.753777566628361,bert-large-uncased,winter2012/e1
+7,stop sign,prepositional,b,b,match,0.8183025435653714,bert-large-uncased,winter2012/e1
+8,no-smoking sign,prepositional,b,b,match,0.8339163624530089,bert-large-uncased,winter2012/e1
+9,lawn-mower,prepositional,b,b,match,0.8163378757775414,bert-large-uncased,winter2012/e1
+10,basketball,prepositional,b,b,match,0.7660894790960912,bert-large-uncased,winter2012/e1
+11,water dispenser,prepositional,b,b,match,0.800081523060338,bert-large-uncased,winter2012/e1
+12,Harley Davidson,prepositional,b,b,match,0.8033527550231889,bert-large-uncased,winter2012/e1
+13,Coke can,prepositional,b,b,match,0.7933798652499865,bert-large-uncased,winter2012/e1
+14,sunflower,prepositional,b,b,match,0.7943612345742206,bert-large-uncased,winter2012/e1
+15,park bench,prepositional,b,b,match,0.8097478475664314,bert-large-uncased,winter2012/e1
+16,wheelchair,prepositional,b,b,match,0.7906807122438883,bert-large-uncased,winter2012/e1
+1,door,landmark,b,b,match,0.7408917421067055,bert-large-uncased,winter2012/e1
+2,cabinet,landmark,b,b,match,0.8003792408489039,bert-large-uncased,winter2012/e1
+3,bat,landmark,b,b,match,0.801327545731277,bert-large-uncased,winter2012/e1
+4,milk bottle,landmark,b,b,match,0.78749704008989,bert-large-uncased,winter2012/e1
+5,axe,landmark,b,b,match,0.6370060359869648,bert-large-uncased,winter2012/e1
+6,beer bottle,landmark,b,b,match,0.7905662438944082,bert-large-uncased,winter2012/e1
+7,guitar,landmark,b,b,match,0.7916018820191383,bert-large-uncased,winter2012/e1
+8,violin,landmark,b,b,match,0.8011451364816969,bert-large-uncased,winter2012/e1
+9,iPod,landmark,b,b,match,0.7197306610763188,bert-large-uncased,winter2012/e1
+10,frisbee,landmark,b,b,match,0.773581948092779,bert-large-uncased,winter2012/e1
+11,shampoo bottle,landmark,b,b,match,0.814004597580186,bert-large-uncased,winter2012/e1
+12,briefcase,landmark,b,b,match,0.8340291732600439,bert-large-uncased,winter2012/e1
+13,olive oil,landmark,b,b,match,0.8055118674863709,bert-large-uncased,winter2012/e1
+14,exit sign,landmark,b,b,match,0.8290378757006985,bert-large-uncased,winter2012/e1
+15,microphone,landmark,b,b,match,0.7952551477568197,bert-large-uncased,winter2012/e1
+16,golf ball,landmark,b,b,match,0.7958331954151698,bert-large-uncased,winter2012/e1
+1,fire hydrant,prepositional,b,a,mismatch,0.8377078527675431,bert-large-uncased,winter2012/e1
+2,bike,prepositional,b,a,mismatch,0.7770371749790745,bert-large-uncased,winter2012/e1
+3,bowling ball,prepositional,b,a,mismatch,0.8237424311572039,bert-large-uncased,winter2012/e1
+4,chair,prepositional,b,a,mismatch,0.801680733852525,bert-large-uncased,winter2012/e1
+5,police car,prepositional,b,a,mismatch,0.8113404261022089,bert-large-uncased,winter2012/e1
+6,racing car,prepositional,b,a,mismatch,0.7719710598250418,bert-large-uncased,winter2012/e1
+7,stop sign,prepositional,b,a,mismatch,0.8195725321190224,bert-large-uncased,winter2012/e1
+8,no-smoking sign,prepositional,b,a,mismatch,0.8320807517263883,bert-large-uncased,winter2012/e1
+9,lawn-mower,prepositional,b,a,mismatch,0.8325653362688306,bert-large-uncased,winter2012/e1
+10,basketball,prepositional,b,a,mismatch,0.7628693577125952,bert-large-uncased,winter2012/e1
+11,water dispenser,prepositional,b,a,mismatch,0.8058774117087733,bert-large-uncased,winter2012/e1
+12,Harley Davidson,prepositional,b,a,mismatch,0.7989077888885792,bert-large-uncased,winter2012/e1
+13,Coke can,prepositional,b,a,mismatch,0.8012988758132208,bert-large-uncased,winter2012/e1
+14,sunflower,prepositional,b,a,mismatch,0.8098426876469145,bert-large-uncased,winter2012/e1
+15,park bench,prepositional,b,a,mismatch,0.8162033848250785,bert-large-uncased,winter2012/e1
+16,wheelchair,prepositional,b,a,mismatch,0.780444806139188,bert-large-uncased,winter2012/e1
+1,door,landmark,b,a,mismatch,0.7691319182678323,bert-large-uncased,winter2012/e1
+2,cabinet,landmark,b,a,mismatch,0.8126502425061827,bert-large-uncased,winter2012/e1
+3,bat,landmark,b,a,mismatch,0.8070035981705395,bert-large-uncased,winter2012/e1
+4,milk bottle,landmark,b,a,mismatch,0.7990889839748826,bert-large-uncased,winter2012/e1
+5,axe,landmark,b,a,mismatch,0.6853572213623748,bert-large-uncased,winter2012/e1
+6,beer bottle,landmark,b,a,mismatch,0.803579671764509,bert-large-uncased,winter2012/e1
+7,guitar,landmark,b,a,mismatch,0.7854149480004363,bert-large-uncased,winter2012/e1
+8,violin,landmark,b,a,mismatch,0.8031923064817569,bert-large-uncased,winter2012/e1
+9,iPod,landmark,b,a,mismatch,0.7230883360062123,bert-large-uncased,winter2012/e1
+10,frisbee,landmark,b,a,mismatch,0.7850059759073232,bert-large-uncased,winter2012/e1
+11,shampoo bottle,landmark,b,a,mismatch,0.8211784889295382,bert-large-uncased,winter2012/e1
+12,briefcase,landmark,b,a,mismatch,0.8530472143678716,bert-large-uncased,winter2012/e1
+13,olive oil,landmark,b,a,mismatch,0.8096014762439132,bert-large-uncased,winter2012/e1
+14,exit sign,landmark,b,a,mismatch,0.8277295767755363,bert-large-uncased,winter2012/e1
+15,microphone,landmark,b,a,mismatch,0.8179650999450583,bert-large-uncased,winter2012/e1
+16,golf ball,landmark,b,a,mismatch,0.7981785103048753,bert-large-uncased,winter2012/e1

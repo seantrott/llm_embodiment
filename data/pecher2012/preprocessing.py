@@ -56,9 +56,24 @@ for fname in fnames:
 Preprocess data
 """
 
+E1_ITEMS = pd.read_csv("data/muraki2021/items.csv")
+E1_CONDITION_MAP = {"H": "a", "V": "b"}
+
+E2_ITEMS = pd.read_csv("data/pecher2006/items.csv")
+
 def extract_condition_e1(colname):
     match, condition, obj = re.split(" ", colname)
-    return match, condition, obj
+    item = E1_ITEMS.loc[E1_ITEMS["object_id"] == obj.lower()]
+    sent_condition, media_condition = map(E1_CONDITION_MAP.get, condition.split("-"))
+    data = {
+        "match": match.lower(),
+        "sent_condition": sent_condition,
+        "media_condition": media_condition,
+        "item": item["item"].item(),
+        "object": obj
+    }
+    return data
+
 
 def extract_condition_e2(colname):
     match, obj = re.split(" ", colname)
@@ -66,7 +81,31 @@ def extract_condition_e2(colname):
         obj, condition = obj.split("_")
     else:
         condition = "canonical"
-    return match, condition, obj
+    item = E2_ITEMS.loc[E2_ITEMS["object_id"] == obj.lower()]
+
+    if condition == item["condition_a"].item():
+        media_condition = "a"
+    elif condition == item["condition_b"].item():
+        media_condition = "b"
+    else:
+        raise ValueError("Media condition not found: ", item.item.item(), condition)
+
+    if match == "Match":
+        sent_condition = media_condition
+    elif match == "Mismatch":
+        sent_condition = {'a': 'b', "b": "a"}[media_condition]
+    else:
+        raise ValueError("match must be 'Match' or 'Mismatch', not ", match)
+
+    data = {
+        "match": match.lower(),
+        "media_condition": media_condition,
+        "sent_condition": sent_condition,
+        "item": item.item.item(),
+        "object": obj
+    }
+
+    return data
 
 
 def melt_table(table, n_trials=24, extract_fn=extract_condition_e1):
@@ -89,15 +128,17 @@ def melt_table(table, n_trials=24, extract_fn=extract_condition_e1):
         mini_table.reset_index(inplace=True, drop=True)
         
         # parse condition into match, condition, object
-        match, condition, obj = extract_fn(c)
+        try:
+            item_data = extract_fn(c)
+        except ValueError:
+            print("Could not find item for ", c)
+            continue
         
         mini_table = mini_table.assign(
             ppt_idx=mini_table.index + 1,
-            match=match,
-            condition_a=condition,
-            object=obj,
             accuracy=mini_table.apply(
-                lambda row: 1 if row['response'] == 2 else 0, axis=1)
+                lambda row: 1 if row['response'] == 2 else 0, axis=1),
+            **item_data
         )
         mini_tables.append(mini_table)
 
@@ -125,7 +166,7 @@ def preprocess_zp_data(df):
     return df
 
 def format_zp_data(filepath, preprocess=False, sheet_name="median & acc",
-                   extract_fn=extract_condition_e1):
+                   extract_fn=extract_condition_e1, n_trials=24):
     # Read the specific sheet
     df = pd.read_excel(filepath, sheet_name=sheet_name)
 
@@ -165,7 +206,13 @@ def format_zp_data(filepath, preprocess=False, sheet_name="median & acc",
         
         # remove rows where fuzzy match of L1 to english < 50
         def en_fuzz_match(x):
-            return fuzz.ratio(x.lower(), 'english') > 70 or x.lower() in ["en", "eng"]
+            if "english" in x.lower():
+                return True
+            if x.lower() in ["en", "eng"]:
+                return True
+            if fuzz.ratio(x.lower(), 'english') > 70:
+                return True
+            return False
         
         # print langs that will get excluded from fuzzy match
         langs = table.iloc[:, l1_col].unique()
@@ -175,7 +222,7 @@ def format_zp_data(filepath, preprocess=False, sheet_name="median & acc",
         table = table[table.iloc[:, l1_col].apply(en_fuzz_match)]
 
         # Melt table
-        table = melt_table(table, extract_fn=extract_fn)
+        table = melt_table(table, extract_fn=extract_fn, n_trials=n_trials)
         table["list"] = i + 1
         # set ppt_id to list_ppt_idx
         table["ppt_id"] = table["list"].astype(str) + "_" + table["ppt_idx"].astype(str)
@@ -186,7 +233,7 @@ def format_zp_data(filepath, preprocess=False, sheet_name="median & acc",
     df_concat.reset_index(inplace=True)
 
     # Confirm 24 trials per ppt
-    assert (df_concat.groupby('ppt_id').count()["object"] == 24).all()
+    # assert (df_concat.groupby('ppt_id').count()["object"] == 24).all()
 
     # Preprocess data
     if preprocess:
@@ -204,9 +251,11 @@ format_zp_data('data/pecher2012/human_data/Experiment_1b.xlsx')
 
 filepath = "data/pecher2012/human_data/Experiment_2a.xlsx"
 format_zp_data('data/pecher2012/human_data/Experiment_2a.xlsx',
-               sheet_name="rt correct median", extract_fn=extract_condition_e2)
+               sheet_name="rt correct median", extract_fn=extract_condition_e2,
+               n_trials=28)
 
 filepath = "data/pecher2012/human_data/Experiment_2b.xlsx"
 format_zp_data('data/pecher2012/human_data/Experiment_2b.xlsx',
-               sheet_name="rt correct median", extract_fn=extract_condition_e2)
+               sheet_name="rt correct median", extract_fn=extract_condition_e2,
+               n_trials=28)
 

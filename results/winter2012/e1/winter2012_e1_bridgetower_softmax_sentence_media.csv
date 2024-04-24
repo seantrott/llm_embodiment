@@ -1,0 +1,129 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,fire hydrant,prepositional,a,a,match,0.49477580189704895,bridgetower,winter2012/e1
+2,bike,prepositional,a,a,match,0.4803040027618408,bridgetower,winter2012/e1
+3,bowling ball,prepositional,a,a,match,0.4171978235244751,bridgetower,winter2012/e1
+4,chair,prepositional,a,a,match,0.354574054479599,bridgetower,winter2012/e1
+5,police car,prepositional,a,a,match,0.4825360178947449,bridgetower,winter2012/e1
+6,racing car,prepositional,a,a,match,0.6290969848632812,bridgetower,winter2012/e1
+7,stop sign,prepositional,a,a,match,0.5175671577453613,bridgetower,winter2012/e1
+8,no-smoking sign,prepositional,a,a,match,0.374163419008255,bridgetower,winter2012/e1
+9,lawn-mower,prepositional,a,a,match,0.6901223659515381,bridgetower,winter2012/e1
+10,basketball,prepositional,a,a,match,0.6427409052848816,bridgetower,winter2012/e1
+11,water dispenser,prepositional,a,a,match,0.9289266467094421,bridgetower,winter2012/e1
+12,Harley Davidson,prepositional,a,a,match,0.2573353052139282,bridgetower,winter2012/e1
+13,Coke can,prepositional,a,a,match,0.46412205696105957,bridgetower,winter2012/e1
+14,sunflower,prepositional,a,a,match,0.647681713104248,bridgetower,winter2012/e1
+15,park bench,prepositional,a,a,match,0.432134747505188,bridgetower,winter2012/e1
+16,wheelchair,prepositional,a,a,match,0.43255746364593506,bridgetower,winter2012/e1
+1,door,landmark,a,a,match,0.20616544783115387,bridgetower,winter2012/e1
+2,cabinet,landmark,a,a,match,0.16367550194263458,bridgetower,winter2012/e1
+3,bat,landmark,a,a,match,0.5865375399589539,bridgetower,winter2012/e1
+4,milk bottle,landmark,a,a,match,0.4916141927242279,bridgetower,winter2012/e1
+5,axe,landmark,a,a,match,0.3741876184940338,bridgetower,winter2012/e1
+6,beer bottle,landmark,a,a,match,0.47758451104164124,bridgetower,winter2012/e1
+7,guitar,landmark,a,a,match,0.30535247921943665,bridgetower,winter2012/e1
+8,violin,landmark,a,a,match,0.30202266573905945,bridgetower,winter2012/e1
+9,iPod,landmark,a,a,match,0.12505264580249786,bridgetower,winter2012/e1
+10,frisbee,landmark,a,a,match,0.14770588278770447,bridgetower,winter2012/e1
+11,shampoo bottle,landmark,a,a,match,0.7588931918144226,bridgetower,winter2012/e1
+12,briefcase,landmark,a,a,match,0.5936849117279053,bridgetower,winter2012/e1
+13,olive oil,landmark,a,a,match,0.6410815119743347,bridgetower,winter2012/e1
+14,exit sign,landmark,a,a,match,0.021257108077406883,bridgetower,winter2012/e1
+15,microphone,landmark,a,a,match,0.49033084511756897,bridgetower,winter2012/e1
+16,golf ball,landmark,a,a,match,0.3429222106933594,bridgetower,winter2012/e1
+1,fire hydrant,prepositional,a,b,mismatch,0.5052241683006287,bridgetower,winter2012/e1
+2,bike,prepositional,a,b,mismatch,0.5196959972381592,bridgetower,winter2012/e1
+3,bowling ball,prepositional,a,b,mismatch,0.5828022360801697,bridgetower,winter2012/e1
+4,chair,prepositional,a,b,mismatch,0.6454259157180786,bridgetower,winter2012/e1
+5,police car,prepositional,a,b,mismatch,0.5174639225006104,bridgetower,winter2012/e1
+6,racing car,prepositional,a,b,mismatch,0.37090304493904114,bridgetower,winter2012/e1
+7,stop sign,prepositional,a,b,mismatch,0.48243290185928345,bridgetower,winter2012/e1
+8,no-smoking sign,prepositional,a,b,mismatch,0.6258366107940674,bridgetower,winter2012/e1
+9,lawn-mower,prepositional,a,b,mismatch,0.3098776042461395,bridgetower,winter2012/e1
+10,basketball,prepositional,a,b,mismatch,0.3572591543197632,bridgetower,winter2012/e1
+11,water dispenser,prepositional,a,b,mismatch,0.07107335329055786,bridgetower,winter2012/e1
+12,Harley Davidson,prepositional,a,b,mismatch,0.742664635181427,bridgetower,winter2012/e1
+13,Coke can,prepositional,a,b,mismatch,0.5358778834342957,bridgetower,winter2012/e1
+14,sunflower,prepositional,a,b,mismatch,0.3523182272911072,bridgetower,winter2012/e1
+15,park bench,prepositional,a,b,mismatch,0.567865252494812,bridgetower,winter2012/e1
+16,wheelchair,prepositional,a,b,mismatch,0.5674425363540649,bridgetower,winter2012/e1
+1,door,landmark,a,b,mismatch,0.7938345074653625,bridgetower,winter2012/e1
+2,cabinet,landmark,a,b,mismatch,0.8363244533538818,bridgetower,winter2012/e1
+3,bat,landmark,a,b,mismatch,0.41346246004104614,bridgetower,winter2012/e1
+4,milk bottle,landmark,a,b,mismatch,0.5083858370780945,bridgetower,winter2012/e1
+5,axe,landmark,a,b,mismatch,0.6258123517036438,bridgetower,winter2012/e1
+6,beer bottle,landmark,a,b,mismatch,0.5224155187606812,bridgetower,winter2012/e1
+7,guitar,landmark,a,b,mismatch,0.6946475505828857,bridgetower,winter2012/e1
+8,violin,landmark,a,b,mismatch,0.6979773044586182,bridgetower,winter2012/e1
+9,iPod,landmark,a,b,mismatch,0.8749473094940186,bridgetower,winter2012/e1
+10,frisbee,landmark,a,b,mismatch,0.8522941470146179,bridgetower,winter2012/e1
+11,shampoo bottle,landmark,a,b,mismatch,0.2411067634820938,bridgetower,winter2012/e1
+12,briefcase,landmark,a,b,mismatch,0.4063150882720947,bridgetower,winter2012/e1
+13,olive oil,landmark,a,b,mismatch,0.35891851782798767,bridgetower,winter2012/e1
+14,exit sign,landmark,a,b,mismatch,0.9787429571151733,bridgetower,winter2012/e1
+15,microphone,landmark,a,b,mismatch,0.5096691846847534,bridgetower,winter2012/e1
+16,golf ball,landmark,a,b,mismatch,0.6570777893066406,bridgetower,winter2012/e1
+1,fire hydrant,prepositional,b,b,match,0.646991491317749,bridgetower,winter2012/e1
+2,bike,prepositional,b,b,match,0.813748836517334,bridgetower,winter2012/e1
+3,bowling ball,prepositional,b,b,match,0.5947272777557373,bridgetower,winter2012/e1
+4,chair,prepositional,b,b,match,0.6344156861305237,bridgetower,winter2012/e1
+5,police car,prepositional,b,b,match,0.5641357898712158,bridgetower,winter2012/e1
+6,racing car,prepositional,b,b,match,0.7102929949760437,bridgetower,winter2012/e1
+7,stop sign,prepositional,b,b,match,0.47001850605010986,bridgetower,winter2012/e1
+8,no-smoking sign,prepositional,b,b,match,0.49333998560905457,bridgetower,winter2012/e1
+9,lawn-mower,prepositional,b,b,match,0.3566824793815613,bridgetower,winter2012/e1
+10,basketball,prepositional,b,b,match,0.32312899827957153,bridgetower,winter2012/e1
+11,water dispenser,prepositional,b,b,match,0.11252870410680771,bridgetower,winter2012/e1
+12,Harley Davidson,prepositional,b,b,match,0.7783140540122986,bridgetower,winter2012/e1
+13,Coke can,prepositional,b,b,match,0.5606071352958679,bridgetower,winter2012/e1
+14,sunflower,prepositional,b,b,match,0.40435969829559326,bridgetower,winter2012/e1
+15,park bench,prepositional,b,b,match,0.6932194232940674,bridgetower,winter2012/e1
+16,wheelchair,prepositional,b,b,match,0.6397758722305298,bridgetower,winter2012/e1
+1,door,landmark,b,b,match,0.8522258400917053,bridgetower,winter2012/e1
+2,cabinet,landmark,b,b,match,0.8388571739196777,bridgetower,winter2012/e1
+3,bat,landmark,b,b,match,0.3771200478076935,bridgetower,winter2012/e1
+4,milk bottle,landmark,b,b,match,0.665429949760437,bridgetower,winter2012/e1
+5,axe,landmark,b,b,match,0.7660069465637207,bridgetower,winter2012/e1
+6,beer bottle,landmark,b,b,match,0.8029597997665405,bridgetower,winter2012/e1
+7,guitar,landmark,b,b,match,0.8166598081588745,bridgetower,winter2012/e1
+8,violin,landmark,b,b,match,0.8598961234092712,bridgetower,winter2012/e1
+9,iPod,landmark,b,b,match,0.38329410552978516,bridgetower,winter2012/e1
+10,frisbee,landmark,b,b,match,0.8220295906066895,bridgetower,winter2012/e1
+11,shampoo bottle,landmark,b,b,match,0.22409456968307495,bridgetower,winter2012/e1
+12,briefcase,landmark,b,b,match,0.7797199487686157,bridgetower,winter2012/e1
+13,olive oil,landmark,b,b,match,0.29219505190849304,bridgetower,winter2012/e1
+14,exit sign,landmark,b,b,match,0.9781560897827148,bridgetower,winter2012/e1
+15,microphone,landmark,b,b,match,0.6170690059661865,bridgetower,winter2012/e1
+16,golf ball,landmark,b,b,match,0.7108560800552368,bridgetower,winter2012/e1
+1,fire hydrant,prepositional,b,a,mismatch,0.35300853848457336,bridgetower,winter2012/e1
+2,bike,prepositional,b,a,mismatch,0.1862511932849884,bridgetower,winter2012/e1
+3,bowling ball,prepositional,b,a,mismatch,0.4052726924419403,bridgetower,winter2012/e1
+4,chair,prepositional,b,a,mismatch,0.3655843138694763,bridgetower,winter2012/e1
+5,police car,prepositional,b,a,mismatch,0.43586423993110657,bridgetower,winter2012/e1
+6,racing car,prepositional,b,a,mismatch,0.2897069752216339,bridgetower,winter2012/e1
+7,stop sign,prepositional,b,a,mismatch,0.5299814939498901,bridgetower,winter2012/e1
+8,no-smoking sign,prepositional,b,a,mismatch,0.506659984588623,bridgetower,winter2012/e1
+9,lawn-mower,prepositional,b,a,mismatch,0.6433175206184387,bridgetower,winter2012/e1
+10,basketball,prepositional,b,a,mismatch,0.6768709421157837,bridgetower,winter2012/e1
+11,water dispenser,prepositional,b,a,mismatch,0.8874713182449341,bridgetower,winter2012/e1
+12,Harley Davidson,prepositional,b,a,mismatch,0.221685990691185,bridgetower,winter2012/e1
+13,Coke can,prepositional,b,a,mismatch,0.4393928050994873,bridgetower,winter2012/e1
+14,sunflower,prepositional,b,a,mismatch,0.595640242099762,bridgetower,winter2012/e1
+15,park bench,prepositional,b,a,mismatch,0.306780606508255,bridgetower,winter2012/e1
+16,wheelchair,prepositional,b,a,mismatch,0.360224187374115,bridgetower,winter2012/e1
+1,door,landmark,b,a,mismatch,0.14777420461177826,bridgetower,winter2012/e1
+2,cabinet,landmark,b,a,mismatch,0.16114281117916107,bridgetower,winter2012/e1
+3,bat,landmark,b,a,mismatch,0.6228799819946289,bridgetower,winter2012/e1
+4,milk bottle,landmark,b,a,mismatch,0.3345700800418854,bridgetower,winter2012/e1
+5,axe,landmark,b,a,mismatch,0.2339930683374405,bridgetower,winter2012/e1
+6,beer bottle,landmark,b,a,mismatch,0.19704018533229828,bridgetower,winter2012/e1
+7,guitar,landmark,b,a,mismatch,0.1833401471376419,bridgetower,winter2012/e1
+8,violin,landmark,b,a,mismatch,0.14010396599769592,bridgetower,winter2012/e1
+9,iPod,landmark,b,a,mismatch,0.6167059540748596,bridgetower,winter2012/e1
+10,frisbee,landmark,b,a,mismatch,0.17797037959098816,bridgetower,winter2012/e1
+11,shampoo bottle,landmark,b,a,mismatch,0.7759054899215698,bridgetower,winter2012/e1
+12,briefcase,landmark,b,a,mismatch,0.2202799916267395,bridgetower,winter2012/e1
+13,olive oil,landmark,b,a,mismatch,0.7078049778938293,bridgetower,winter2012/e1
+14,exit sign,landmark,b,a,mismatch,0.021843956783413887,bridgetower,winter2012/e1
+15,microphone,landmark,b,a,mismatch,0.3829309940338135,bridgetower,winter2012/e1
+16,golf ball,landmark,b,a,mismatch,0.2891439199447632,bridgetower,winter2012/e1

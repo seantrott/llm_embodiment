@@ -1,0 +1,49 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,steak,,a,a,match,5.40264633031029e-09,ViT-H-14-no-proj,connell2007
+2,traffic light,,a,a,match,1.0,ViT-H-14-no-proj,connell2007
+3,tomato,,a,a,match,1.0,ViT-H-14-no-proj,connell2007
+4,tree,,a,a,match,1.0,ViT-H-14-no-proj,connell2007
+5,hair,,a,a,match,1.0,ViT-H-14-no-proj,connell2007
+6,bear,,a,a,match,0.7872010469436646,ViT-H-14-no-proj,connell2007
+7,leaf,,a,a,match,1.0,ViT-H-14-no-proj,connell2007
+8,lamb,,a,a,match,8.080872362370428e-07,ViT-H-14-no-proj,connell2007
+9,bananas,,a,a,match,1.0,ViT-H-14-no-proj,connell2007
+10,coffee,,a,a,match,1.9667017113533802e-05,ViT-H-14-no-proj,connell2007
+11,sky,,a,a,match,1.0,ViT-H-14-no-proj,connell2007
+12,chameleon,,a,a,match,1.0,ViT-H-14-no-proj,connell2007
+1,steak,,a,b,mismatch,1.0,ViT-H-14-no-proj,connell2007
+2,traffic light,,a,b,mismatch,2.4052252279026546e-15,ViT-H-14-no-proj,connell2007
+3,tomato,,a,b,mismatch,1.401298464324817e-45,ViT-H-14-no-proj,connell2007
+4,tree,,a,b,mismatch,7.93051822128854e-12,ViT-H-14-no-proj,connell2007
+5,hair,,a,b,mismatch,1.9928606320718245e-08,ViT-H-14-no-proj,connell2007
+6,bear,,a,b,mismatch,0.21279892325401306,ViT-H-14-no-proj,connell2007
+7,leaf,,a,b,mismatch,5.788410989708769e-18,ViT-H-14-no-proj,connell2007
+8,lamb,,a,b,mismatch,0.9999991655349731,ViT-H-14-no-proj,connell2007
+9,bananas,,a,b,mismatch,2.4600084987444914e-24,ViT-H-14-no-proj,connell2007
+10,coffee,,a,b,mismatch,0.9999803304672241,ViT-H-14-no-proj,connell2007
+11,sky,,a,b,mismatch,4.756910991982399e-27,ViT-H-14-no-proj,connell2007
+12,chameleon,,a,b,mismatch,1.6173218189935418e-27,ViT-H-14-no-proj,connell2007
+1,steak,,b,b,match,1.0,ViT-H-14-no-proj,connell2007
+2,traffic light,,b,b,match,1.7976233565933364e-12,ViT-H-14-no-proj,connell2007
+3,tomato,,b,b,match,4.764414778704378e-44,ViT-H-14-no-proj,connell2007
+4,tree,,b,b,match,1.0,ViT-H-14-no-proj,connell2007
+5,hair,,b,b,match,1.8433442706272674e-12,ViT-H-14-no-proj,connell2007
+6,bear,,b,b,match,0.9999959468841553,ViT-H-14-no-proj,connell2007
+7,leaf,,b,b,match,1.2793994593423799e-16,ViT-H-14-no-proj,connell2007
+8,lamb,,b,b,match,0.999996542930603,ViT-H-14-no-proj,connell2007
+9,bananas,,b,b,match,3.9095216924188197e-22,ViT-H-14-no-proj,connell2007
+10,coffee,,b,b,match,0.5325163006782532,ViT-H-14-no-proj,connell2007
+11,sky,,b,b,match,1.0,ViT-H-14-no-proj,connell2007
+12,chameleon,,b,b,match,2.7152950998754477e-09,ViT-H-14-no-proj,connell2007
+1,steak,,b,a,mismatch,7.6901172604317e-15,ViT-H-14-no-proj,connell2007
+2,traffic light,,b,a,mismatch,1.0,ViT-H-14-no-proj,connell2007
+3,tomato,,b,a,mismatch,1.0,ViT-H-14-no-proj,connell2007
+4,tree,,b,a,mismatch,1.8923667594848176e-31,ViT-H-14-no-proj,connell2007
+5,hair,,b,a,mismatch,1.0,ViT-H-14-no-proj,connell2007
+6,bear,,b,a,mismatch,4.073845502716722e-06,ViT-H-14-no-proj,connell2007
+7,leaf,,b,a,mismatch,1.0,ViT-H-14-no-proj,connell2007
+8,lamb,,b,a,mismatch,3.451736802162486e-06,ViT-H-14-no-proj,connell2007
+9,bananas,,b,a,mismatch,1.0,ViT-H-14-no-proj,connell2007
+10,coffee,,b,a,mismatch,0.4674837291240692,ViT-H-14-no-proj,connell2007
+11,sky,,b,a,mismatch,0.0,ViT-H-14-no-proj,connell2007
+12,chameleon,,b,a,mismatch,1.0,ViT-H-14-no-proj,connell2007

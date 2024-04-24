@@ -1,0 +1,241 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+35,airplane,original,a,a,match,0.7894557759214051,bert-large-uncased,pecher2006
+53,apple,original,a,a,match,0.7443652619622573,bert-large-uncased,pecher2006
+1,apple pie,new,a,a,match,0.8034007750097462,bert-large-uncased,pecher2006
+21,avocado,new new,a,a,match,0.7117497992057421,bert-large-uncased,pecher2006
+39,balloon,original,a,a,match,0.7106999559072545,bert-large-uncased,pecher2006
+32,banana,new new,a,a,match,0.7051956098647464,bert-large-uncased,pecher2006
+47,book,original,a,a,match,0.7175906251668627,bert-large-uncased,pecher2006
+40,bread,original,a,a,match,0.8728269307771302,bert-large-uncased,pecher2006
+12,carrot,new,a,a,match,0.7684891898677507,bert-large-uncased,pecher2006
+28,cheesecake,new new,a,a,match,0.6557746526082252,bert-large-uncased,pecher2006
+36,chicken,original,a,a,match,0.802092909529621,bert-large-uncased,pecher2006
+54,cigarette,original,a,a,match,0.8219205909033953,bert-large-uncased,pecher2006
+7,coat,new,a,a,match,0.8829601582016897,bert-large-uncased,pecher2006
+55,corn,original,a,a,match,0.8255560261562924,bert-large-uncased,pecher2006
+18,cucumber,new,a,a,match,0.79199446498654,bert-large-uncased,pecher2006
+56,eagle,original,a,a,match,0.7877118829969454,bert-large-uncased,pecher2006
+41,egg,original,a,a,match,0.7530931911351894,bert-large-uncased,pecher2006
+48,fish,original,a,a,match,0.761014863495026,bert-large-uncased,pecher2006
+22,frog,new new,a,a,match,0.7340899301528417,bert-large-uncased,pecher2006
+13,garbage bag,new,a,a,match,0.6666076191838349,bert-large-uncased,pecher2006
+14,goose,new,a,a,match,0.7427948416755108,bert-large-uncased,pecher2006
+37,hockey,original,a,a,match,0.7951566062913461,bert-large-uncased,pecher2006
+2,horse,new,a,a,match,0.7873736730075593,bert-large-uncased,pecher2006
+29,hose,new new,a,a,match,0.7965156073856146,bert-large-uncased,pecher2006
+15,ice,new,a,a,match,0.6933936994497106,bert-large-uncased,pecher2006
+33,ketchup,new new,a,a,match,0.8227608520410513,bert-large-uncased,pecher2006
+19,lamp,new,a,a,match,0.5967293605768342,bert-large-uncased,pecher2006
+49,lemon,original,a,a,match,0.7283603516798051,bert-large-uncased,pecher2006
+38,lime,original,a,a,match,0.7337103747551599,bert-large-uncased,pecher2006
+57,lobster,original,a,a,match,0.739834185960828,bert-large-uncased,pecher2006
+20,map,new,a,a,match,0.8827084233976711,bert-large-uncased,pecher2006
+8,match,new,a,a,match,0.8476949277424891,bert-large-uncased,pecher2006
+42,mushroom,original,a,a,match,0.6228674593429624,bert-large-uncased,pecher2006
+43,newspaper,original,a,a,match,0.8695944229007084,bert-large-uncased,pecher2006
+50,onion,original,a,a,match,0.7672915240289275,bert-large-uncased,pecher2006
+9,owl,new,a,a,match,0.5389045270145951,bert-large-uncased,pecher2006
+23,paint,new new,a,a,match,0.8402214428117752,bert-large-uncased,pecher2006
+44,pineapple,original,a,a,match,0.7146036782149298,bert-large-uncased,pecher2006
+10,pumpkin,new,a,a,match,0.7141559520092619,bert-large-uncased,pecher2006
+45,sailboat,original,a,a,match,0.6834510066051139,bert-large-uncased,pecher2006
+3,scarf,new,a,a,match,0.8424631493369118,bert-large-uncased,pecher2006
+58,shirt,original,a,a,match,0.8628949149097489,bert-large-uncased,pecher2006
+4,shoelace,new,a,a,match,0.8728398190135518,bert-large-uncased,pecher2006
+30,soap,new new,a,a,match,0.793676471240877,bert-large-uncased,pecher2006
+59,spaghetti,original,a,a,match,0.8232377101503141,bert-large-uncased,pecher2006
+11,squid,new,a,a,match,0.7764073852351067,bert-large-uncased,pecher2006
+5,staple,new,a,a,match,0.8008173489505473,bert-large-uncased,pecher2006
+26,sugar,new new,a,a,match,0.8763981025617833,bert-large-uncased,pecher2006
+16,swiss knife,new,a,a,match,0.8405083161670412,bert-large-uncased,pecher2006
+31,tape,new new,a,a,match,0.8920669043107424,bert-large-uncased,pecher2006
+27,tinfoil,new new,a,a,match,0.8859739804625404,bert-large-uncased,pecher2006
+60,tissue,original,a,a,match,0.7942276318947546,bert-large-uncased,pecher2006
+46,tomato,original,a,a,match,0.7744180734980592,bert-large-uncased,pecher2006
+51,towel,original,a,a,match,0.853537707039074,bert-large-uncased,pecher2006
+17,umbrella,new,a,a,match,0.8318472348940881,bert-large-uncased,pecher2006
+24,walnut,new new,a,a,match,0.8120352782307758,bert-large-uncased,pecher2006
+52,watermelon,original,a,a,match,0.6934549905308233,bert-large-uncased,pecher2006
+6,wheat,new,a,a,match,0.9095273036134328,bert-large-uncased,pecher2006
+34,wool,new new,a,a,match,0.8039412196712736,bert-large-uncased,pecher2006
+25,zodiac,new new,a,a,match,0.7004821393113796,bert-large-uncased,pecher2006
+35,airplane,original,a,b,mismatch,0.738287357118513,bert-large-uncased,pecher2006
+53,apple,original,a,b,mismatch,0.6897687967708002,bert-large-uncased,pecher2006
+1,apple pie,new,a,b,mismatch,0.7674767772289431,bert-large-uncased,pecher2006
+21,avocado,new new,a,b,mismatch,0.8953261574963789,bert-large-uncased,pecher2006
+39,balloon,original,a,b,mismatch,0.7976458328045068,bert-large-uncased,pecher2006
+32,banana,new new,a,b,mismatch,0.6365320049616608,bert-large-uncased,pecher2006
+47,book,original,a,b,mismatch,0.7899381229145962,bert-large-uncased,pecher2006
+40,bread,original,a,b,mismatch,0.8351867003247744,bert-large-uncased,pecher2006
+12,carrot,new,a,b,mismatch,0.7213612868007798,bert-large-uncased,pecher2006
+28,cheesecake,new new,a,b,mismatch,0.751051684090864,bert-large-uncased,pecher2006
+36,chicken,original,a,b,mismatch,0.6988770235376036,bert-large-uncased,pecher2006
+54,cigarette,original,a,b,mismatch,0.7991679890381574,bert-large-uncased,pecher2006
+7,coat,new,a,b,mismatch,0.8119219942632714,bert-large-uncased,pecher2006
+55,corn,original,a,b,mismatch,0.8609018475967415,bert-large-uncased,pecher2006
+18,cucumber,new,a,b,mismatch,0.7053593000922194,bert-large-uncased,pecher2006
+56,eagle,original,a,b,mismatch,0.8194243315294124,bert-large-uncased,pecher2006
+41,egg,original,a,b,mismatch,0.8027545264664746,bert-large-uncased,pecher2006
+48,fish,original,a,b,mismatch,0.7405809180129643,bert-large-uncased,pecher2006
+22,frog,new new,a,b,mismatch,0.7294321040880684,bert-large-uncased,pecher2006
+13,garbage bag,new,a,b,mismatch,0.6859003193109571,bert-large-uncased,pecher2006
+14,goose,new,a,b,mismatch,0.7592327376387521,bert-large-uncased,pecher2006
+37,hockey,original,a,b,mismatch,0.7667196936258873,bert-large-uncased,pecher2006
+2,horse,new,a,b,mismatch,0.8122026509041795,bert-large-uncased,pecher2006
+29,hose,new new,a,b,mismatch,0.680317835779622,bert-large-uncased,pecher2006
+15,ice,new,a,b,mismatch,0.6709990918326573,bert-large-uncased,pecher2006
+33,ketchup,new new,a,b,mismatch,0.7252933234463527,bert-large-uncased,pecher2006
+19,lamp,new,a,b,mismatch,0.69398829915215,bert-large-uncased,pecher2006
+49,lemon,original,a,b,mismatch,0.6363149529827642,bert-large-uncased,pecher2006
+38,lime,original,a,b,mismatch,0.2551010603345879,bert-large-uncased,pecher2006
+57,lobster,original,a,b,mismatch,0.7806376050813036,bert-large-uncased,pecher2006
+20,map,new,a,b,mismatch,0.8421164501821584,bert-large-uncased,pecher2006
+8,match,new,a,b,mismatch,0.5070625311203645,bert-large-uncased,pecher2006
+42,mushroom,original,a,b,mismatch,0.5938597410372595,bert-large-uncased,pecher2006
+43,newspaper,original,a,b,mismatch,0.8263281273437535,bert-large-uncased,pecher2006
+50,onion,original,a,b,mismatch,0.6879720549714486,bert-large-uncased,pecher2006
+9,owl,new,a,b,mismatch,0.5790050302245721,bert-large-uncased,pecher2006
+23,paint,new new,a,b,mismatch,0.6553822106475597,bert-large-uncased,pecher2006
+44,pineapple,original,a,b,mismatch,0.7907850784067926,bert-large-uncased,pecher2006
+10,pumpkin,new,a,b,mismatch,0.504883407769979,bert-large-uncased,pecher2006
+45,sailboat,original,a,b,mismatch,0.641752383874502,bert-large-uncased,pecher2006
+3,scarf,new,a,b,mismatch,0.7994142254413692,bert-large-uncased,pecher2006
+58,shirt,original,a,b,mismatch,0.8539057023182434,bert-large-uncased,pecher2006
+4,shoelace,new,a,b,mismatch,0.8383971769035583,bert-large-uncased,pecher2006
+30,soap,new new,a,b,mismatch,0.8407143925244345,bert-large-uncased,pecher2006
+59,spaghetti,original,a,b,mismatch,0.7974709737601928,bert-large-uncased,pecher2006
+11,squid,new,a,b,mismatch,0.7836920628065005,bert-large-uncased,pecher2006
+5,staple,new,a,b,mismatch,0.6590135710638539,bert-large-uncased,pecher2006
+26,sugar,new new,a,b,mismatch,0.8579202980967571,bert-large-uncased,pecher2006
+16,swiss knife,new,a,b,mismatch,0.8712153902461337,bert-large-uncased,pecher2006
+31,tape,new new,a,b,mismatch,0.7894554773727934,bert-large-uncased,pecher2006
+27,tinfoil,new new,a,b,mismatch,0.8563735080473511,bert-large-uncased,pecher2006
+60,tissue,original,a,b,mismatch,0.8611590181053573,bert-large-uncased,pecher2006
+46,tomato,original,a,b,mismatch,0.7448631981044957,bert-large-uncased,pecher2006
+51,towel,original,a,b,mismatch,0.8731787490168748,bert-large-uncased,pecher2006
+17,umbrella,new,a,b,mismatch,0.8822494711757249,bert-large-uncased,pecher2006
+24,walnut,new new,a,b,mismatch,0.6226440529815176,bert-large-uncased,pecher2006
+52,watermelon,original,a,b,mismatch,0.5913355751341589,bert-large-uncased,pecher2006
+6,wheat,new,a,b,mismatch,0.8458216876752073,bert-large-uncased,pecher2006
+34,wool,new new,a,b,mismatch,0.8029163048174855,bert-large-uncased,pecher2006
+25,zodiac,new new,a,b,mismatch,0.8160661539699265,bert-large-uncased,pecher2006
+35,airplane,original,b,b,match,0.6507398421917916,bert-large-uncased,pecher2006
+53,apple,original,b,b,match,0.798145990972025,bert-large-uncased,pecher2006
+1,apple pie,new,b,b,match,0.7756012221819819,bert-large-uncased,pecher2006
+21,avocado,new new,b,b,match,0.7551838415171086,bert-large-uncased,pecher2006
+39,balloon,original,b,b,match,0.8614840692001634,bert-large-uncased,pecher2006
+32,banana,new new,b,b,match,0.7902685722236522,bert-large-uncased,pecher2006
+47,book,original,b,b,match,0.8656653080890971,bert-large-uncased,pecher2006
+40,bread,original,b,b,match,0.8442439936925771,bert-large-uncased,pecher2006
+12,carrot,new,b,b,match,0.6910301067965471,bert-large-uncased,pecher2006
+28,cheesecake,new new,b,b,match,0.7957026198458342,bert-large-uncased,pecher2006
+36,chicken,original,b,b,match,0.7461226010193064,bert-large-uncased,pecher2006
+54,cigarette,original,b,b,match,0.831226508230613,bert-large-uncased,pecher2006
+7,coat,new,b,b,match,0.8413095682700664,bert-large-uncased,pecher2006
+55,corn,original,b,b,match,0.8581029043746237,bert-large-uncased,pecher2006
+18,cucumber,new,b,b,match,0.7872723173136614,bert-large-uncased,pecher2006
+56,eagle,original,b,b,match,0.8173875560850135,bert-large-uncased,pecher2006
+41,egg,original,b,b,match,0.822642060463487,bert-large-uncased,pecher2006
+48,fish,original,b,b,match,0.6118675581880797,bert-large-uncased,pecher2006
+22,frog,new new,b,b,match,0.8147989652476794,bert-large-uncased,pecher2006
+13,garbage bag,new,b,b,match,0.9231931888912154,bert-large-uncased,pecher2006
+14,goose,new,b,b,match,0.8223034568151272,bert-large-uncased,pecher2006
+37,hockey,original,b,b,match,0.8151591446076223,bert-large-uncased,pecher2006
+2,horse,new,b,b,match,0.7634557085701775,bert-large-uncased,pecher2006
+29,hose,new new,b,b,match,0.7435290187491514,bert-large-uncased,pecher2006
+15,ice,new,b,b,match,0.7672260530245579,bert-large-uncased,pecher2006
+33,ketchup,new new,b,b,match,0.7617597187793423,bert-large-uncased,pecher2006
+19,lamp,new,b,b,match,0.7378554858490386,bert-large-uncased,pecher2006
+49,lemon,original,b,b,match,0.7836056305537203,bert-large-uncased,pecher2006
+38,lime,original,b,b,match,0.4974010785193401,bert-large-uncased,pecher2006
+57,lobster,original,b,b,match,0.8162428418092993,bert-large-uncased,pecher2006
+20,map,new,b,b,match,0.8499104873921551,bert-large-uncased,pecher2006
+8,match,new,b,b,match,0.5285359106587985,bert-large-uncased,pecher2006
+42,mushroom,original,b,b,match,0.7274977763496875,bert-large-uncased,pecher2006
+43,newspaper,original,b,b,match,0.7049076812631145,bert-large-uncased,pecher2006
+50,onion,original,b,b,match,0.8292527334464274,bert-large-uncased,pecher2006
+9,owl,new,b,b,match,0.7258676776658527,bert-large-uncased,pecher2006
+23,paint,new new,b,b,match,0.7906020390155895,bert-large-uncased,pecher2006
+44,pineapple,original,b,b,match,0.8138626390686308,bert-large-uncased,pecher2006
+10,pumpkin,new,b,b,match,0.5333920222418362,bert-large-uncased,pecher2006
+45,sailboat,original,b,b,match,0.7735238487033786,bert-large-uncased,pecher2006
+3,scarf,new,b,b,match,0.8313490518120452,bert-large-uncased,pecher2006
+58,shirt,original,b,b,match,0.7955684569104062,bert-large-uncased,pecher2006
+4,shoelace,new,b,b,match,0.8953991492725686,bert-large-uncased,pecher2006
+30,soap,new new,b,b,match,0.8916488863801261,bert-large-uncased,pecher2006
+59,spaghetti,original,b,b,match,0.8230727579185202,bert-large-uncased,pecher2006
+11,squid,new,b,b,match,0.8287666867562741,bert-large-uncased,pecher2006
+5,staple,new,b,b,match,0.5365590639879113,bert-large-uncased,pecher2006
+26,sugar,new new,b,b,match,0.8402792647436148,bert-large-uncased,pecher2006
+16,swiss knife,new,b,b,match,0.9082180808671978,bert-large-uncased,pecher2006
+31,tape,new new,b,b,match,0.8350198147069053,bert-large-uncased,pecher2006
+27,tinfoil,new new,b,b,match,0.8672504883468365,bert-large-uncased,pecher2006
+60,tissue,original,b,b,match,0.8496964817903888,bert-large-uncased,pecher2006
+46,tomato,original,b,b,match,0.7457309169738799,bert-large-uncased,pecher2006
+51,towel,original,b,b,match,0.8804087925768288,bert-large-uncased,pecher2006
+17,umbrella,new,b,b,match,0.8348885843541795,bert-large-uncased,pecher2006
+24,walnut,new new,b,b,match,0.5852082435919885,bert-large-uncased,pecher2006
+52,watermelon,original,b,b,match,0.697802244939932,bert-large-uncased,pecher2006
+6,wheat,new,b,b,match,0.7878053177554573,bert-large-uncased,pecher2006
+34,wool,new new,b,b,match,0.7748567220831899,bert-large-uncased,pecher2006
+25,zodiac,new new,b,b,match,0.7769099139247665,bert-large-uncased,pecher2006
+35,airplane,original,b,a,mismatch,0.748393464108026,bert-large-uncased,pecher2006
+53,apple,original,b,a,mismatch,0.8051859922531568,bert-large-uncased,pecher2006
+1,apple pie,new,b,a,mismatch,0.8170680483846839,bert-large-uncased,pecher2006
+21,avocado,new new,b,a,mismatch,0.7451553327020375,bert-large-uncased,pecher2006
+39,balloon,original,b,a,mismatch,0.7174617299133988,bert-large-uncased,pecher2006
+32,banana,new new,b,a,mismatch,0.8060497292667869,bert-large-uncased,pecher2006
+47,book,original,b,a,mismatch,0.7910764914153695,bert-large-uncased,pecher2006
+40,bread,original,b,a,mismatch,0.8625557736464029,bert-large-uncased,pecher2006
+12,carrot,new,b,a,mismatch,0.74879483278934,bert-large-uncased,pecher2006
+28,cheesecake,new new,b,a,mismatch,0.7228863544368197,bert-large-uncased,pecher2006
+36,chicken,original,b,a,mismatch,0.7536916622314427,bert-large-uncased,pecher2006
+54,cigarette,original,b,a,mismatch,0.8641950278964777,bert-large-uncased,pecher2006
+7,coat,new,b,a,mismatch,0.8033102156692855,bert-large-uncased,pecher2006
+55,corn,original,b,a,mismatch,0.8364395643054314,bert-large-uncased,pecher2006
+18,cucumber,new,b,a,mismatch,0.7903637928492753,bert-large-uncased,pecher2006
+56,eagle,original,b,a,mismatch,0.774777600701518,bert-large-uncased,pecher2006
+41,egg,original,b,a,mismatch,0.7619580351482966,bert-large-uncased,pecher2006
+48,fish,original,b,a,mismatch,0.731889710124483,bert-large-uncased,pecher2006
+22,frog,new new,b,a,mismatch,0.8000475913429809,bert-large-uncased,pecher2006
+13,garbage bag,new,b,a,mismatch,0.9084040749797385,bert-large-uncased,pecher2006
+14,goose,new,b,a,mismatch,0.7897022234088835,bert-large-uncased,pecher2006
+37,hockey,original,b,a,mismatch,0.8015970596923199,bert-large-uncased,pecher2006
+2,horse,new,b,a,mismatch,0.7641761621842251,bert-large-uncased,pecher2006
+29,hose,new new,b,a,mismatch,0.8458783861658075,bert-large-uncased,pecher2006
+15,ice,new,b,a,mismatch,0.7268261894720265,bert-large-uncased,pecher2006
+33,ketchup,new new,b,a,mismatch,0.8346461180325903,bert-large-uncased,pecher2006
+19,lamp,new,b,a,mismatch,0.5210247447895503,bert-large-uncased,pecher2006
+49,lemon,original,b,a,mismatch,0.8313919400373976,bert-large-uncased,pecher2006
+38,lime,original,b,a,mismatch,0.8449373111867797,bert-large-uncased,pecher2006
+57,lobster,original,b,a,mismatch,0.8308158076674991,bert-large-uncased,pecher2006
+20,map,new,b,a,mismatch,0.7879089791308747,bert-large-uncased,pecher2006
+8,match,new,b,a,mismatch,0.8225736071108771,bert-large-uncased,pecher2006
+42,mushroom,original,b,a,mismatch,0.7378225199444378,bert-large-uncased,pecher2006
+43,newspaper,original,b,a,mismatch,0.7215002131620428,bert-large-uncased,pecher2006
+50,onion,original,b,a,mismatch,0.8429324097139934,bert-large-uncased,pecher2006
+9,owl,new,b,a,mismatch,0.6817714688261153,bert-large-uncased,pecher2006
+23,paint,new new,b,a,mismatch,0.8382593665749275,bert-large-uncased,pecher2006
+44,pineapple,original,b,a,mismatch,0.7360920431574762,bert-large-uncased,pecher2006
+10,pumpkin,new,b,a,mismatch,0.7620382913879631,bert-large-uncased,pecher2006
+45,sailboat,original,b,a,mismatch,0.7739212497754161,bert-large-uncased,pecher2006
+3,scarf,new,b,a,mismatch,0.814900742482674,bert-large-uncased,pecher2006
+58,shirt,original,b,a,mismatch,0.8104224590681053,bert-large-uncased,pecher2006
+4,shoelace,new,b,a,mismatch,0.9069527297744839,bert-large-uncased,pecher2006
+30,soap,new new,b,a,mismatch,0.823849128554433,bert-large-uncased,pecher2006
+59,spaghetti,original,b,a,mismatch,0.847965320934092,bert-large-uncased,pecher2006
+11,squid,new,b,a,mismatch,0.7062364272833198,bert-large-uncased,pecher2006
+5,staple,new,b,a,mismatch,0.721434221684861,bert-large-uncased,pecher2006
+26,sugar,new new,b,a,mismatch,0.8449406679718927,bert-large-uncased,pecher2006
+16,swiss knife,new,b,a,mismatch,0.8457594453245942,bert-large-uncased,pecher2006
+31,tape,new new,b,a,mismatch,0.9170274820773587,bert-large-uncased,pecher2006
+27,tinfoil,new new,b,a,mismatch,0.8451857548786529,bert-large-uncased,pecher2006
+60,tissue,original,b,a,mismatch,0.7550200210077151,bert-large-uncased,pecher2006
+46,tomato,original,b,a,mismatch,0.7482233684235361,bert-large-uncased,pecher2006
+51,towel,original,b,a,mismatch,0.7886172393442175,bert-large-uncased,pecher2006
+17,umbrella,new,b,a,mismatch,0.8166838637614209,bert-large-uncased,pecher2006
+24,walnut,new new,b,a,mismatch,0.7719556380870304,bert-large-uncased,pecher2006
+52,watermelon,original,b,a,mismatch,0.6775743680959505,bert-large-uncased,pecher2006
+6,wheat,new,b,a,mismatch,0.7990476531143929,bert-large-uncased,pecher2006
+34,wool,new new,b,a,mismatch,0.8081655330242892,bert-large-uncased,pecher2006
+25,zodiac,new new,b,a,mismatch,0.6248946501638633,bert-large-uncased,pecher2006

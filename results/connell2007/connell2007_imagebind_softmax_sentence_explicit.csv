@@ -1,0 +1,49 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,steak,,a,a,match,2.2618623418679817e-08,imagebind,connell2007
+2,traffic light,,a,a,match,1.0,imagebind,connell2007
+3,tomato,,a,a,match,1.0,imagebind,connell2007
+4,tree,,a,a,match,1.0,imagebind,connell2007
+5,hair,,a,a,match,1.0,imagebind,connell2007
+6,bear,,a,a,match,1.0,imagebind,connell2007
+7,leaf,,a,a,match,1.0,imagebind,connell2007
+8,lamb,,a,a,match,0.0,imagebind,connell2007
+9,bananas,,a,a,match,1.0,imagebind,connell2007
+10,coffee,,a,a,match,7.372620642264695e-28,imagebind,connell2007
+11,sky,,a,a,match,1.0,imagebind,connell2007
+12,chameleon,,a,a,match,1.0,imagebind,connell2007
+1,steak,,a,b,mismatch,1.0,imagebind,connell2007
+2,traffic light,,a,b,mismatch,0.0,imagebind,connell2007
+3,tomato,,a,b,mismatch,0.0,imagebind,connell2007
+4,tree,,a,b,mismatch,0.0,imagebind,connell2007
+5,hair,,a,b,mismatch,0.0,imagebind,connell2007
+6,bear,,a,b,mismatch,3.0000523930656904e-36,imagebind,connell2007
+7,leaf,,a,b,mismatch,0.0,imagebind,connell2007
+8,lamb,,a,b,mismatch,1.0,imagebind,connell2007
+9,bananas,,a,b,mismatch,0.0,imagebind,connell2007
+10,coffee,,a,b,mismatch,1.0,imagebind,connell2007
+11,sky,,a,b,mismatch,0.0,imagebind,connell2007
+12,chameleon,,a,b,mismatch,0.0,imagebind,connell2007
+1,steak,,b,b,match,1.0,imagebind,connell2007
+2,traffic light,,b,b,match,0.0,imagebind,connell2007
+3,tomato,,b,b,match,0.0,imagebind,connell2007
+4,tree,,b,b,match,1.0,imagebind,connell2007
+5,hair,,b,b,match,0.0,imagebind,connell2007
+6,bear,,b,b,match,1.0,imagebind,connell2007
+7,leaf,,b,b,match,0.0,imagebind,connell2007
+8,lamb,,b,b,match,1.0,imagebind,connell2007
+9,bananas,,b,b,match,0.0,imagebind,connell2007
+10,coffee,,b,b,match,0.11182180792093277,imagebind,connell2007
+11,sky,,b,b,match,1.0,imagebind,connell2007
+12,chameleon,,b,b,match,0.0,imagebind,connell2007
+1,steak,,b,a,mismatch,0.0,imagebind,connell2007
+2,traffic light,,b,a,mismatch,1.0,imagebind,connell2007
+3,tomato,,b,a,mismatch,1.0,imagebind,connell2007
+4,tree,,b,a,mismatch,0.0,imagebind,connell2007
+5,hair,,b,a,mismatch,1.0,imagebind,connell2007
+6,bear,,b,a,mismatch,4.0489694200443767e-26,imagebind,connell2007
+7,leaf,,b,a,mismatch,1.0,imagebind,connell2007
+8,lamb,,b,a,mismatch,0.0,imagebind,connell2007
+9,bananas,,b,a,mismatch,1.0,imagebind,connell2007
+10,coffee,,b,a,mismatch,0.8881781101226807,imagebind,connell2007
+11,sky,,b,a,mismatch,0.0,imagebind,connell2007
+12,chameleon,,b,a,mismatch,1.0,imagebind,connell2007

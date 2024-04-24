@@ -1,0 +1,49 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,steak,,a,a,match,0.16387802362442017,bridgetower,connell2007
+2,traffic light,,a,a,match,0.39304119348526,bridgetower,connell2007
+3,tomato,,a,a,match,0.688223123550415,bridgetower,connell2007
+4,tree,,a,a,match,0.3961455225944519,bridgetower,connell2007
+5,hair,,a,a,match,0.573451817035675,bridgetower,connell2007
+6,bear,,a,a,match,0.28525665402412415,bridgetower,connell2007
+7,leaf,,a,a,match,0.6111170649528503,bridgetower,connell2007
+8,lamb,,a,a,match,0.7466686964035034,bridgetower,connell2007
+9,bananas,,a,a,match,0.5550772547721863,bridgetower,connell2007
+10,coffee,,a,a,match,0.49477189779281616,bridgetower,connell2007
+11,sky,,a,a,match,0.8949882984161377,bridgetower,connell2007
+12,chameleon,,a,a,match,0.6342687010765076,bridgetower,connell2007
+1,steak,,a,b,mismatch,0.8361219763755798,bridgetower,connell2007
+2,traffic light,,a,b,mismatch,0.60695880651474,bridgetower,connell2007
+3,tomato,,a,b,mismatch,0.3117768466472626,bridgetower,connell2007
+4,tree,,a,b,mismatch,0.6038544178009033,bridgetower,connell2007
+5,hair,,a,b,mismatch,0.42654821276664734,bridgetower,connell2007
+6,bear,,a,b,mismatch,0.7147433161735535,bridgetower,connell2007
+7,leaf,,a,b,mismatch,0.38888299465179443,bridgetower,connell2007
+8,lamb,,a,b,mismatch,0.2533312737941742,bridgetower,connell2007
+9,bananas,,a,b,mismatch,0.44492271542549133,bridgetower,connell2007
+10,coffee,,a,b,mismatch,0.5052281022071838,bridgetower,connell2007
+11,sky,,a,b,mismatch,0.10501167923212051,bridgetower,connell2007
+12,chameleon,,a,b,mismatch,0.36573129892349243,bridgetower,connell2007
+1,steak,,b,b,match,0.8774583339691162,bridgetower,connell2007
+2,traffic light,,b,b,match,0.5960884094238281,bridgetower,connell2007
+3,tomato,,b,b,match,0.3062400221824646,bridgetower,connell2007
+4,tree,,b,b,match,0.9890199303627014,bridgetower,connell2007
+5,hair,,b,b,match,0.4019586741924286,bridgetower,connell2007
+6,bear,,b,b,match,0.5204759836196899,bridgetower,connell2007
+7,leaf,,b,b,match,0.3886170983314514,bridgetower,connell2007
+8,lamb,,b,b,match,0.2647043466567993,bridgetower,connell2007
+9,bananas,,b,b,match,0.43075016140937805,bridgetower,connell2007
+10,coffee,,b,b,match,0.5333372950553894,bridgetower,connell2007
+11,sky,,b,b,match,0.3270368278026581,bridgetower,connell2007
+12,chameleon,,b,b,match,0.4645503759384155,bridgetower,connell2007
+1,steak,,b,a,mismatch,0.12254167348146439,bridgetower,connell2007
+2,traffic light,,b,a,mismatch,0.40391162037849426,bridgetower,connell2007
+3,tomato,,b,a,mismatch,0.6937599778175354,bridgetower,connell2007
+4,tree,,b,a,mismatch,0.010980048216879368,bridgetower,connell2007
+5,hair,,b,a,mismatch,0.598041296005249,bridgetower,connell2007
+6,bear,,b,a,mismatch,0.47952404618263245,bridgetower,connell2007
+7,leaf,,b,a,mismatch,0.6113829016685486,bridgetower,connell2007
+8,lamb,,b,a,mismatch,0.7352956533432007,bridgetower,connell2007
+9,bananas,,b,a,mismatch,0.5692498683929443,bridgetower,connell2007
+10,coffee,,b,a,mismatch,0.4666627049446106,bridgetower,connell2007
+11,sky,,b,a,mismatch,0.6729631423950195,bridgetower,connell2007
+12,chameleon,,b,a,mismatch,0.5354495644569397,bridgetower,connell2007

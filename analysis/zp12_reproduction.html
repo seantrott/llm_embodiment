@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Cameron Jones" />
+<meta name="author" content="Anonymous" />
 
 
 <title>Reproduction of Zwaan &amp; Pecher 2012 using LMEs</title>
@@ -1676,7 +1676,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Reproduction of Zwaan &amp; Pecher 2012
 using LMEs</h1>
-<h4 class="author">Cameron Jones</h4>
+<h4 class="author">Anonymous</h4>
 <h4 class="date">29/11/2023</h4>
 
 </div>
@@ -1746,8 +1746,8 @@ using LMEs</h1>
 <pre><code>## # A tibble: 2 × 2
 ##   match       rt
 ##   &lt;chr&gt;    &lt;dbl&gt;
-## 1 Match    0.931
-## 2 Mismatch 0.964</code></pre>
+## 1 match    0.932
+## 2 mismatch 0.961</code></pre>
 </div>
 <div id="anova" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> ANOVA</h2>
@@ -1765,12 +1765,12 @@ using LMEs</h1>
 <pre><code>## 
 ## Error: factor(ppt_id)
 ##            Df Sum Sq Mean Sq F value Pr(&gt;F)
-## Residuals 163  34.31  0.2105               
+## Residuals 163  35.86    0.22               
 ## 
 ## Error: Within
 ##            Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## match       1 0.0891 0.08908   5.548 0.0197 *
-## Residuals 163 2.6174 0.01606                 
+## match       1  0.070 0.07001   3.688 0.0566 .
+## Residuals 163  3.094 0.01898                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -1793,9 +1793,9 @@ using LMEs</h1>
 ## Models:
 ## m.e1a.base: rt ~ 1 + (1 | ppt_id) + (1 | object)
 ## m.e1a: rt ~ match + (1 | ppt_id) + (1 | object)
-##            npar    AIC    BIC logLik deviance  Chisq Df Pr(&gt;Chisq)  
-## m.e1a.base    4 3122.1 3147.0  -1557   3114.1                       
-## m.e1a         5 3119.9 3151.1  -1555   3109.9 4.1108  1    0.04261 *
+##            npar    AIC    BIC  logLik deviance  Chisq Df Pr(&gt;Chisq)  
+## m.e1a.base    4 3034.5 3059.3 -1513.3   3026.5                       
+## m.e1a         5 3032.5 3063.5 -1511.3   3022.5 3.9684  1    0.04636 *
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e1a)</span></code></pre></div>
@@ -1805,29 +1805,29 @@ using LMEs</h1>
 ##    Data: e1a.clean
 ## 
 ##      AIC      BIC   logLik deviance df.resid 
-##   3119.9   3151.1  -1555.0   3109.9     3762 
+##   3032.5   3063.5  -1511.3   3022.5     3605 
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -2.8597 -0.5930 -0.1716  0.3578  6.1251 
+## -2.9612 -0.5931 -0.1708  0.3564  6.1563 
 ## 
 ## Random effects:
 ##  Groups   Name        Variance Std.Dev.
-##  ppt_id   (Intercept) 0.076552 0.27668 
-##  object   (Intercept) 0.005258 0.07251 
-##  Residual             0.116974 0.34201 
-## Number of obs: 3767, groups:  ppt_id, 164; object, 24
+##  ppt_id   (Intercept) 0.077684 0.27872 
+##  object   (Intercept) 0.005233 0.07234 
+##  Residual             0.117922 0.34340 
+## Number of obs: 3610, groups:  ppt_id, 164; object, 23
 ## 
 ## Fixed effects:
 ##                Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)   9.840e-01  2.735e-02 1.324e+02  35.980   &lt;2e-16 ***
-## matchMismatch 2.263e-02  1.116e-02 3.579e+03   2.028   0.0426 *  
+## (Intercept)   9.804e-01  2.769e-02 1.268e+02  35.411   &lt;2e-16 ***
+## matchmismatch 2.283e-02  1.146e-02 3.424e+03   1.993   0.0464 *  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## matchMsmtch -0.203</code></pre>
+## matchmsmtch -0.206</code></pre>
 </div>
 </div>
 <div id="experiment-1b" class="section level1" number="3">
@@ -1836,7 +1836,7 @@ using LMEs</h1>
 <h2><span class="header-section-number">3.1</span> Descriptive</h2>
 <p>Note, 1 fewer than ZP, appears to be due to language filtering</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(e1b<span class="sc">$</span>ppt_id)</span></code></pre></div>
-<pre><code>## [1] 171</code></pre>
+<pre><code>## [1] 172</code></pre>
 <p>Median rt matches values in paper</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>e1b.correct <span class="ot">&lt;-</span> e1b <span class="sc">%&gt;%</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(accuracy <span class="sc">==</span> <span class="dv">1</span>)</span>
@@ -1855,8 +1855,8 @@ using LMEs</h1>
 <pre><code>## # A tibble: 2 × 2
 ##   match       rt
 ##   &lt;chr&gt;    &lt;dbl&gt;
-## 1 Match    0.988
-## 2 Mismatch 1.02</code></pre>
+## 1 match    0.987
+## 2 mismatch 1.02</code></pre>
 </div>
 <div id="anova-1" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> ANOVA</h2>
@@ -1874,12 +1874,12 @@ using LMEs</h1>
 <pre><code>## 
 ## Error: factor(ppt_id)
 ##            Df Sum Sq Mean Sq F value Pr(&gt;F)
-## Residuals 170   53.5  0.3147               
+## Residuals 171  54.67  0.3197               
 ## 
 ## Error: Within
 ##            Df Sum Sq Mean Sq F value Pr(&gt;F)  
-## match       1 0.1153 0.11534   6.514 0.0116 *
-## Residuals 170 3.0099 0.01771                 
+## match       1 0.0923 0.09227   5.833 0.0168 *
+## Residuals 171 2.7052 0.01582                 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -1902,9 +1902,9 @@ using LMEs</h1>
 ## Models:
 ## m.e1b.base: rt ~ 1 + (1 | ppt_id) + (1 | object)
 ## m.e1b: rt ~ match + (1 | ppt_id) + (1 | object)
-##            npar    AIC    BIC  logLik deviance  Chisq Df Pr(&gt;Chisq)   
-## m.e1b.base    4 3670.7 3695.7 -1831.3   3662.7                        
-## m.e1b         5 3665.9 3697.2 -1828.0   3655.9 6.7669  1   0.009286 **
+##            npar    AIC    BIC  logLik deviance Chisq Df Pr(&gt;Chisq)  
+## m.e1b.base    4 3623.2 3648.1 -1807.6   3615.2                      
+## m.e1b         5 3619.3 3650.5 -1804.7   3609.3 5.884  1    0.01528 *
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e1b)</span></code></pre></div>
@@ -1914,29 +1914,29 @@ using LMEs</h1>
 ##    Data: e1b.clean
 ## 
 ##      AIC      BIC   logLik deviance df.resid 
-##   3665.9   3697.2  -1828.0   3655.9     3880 
+##   3619.3   3650.5  -1804.7   3609.3     3737 
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -3.1143 -0.6061 -0.1589  0.3707  5.3816 
+## -3.0867 -0.5977 -0.1600  0.3659  5.2936 
 ## 
 ## Random effects:
 ##  Groups   Name        Variance Std.Dev.
-##  ppt_id   (Intercept) 0.074813 0.27352 
-##  object   (Intercept) 0.006532 0.08082 
-##  Residual             0.131949 0.36325 
-## Number of obs: 3885, groups:  ppt_id, 171; object, 24
+##  ppt_id   (Intercept) 0.074411 0.27278 
+##  object   (Intercept) 0.006638 0.08147 
+##  Residual             0.134812 0.36717 
+## Number of obs: 3742, groups:  ppt_id, 172; object, 23
 ## 
 ## Fixed effects:
 ##                Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)   1.028e+00  2.791e-02 1.121e+02  36.845  &lt; 2e-16 ***
-## matchMismatch 3.037e-02  1.167e-02 3.681e+03   2.603  0.00929 ** 
+## (Intercept)   1.027e+00  2.819e-02 1.038e+02  36.418   &lt;2e-16 ***
+## matchmismatch 2.919e-02  1.203e-02 3.539e+03   2.427   0.0153 *  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## matchMsmtch -0.209</code></pre>
+## matchmsmtch -0.213</code></pre>
 </div>
 </div>
 <div id="experiment-2a" class="section level1" number="4">
@@ -1945,7 +1945,7 @@ using LMEs</h1>
 <h2><span class="header-section-number">4.1</span> Descriptive</h2>
 <p>No ppts</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(e2a<span class="sc">$</span>ppt_id)</span></code></pre></div>
-<pre><code>## [1] 173</code></pre>
+<pre><code>## [1] 172</code></pre>
 <p>Median rt matches values in paper</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>e2a.correct <span class="ot">&lt;-</span> e2a <span class="sc">%&gt;%</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(accuracy <span class="sc">==</span> <span class="dv">1</span>)</span>
@@ -1964,8 +1964,8 @@ using LMEs</h1>
 <pre><code>## # A tibble: 2 × 2
 ##   match       rt
 ##   &lt;chr&gt;    &lt;dbl&gt;
-## 1 Match    0.990
-## 2 Mismatch 1.04</code></pre>
+## 1 match    0.968
+## 2 mismatch 1.03</code></pre>
 </div>
 <div id="anova-2" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> ANOVA</h2>
@@ -1983,12 +1983,12 @@ using LMEs</h1>
 <pre><code>## 
 ## Error: factor(ppt_id)
 ##            Df Sum Sq Mean Sq F value Pr(&gt;F)
-## Residuals 172  45.48  0.2644               
+## Residuals 171  46.11  0.2696               
 ## 
 ## Error: Within
-##            Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## match       1  0.187 0.18657   8.051 0.00509 **
-## Residuals 172  3.986 0.02317                   
+##            Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## match       1  0.349  0.3493   15.61 0.000113 ***
+## Residuals 171  3.825  0.0224                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -2012,8 +2012,8 @@ using LMEs</h1>
 ## m.e2a.base: rt ~ 1 + (1 | ppt_id) + (1 | object)
 ## m.e2a: rt ~ match + (1 | ppt_id) + (1 | object)
 ##            npar    AIC    BIC  logLik deviance  Chisq Df Pr(&gt;Chisq)    
-## m.e2a.base    4 4350.4 4375.4 -2171.2   4342.4                         
-## m.e2a         5 4338.0 4369.3 -2164.0   4328.0 14.416  1  0.0001465 ***
+## m.e2a.base    4 4804.5 4829.8 -2398.2   4796.5                         
+## m.e2a         5 4783.4 4815.1 -2386.7   4773.4 23.076  1  1.557e-06 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e2a)</span></code></pre></div>
@@ -2023,29 +2023,29 @@ using LMEs</h1>
 ##    Data: e2a.clean
 ## 
 ##      AIC      BIC   logLik deviance df.resid 
-##   4338.0   4369.3  -2164.0   4328.0     3872 
+##   4783.4   4815.1  -2386.7   4773.4     4183 
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -2.7017 -0.6032 -0.1817  0.3831  4.9968 
+## -2.7119 -0.6078 -0.1872  0.3922  4.9760 
 ## 
 ## Random effects:
 ##  Groups   Name        Variance Std.Dev.
-##  ppt_id   (Intercept) 0.09470  0.3077  
-##  object   (Intercept) 0.01146  0.1071  
-##  Residual             0.15625  0.3953  
-## Number of obs: 3877, groups:  ppt_id, 173; object, 24
+##  ppt_id   (Intercept) 0.09757  0.3124  
+##  object   (Intercept) 0.01106  0.1052  
+##  Residual             0.16103  0.4013  
+## Number of obs: 4188, groups:  ppt_id, 172; object, 26
 ## 
 ## Fixed effects:
 ##                Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)   1.040e+00  3.334e-02 9.180e+01  31.202  &lt; 2e-16 ***
-## matchMismatch 5.001e-02  1.316e-02 3.718e+03   3.802 0.000146 ***
+## (Intercept)   1.033e+00  3.275e-02 1.081e+02  31.538  &lt; 2e-16 ***
+## matchmismatch 6.042e-02  1.256e-02 4.004e+03   4.812 1.55e-06 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## matchMsmtch -0.203</code></pre>
+## matchmsmtch -0.196</code></pre>
 </div>
 </div>
 <div id="experiment-2b" class="section level1" number="5">
@@ -2074,8 +2074,8 @@ using LMEs</h1>
 <pre><code>## # A tibble: 2 × 2
 ##   match       rt
 ##   &lt;chr&gt;    &lt;dbl&gt;
-## 1 Match     1.08
-## 2 Mismatch  1.15</code></pre>
+## 1 match     1.06
+## 2 mismatch  1.12</code></pre>
 </div>
 <div id="anova-3" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> ANOVA</h2>
@@ -2093,12 +2093,12 @@ using LMEs</h1>
 <pre><code>## 
 ## Error: factor(ppt_id)
 ##            Df Sum Sq Mean Sq F value Pr(&gt;F)
-## Residuals 175  51.59  0.2948               
+## Residuals 175  47.57  0.2718               
 ## 
 ## Error: Within
 ##            Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## match       1  0.364  0.3641   9.968 0.00188 **
-## Residuals 175  6.392  0.0365                   
+## match       1  0.299 0.29876   10.11 0.00174 **
+## Residuals 175  5.169 0.02954                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -2121,9 +2121,9 @@ using LMEs</h1>
 ## Models:
 ## m.e2b.base: rt ~ 1 + (1 | ppt_id) + (1 | object)
 ## m.e2b: rt ~ match + (1 | ppt_id) + (1 | object)
-##            npar    AIC    BIC  logLik deviance Chisq Df Pr(&gt;Chisq)    
-## m.e2b.base    4 4599.1 4624.2 -2295.6   4591.1                        
-## m.e2b         5 4577.1 4608.4 -2283.6   4567.1 24.04  1  9.437e-07 ***
+##            npar    AIC    BIC  logLik deviance  Chisq Df Pr(&gt;Chisq)    
+## m.e2b.base    4 5018.6 5044.0 -2505.3   5010.6                         
+## m.e2b         5 4995.2 5026.9 -2492.6   4985.2 25.435  1  4.576e-07 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e2b)</span></code></pre></div>
@@ -2133,29 +2133,29 @@ using LMEs</h1>
 ##    Data: e2b.clean
 ## 
 ##      AIC      BIC   logLik deviance df.resid 
-##   4577.1   4608.4  -2283.6   4567.1     3894 
+##   4995.2   5026.9  -2492.6   4985.2     4217 
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -2.7978 -0.6360 -0.1724  0.4284  4.9174 
+## -2.8562 -0.6316 -0.1756  0.4305  4.8944 
 ## 
 ## Random effects:
 ##  Groups   Name        Variance Std.Dev.
-##  ppt_id   (Intercept) 0.085194 0.29188 
-##  object   (Intercept) 0.009323 0.09656 
-##  Residual             0.166382 0.40790 
-## Number of obs: 3899, groups:  ppt_id, 176; object, 24
+##  ppt_id   (Intercept) 0.082732 0.28763 
+##  object   (Intercept) 0.009622 0.09809 
+##  Residual             0.169177 0.41131 
+## Number of obs: 4222, groups:  ppt_id, 176; object, 26
 ## 
 ## Fixed effects:
 ##                Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)   1.119e+00  3.096e-02 9.603e+01  36.145  &lt; 2e-16 ***
-## matchMismatch 6.526e-02  1.328e-02 3.719e+03   4.912  9.4e-07 ***
+## (Intercept)   1.113e+00  3.033e-02 1.039e+02  36.717  &lt; 2e-16 ***
+## matchmismatch 6.426e-02  1.272e-02 4.025e+03   5.051 4.58e-07 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## matchMsmtch -0.210</code></pre>
+## matchmsmtch -0.205</code></pre>
 </div>
 </div>
 

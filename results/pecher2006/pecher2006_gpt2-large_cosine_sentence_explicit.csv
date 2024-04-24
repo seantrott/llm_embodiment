@@ -1,0 +1,241 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+35,airplane,original,a,a,match,0.699708269182887,gpt2-large,pecher2006
+53,apple,original,a,a,match,0.7738312103446513,gpt2-large,pecher2006
+1,apple pie,new,a,a,match,0.7775612904320727,gpt2-large,pecher2006
+21,avocado,new new,a,a,match,0.7123971709017883,gpt2-large,pecher2006
+39,balloon,original,a,a,match,0.7002854000648263,gpt2-large,pecher2006
+32,banana,new new,a,a,match,0.7354942327453543,gpt2-large,pecher2006
+47,book,original,a,a,match,0.7241327712578187,gpt2-large,pecher2006
+40,bread,original,a,a,match,0.7387498761567177,gpt2-large,pecher2006
+12,carrot,new,a,a,match,0.7620440530839905,gpt2-large,pecher2006
+28,cheesecake,new new,a,a,match,0.7120425990190533,gpt2-large,pecher2006
+36,chicken,original,a,a,match,0.7546004316551064,gpt2-large,pecher2006
+54,cigarette,original,a,a,match,0.7611263878101905,gpt2-large,pecher2006
+7,coat,new,a,a,match,0.704969698860356,gpt2-large,pecher2006
+55,corn,original,a,a,match,0.7682327556857378,gpt2-large,pecher2006
+18,cucumber,new,a,a,match,0.778851687056555,gpt2-large,pecher2006
+56,eagle,original,a,a,match,0.7256034032026836,gpt2-large,pecher2006
+41,egg,original,a,a,match,0.7458602776609262,gpt2-large,pecher2006
+48,fish,original,a,a,match,0.7080058305675768,gpt2-large,pecher2006
+22,frog,new new,a,a,match,0.6945330730864502,gpt2-large,pecher2006
+13,garbage bag,new,a,a,match,0.7644903173954214,gpt2-large,pecher2006
+14,goose,new,a,a,match,0.6981179677672742,gpt2-large,pecher2006
+37,hockey,original,a,a,match,0.7917727628005424,gpt2-large,pecher2006
+2,horse,new,a,a,match,0.7854859905028977,gpt2-large,pecher2006
+29,hose,new new,a,a,match,0.7597628580605804,gpt2-large,pecher2006
+15,ice,new,a,a,match,0.7518499830482597,gpt2-large,pecher2006
+33,ketchup,new new,a,a,match,0.7895829883568227,gpt2-large,pecher2006
+19,lamp,new,a,a,match,0.7906223643441621,gpt2-large,pecher2006
+49,lemon,original,a,a,match,0.7643810364947464,gpt2-large,pecher2006
+38,lime,original,a,a,match,0.7480698334131035,gpt2-large,pecher2006
+57,lobster,original,a,a,match,0.7134132865468349,gpt2-large,pecher2006
+20,map,new,a,a,match,0.6940131507738923,gpt2-large,pecher2006
+8,match,new,a,a,match,0.7071775402098448,gpt2-large,pecher2006
+42,mushroom,original,a,a,match,0.7250326562981145,gpt2-large,pecher2006
+43,newspaper,original,a,a,match,0.721084719910359,gpt2-large,pecher2006
+50,onion,original,a,a,match,0.7514926825813265,gpt2-large,pecher2006
+9,owl,new,a,a,match,0.7009613475570827,gpt2-large,pecher2006
+23,paint,new new,a,a,match,0.7638967473029001,gpt2-large,pecher2006
+44,pineapple,original,a,a,match,0.7146026065685451,gpt2-large,pecher2006
+10,pumpkin,new,a,a,match,0.7381920566391922,gpt2-large,pecher2006
+45,sailboat,original,a,a,match,0.7784075126034783,gpt2-large,pecher2006
+3,scarf,new,a,a,match,0.7101630188154507,gpt2-large,pecher2006
+58,shirt,original,a,a,match,0.7568304473178983,gpt2-large,pecher2006
+4,shoelace,new,a,a,match,0.796596966850024,gpt2-large,pecher2006
+30,soap,new new,a,a,match,0.7738582803991615,gpt2-large,pecher2006
+59,spaghetti,original,a,a,match,0.754274690511008,gpt2-large,pecher2006
+11,squid,new,a,a,match,0.7932892831098843,gpt2-large,pecher2006
+5,staple,new,a,a,match,0.6107131033982678,gpt2-large,pecher2006
+26,sugar,new new,a,a,match,0.7461574988808036,gpt2-large,pecher2006
+16,swiss knife,new,a,a,match,0.798602900413973,gpt2-large,pecher2006
+31,tape,new new,a,a,match,0.8830217758382767,gpt2-large,pecher2006
+27,tinfoil,new new,a,a,match,0.7795797477813422,gpt2-large,pecher2006
+60,tissue,original,a,a,match,0.662724874099048,gpt2-large,pecher2006
+46,tomato,original,a,a,match,0.7589421819153116,gpt2-large,pecher2006
+51,towel,original,a,a,match,0.7673591646106708,gpt2-large,pecher2006
+17,umbrella,new,a,a,match,0.7734062370769857,gpt2-large,pecher2006
+24,walnut,new new,a,a,match,0.7536729750615874,gpt2-large,pecher2006
+52,watermelon,original,a,a,match,0.7546245769743056,gpt2-large,pecher2006
+6,wheat,new,a,a,match,0.7948452762828546,gpt2-large,pecher2006
+34,wool,new new,a,a,match,0.8112335362959618,gpt2-large,pecher2006
+25,zodiac,new new,a,a,match,0.7367062970835595,gpt2-large,pecher2006
+35,airplane,original,a,b,mismatch,0.6948623240394628,gpt2-large,pecher2006
+53,apple,original,a,b,mismatch,0.7740866982117404,gpt2-large,pecher2006
+1,apple pie,new,a,b,mismatch,0.8036977618360491,gpt2-large,pecher2006
+21,avocado,new new,a,b,mismatch,0.7314802998293469,gpt2-large,pecher2006
+39,balloon,original,a,b,mismatch,0.7110273329177905,gpt2-large,pecher2006
+32,banana,new new,a,b,mismatch,0.7432466639937886,gpt2-large,pecher2006
+47,book,original,a,b,mismatch,0.676040645856105,gpt2-large,pecher2006
+40,bread,original,a,b,mismatch,0.7411758492421567,gpt2-large,pecher2006
+12,carrot,new,a,b,mismatch,0.7636482797932382,gpt2-large,pecher2006
+28,cheesecake,new new,a,b,mismatch,0.7420066322732813,gpt2-large,pecher2006
+36,chicken,original,a,b,mismatch,0.7158087963440132,gpt2-large,pecher2006
+54,cigarette,original,a,b,mismatch,0.7549175506393319,gpt2-large,pecher2006
+7,coat,new,a,b,mismatch,0.7326030221732895,gpt2-large,pecher2006
+55,corn,original,a,b,mismatch,0.7369230306484491,gpt2-large,pecher2006
+18,cucumber,new,a,b,mismatch,0.7633561857634316,gpt2-large,pecher2006
+56,eagle,original,a,b,mismatch,0.733560340400733,gpt2-large,pecher2006
+41,egg,original,a,b,mismatch,0.7704915854165773,gpt2-large,pecher2006
+48,fish,original,a,b,mismatch,0.7106677946420054,gpt2-large,pecher2006
+22,frog,new new,a,b,mismatch,0.7043429948084756,gpt2-large,pecher2006
+13,garbage bag,new,a,b,mismatch,0.7640813454489884,gpt2-large,pecher2006
+14,goose,new,a,b,mismatch,0.7010008620468411,gpt2-large,pecher2006
+37,hockey,original,a,b,mismatch,0.7883792786418794,gpt2-large,pecher2006
+2,horse,new,a,b,mismatch,0.7752641478758666,gpt2-large,pecher2006
+29,hose,new new,a,b,mismatch,0.7766646284483668,gpt2-large,pecher2006
+15,ice,new,a,b,mismatch,0.727364656539236,gpt2-large,pecher2006
+33,ketchup,new new,a,b,mismatch,0.7608059357443117,gpt2-large,pecher2006
+19,lamp,new,a,b,mismatch,0.751627998784507,gpt2-large,pecher2006
+49,lemon,original,a,b,mismatch,0.7511375655259367,gpt2-large,pecher2006
+38,lime,original,a,b,mismatch,0.7300923118014483,gpt2-large,pecher2006
+57,lobster,original,a,b,mismatch,0.7823808679683738,gpt2-large,pecher2006
+20,map,new,a,b,mismatch,0.6836176130835027,gpt2-large,pecher2006
+8,match,new,a,b,mismatch,0.7239670884744067,gpt2-large,pecher2006
+42,mushroom,original,a,b,mismatch,0.7227932687243971,gpt2-large,pecher2006
+43,newspaper,original,a,b,mismatch,0.651670544629845,gpt2-large,pecher2006
+50,onion,original,a,b,mismatch,0.731495437589743,gpt2-large,pecher2006
+9,owl,new,a,b,mismatch,0.7031227627603562,gpt2-large,pecher2006
+23,paint,new new,a,b,mismatch,0.7471277575525362,gpt2-large,pecher2006
+44,pineapple,original,a,b,mismatch,0.7634635193829856,gpt2-large,pecher2006
+10,pumpkin,new,a,b,mismatch,0.7633511114615001,gpt2-large,pecher2006
+45,sailboat,original,a,b,mismatch,0.776029340519065,gpt2-large,pecher2006
+3,scarf,new,a,b,mismatch,0.754114016679083,gpt2-large,pecher2006
+58,shirt,original,a,b,mismatch,0.756127758202983,gpt2-large,pecher2006
+4,shoelace,new,a,b,mismatch,0.8336645468343082,gpt2-large,pecher2006
+30,soap,new new,a,b,mismatch,0.7455093539209319,gpt2-large,pecher2006
+59,spaghetti,original,a,b,mismatch,0.7504779488221873,gpt2-large,pecher2006
+11,squid,new,a,b,mismatch,0.7509553356159762,gpt2-large,pecher2006
+5,staple,new,a,b,mismatch,0.6747462755598914,gpt2-large,pecher2006
+26,sugar,new new,a,b,mismatch,0.781940225464542,gpt2-large,pecher2006
+16,swiss knife,new,a,b,mismatch,0.7989989937734915,gpt2-large,pecher2006
+31,tape,new new,a,b,mismatch,0.691205188226396,gpt2-large,pecher2006
+27,tinfoil,new new,a,b,mismatch,0.789280332864017,gpt2-large,pecher2006
+60,tissue,original,a,b,mismatch,0.6684263561671527,gpt2-large,pecher2006
+46,tomato,original,a,b,mismatch,0.7663350971404421,gpt2-large,pecher2006
+51,towel,original,a,b,mismatch,0.7315056886511436,gpt2-large,pecher2006
+17,umbrella,new,a,b,mismatch,0.7860889087131048,gpt2-large,pecher2006
+24,walnut,new new,a,b,mismatch,0.754016546455647,gpt2-large,pecher2006
+52,watermelon,original,a,b,mismatch,0.7456636270536635,gpt2-large,pecher2006
+6,wheat,new,a,b,mismatch,0.787989842107356,gpt2-large,pecher2006
+34,wool,new new,a,b,mismatch,0.7209928441407882,gpt2-large,pecher2006
+25,zodiac,new new,a,b,mismatch,0.7267135175419819,gpt2-large,pecher2006
+35,airplane,original,b,b,match,0.692627870639033,gpt2-large,pecher2006
+53,apple,original,b,b,match,0.7501906296504872,gpt2-large,pecher2006
+1,apple pie,new,b,b,match,0.8079886544672955,gpt2-large,pecher2006
+21,avocado,new new,b,b,match,0.7326000199755903,gpt2-large,pecher2006
+39,balloon,original,b,b,match,0.7410145687565747,gpt2-large,pecher2006
+32,banana,new new,b,b,match,0.7201210141427351,gpt2-large,pecher2006
+47,book,original,b,b,match,0.6313867810414645,gpt2-large,pecher2006
+40,bread,original,b,b,match,0.7622258993636005,gpt2-large,pecher2006
+12,carrot,new,b,b,match,0.7429691971771689,gpt2-large,pecher2006
+28,cheesecake,new new,b,b,match,0.7287421455996431,gpt2-large,pecher2006
+36,chicken,original,b,b,match,0.6860401159520467,gpt2-large,pecher2006
+54,cigarette,original,b,b,match,0.7448539789963177,gpt2-large,pecher2006
+7,coat,new,b,b,match,0.7358668153932667,gpt2-large,pecher2006
+55,corn,original,b,b,match,0.7428799224211772,gpt2-large,pecher2006
+18,cucumber,new,b,b,match,0.7815788548957066,gpt2-large,pecher2006
+56,eagle,original,b,b,match,0.7482685932064588,gpt2-large,pecher2006
+41,egg,original,b,b,match,0.7942606898348689,gpt2-large,pecher2006
+48,fish,original,b,b,match,0.7096928323574924,gpt2-large,pecher2006
+22,frog,new new,b,b,match,0.7139815501685612,gpt2-large,pecher2006
+13,garbage bag,new,b,b,match,0.8135538543785744,gpt2-large,pecher2006
+14,goose,new,b,b,match,0.7269897699401572,gpt2-large,pecher2006
+37,hockey,original,b,b,match,0.7983199465483226,gpt2-large,pecher2006
+2,horse,new,b,b,match,0.7566460898078798,gpt2-large,pecher2006
+29,hose,new new,b,b,match,0.7592782264394242,gpt2-large,pecher2006
+15,ice,new,b,b,match,0.7119639217589268,gpt2-large,pecher2006
+33,ketchup,new new,b,b,match,0.767780197525507,gpt2-large,pecher2006
+19,lamp,new,b,b,match,0.7526108783059237,gpt2-large,pecher2006
+49,lemon,original,b,b,match,0.7541119520401864,gpt2-large,pecher2006
+38,lime,original,b,b,match,0.7265796024952496,gpt2-large,pecher2006
+57,lobster,original,b,b,match,0.7458740840145853,gpt2-large,pecher2006
+20,map,new,b,b,match,0.7198678837652105,gpt2-large,pecher2006
+8,match,new,b,b,match,0.6970516786947982,gpt2-large,pecher2006
+42,mushroom,original,b,b,match,0.7228433743123468,gpt2-large,pecher2006
+43,newspaper,original,b,b,match,0.6383060753019094,gpt2-large,pecher2006
+50,onion,original,b,b,match,0.7548859073315116,gpt2-large,pecher2006
+9,owl,new,b,b,match,0.7346818646511,gpt2-large,pecher2006
+23,paint,new new,b,b,match,0.7656946775647384,gpt2-large,pecher2006
+44,pineapple,original,b,b,match,0.780276865568543,gpt2-large,pecher2006
+10,pumpkin,new,b,b,match,0.7738897181882205,gpt2-large,pecher2006
+45,sailboat,original,b,b,match,0.7740794874128696,gpt2-large,pecher2006
+3,scarf,new,b,b,match,0.758613165830049,gpt2-large,pecher2006
+58,shirt,original,b,b,match,0.7765574860268407,gpt2-large,pecher2006
+4,shoelace,new,b,b,match,0.8042843419937059,gpt2-large,pecher2006
+30,soap,new new,b,b,match,0.7330661922486781,gpt2-large,pecher2006
+59,spaghetti,original,b,b,match,0.7642082949519747,gpt2-large,pecher2006
+11,squid,new,b,b,match,0.7288332429283115,gpt2-large,pecher2006
+5,staple,new,b,b,match,0.6658410059047627,gpt2-large,pecher2006
+26,sugar,new new,b,b,match,0.780927749970195,gpt2-large,pecher2006
+16,swiss knife,new,b,b,match,0.7974484210154794,gpt2-large,pecher2006
+31,tape,new new,b,b,match,0.7074201554291574,gpt2-large,pecher2006
+27,tinfoil,new new,b,b,match,0.7582298966264449,gpt2-large,pecher2006
+60,tissue,original,b,b,match,0.6486303442044589,gpt2-large,pecher2006
+46,tomato,original,b,b,match,0.7483450226498684,gpt2-large,pecher2006
+51,towel,original,b,b,match,0.7291882534382196,gpt2-large,pecher2006
+17,umbrella,new,b,b,match,0.7911251797395186,gpt2-large,pecher2006
+24,walnut,new new,b,b,match,0.7647955140119611,gpt2-large,pecher2006
+52,watermelon,original,b,b,match,0.783133372861453,gpt2-large,pecher2006
+6,wheat,new,b,b,match,0.7821483138312321,gpt2-large,pecher2006
+34,wool,new new,b,b,match,0.7260140524224605,gpt2-large,pecher2006
+25,zodiac,new new,b,b,match,0.7213947229089124,gpt2-large,pecher2006
+35,airplane,original,b,a,mismatch,0.7008968554177831,gpt2-large,pecher2006
+53,apple,original,b,a,mismatch,0.7524140264178575,gpt2-large,pecher2006
+1,apple pie,new,b,a,mismatch,0.7826556696215906,gpt2-large,pecher2006
+21,avocado,new new,b,a,mismatch,0.7832525290119222,gpt2-large,pecher2006
+39,balloon,original,b,a,mismatch,0.7291742541488193,gpt2-large,pecher2006
+32,banana,new new,b,a,mismatch,0.7088847650370527,gpt2-large,pecher2006
+47,book,original,b,a,mismatch,0.6653085080336791,gpt2-large,pecher2006
+40,bread,original,b,a,mismatch,0.7624990682926206,gpt2-large,pecher2006
+12,carrot,new,b,a,mismatch,0.7499017254835001,gpt2-large,pecher2006
+28,cheesecake,new new,b,a,mismatch,0.6983970662227736,gpt2-large,pecher2006
+36,chicken,original,b,a,mismatch,0.8292777464972582,gpt2-large,pecher2006
+54,cigarette,original,b,a,mismatch,0.7416852474047027,gpt2-large,pecher2006
+7,coat,new,b,a,mismatch,0.7025885269094612,gpt2-large,pecher2006
+55,corn,original,b,a,mismatch,0.7396204396443922,gpt2-large,pecher2006
+18,cucumber,new,b,a,mismatch,0.792567579250341,gpt2-large,pecher2006
+56,eagle,original,b,a,mismatch,0.7333279466290353,gpt2-large,pecher2006
+41,egg,original,b,a,mismatch,0.7501718697372671,gpt2-large,pecher2006
+48,fish,original,b,a,mismatch,0.7723617389130668,gpt2-large,pecher2006
+22,frog,new new,b,a,mismatch,0.7048012158067466,gpt2-large,pecher2006
+13,garbage bag,new,b,a,mismatch,0.8197880390348209,gpt2-large,pecher2006
+14,goose,new,b,a,mismatch,0.7236668014277291,gpt2-large,pecher2006
+37,hockey,original,b,a,mismatch,0.8006054843580185,gpt2-large,pecher2006
+2,horse,new,b,a,mismatch,0.7693403757214814,gpt2-large,pecher2006
+29,hose,new new,b,a,mismatch,0.7385535315235007,gpt2-large,pecher2006
+15,ice,new,b,a,mismatch,0.7216447875831851,gpt2-large,pecher2006
+33,ketchup,new new,b,a,mismatch,0.7969356334757993,gpt2-large,pecher2006
+19,lamp,new,b,a,mismatch,0.7931344039949927,gpt2-large,pecher2006
+49,lemon,original,b,a,mismatch,0.7666116183204144,gpt2-large,pecher2006
+38,lime,original,b,a,mismatch,0.7554621234263175,gpt2-large,pecher2006
+57,lobster,original,b,a,mismatch,0.7533269874802577,gpt2-large,pecher2006
+20,map,new,b,a,mismatch,0.7670721969630968,gpt2-large,pecher2006
+8,match,new,b,a,mismatch,0.6736335319447505,gpt2-large,pecher2006
+42,mushroom,original,b,a,mismatch,0.7204878600396691,gpt2-large,pecher2006
+43,newspaper,original,b,a,mismatch,0.6626965553245638,gpt2-large,pecher2006
+50,onion,original,b,a,mismatch,0.7644416147348785,gpt2-large,pecher2006
+9,owl,new,b,a,mismatch,0.7266300022960949,gpt2-large,pecher2006
+23,paint,new new,b,a,mismatch,0.773907861971982,gpt2-large,pecher2006
+44,pineapple,original,b,a,mismatch,0.7397520865831679,gpt2-large,pecher2006
+10,pumpkin,new,b,a,mismatch,0.7410386730758831,gpt2-large,pecher2006
+45,sailboat,original,b,a,mismatch,0.7764009754065462,gpt2-large,pecher2006
+3,scarf,new,b,a,mismatch,0.7122411410781528,gpt2-large,pecher2006
+58,shirt,original,b,a,mismatch,0.7789975434327805,gpt2-large,pecher2006
+4,shoelace,new,b,a,mismatch,0.8011300669390198,gpt2-large,pecher2006
+30,soap,new new,b,a,mismatch,0.7614774206037372,gpt2-large,pecher2006
+59,spaghetti,original,b,a,mismatch,0.7647648605658663,gpt2-large,pecher2006
+11,squid,new,b,a,mismatch,0.7298063081694031,gpt2-large,pecher2006
+5,staple,new,b,a,mismatch,0.6037982318467465,gpt2-large,pecher2006
+26,sugar,new new,b,a,mismatch,0.7523185187275478,gpt2-large,pecher2006
+16,swiss knife,new,b,a,mismatch,0.7985306882660064,gpt2-large,pecher2006
+31,tape,new new,b,a,mismatch,0.8801042572217964,gpt2-large,pecher2006
+27,tinfoil,new new,b,a,mismatch,0.7495520433125412,gpt2-large,pecher2006
+60,tissue,original,b,a,mismatch,0.5478738940251516,gpt2-large,pecher2006
+46,tomato,original,b,a,mismatch,0.742520926531992,gpt2-large,pecher2006
+51,towel,original,b,a,mismatch,0.7639964271521568,gpt2-large,pecher2006
+17,umbrella,new,b,a,mismatch,0.7783598318464329,gpt2-large,pecher2006
+24,walnut,new new,b,a,mismatch,0.7574492870634003,gpt2-large,pecher2006
+52,watermelon,original,b,a,mismatch,0.7829564486633961,gpt2-large,pecher2006
+6,wheat,new,b,a,mismatch,0.7792451524827991,gpt2-large,pecher2006
+34,wool,new new,b,a,mismatch,0.8141063972923682,gpt2-large,pecher2006
+25,zodiac,new new,b,a,mismatch,0.7309599734701981,gpt2-large,pecher2006

@@ -1,6 +1,6 @@
 ---
 title: "Reproduction of Winter & Bergen 2012 using LMEs"
-author: "Cameron Jones"
+author: "Anonymous"
 date: "4/12/2023"
 output:
   html_document: 
@@ -154,6 +154,7 @@ m.e1.ixn <- lmer(rt ~ sentence_type * image_type +
 
 anova(m.e1.ixn, m.e1.ixn.base)
 
+summary(m.e1.ixn.base)
 summary(m.e1.ixn)
 
 

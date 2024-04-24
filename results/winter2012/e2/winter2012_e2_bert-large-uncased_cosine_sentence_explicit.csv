@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,handgun,,a,a,match,0.6783811520026563,bert-large-uncased,winter2012/e2
+2,baby,,a,a,match,0.5924860459889522,bert-large-uncased,winter2012/e2
+3,blender,,a,a,match,0.6879557317333368,bert-large-uncased,winter2012/e2
+4,cat,,a,a,match,0.5707526519403384,bert-large-uncased,winter2012/e2
+5,champagne bottle,,a,a,match,0.5986534799510544,bert-large-uncased,winter2012/e2
+6,church bells,,a,a,match,0.5549632914451529,bert-large-uncased,winter2012/e2
+7,cow,,a,a,match,0.7117943544760846,bert-large-uncased,winter2012/e2
+8,audience,,a,a,match,0.7507440194030218,bert-large-uncased,winter2012/e2
+9,cuckoo-clock,,a,a,match,0.7293495581559917,bert-large-uncased,winter2012/e2
+10,rooster,,a,a,match,0.7242488802829574,bert-large-uncased,winter2012/e2
+11,dog,,a,a,match,0.658369316134902,bert-large-uncased,winter2012/e2
+12,power drill,,a,a,match,0.6042871025569134,bert-large-uncased,winter2012/e2
+13,hammer,,a,a,match,0.39037734735404306,bert-large-uncased,winter2012/e2
+14,motorbike,,a,a,match,0.7063983627389347,bert-large-uncased,winter2012/e2
+15,horse,,a,a,match,0.7148675371127233,bert-large-uncased,winter2012/e2
+16,jackhammer,,a,a,match,0.4748793483368273,bert-large-uncased,winter2012/e2
+17,door,,a,a,match,0.5304014525027757,bert-large-uncased,winter2012/e2
+18,machine gun,,a,a,match,0.5941364249122854,bert-large-uncased,winter2012/e2
+19,sheep,,a,a,match,0.6222616639240643,bert-large-uncased,winter2012/e2
+20,frog,,a,a,match,0.7067149077778664,bert-large-uncased,winter2012/e2
+21,toilet,,a,a,match,0.640248714779562,bert-large-uncased,winter2012/e2
+22,waterfall,,a,a,match,0.7359196436314503,bert-large-uncased,winter2012/e2
+23,can of soda,,a,a,match,0.6803148176008272,bert-large-uncased,winter2012/e2
+24,branches,,a,a,match,0.6226867437408949,bert-large-uncased,winter2012/e2
+1,handgun,,a,b,mismatch,0.6511953913179966,bert-large-uncased,winter2012/e2
+2,baby,,a,b,mismatch,0.5581439788697061,bert-large-uncased,winter2012/e2
+3,blender,,a,b,mismatch,0.6952946039419575,bert-large-uncased,winter2012/e2
+4,cat,,a,b,mismatch,0.49372658686041737,bert-large-uncased,winter2012/e2
+5,champagne bottle,,a,b,mismatch,0.5847657870563573,bert-large-uncased,winter2012/e2
+6,church bells,,a,b,mismatch,0.49505286666992343,bert-large-uncased,winter2012/e2
+7,cow,,a,b,mismatch,0.6259294891123376,bert-large-uncased,winter2012/e2
+8,audience,,a,b,mismatch,0.7106740843569601,bert-large-uncased,winter2012/e2
+9,cuckoo-clock,,a,b,mismatch,0.7260419048225599,bert-large-uncased,winter2012/e2
+10,rooster,,a,b,mismatch,0.7796446520173638,bert-large-uncased,winter2012/e2
+11,dog,,a,b,mismatch,0.6419324491712868,bert-large-uncased,winter2012/e2
+12,power drill,,a,b,mismatch,0.5110210771615762,bert-large-uncased,winter2012/e2
+13,hammer,,a,b,mismatch,0.3029761545877425,bert-large-uncased,winter2012/e2
+14,motorbike,,a,b,mismatch,0.6692098523831826,bert-large-uncased,winter2012/e2
+15,horse,,a,b,mismatch,0.6477588504542575,bert-large-uncased,winter2012/e2
+16,jackhammer,,a,b,mismatch,0.45451363894192154,bert-large-uncased,winter2012/e2
+17,door,,a,b,mismatch,0.43525995275492035,bert-large-uncased,winter2012/e2
+18,machine gun,,a,b,mismatch,0.5003325452598828,bert-large-uncased,winter2012/e2
+19,sheep,,a,b,mismatch,0.5646600281911027,bert-large-uncased,winter2012/e2
+20,frog,,a,b,mismatch,0.6947861986769798,bert-large-uncased,winter2012/e2
+21,toilet,,a,b,mismatch,0.6800616580688152,bert-large-uncased,winter2012/e2
+22,waterfall,,a,b,mismatch,0.8216479587574946,bert-large-uncased,winter2012/e2
+23,can of soda,,a,b,mismatch,0.6775090073431511,bert-large-uncased,winter2012/e2
+24,branches,,a,b,mismatch,0.5988465618978328,bert-large-uncased,winter2012/e2
+1,handgun,,b,b,match,0.6694520433192532,bert-large-uncased,winter2012/e2
+2,baby,,b,b,match,0.7326150391144634,bert-large-uncased,winter2012/e2
+3,blender,,b,b,match,0.6151140985190775,bert-large-uncased,winter2012/e2
+4,cat,,b,b,match,0.2772806453660467,bert-large-uncased,winter2012/e2
+5,champagne bottle,,b,b,match,0.6816310501489476,bert-large-uncased,winter2012/e2
+6,church bells,,b,b,match,0.7744027022547443,bert-large-uncased,winter2012/e2
+7,cow,,b,b,match,0.7469209322996474,bert-large-uncased,winter2012/e2
+8,audience,,b,b,match,0.7248732636637305,bert-large-uncased,winter2012/e2
+9,cuckoo-clock,,b,b,match,0.7827118943425715,bert-large-uncased,winter2012/e2
+10,rooster,,b,b,match,0.5133176805476981,bert-large-uncased,winter2012/e2
+11,dog,,b,b,match,0.43566806394941904,bert-large-uncased,winter2012/e2
+12,power drill,,b,b,match,0.5223463035809031,bert-large-uncased,winter2012/e2
+13,hammer,,b,b,match,0.4142671710634591,bert-large-uncased,winter2012/e2
+14,motorbike,,b,b,match,0.731950250390607,bert-large-uncased,winter2012/e2
+15,horse,,b,b,match,0.6912093525142154,bert-large-uncased,winter2012/e2
+16,jackhammer,,b,b,match,0.563681670069639,bert-large-uncased,winter2012/e2
+17,door,,b,b,match,0.36722584083244025,bert-large-uncased,winter2012/e2
+18,machine gun,,b,b,match,0.686219744555582,bert-large-uncased,winter2012/e2
+19,sheep,,b,b,match,0.6663908871153108,bert-large-uncased,winter2012/e2
+20,frog,,b,b,match,0.6546780911530515,bert-large-uncased,winter2012/e2
+21,toilet,,b,b,match,0.7525216595489479,bert-large-uncased,winter2012/e2
+22,waterfall,,b,b,match,0.7671648412989339,bert-large-uncased,winter2012/e2
+23,can of soda,,b,b,match,0.6942344101302919,bert-large-uncased,winter2012/e2
+24,branches,,b,b,match,0.6941958405975068,bert-large-uncased,winter2012/e2
+1,handgun,,b,a,mismatch,0.67954581971682,bert-large-uncased,winter2012/e2
+2,baby,,b,a,mismatch,0.7242713939997805,bert-large-uncased,winter2012/e2
+3,blender,,b,a,mismatch,0.6254126928207421,bert-large-uncased,winter2012/e2
+4,cat,,b,a,mismatch,0.35313231154220115,bert-large-uncased,winter2012/e2
+5,champagne bottle,,b,a,mismatch,0.6708894189474889,bert-large-uncased,winter2012/e2
+6,church bells,,b,a,mismatch,0.7828524477156108,bert-large-uncased,winter2012/e2
+7,cow,,b,a,mismatch,0.7239972467349174,bert-large-uncased,winter2012/e2
+8,audience,,b,a,mismatch,0.7550783079777845,bert-large-uncased,winter2012/e2
+9,cuckoo-clock,,b,a,mismatch,0.7907564192663383,bert-large-uncased,winter2012/e2
+10,rooster,,b,a,mismatch,0.5697851023943071,bert-large-uncased,winter2012/e2
+11,dog,,b,a,mismatch,0.5263728067681904,bert-large-uncased,winter2012/e2
+12,power drill,,b,a,mismatch,0.6217117626226053,bert-large-uncased,winter2012/e2
+13,hammer,,b,a,mismatch,0.46261229526630954,bert-large-uncased,winter2012/e2
+14,motorbike,,b,a,mismatch,0.7359497580027826,bert-large-uncased,winter2012/e2
+15,horse,,b,a,mismatch,0.6589251570665519,bert-large-uncased,winter2012/e2
+16,jackhammer,,b,a,mismatch,0.5695849033142876,bert-large-uncased,winter2012/e2
+17,door,,b,a,mismatch,0.46412914913488634,bert-large-uncased,winter2012/e2
+18,machine gun,,b,a,mismatch,0.7361754092447973,bert-large-uncased,winter2012/e2
+19,sheep,,b,a,mismatch,0.6779943123392477,bert-large-uncased,winter2012/e2
+20,frog,,b,a,mismatch,0.6270223029637193,bert-large-uncased,winter2012/e2
+21,toilet,,b,a,mismatch,0.705129926389628,bert-large-uncased,winter2012/e2
+22,waterfall,,b,a,mismatch,0.7200631476191878,bert-large-uncased,winter2012/e2
+23,can of soda,,b,a,mismatch,0.6708371973309022,bert-large-uncased,winter2012/e2
+24,branches,,b,a,mismatch,0.687802118580144,bert-large-uncased,winter2012/e2

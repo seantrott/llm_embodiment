@@ -1,241 +1,241 @@
-,sentence,match,probability,model,dataset
-0,a,match,0.27516582240420706,imagebind,pecher2006
-1,a,match,0.2503631426278774,imagebind,pecher2006
-2,a,match,0.2489477990830633,imagebind,pecher2006
-3,a,match,0.28157179485421735,imagebind,pecher2006
-4,a,match,0.15539935750516454,imagebind,pecher2006
-5,a,match,0.24663794977976028,imagebind,pecher2006
-6,a,match,0.1502522526317963,imagebind,pecher2006
-7,a,match,0.07529746915218982,imagebind,pecher2006
-8,a,match,0.2526376656311746,imagebind,pecher2006
-9,a,match,0.19240397591188574,imagebind,pecher2006
-10,a,match,0.31121469358839116,imagebind,pecher2006
-11,a,match,0.2884009254335964,imagebind,pecher2006
-12,a,match,0.23438612576728168,imagebind,pecher2006
-13,a,match,0.2972084296487496,imagebind,pecher2006
-14,a,match,0.2699177653210859,imagebind,pecher2006
-15,a,match,0.26370883415966995,imagebind,pecher2006
-16,a,match,0.23547380278618446,imagebind,pecher2006
-17,a,match,0.30963761427144987,imagebind,pecher2006
-18,a,match,0.18758717361895239,imagebind,pecher2006
-19,a,match,0.19787658545418796,imagebind,pecher2006
-20,a,match,0.24893128441719892,imagebind,pecher2006
-21,a,match,0.22044354375838582,imagebind,pecher2006
-22,a,match,0.1942638001093293,imagebind,pecher2006
-23,a,match,0.2850828567585626,imagebind,pecher2006
-24,a,match,0.11712334906508759,imagebind,pecher2006
-25,a,match,0.21689252168009332,imagebind,pecher2006
-26,a,match,0.23227604620453857,imagebind,pecher2006
-27,a,match,0.17628954827253795,imagebind,pecher2006
-28,a,match,0.22878371608686643,imagebind,pecher2006
-29,a,match,0.2923118610277554,imagebind,pecher2006
-30,a,match,0.21221498812354966,imagebind,pecher2006
-31,a,match,0.2268742752047248,imagebind,pecher2006
-32,a,match,0.05897483466226339,imagebind,pecher2006
-33,a,match,0.17374774494119105,imagebind,pecher2006
-34,a,match,0.1543434714466283,imagebind,pecher2006
-35,a,match,0.2605143156642389,imagebind,pecher2006
-36,a,match,0.27543396882361515,imagebind,pecher2006
-37,a,match,0.23878655484527478,imagebind,pecher2006
-38,a,match,0.1541602172330847,imagebind,pecher2006
-39,a,match,0.20684603879708185,imagebind,pecher2006
-40,a,match,0.2921699520770582,imagebind,pecher2006
-41,a,match,0.27850140355404873,imagebind,pecher2006
-42,a,match,0.2833308474447751,imagebind,pecher2006
-43,a,match,0.2607738970716931,imagebind,pecher2006
-44,a,match,0.1912845852860483,imagebind,pecher2006
-45,a,match,0.2940105383380065,imagebind,pecher2006
-46,a,match,0.1663853374045824,imagebind,pecher2006
-47,a,match,0.18542000679796367,imagebind,pecher2006
-48,a,match,0.26297229337695605,imagebind,pecher2006
-49,a,match,0.24654898187934016,imagebind,pecher2006
-50,a,match,0.14779295408463278,imagebind,pecher2006
-51,a,match,0.28484419509535863,imagebind,pecher2006
-52,a,match,0.2365832146662893,imagebind,pecher2006
-53,a,match,0.10875805820628792,imagebind,pecher2006
-54,a,match,0.2603385307541167,imagebind,pecher2006
-55,a,match,0.24242112858686538,imagebind,pecher2006
-56,a,match,0.2621721663456835,imagebind,pecher2006
-57,a,match,0.18183919636315948,imagebind,pecher2006
-58,a,match,0.16786545146910914,imagebind,pecher2006
-59,a,match,0.14593295356854763,imagebind,pecher2006
-60,a,mismatch,0.23317676330681247,imagebind,pecher2006
-61,a,mismatch,0.23207698483029027,imagebind,pecher2006
-62,a,mismatch,0.18924503208917043,imagebind,pecher2006
-63,a,mismatch,0.21613900825416643,imagebind,pecher2006
-64,a,mismatch,0.13754227552806908,imagebind,pecher2006
-65,a,mismatch,0.14441935985741416,imagebind,pecher2006
-66,a,mismatch,0.2523847273168708,imagebind,pecher2006
-67,a,mismatch,0.11828752937863174,imagebind,pecher2006
-68,a,mismatch,0.24599568653269488,imagebind,pecher2006
-69,a,mismatch,0.20626199928939914,imagebind,pecher2006
-70,a,mismatch,0.19492132194263434,imagebind,pecher2006
-71,a,mismatch,0.15552884851988025,imagebind,pecher2006
-72,a,mismatch,0.2743795164596303,imagebind,pecher2006
-73,a,mismatch,0.27091271444424414,imagebind,pecher2006
-74,a,mismatch,0.20081948757024182,imagebind,pecher2006
-75,a,mismatch,0.2974137379137842,imagebind,pecher2006
-76,a,mismatch,0.24364459951832462,imagebind,pecher2006
-77,a,mismatch,0.21863486064934157,imagebind,pecher2006
-78,a,mismatch,0.17438082949110778,imagebind,pecher2006
-79,a,mismatch,0.12928486211291423,imagebind,pecher2006
-80,a,mismatch,0.11257183439669449,imagebind,pecher2006
-81,a,mismatch,0.21523099317051197,imagebind,pecher2006
-82,a,mismatch,0.20305144056375468,imagebind,pecher2006
-83,a,mismatch,0.22423881906900367,imagebind,pecher2006
-84,a,mismatch,0.16150490299788212,imagebind,pecher2006
-85,a,mismatch,0.24494026905941957,imagebind,pecher2006
-86,a,mismatch,0.3029611258485171,imagebind,pecher2006
-87,a,mismatch,0.2799514503018592,imagebind,pecher2006
-88,a,mismatch,0.20735097142356085,imagebind,pecher2006
-89,a,mismatch,0.19907619822919698,imagebind,pecher2006
-90,a,mismatch,0.19060863712182208,imagebind,pecher2006
-91,a,mismatch,0.06471171957668331,imagebind,pecher2006
-92,a,mismatch,0.17195208607422385,imagebind,pecher2006
-93,a,mismatch,0.15654249526214326,imagebind,pecher2006
-94,a,mismatch,0.19370774622249853,imagebind,pecher2006
-95,a,mismatch,0.18023391404195688,imagebind,pecher2006
-96,a,mismatch,0.23775882770616663,imagebind,pecher2006
-97,a,mismatch,0.23467184410351538,imagebind,pecher2006
-98,a,mismatch,0.2581461214575187,imagebind,pecher2006
-99,a,mismatch,0.1953725520443924,imagebind,pecher2006
-100,a,mismatch,0.2613477508117643,imagebind,pecher2006
-101,a,mismatch,0.14199920582326564,imagebind,pecher2006
-102,a,mismatch,0.2715616702723356,imagebind,pecher2006
-103,a,mismatch,0.08590691645377124,imagebind,pecher2006
-104,a,mismatch,0.23279852606594997,imagebind,pecher2006
-105,a,mismatch,0.2470868449050273,imagebind,pecher2006
-106,a,mismatch,0.18340951803397765,imagebind,pecher2006
-107,a,mismatch,0.12064707336484926,imagebind,pecher2006
-108,a,mismatch,0.2511281829054819,imagebind,pecher2006
-109,a,mismatch,0.15277804689459518,imagebind,pecher2006
-110,a,mismatch,0.12065407140035533,imagebind,pecher2006
-111,a,mismatch,0.24969086508780713,imagebind,pecher2006
-112,a,mismatch,0.15671817071459493,imagebind,pecher2006
-113,a,mismatch,0.14611415851291976,imagebind,pecher2006
-114,a,mismatch,0.09330113527605488,imagebind,pecher2006
-115,a,mismatch,0.20506372079199098,imagebind,pecher2006
-116,a,mismatch,0.2300957970524199,imagebind,pecher2006
-117,a,mismatch,0.1424249459648097,imagebind,pecher2006
-118,a,mismatch,0.20804810599895107,imagebind,pecher2006
-119,a,mismatch,0.24290491354848387,imagebind,pecher2006
-120,b,match,0.22138807039028696,imagebind,pecher2006
-121,b,match,0.2574242709740824,imagebind,pecher2006
-122,b,match,0.2382530896007996,imagebind,pecher2006
-123,b,match,0.14873573282601382,imagebind,pecher2006
-124,b,match,0.14749541379859654,imagebind,pecher2006
-125,b,match,0.16815876530312301,imagebind,pecher2006
-126,b,match,0.2720499107142693,imagebind,pecher2006
-127,b,match,0.12855318954961825,imagebind,pecher2006
-128,b,match,0.2787441477748669,imagebind,pecher2006
-129,b,match,0.2449236739980729,imagebind,pecher2006
-130,b,match,0.33908528517288616,imagebind,pecher2006
-131,b,match,0.2043652742921257,imagebind,pecher2006
-132,b,match,0.3080885788131247,imagebind,pecher2006
-133,b,match,0.31127374892352355,imagebind,pecher2006
-134,b,match,0.2234192143124769,imagebind,pecher2006
-135,b,match,0.29341983572844177,imagebind,pecher2006
-136,b,match,0.2347322375666696,imagebind,pecher2006
-137,b,match,0.23648143479709682,imagebind,pecher2006
-138,b,match,0.20120379704407143,imagebind,pecher2006
-139,b,match,0.19682823477590117,imagebind,pecher2006
-140,b,match,0.155877572542528,imagebind,pecher2006
-141,b,match,0.2098896351760089,imagebind,pecher2006
-142,b,match,0.22058158212187173,imagebind,pecher2006
-143,b,match,0.18160569019571038,imagebind,pecher2006
-144,b,match,0.1417240839814905,imagebind,pecher2006
-145,b,match,0.23454770587723717,imagebind,pecher2006
-146,b,match,0.35649745297079316,imagebind,pecher2006
-147,b,match,0.2536159348126601,imagebind,pecher2006
-148,b,match,0.18038561974338896,imagebind,pecher2006
-149,b,match,0.19971158004111056,imagebind,pecher2006
-150,b,match,0.1794254326279775,imagebind,pecher2006
-151,b,match,0.04258014560416401,imagebind,pecher2006
-152,b,match,0.14204579763301217,imagebind,pecher2006
-153,b,match,0.21148469273014292,imagebind,pecher2006
-154,b,match,0.24162108067748,imagebind,pecher2006
-155,b,match,0.22637118099996734,imagebind,pecher2006
-156,b,match,0.23875918855368627,imagebind,pecher2006
-157,b,match,0.1918095623179188,imagebind,pecher2006
-158,b,match,0.2568482448540873,imagebind,pecher2006
-159,b,match,0.2823041346808801,imagebind,pecher2006
-160,b,match,0.2983041813275944,imagebind,pecher2006
-161,b,match,0.21691592757815625,imagebind,pecher2006
-162,b,match,0.23559929146362468,imagebind,pecher2006
-163,b,match,0.11742585575219255,imagebind,pecher2006
-164,b,match,0.19880399782019265,imagebind,pecher2006
-165,b,match,0.2582216804802757,imagebind,pecher2006
-166,b,match,0.2195729085328615,imagebind,pecher2006
-167,b,match,0.20075876412880755,imagebind,pecher2006
-168,b,match,0.27903850897460836,imagebind,pecher2006
-169,b,match,0.22420094652718436,imagebind,pecher2006
-170,b,match,0.11883120512334178,imagebind,pecher2006
-171,b,match,0.23876805791011613,imagebind,pecher2006
-172,b,match,0.16266717642813178,imagebind,pecher2006
-173,b,match,0.1709650273048995,imagebind,pecher2006
-174,b,match,0.13776932089762517,imagebind,pecher2006
-175,b,match,0.24824604765642222,imagebind,pecher2006
-176,b,match,0.1975484535165477,imagebind,pecher2006
-177,b,match,0.1485473142078031,imagebind,pecher2006
-178,b,match,0.21746755996875078,imagebind,pecher2006
-179,b,match,0.257932603858968,imagebind,pecher2006
-180,b,mismatch,0.27563309864744356,imagebind,pecher2006
-181,b,mismatch,0.24111723581961886,imagebind,pecher2006
-182,b,mismatch,0.24495358123816957,imagebind,pecher2006
-183,b,mismatch,0.2156475034094908,imagebind,pecher2006
-184,b,mismatch,0.11059153414891587,imagebind,pecher2006
-185,b,mismatch,0.2530390836158485,imagebind,pecher2006
-186,b,mismatch,0.16845303133007838,imagebind,pecher2006
-187,b,mismatch,0.06430564837884878,imagebind,pecher2006
-188,b,mismatch,0.26681554712323774,imagebind,pecher2006
-189,b,mismatch,0.22417712812472956,imagebind,pecher2006
-190,b,mismatch,0.26886111106921207,imagebind,pecher2006
-191,b,mismatch,0.2581408980329627,imagebind,pecher2006
-192,b,mismatch,0.2433767644275714,imagebind,pecher2006
-193,b,mismatch,0.2842936406784724,imagebind,pecher2006
-194,b,mismatch,0.19986278642057453,imagebind,pecher2006
-195,b,mismatch,0.2592122659084716,imagebind,pecher2006
-196,b,mismatch,0.19174682910594187,imagebind,pecher2006
-197,b,mismatch,0.25187741531586083,imagebind,pecher2006
-198,b,mismatch,0.13495785885449374,imagebind,pecher2006
-199,b,mismatch,0.14696238481386392,imagebind,pecher2006
-200,b,mismatch,0.25333606631929506,imagebind,pecher2006
-201,b,mismatch,0.20898134406924918,imagebind,pecher2006
-202,b,mismatch,0.1375879559426073,imagebind,pecher2006
-203,b,mismatch,0.1843675651047566,imagebind,pecher2006
-204,b,mismatch,0.12817092846746847,imagebind,pecher2006
-205,b,mismatch,0.19724184309536563,imagebind,pecher2006
-206,b,mismatch,0.2118382960751679,imagebind,pecher2006
-207,b,mismatch,0.16609298241009685,imagebind,pecher2006
-208,b,mismatch,0.21853263137429702,imagebind,pecher2006
-209,b,mismatch,0.27220646037971874,imagebind,pecher2006
-210,b,mismatch,0.17917371216289735,imagebind,pecher2006
-211,b,mismatch,0.13875274749883015,imagebind,pecher2006
-212,b,mismatch,0.030129523897252763,imagebind,pecher2006
-213,b,mismatch,0.22936824671176825,imagebind,pecher2006
-214,b,mismatch,0.17030990316852412,imagebind,pecher2006
-215,b,mismatch,0.18510503856014027,imagebind,pecher2006
-216,b,mismatch,0.22723200668307852,imagebind,pecher2006
-217,b,mismatch,0.16074490059634972,imagebind,pecher2006
-218,b,mismatch,0.13473721918670867,imagebind,pecher2006
-219,b,mismatch,0.19429256493796776,imagebind,pecher2006
-220,b,mismatch,0.2329227844397599,imagebind,pecher2006
-221,b,mismatch,0.24526323818089157,imagebind,pecher2006
-222,b,mismatch,0.26436188574822284,imagebind,pecher2006
-223,b,mismatch,0.2193352334002302,imagebind,pecher2006
-224,b,mismatch,0.1699237816727024,imagebind,pecher2006
-225,b,mismatch,0.21139841275972904,imagebind,pecher2006
-226,b,mismatch,0.17448133572758573,imagebind,pecher2006
-227,b,mismatch,0.2314285326278258,imagebind,pecher2006
-228,b,mismatch,0.21935199996963206,imagebind,pecher2006
-229,b,mismatch,0.24986443659945556,imagebind,pecher2006
-230,b,mismatch,0.1294520272250883,imagebind,pecher2006
-231,b,mismatch,0.25426769128946325,imagebind,pecher2006
-232,b,mismatch,0.23487147311752354,imagebind,pecher2006
-233,b,mismatch,0.10707605002691523,imagebind,pecher2006
-234,b,mismatch,0.2578763957792396,imagebind,pecher2006
-235,b,mismatch,0.2534701021229422,imagebind,pecher2006
-236,b,mismatch,0.22588241122548913,imagebind,pecher2006
-237,b,mismatch,0.1602710585787651,imagebind,pecher2006
-238,b,mismatch,0.15854923010020772,imagebind,pecher2006
-239,b,mismatch,0.15541112918573952,imagebind,pecher2006
+,item,object,item_type,sentence,match,probability,model,dataset
+0,1,apple pie,new,a,match,0.27516582240420706,imagebind,pecher2006
+1,2,horse,new,a,match,0.2503631426278774,imagebind,pecher2006
+2,3,Scarf,new,a,match,0.2489477990830633,imagebind,pecher2006
+3,4,shoelace,new,a,match,0.28157179485421735,imagebind,pecher2006
+4,5,Staple,new,a,match,0.15539935750516454,imagebind,pecher2006
+5,6,wheat,new,a,match,0.24663794977976028,imagebind,pecher2006
+6,7,coat,new,a,match,0.1502522526317963,imagebind,pecher2006
+7,8,match,new,a,match,0.07529746915218982,imagebind,pecher2006
+8,9,owl,new,a,match,0.2526376656311746,imagebind,pecher2006
+9,10,pumpkin,new,a,match,0.19240397591188574,imagebind,pecher2006
+10,11,Squid,new,a,match,0.31121469358839116,imagebind,pecher2006
+11,12,carrot,new,a,match,0.2884009254335964,imagebind,pecher2006
+12,13,garbage bag,new,a,match,0.23438612576728168,imagebind,pecher2006
+13,14,goose,new,a,match,0.2972084296487496,imagebind,pecher2006
+14,15,ice,new,a,match,0.2699177653210859,imagebind,pecher2006
+15,16,swiss knife,new,a,match,0.26370883415966995,imagebind,pecher2006
+16,17,umbrella,new,a,match,0.23547380278618446,imagebind,pecher2006
+17,18,cucumber,new,a,match,0.30963761427144987,imagebind,pecher2006
+18,19,lamp,new,a,match,0.18758717361895239,imagebind,pecher2006
+19,20,map,new,a,match,0.19787658545418796,imagebind,pecher2006
+20,21,avocado,new new,a,match,0.24893128441719892,imagebind,pecher2006
+21,22,frog,new new,a,match,0.22044354375838582,imagebind,pecher2006
+22,23,paint,new new,a,match,0.1942638001093293,imagebind,pecher2006
+23,24,walnut,new new,a,match,0.2850828567585626,imagebind,pecher2006
+24,25,zodiac,new new,a,match,0.11712334906508759,imagebind,pecher2006
+25,26,sugar,new new,a,match,0.21689252168009332,imagebind,pecher2006
+26,27,tinfoil,new new,a,match,0.23227604620453857,imagebind,pecher2006
+27,28,cheesecake,new new,a,match,0.17628954827253795,imagebind,pecher2006
+28,29,hose,new new,a,match,0.22878371608686643,imagebind,pecher2006
+29,30,soap,new new,a,match,0.2923118610277554,imagebind,pecher2006
+30,31,tape,new new,a,match,0.21221498812354966,imagebind,pecher2006
+31,32,banana,new new,a,match,0.2268742752047248,imagebind,pecher2006
+32,33,ketchup,new new,a,match,0.05897483466226339,imagebind,pecher2006
+33,34,wool,new new,a,match,0.17374774494119105,imagebind,pecher2006
+34,35,airplane,original,a,match,0.1543434714466283,imagebind,pecher2006
+35,36,chicken,original,a,match,0.2605143156642389,imagebind,pecher2006
+36,37,hockey,original,a,match,0.27543396882361515,imagebind,pecher2006
+37,38,lime,original,a,match,0.23878655484527478,imagebind,pecher2006
+38,39,balloon,original,a,match,0.1541602172330847,imagebind,pecher2006
+39,40,bread,original,a,match,0.20684603879708185,imagebind,pecher2006
+40,41,egg,original,a,match,0.2921699520770582,imagebind,pecher2006
+41,42,mushroom,original,a,match,0.27850140355404873,imagebind,pecher2006
+42,43,newspaper,original,a,match,0.2833308474447751,imagebind,pecher2006
+43,44,pineapple,original,a,match,0.2607738970716931,imagebind,pecher2006
+44,45,sailboat,original,a,match,0.1912845852860483,imagebind,pecher2006
+45,46,tomato,original,a,match,0.2940105383380065,imagebind,pecher2006
+46,47,book,original,a,match,0.1663853374045824,imagebind,pecher2006
+47,48,fish,original,a,match,0.18542000679796367,imagebind,pecher2006
+48,49,lemon,original,a,match,0.26297229337695605,imagebind,pecher2006
+49,50,onion,original,a,match,0.24654898187934016,imagebind,pecher2006
+50,51,towel,original,a,match,0.14779295408463278,imagebind,pecher2006
+51,52,watermelon,original,a,match,0.28484419509535863,imagebind,pecher2006
+52,53,apple,original,a,match,0.2365832146662893,imagebind,pecher2006
+53,54,cigarette,original,a,match,0.10875805820628792,imagebind,pecher2006
+54,55,corn,original,a,match,0.2603385307541167,imagebind,pecher2006
+55,56,eagle,original,a,match,0.24242112858686538,imagebind,pecher2006
+56,57,lobster,original,a,match,0.2621721663456835,imagebind,pecher2006
+57,58,shirt,original,a,match,0.18183919636315948,imagebind,pecher2006
+58,59,spaghetti,original,a,match,0.16786545146910914,imagebind,pecher2006
+59,60,tissue,original,a,match,0.14593295356854763,imagebind,pecher2006
+60,1,apple pie,new,a,mismatch,0.23317676330681247,imagebind,pecher2006
+61,2,horse,new,a,mismatch,0.23207698483029027,imagebind,pecher2006
+62,3,Scarf,new,a,mismatch,0.18924503208917043,imagebind,pecher2006
+63,4,shoelace,new,a,mismatch,0.21613900825416643,imagebind,pecher2006
+64,5,Staple,new,a,mismatch,0.13754227552806908,imagebind,pecher2006
+65,6,wheat,new,a,mismatch,0.14441935985741416,imagebind,pecher2006
+66,7,coat,new,a,mismatch,0.2523847273168708,imagebind,pecher2006
+67,8,match,new,a,mismatch,0.11828752937863174,imagebind,pecher2006
+68,9,owl,new,a,mismatch,0.24599568653269488,imagebind,pecher2006
+69,10,pumpkin,new,a,mismatch,0.20626199928939914,imagebind,pecher2006
+70,11,Squid,new,a,mismatch,0.19492132194263434,imagebind,pecher2006
+71,12,carrot,new,a,mismatch,0.15552884851988025,imagebind,pecher2006
+72,13,garbage bag,new,a,mismatch,0.2743795164596303,imagebind,pecher2006
+73,14,goose,new,a,mismatch,0.27091271444424414,imagebind,pecher2006
+74,15,ice,new,a,mismatch,0.20081948757024182,imagebind,pecher2006
+75,16,swiss knife,new,a,mismatch,0.2974137379137842,imagebind,pecher2006
+76,17,umbrella,new,a,mismatch,0.24364459951832462,imagebind,pecher2006
+77,18,cucumber,new,a,mismatch,0.21863486064934157,imagebind,pecher2006
+78,19,lamp,new,a,mismatch,0.17438082949110778,imagebind,pecher2006
+79,20,map,new,a,mismatch,0.12928486211291423,imagebind,pecher2006
+80,21,avocado,new new,a,mismatch,0.11257183439669449,imagebind,pecher2006
+81,22,frog,new new,a,mismatch,0.21523099317051197,imagebind,pecher2006
+82,23,paint,new new,a,mismatch,0.20305144056375468,imagebind,pecher2006
+83,24,walnut,new new,a,mismatch,0.22423881906900367,imagebind,pecher2006
+84,25,zodiac,new new,a,mismatch,0.16150490299788212,imagebind,pecher2006
+85,26,sugar,new new,a,mismatch,0.24494026905941957,imagebind,pecher2006
+86,27,tinfoil,new new,a,mismatch,0.3029611258485171,imagebind,pecher2006
+87,28,cheesecake,new new,a,mismatch,0.2799514503018592,imagebind,pecher2006
+88,29,hose,new new,a,mismatch,0.20735097142356085,imagebind,pecher2006
+89,30,soap,new new,a,mismatch,0.19907619822919698,imagebind,pecher2006
+90,31,tape,new new,a,mismatch,0.19060863712182208,imagebind,pecher2006
+91,32,banana,new new,a,mismatch,0.06471171957668331,imagebind,pecher2006
+92,33,ketchup,new new,a,mismatch,0.17195208607422385,imagebind,pecher2006
+93,34,wool,new new,a,mismatch,0.15654249526214326,imagebind,pecher2006
+94,35,airplane,original,a,mismatch,0.19370774622249853,imagebind,pecher2006
+95,36,chicken,original,a,mismatch,0.18023391404195688,imagebind,pecher2006
+96,37,hockey,original,a,mismatch,0.23775882770616663,imagebind,pecher2006
+97,38,lime,original,a,mismatch,0.23467184410351538,imagebind,pecher2006
+98,39,balloon,original,a,mismatch,0.2581461214575187,imagebind,pecher2006
+99,40,bread,original,a,mismatch,0.1953725520443924,imagebind,pecher2006
+100,41,egg,original,a,mismatch,0.2613477508117643,imagebind,pecher2006
+101,42,mushroom,original,a,mismatch,0.14199920582326564,imagebind,pecher2006
+102,43,newspaper,original,a,mismatch,0.2715616702723356,imagebind,pecher2006
+103,44,pineapple,original,a,mismatch,0.08590691645377124,imagebind,pecher2006
+104,45,sailboat,original,a,mismatch,0.23279852606594997,imagebind,pecher2006
+105,46,tomato,original,a,mismatch,0.2470868449050273,imagebind,pecher2006
+106,47,book,original,a,mismatch,0.18340951803397765,imagebind,pecher2006
+107,48,fish,original,a,mismatch,0.12064707336484926,imagebind,pecher2006
+108,49,lemon,original,a,mismatch,0.2511281829054819,imagebind,pecher2006
+109,50,onion,original,a,mismatch,0.15277804689459518,imagebind,pecher2006
+110,51,towel,original,a,mismatch,0.12065407140035533,imagebind,pecher2006
+111,52,watermelon,original,a,mismatch,0.24969086508780713,imagebind,pecher2006
+112,53,apple,original,a,mismatch,0.15671817071459493,imagebind,pecher2006
+113,54,cigarette,original,a,mismatch,0.14611415851291976,imagebind,pecher2006
+114,55,corn,original,a,mismatch,0.09330113527605488,imagebind,pecher2006
+115,56,eagle,original,a,mismatch,0.20506372079199098,imagebind,pecher2006
+116,57,lobster,original,a,mismatch,0.2300957970524199,imagebind,pecher2006
+117,58,shirt,original,a,mismatch,0.1424249459648097,imagebind,pecher2006
+118,59,spaghetti,original,a,mismatch,0.20804810599895107,imagebind,pecher2006
+119,60,tissue,original,a,mismatch,0.24290491354848387,imagebind,pecher2006
+120,1,apple pie,new,b,match,0.22138807039028696,imagebind,pecher2006
+121,2,horse,new,b,match,0.2574242709740824,imagebind,pecher2006
+122,3,Scarf,new,b,match,0.2382530896007996,imagebind,pecher2006
+123,4,shoelace,new,b,match,0.14873573282601382,imagebind,pecher2006
+124,5,Staple,new,b,match,0.14749541379859654,imagebind,pecher2006
+125,6,wheat,new,b,match,0.16815876530312301,imagebind,pecher2006
+126,7,coat,new,b,match,0.2720499107142693,imagebind,pecher2006
+127,8,match,new,b,match,0.12855318954961825,imagebind,pecher2006
+128,9,owl,new,b,match,0.2787441477748669,imagebind,pecher2006
+129,10,pumpkin,new,b,match,0.2449236739980729,imagebind,pecher2006
+130,11,Squid,new,b,match,0.33908528517288616,imagebind,pecher2006
+131,12,carrot,new,b,match,0.2043652742921257,imagebind,pecher2006
+132,13,garbage bag,new,b,match,0.3080885788131247,imagebind,pecher2006
+133,14,goose,new,b,match,0.31127374892352355,imagebind,pecher2006
+134,15,ice,new,b,match,0.2234192143124769,imagebind,pecher2006
+135,16,swiss knife,new,b,match,0.29341983572844177,imagebind,pecher2006
+136,17,umbrella,new,b,match,0.2347322375666696,imagebind,pecher2006
+137,18,cucumber,new,b,match,0.23648143479709682,imagebind,pecher2006
+138,19,lamp,new,b,match,0.20120379704407143,imagebind,pecher2006
+139,20,map,new,b,match,0.19682823477590117,imagebind,pecher2006
+140,21,avocado,new new,b,match,0.155877572542528,imagebind,pecher2006
+141,22,frog,new new,b,match,0.2098896351760089,imagebind,pecher2006
+142,23,paint,new new,b,match,0.22058158212187173,imagebind,pecher2006
+143,24,walnut,new new,b,match,0.18160569019571038,imagebind,pecher2006
+144,25,zodiac,new new,b,match,0.1417240839814905,imagebind,pecher2006
+145,26,sugar,new new,b,match,0.23454770587723717,imagebind,pecher2006
+146,27,tinfoil,new new,b,match,0.35649745297079316,imagebind,pecher2006
+147,28,cheesecake,new new,b,match,0.2536159348126601,imagebind,pecher2006
+148,29,hose,new new,b,match,0.18038561974338896,imagebind,pecher2006
+149,30,soap,new new,b,match,0.19971158004111056,imagebind,pecher2006
+150,31,tape,new new,b,match,0.1794254326279775,imagebind,pecher2006
+151,32,banana,new new,b,match,0.04258014560416401,imagebind,pecher2006
+152,33,ketchup,new new,b,match,0.14204579763301217,imagebind,pecher2006
+153,34,wool,new new,b,match,0.21148469273014292,imagebind,pecher2006
+154,35,airplane,original,b,match,0.24162108067748,imagebind,pecher2006
+155,36,chicken,original,b,match,0.22637118099996734,imagebind,pecher2006
+156,37,hockey,original,b,match,0.23875918855368627,imagebind,pecher2006
+157,38,lime,original,b,match,0.1918095623179188,imagebind,pecher2006
+158,39,balloon,original,b,match,0.2568482448540873,imagebind,pecher2006
+159,40,bread,original,b,match,0.2823041346808801,imagebind,pecher2006
+160,41,egg,original,b,match,0.2983041813275944,imagebind,pecher2006
+161,42,mushroom,original,b,match,0.21691592757815625,imagebind,pecher2006
+162,43,newspaper,original,b,match,0.23559929146362468,imagebind,pecher2006
+163,44,pineapple,original,b,match,0.11742585575219255,imagebind,pecher2006
+164,45,sailboat,original,b,match,0.19880399782019265,imagebind,pecher2006
+165,46,tomato,original,b,match,0.2582216804802757,imagebind,pecher2006
+166,47,book,original,b,match,0.2195729085328615,imagebind,pecher2006
+167,48,fish,original,b,match,0.20075876412880755,imagebind,pecher2006
+168,49,lemon,original,b,match,0.27903850897460836,imagebind,pecher2006
+169,50,onion,original,b,match,0.22420094652718436,imagebind,pecher2006
+170,51,towel,original,b,match,0.11883120512334178,imagebind,pecher2006
+171,52,watermelon,original,b,match,0.23876805791011613,imagebind,pecher2006
+172,53,apple,original,b,match,0.16266717642813178,imagebind,pecher2006
+173,54,cigarette,original,b,match,0.1709650273048995,imagebind,pecher2006
+174,55,corn,original,b,match,0.13776932089762517,imagebind,pecher2006
+175,56,eagle,original,b,match,0.24824604765642222,imagebind,pecher2006
+176,57,lobster,original,b,match,0.1975484535165477,imagebind,pecher2006
+177,58,shirt,original,b,match,0.1485473142078031,imagebind,pecher2006
+178,59,spaghetti,original,b,match,0.21746755996875078,imagebind,pecher2006
+179,60,tissue,original,b,match,0.257932603858968,imagebind,pecher2006
+180,1,apple pie,new,b,mismatch,0.27563309864744356,imagebind,pecher2006
+181,2,horse,new,b,mismatch,0.24111723581961886,imagebind,pecher2006
+182,3,Scarf,new,b,mismatch,0.24495358123816957,imagebind,pecher2006
+183,4,shoelace,new,b,mismatch,0.2156475034094908,imagebind,pecher2006
+184,5,Staple,new,b,mismatch,0.11059153414891587,imagebind,pecher2006
+185,6,wheat,new,b,mismatch,0.2530390836158485,imagebind,pecher2006
+186,7,coat,new,b,mismatch,0.16845303133007838,imagebind,pecher2006
+187,8,match,new,b,mismatch,0.06430564837884878,imagebind,pecher2006
+188,9,owl,new,b,mismatch,0.26681554712323774,imagebind,pecher2006
+189,10,pumpkin,new,b,mismatch,0.22417712812472956,imagebind,pecher2006
+190,11,Squid,new,b,mismatch,0.26886111106921207,imagebind,pecher2006
+191,12,carrot,new,b,mismatch,0.2581408980329627,imagebind,pecher2006
+192,13,garbage bag,new,b,mismatch,0.2433767644275714,imagebind,pecher2006
+193,14,goose,new,b,mismatch,0.2842936406784724,imagebind,pecher2006
+194,15,ice,new,b,mismatch,0.19986278642057453,imagebind,pecher2006
+195,16,swiss knife,new,b,mismatch,0.2592122659084716,imagebind,pecher2006
+196,17,umbrella,new,b,mismatch,0.19174682910594187,imagebind,pecher2006
+197,18,cucumber,new,b,mismatch,0.25187741531586083,imagebind,pecher2006
+198,19,lamp,new,b,mismatch,0.13495785885449374,imagebind,pecher2006
+199,20,map,new,b,mismatch,0.14696238481386392,imagebind,pecher2006
+200,21,avocado,new new,b,mismatch,0.25333606631929506,imagebind,pecher2006
+201,22,frog,new new,b,mismatch,0.20898134406924918,imagebind,pecher2006
+202,23,paint,new new,b,mismatch,0.1375879559426073,imagebind,pecher2006
+203,24,walnut,new new,b,mismatch,0.1843675651047566,imagebind,pecher2006
+204,25,zodiac,new new,b,mismatch,0.12817092846746847,imagebind,pecher2006
+205,26,sugar,new new,b,mismatch,0.19724184309536563,imagebind,pecher2006
+206,27,tinfoil,new new,b,mismatch,0.2118382960751679,imagebind,pecher2006
+207,28,cheesecake,new new,b,mismatch,0.16609298241009685,imagebind,pecher2006
+208,29,hose,new new,b,mismatch,0.21853263137429702,imagebind,pecher2006
+209,30,soap,new new,b,mismatch,0.27220646037971874,imagebind,pecher2006
+210,31,tape,new new,b,mismatch,0.17917371216289735,imagebind,pecher2006
+211,32,banana,new new,b,mismatch,0.13875274749883015,imagebind,pecher2006
+212,33,ketchup,new new,b,mismatch,0.030129523897252763,imagebind,pecher2006
+213,34,wool,new new,b,mismatch,0.22936824671176825,imagebind,pecher2006
+214,35,airplane,original,b,mismatch,0.17030990316852412,imagebind,pecher2006
+215,36,chicken,original,b,mismatch,0.18510503856014027,imagebind,pecher2006
+216,37,hockey,original,b,mismatch,0.22723200668307852,imagebind,pecher2006
+217,38,lime,original,b,mismatch,0.16074490059634972,imagebind,pecher2006
+218,39,balloon,original,b,mismatch,0.13473721918670867,imagebind,pecher2006
+219,40,bread,original,b,mismatch,0.19429256493796776,imagebind,pecher2006
+220,41,egg,original,b,mismatch,0.2329227844397599,imagebind,pecher2006
+221,42,mushroom,original,b,mismatch,0.24526323818089157,imagebind,pecher2006
+222,43,newspaper,original,b,mismatch,0.26436188574822284,imagebind,pecher2006
+223,44,pineapple,original,b,mismatch,0.2193352334002302,imagebind,pecher2006
+224,45,sailboat,original,b,mismatch,0.1699237816727024,imagebind,pecher2006
+225,46,tomato,original,b,mismatch,0.21139841275972904,imagebind,pecher2006
+226,47,book,original,b,mismatch,0.17448133572758573,imagebind,pecher2006
+227,48,fish,original,b,mismatch,0.2314285326278258,imagebind,pecher2006
+228,49,lemon,original,b,mismatch,0.21935199996963206,imagebind,pecher2006
+229,50,onion,original,b,mismatch,0.24986443659945556,imagebind,pecher2006
+230,51,towel,original,b,mismatch,0.1294520272250883,imagebind,pecher2006
+231,52,watermelon,original,b,mismatch,0.25426769128946325,imagebind,pecher2006
+232,53,apple,original,b,mismatch,0.23487147311752354,imagebind,pecher2006
+233,54,cigarette,original,b,mismatch,0.10707605002691523,imagebind,pecher2006
+234,55,corn,original,b,mismatch,0.2578763957792396,imagebind,pecher2006
+235,56,eagle,original,b,mismatch,0.2534701021229422,imagebind,pecher2006
+236,57,lobster,original,b,mismatch,0.22588241122548913,imagebind,pecher2006
+237,58,shirt,original,b,mismatch,0.1602710585787651,imagebind,pecher2006
+238,59,spaghetti,original,b,mismatch,0.15854923010020772,imagebind,pecher2006
+239,60,tissue,original,b,mismatch,0.15541112918573952,imagebind,pecher2006

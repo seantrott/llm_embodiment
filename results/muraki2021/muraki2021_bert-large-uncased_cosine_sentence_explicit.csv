@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,axe,,a,a,match,0.6218865155644105,bert-large-uncased,muraki2021
+2,bat,,a,a,match,0.6897187996520971,bert-large-uncased,muraki2021
+3,book,,a,a,match,0.6989263405083569,bert-large-uncased,muraki2021
+4,bottle,,a,a,match,0.7365440545758445,bert-large-uncased,muraki2021
+5,bowl,,a,a,match,0.7192186534675383,bert-large-uncased,muraki2021
+6,broom,,a,a,match,0.7500593229150478,bert-large-uncased,muraki2021
+7,brush,,a,a,match,0.649963880294923,bert-large-uncased,muraki2021
+8,crayon,,a,a,match,0.8432846834795196,bert-large-uncased,muraki2021
+9,decoration,,a,a,match,0.6529267028908948,bert-large-uncased,muraki2021
+10,flashlight,,a,a,match,0.7439178562320844,bert-large-uncased,muraki2021
+11,fire extinguisher,,a,a,match,0.8430643805946392,bert-large-uncased,muraki2021
+12,glass,,a,a,match,0.7473817493443788,bert-large-uncased,muraki2021
+13,guitar,,a,a,match,0.738092310422188,bert-large-uncased,muraki2021
+14,gun,,a,a,match,0.7102683060322545,bert-large-uncased,muraki2021
+15,iron,,a,a,match,0.6493167073778593,bert-large-uncased,muraki2021
+16,key,,a,a,match,0.8082176404147416,bert-large-uncased,muraki2021
+17,nail,,a,a,match,0.7251806538355733,bert-large-uncased,muraki2021
+18,pen,,a,a,match,0.4537720818277047,bert-large-uncased,muraki2021
+19,pencil,,a,a,match,0.7528855461396098,bert-large-uncased,muraki2021
+20,plate,,a,a,match,0.6444360388112333,bert-large-uncased,muraki2021
+21,salt shaker,,a,a,match,0.5196463423905133,bert-large-uncased,muraki2021
+22,pair of scissors,,a,a,match,0.7203076274116663,bert-large-uncased,muraki2021
+23,screw,,a,a,match,0.5892202797823123,bert-large-uncased,muraki2021
+24,wheel,,a,a,match,0.7439955804854266,bert-large-uncased,muraki2021
+1,axe,,a,b,mismatch,0.6334182774894791,bert-large-uncased,muraki2021
+2,bat,,a,b,mismatch,0.7222436572700064,bert-large-uncased,muraki2021
+3,book,,a,b,mismatch,0.6982722901913366,bert-large-uncased,muraki2021
+4,bottle,,a,b,mismatch,0.6972379407408759,bert-large-uncased,muraki2021
+5,bowl,,a,b,mismatch,0.7234555308598993,bert-large-uncased,muraki2021
+6,broom,,a,b,mismatch,0.7434662158770509,bert-large-uncased,muraki2021
+7,brush,,a,b,mismatch,0.6526457291255578,bert-large-uncased,muraki2021
+8,crayon,,a,b,mismatch,0.8022243501192893,bert-large-uncased,muraki2021
+9,decoration,,a,b,mismatch,0.6770391863821131,bert-large-uncased,muraki2021
+10,flashlight,,a,b,mismatch,0.7403311950504562,bert-large-uncased,muraki2021
+11,fire extinguisher,,a,b,mismatch,0.8207756201701762,bert-large-uncased,muraki2021
+12,glass,,a,b,mismatch,0.7416716014995255,bert-large-uncased,muraki2021
+13,guitar,,a,b,mismatch,0.7034592340435666,bert-large-uncased,muraki2021
+14,gun,,a,b,mismatch,0.747063218395815,bert-large-uncased,muraki2021
+15,iron,,a,b,mismatch,0.6299152239422218,bert-large-uncased,muraki2021
+16,key,,a,b,mismatch,0.7800576699959018,bert-large-uncased,muraki2021
+17,nail,,a,b,mismatch,0.733234664582191,bert-large-uncased,muraki2021
+18,pen,,a,b,mismatch,0.44988316459183075,bert-large-uncased,muraki2021
+19,pencil,,a,b,mismatch,0.744798715306116,bert-large-uncased,muraki2021
+20,plate,,a,b,mismatch,0.6748399474771316,bert-large-uncased,muraki2021
+21,salt shaker,,a,b,mismatch,0.5185237533919254,bert-large-uncased,muraki2021
+22,pair of scissors,,a,b,mismatch,0.6948390287133738,bert-large-uncased,muraki2021
+23,screw,,a,b,mismatch,0.5822611763164884,bert-large-uncased,muraki2021
+24,wheel,,a,b,mismatch,0.7600599155975801,bert-large-uncased,muraki2021
+1,axe,,b,b,match,0.6357760320201308,bert-large-uncased,muraki2021
+2,bat,,b,b,match,0.771706247498929,bert-large-uncased,muraki2021
+3,book,,b,b,match,0.7337093334754665,bert-large-uncased,muraki2021
+4,bottle,,b,b,match,0.6666976824124682,bert-large-uncased,muraki2021
+5,bowl,,b,b,match,0.7267405693595496,bert-large-uncased,muraki2021
+6,broom,,b,b,match,0.7451021324673105,bert-large-uncased,muraki2021
+7,brush,,b,b,match,0.5710012883829971,bert-large-uncased,muraki2021
+8,crayon,,b,b,match,0.8137949290994201,bert-large-uncased,muraki2021
+9,decoration,,b,b,match,0.6705166916792539,bert-large-uncased,muraki2021
+10,flashlight,,b,b,match,0.7602854015663615,bert-large-uncased,muraki2021
+11,fire extinguisher,,b,b,match,0.8095012834427906,bert-large-uncased,muraki2021
+12,glass,,b,b,match,0.7500482633133616,bert-large-uncased,muraki2021
+13,guitar,,b,b,match,0.6988953155178985,bert-large-uncased,muraki2021
+14,gun,,b,b,match,0.8046733984163633,bert-large-uncased,muraki2021
+15,iron,,b,b,match,0.6151305933092107,bert-large-uncased,muraki2021
+16,key,,b,b,match,0.7735550053282029,bert-large-uncased,muraki2021
+17,nail,,b,b,match,0.8388427992887278,bert-large-uncased,muraki2021
+18,pen,,b,b,match,0.6243927389852828,bert-large-uncased,muraki2021
+19,pencil,,b,b,match,0.6953718972025383,bert-large-uncased,muraki2021
+20,plate,,b,b,match,0.6870719050399758,bert-large-uncased,muraki2021
+21,salt shaker,,b,b,match,0.686720017288686,bert-large-uncased,muraki2021
+22,pair of scissors,,b,b,match,0.7367386104944602,bert-large-uncased,muraki2021
+23,screw,,b,b,match,0.5824744581495183,bert-large-uncased,muraki2021
+24,wheel,,b,b,match,0.7494584302781008,bert-large-uncased,muraki2021
+1,axe,,b,a,mismatch,0.6256506475362779,bert-large-uncased,muraki2021
+2,bat,,b,a,mismatch,0.7332031762737844,bert-large-uncased,muraki2021
+3,book,,b,a,mismatch,0.7559633990647093,bert-large-uncased,muraki2021
+4,bottle,,b,a,mismatch,0.7001486584835744,bert-large-uncased,muraki2021
+5,bowl,,b,a,mismatch,0.7136567411919639,bert-large-uncased,muraki2021
+6,broom,,b,a,mismatch,0.7648894507347331,bert-large-uncased,muraki2021
+7,brush,,b,a,mismatch,0.5651030560166448,bert-large-uncased,muraki2021
+8,crayon,,b,a,mismatch,0.8223246632980988,bert-large-uncased,muraki2021
+9,decoration,,b,a,mismatch,0.6661856312615683,bert-large-uncased,muraki2021
+10,flashlight,,b,a,mismatch,0.764110408922604,bert-large-uncased,muraki2021
+11,fire extinguisher,,b,a,mismatch,0.8257133878597603,bert-large-uncased,muraki2021
+12,glass,,b,a,mismatch,0.754444017607884,bert-large-uncased,muraki2021
+13,guitar,,b,a,mismatch,0.729058210958473,bert-large-uncased,muraki2021
+14,gun,,b,a,mismatch,0.7571716015013394,bert-large-uncased,muraki2021
+15,iron,,b,a,mismatch,0.6300706208359793,bert-large-uncased,muraki2021
+16,key,,b,a,mismatch,0.812658070983176,bert-large-uncased,muraki2021
+17,nail,,b,a,mismatch,0.8113848465600396,bert-large-uncased,muraki2021
+18,pen,,b,a,mismatch,0.6295447184021179,bert-large-uncased,muraki2021
+19,pencil,,b,a,mismatch,0.7056182177905542,bert-large-uncased,muraki2021
+20,plate,,b,a,mismatch,0.6500433884024353,bert-large-uncased,muraki2021
+21,salt shaker,,b,a,mismatch,0.6801371321460302,bert-large-uncased,muraki2021
+22,pair of scissors,,b,a,mismatch,0.7377687849956955,bert-large-uncased,muraki2021
+23,screw,,b,a,mismatch,0.5877347769559925,bert-large-uncased,muraki2021
+24,wheel,,b,a,mismatch,0.7342180495940259,bert-large-uncased,muraki2021

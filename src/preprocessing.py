@@ -3,6 +3,7 @@ import pandas as pd
 import os
 from PIL import Image, ImageOps
 import re
+import tiktoken
 
 
 """
@@ -238,3 +239,23 @@ df.reset_index(inplace=True, drop=True)
 
 # save to items.csv
 df.to_csv("data/winter2012/e2/items.csv", index=False)
+
+"""
+Descriptive stats
+"""
+
+# Get the mean and std of sentence lengths in each dataset
+
+def get_mean_std_sentence_length(dataset, colname):
+    df = pd.read_csv(f"data/{dataset}/items.csv")
+
+    # Get no. tokens for gpt-3 text-davinci-002
+    encoding = tiktoken.get_encoding("p50k_base")
+    df["sentence_length"] = df[colname].apply(lambda x: len(encoding.encode(x)))
+
+    return df["sentence_length"].mean(), df["sentence_length"].std()
+
+
+get_mean_std_sentence_length("connell2007", "sentence_a")
+get_mean_std_sentence_length("muraki2021", "sentence_a")
+get_mean_std_sentence_length("pecher2006", "sentence_a")

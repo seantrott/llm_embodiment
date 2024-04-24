@@ -1,6 +1,6 @@
 ---
 title: "Do MLMs show effects of Embodied Simulation"
-author: "Cameron Jones & Sean Trott"
+author: "Anonymous"
 date: "10/10/2019"
 output:
   html_document: 
@@ -36,7 +36,7 @@ fnames <- c()
 
 for (dataset in datasets) {
   for (model in models) {
-    fp <- paste0("../results/", dataset, "/", dataset, "_", model, "_cosine",  ".csv")
+    fp <- paste0("../results/", dataset, "/", dataset, "_", model,   ".csv")
     fnames <- c(fnames, fp)
   }
 }
@@ -56,6 +56,9 @@ data <- do.call(rbind,lapply(fnames,read.csv)) %>%
       "muraki2021" ~ "Orientation"
     ),
     dataset = factor(dataset, levels=c("Shape", "Color", "Orientation"))
+  ) %>%
+  mutate(
+    item_id = paste(dataset, item, sep="_")
   )
 
 ```
@@ -76,15 +79,17 @@ for (model_name in unique(data$model)) {
   subset_data <- data %>%
     filter(model == model_name)
   
-  # Run t-test
-  result <- summary(lm(probability ~ match + (1 | ), data = subset_data))
+  # Run linear model
+  result <- summary(lmer(probability ~ match + (1 | item_id) + 
+                           (1 | dataset), data = subset_data))
   
   # Store the summarized t-test result in the data frame
   agg_summary <- rbind(agg_summary, data.frame(
     model = model_name,
     estimate = result$coefficients[2,1],
-    t_value = result$coefficients[2,3],
-    p_value = result$coefficients[2,4]
+    df = result$coefficients[2,3],
+    t_value = result$coefficients[2,4],
+    p_value = result$coefficients[2,5]
   ))
 }
 
@@ -99,29 +104,12 @@ agg_summary
 ```
 
 
-Example result for ImageBind
-
-```{r}
-
-summary(lm(probability ~ match, data = data %>% filter(model == "ImageBind")))
-
-```
-
-## By dataset
-
-```{r}
-
-data.frame(round(summary(lm(probability ~ match * dataset, data = data %>% filter(model == "ImageBind")))$coefficients, 3))
-
-```
-
-
 ## By Feature type
 
 ```{r}
 
 # Initialize empty data frame to store summarized results
-ttest_summary <- data.frame()
+lm_summary <- data.frame()
 
 # Loop through each unique combination of model and dataset
 for (model_name in unique(data$model)) {
@@ -131,35 +119,38 @@ for (model_name in unique(data$model)) {
     subset_data <- data %>%
       filter(model == model_name, dataset == dataset_name)
     
-    # Run t-test
-    t_result <- t.test(probability ~ match, data = subset_data)
+    
+    # Run linear model
+    result <- summary(lmer(probability ~ match + (1 | item_id),
+                           data = subset_data))
     
     # Store the summarized t-test result in the data frame
-    ttest_summary <- rbind(ttest_summary, data.frame(
+    lm_summary <- rbind(lm_summary, data.frame(
       model = model_name,
       dataset = dataset_name,
-      t_value = t_result$statistic,
-      p_value = t_result$p.value,
-      df = t_result$parameter
+      estimate = result$coefficients[2,1],
+      df = result$coefficients[2,3],
+      t_value = result$coefficients[2,4],
+      p_value = result$coefficients[2,5]
     ))
   }
 }
 
 # View the summarized results
-ttest_summary <- ttest_summary %>%
+lm_summary <- lm_summary %>%
   mutate(
     model = factor(model, levels=c("ViT-B/32", "ViT-L/14", "ViT-H/14", "ImageBind")),
     dataset = factor(dataset, levels=c("Shape", "Color", "Orientation"))
   )
 
-ttest_summary
+lm_summary
 
 
 ```
 
 ```{r}
 
-pivoted_data <- ttest_summary %>%
+pivoted_data <- lm_summary %>%
 
   mutate(
     formatted_p = case_when(
@@ -253,14 +244,14 @@ max_bar <- data %>%
 ```{r}
 
 # Add a column for significance stars
-ttest_summary$signif_star <- with(ttest_summary, ifelse(p_value < 0.001, '***', 
+lm_summary$signif_star <- with(lm_summary, ifelse(p_value < 0.001, '***', 
                                               ifelse(p_value < 0.01, '**', 
                                               ifelse(p_value < 0.05, '*', 'ns'))))
 
 # Merge this significance data with your main dataset
-data_with_signif <- merge(data, ttest_summary, by = c("model", "dataset"))
+data_with_signif <- merge(data, lm_summary, by = c("model", "dataset"))
 
-ttest_summary <- ttest_summary %>%
+lm_summary <- lm_summary %>%
   mutate(
     model = case_match(
       model,
@@ -306,7 +297,7 @@ data_with_signif %>%
     axis.text.x = element_text(size = 16),  # Increase axis text size
     strip.text = element_markdown()
   ) +
-  geom_text(data=ttest_summary, aes(label = signif_star, y = y), vjust = -1, size=6, fontface="plain", color="#222222") +
+  geom_text(data=lm_summary, aes(label = signif_star, y = y), vjust = -1, size=6, fontface="plain", color="#222222") +
   coord_cartesian(ylim=c(0, max_bar + 0.05)) +
   labs(x = "Model", y = "Probability", fill = "Match")
 

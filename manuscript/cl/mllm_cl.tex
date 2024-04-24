@@ -1,0 +1,201 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+\usepackage[review]{ACL2023}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out.
+% However, it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{Do Multimodal Large Language Models Show Evidence of Embodied Simulation?}
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+\author{Cameron Jones \and Benjamin Bergen \and Sean Trott \\
+         Department of Cognitive Science\\ University of California, San Diego}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a seperate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+
+Advances in Large Language Models (LLMs) have led to impressive performance on a range of linguistic tasks \cite{hu2022fine, trott2023large, dillion2023can}. Yet despite these improvements, a common criticism of contemporary LLMs is that they are trained on linguistic input alone \cite{bender2020climbing, bisk2020experience}. Lacking bodies or sensorimotor experience, they have no way to ``ground'' the symbols they are trained on, which some \cite{harnad1990symbol} have argued is necessary for true language understanding. A natural solution to this problem could be found in Multimodal Large Language Models (MLLMs) \cite{driess2023palm, girdhar2023imagebind, huang2023language, radfordLearningTransferableVisual2021a}, which learn to associate linguistic representations with information from other \textit{modalities}, such as vision or sound. However, there is still considerable disagreement over whether MLLMs exhibit the necessary interaction between linguistic and sensorimotor inputs that appears to underpin grounding in humans \cite{mollo2023vector}. How tightly integrated are MLLMs' representations of  information from distinct inputs (e.g., vision and language), and how \textit{humanlike} is the manner in which they do this?
+
+We address this gap directly by turning to the evidentiary basis for grounding in humans \cite{bergen2015embodiment}. A range of experimental evidence suggests that humans ground language---in part---by \textit{embodied simulation} of the sensorimotor experiences that language describes.
+By applying techniques originally developed to probe the representations and mechanisms underlying grounding in human language comprehension, we can ask to what extent MLLMs use analogous representations and mechanisms. This approach also offers a unique opportunity for \textit{cross-disciplinary symbiosis}: MLLMs (and LLMs), as operationalizations of verbal theories of language comprehension, could also help refine and resolve outstanding debates about the functional role of grounding in human comprehenders.
+
+
+\subsection{Evidence for embodied simulation in humans}
+
+The theory of \textit{embodied simulation} claims that human comprehenders ground language by simulating the sensorimotor experiences that it describes \cite{barsalou1999perceptual, harnad1990symbol}. For example, understanding a sentence like ``She tossed the ball'' would involve activating the same (or overlapping) neural tissue that is involved in either perceiving or participating in that event \cite{bergen2015embodiment}. 
+
+This theory enjoys empirical support in the form of both behavioral \cite{zwaan2002language, pecher2009short, winter2012language, stanfield2001effect} and neuroimaging \cite{hauk2004somatotopic, pulvermuller2013neurons} evidence. One particularly prominent experimental paradigm is the \textit{sentence-picture verification task} \cite{stanfield2001effect, winter2012language, zwaan2002language, pecher2009short}. In this task, participants read a sentence (e.g., ``He hammered the nail into the wall''); participants then see a picture of an object (e.g., a nail) and must indicate whether that object was mentioned in the previous sentence. On critical trials, the depiction of the object is manipulated according to whether it matches \textit{implicit features} (e.g., color, shape, orientation) from the sentence. For example, the sentence ``He hammered the nail into the wall'' implies that the nail is horizontal, while ``He hammered the nail into the floor'' implies that the nail is vertical. Crucially, these features are not mentioned explicitly in the sentence. Thus, if human participants show different behavior (e.g., a difference in reaction time or accuracy) as a function of whether the implied features are matched in the image, it suggests that they have \textit{inferred} this information from the overall event structure.
+
+The sentence-picture verification task has been used to demonstrate evidence for embodied simulation across multiple visual features, including orientation \cite{stanfield2001effect}, shape \cite{pecher2009short}, distance \cite{winter2012language}, and color \cite{connell2007representing, zwaan2012revisiting}. It has also been adapted for other modalities, such as sound (e.g., implied volume) \cite{winter2012language}. In each case, an effect of the experimental manipulation is generally interpreted as reflecting the activation of \textit{implicit sensorimotor features} from linguistic input; participants' responses to real sensorimotor stimuli are influenced by whether the stimulus matches simulated features.
+
+\subsection{Debates over the Interpretation of Evidence}\label{sec:human_debate}
+
+Despite widespread evidence for some degree of sensorimotor activation, there remains considerable debate over which \textit{mechanisms} are most likely to give rise to this effect. 
+
+One question revolves around the functional role played by sensorimotor activation. Much of the current evidence cannot adjudicate whether simulation plays an epiphenomenal or necessary role in the process of understanding language \cite{mahon2008critical, ostarek2021towards}. On functional accounts \citet{barsalou1999perceptual}, embodied simulation is casually important for inferring implicit features. Comprehenders use sensorimotor representations and the simulation process itself to infer that the eagle's wings are likely to be 'outstreched' if it is in flight.
+As \citet{mahon2008critical} point out, however, sensorimotor simulation could also occur as a byproduct of spreading activation during language comprehension. On this account, processing of the sentence might generate amodal or linguistic representations of the implied features e.g. ``horizontal nail''. These amodal representations, in turn, could activate relevant sensorimotor representations without the sensorimotor representations playing any causal role in comprehension. Under this account, the match effect observed on the target picture trial would not require direct activation of \textit{visual} features but could be explained by the activation of correlated \textit{linguistic features}.
+
+Another question is \textit{architectural} in nature: if semantic representations are multimodal, when and how is information from different modalities integrated? Here, the possibilities range from ``full integration'' (i.e., semantic representations are fully multimodal) to ``grounding by interaction'' (i.e., semantic representations are partially ``symbolic'', but can be grounded on the fly) \cite{mahon2008critical, meteyardComingAgeReview2012}. 
+
+In each case, answering these questions has proven extremely challenging for the field. It is difficult to specify verbal theories in sufficient detail that they make divergent predictions that could be used to test them. One path forward is to identify suitable \textit{computational operationalizations} of these verbal theories and the effects they predict---such as LLMs and MLLMs.
+
+\subsection{Adapting psycholinguistic techniques for (M)LLMs}
+
+LLMs are neural networks with billions of parameters trained on billions or even trillions of words to predict missing tokens from a sequence. LLMs are trained on linguistic input alone---which is often cited as a limitation. MLLMs provide a potential solution to this problem by linking linguistic input to another \textit{modality}, typically (though not always) vision \cite{driess2023palm, girdhar2023imagebind, huang2023language}. For example, CLIP (Contrastive Language-Image Pretraining) is trained on image-caption pairs \cite{radfordLearningTransferableVisual2021a}, and thus learns to map flexibly between linguistic and visual representations. 
+
+Much remains unknown about exactly how MLLMs representations differ from those of unimodal LLMs. Additionally, there is considerable variance within MLLMs in terms of their \textit{architecture}, e.g., whether linguistic and visual representations are integrated during encoding (``fusion architectures'') or encoded separately, then integrated later on (``dual-encoder architectures''); it is unclear how this variation affects the nature of cross-modal representations formed.
+
+Careful application of methodologies developed for humans, such as the sentence-picture verification task \cite{stanfield2001effect, zwaan2002language}, could be used to address both of these questions. In doing so, it would also inform debates around embodied simulation in humans (see Section \ref{sec:human_debate}).
+
+Here we attempt to address both sets of questions by administering adapted versions of sentence-picture verification tasks to LLMs and MLLMs.
+First, we test whether MLLMs show a stronger association between matching sentence-picture pairs vs non-matching pairs. This allows us to ask: \textit{To what extent do MLLM representations encode implicit sensorimotor features, and for which features (e.g., orientation vs. shape) or modalities (e.g., vision vs. sound) are these activations strongest?}
+
+Second, we ask whether text-only LLMs encode these implicit event features in linguistic form, e.g., whether the word ``horizontal'' is primed relative to ``vertical'' upon presentation of the sentence ``He hammered the nail into the wall''. This addresses the question: \textit{Are the ``raw materials'' for sensorimotor activation accessible distributionally, or does activation depend on cross-modal integration?}
+
+Third, as a further test of mechanism, we use representations elicited from both MLLMs and LLMs to predict human behavior on this task. That is: \textit{Which model provides a plausible explanatory account of the human match/mismatch effect?}
+
+Finally, we compare a suite of MLLMs, ranging from dual-encoder models to single-stream fusion models, and ask: \textit{Which architecture is most sensitive to implicit visual features, and which best explains human data?}
+
+
+
+
+\section{Related Work}
+
+Optional, but if space we could briefly cover the work on hybrid models generally, as well as the recent stuff looking at prepositions in CLIP.
+
+
+\section{Experiment 1}
+
+In Experiment 1, we test whether ImageBind \citep{girdhar2023imagebind}, an MLLM, is sensitive to whether or not sensorimotor features implied by sentences are explicitly present in images and sounds. 
+
+\subsection{Methods}
+
+\subsubsection{Materials}
+
+We draw experimental stimuli from existing sentence-picture or sentence-sound verification experiments designed to test for effects of sensorimotor simulation in humans. Items for each task or organized as quadruplets, consisting of a pair of sentences and a pair of media stimuli (images or sounds). Sentence pairs differ by implying that an object has a given sensorimotor property (e.g. color or volume).
+Each of the media stimuli in a pair match one of the sentences by explicitly displaying the implied feature (and therefore mismatch the other sentence). See Figure \ref{fig:stimuli}.
+
+We draw stimuli from five different experiments, each of which manipulates a different sensorimotor feature:
+
+\begin{enumerate}
+
+    % Shape
+    \item \textsc{Shape}: % Item description
+    \citet{pecher2009short} collected a set of 60 quadruplets that varied the implied shape of the object (see Figure \ref{fig:materials}, left). A sentence such as `There was an egg in the [refrigerator/skillet].' implies that the egg is either in its shell or cracked open. A pair of black-and-white images of eggs each match one of these sentences by displaying the relevant property.
+
+    % Orientation
+    \item \textsc{Orientation}: % Stanfield
+    \citet{stanfield2001effect} collected 24 quadruplets of sentences implying different orientations of an item, and line-drawings that were rotated to match the implied orientation (Figure \ref{fig:materials}, center). For instance `Derek swung his bat as the ball approached' suggests a horizontal bat, while `Derek held his bat high as the ball approached' suggests a vertical bat.
+
+    % Color
+    \item \textsc{Color}:
+    12 quadruplets from \citet{connell2007representing} vary the implied color of an object. `Joanne [never/always] took milk in her coffee' implies black/brown coffee. The only difference between matching images was their color.
+
+    % Size
+    \item \textsc{Size}: \citet{winter2012language} Experiment 1 manipulates the implied apparent size of objects from the viewer's perspective by varying the viewer's distance from the object.
+    Corresponding images display the same object at different scales.
+
+    % Volume
+    \item \textsc{Volume}: \citet{winter2012language} Experiment 2 manipulates the implied volume of sounds by varying the viewer's distance from the sound.
+    Matching audio stimuli vary the volume of the sound described in the sentence.
+
+
+
+\end{enumerate}
+
+
+\subsection{Model Evaluation}
+
+To probe MLLMs, we implemented a computational analogue of the sentence-picture verification task. Our primary question was whether a model's representation of a given linguistic input (e.g., "He hammered the nail into the wall") was more similar to its representation of an image that matched an implied visual feature (e.g. horizontal orientation) compared to an image that did not (e.g. a vertical nail).
+% Technical explanation
+For each sentence-image pair, we found the cosine distance between the ImageBind embedding of the sentence and the image. This value quantifies the similarity between the linguistic and visual representations within the model.
+
+\[ similarity_{ij} = cosine(S_i, I_j)} \]
+
+where \( S_i \) is the embedding for sentence \( i \), \( I_j \) is the embedding for image \( j \).
+% Stats
+To statistically evaluate the model's performance, we constructed a linear mixed-effects model predicting $similarity_{ij}$ on the basis of match condition, with random intercepts by quadruplet id.
+We were interested in two different kinds of question, for which we performed separate analyses. First we asked whether there was an effect of match overall, across all datasets. In this model we included an additional random intercept by item. Secondly, we asked whether ImageBind showed effects of match within each dataset individually.
+
+\subsection{Results}
+
+we conducted a t-test to compare the probabilities of matching (e.g., \( p_{11} \) and \( p_{22} \)) against mismatching (e.g., \( p_{12} \) and \( p_{21} \)) sentence-image pairs. A significant result, where the matching probabilities are greater than mismatching ones, would indicate that the MLLM's representations are sensitive to the visual properties implied by the linguistic input.
+
+
+
+\section{Experiment 2}
+
+
+\section{Experiment 3}
+
+
+
+
+\section*{Ethics Statement}
+
+
+\section*{Acknowledgements}
+
+
+% Entries for the entire Anthology, followed by custom entries
+\bibliography{embodiment}
+\bibliographystyle{acl_natbib}
+
+
+\end{document}
+
+
+----
+
+Note

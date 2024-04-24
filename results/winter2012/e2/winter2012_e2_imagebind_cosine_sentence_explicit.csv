@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,handgun,,a,a,match,0.6930379429741511,imagebind,winter2012/e2
+2,baby,,a,a,match,0.6998207352685333,imagebind,winter2012/e2
+3,blender,,a,a,match,0.7670082007235318,imagebind,winter2012/e2
+4,cat,,a,a,match,0.6776503152851729,imagebind,winter2012/e2
+5,champagne bottle,,a,a,match,0.7966204823765632,imagebind,winter2012/e2
+6,church bells,,a,a,match,0.845300824878604,imagebind,winter2012/e2
+7,cow,,a,a,match,0.730200708302885,imagebind,winter2012/e2
+8,audience,,a,a,match,0.6660085252020087,imagebind,winter2012/e2
+9,cuckoo-clock,,a,a,match,0.8874561147636677,imagebind,winter2012/e2
+10,rooster,,a,a,match,0.7249978555074096,imagebind,winter2012/e2
+11,dog,,a,a,match,0.7531981029372352,imagebind,winter2012/e2
+12,power drill,,a,a,match,0.7411219479019998,imagebind,winter2012/e2
+13,hammer,,a,a,match,0.664366672087392,imagebind,winter2012/e2
+14,motorbike,,a,a,match,0.6425730859610326,imagebind,winter2012/e2
+15,horse,,a,a,match,0.7352455743394729,imagebind,winter2012/e2
+16,jackhammer,,a,a,match,0.6395740743753723,imagebind,winter2012/e2
+17,door,,a,a,match,0.6970159816189212,imagebind,winter2012/e2
+18,machine gun,,a,a,match,0.6751785071863093,imagebind,winter2012/e2
+19,sheep,,a,a,match,0.7709089780610515,imagebind,winter2012/e2
+20,frog,,a,a,match,0.7587423052664944,imagebind,winter2012/e2
+21,toilet,,a,a,match,0.7632854574932127,imagebind,winter2012/e2
+22,waterfall,,a,a,match,0.7929788762833292,imagebind,winter2012/e2
+23,can of soda,,a,a,match,0.8049815625044817,imagebind,winter2012/e2
+24,branches,,a,a,match,0.6543589578716471,imagebind,winter2012/e2
+1,handgun,,a,b,mismatch,0.6928417675107676,imagebind,winter2012/e2
+2,baby,,a,b,mismatch,0.7050974620013181,imagebind,winter2012/e2
+3,blender,,a,b,mismatch,0.7830837489811131,imagebind,winter2012/e2
+4,cat,,a,b,mismatch,0.6779562235703671,imagebind,winter2012/e2
+5,champagne bottle,,a,b,mismatch,0.7869147610618705,imagebind,winter2012/e2
+6,church bells,,a,b,mismatch,0.8688446143934189,imagebind,winter2012/e2
+7,cow,,a,b,mismatch,0.7379035363964221,imagebind,winter2012/e2
+8,audience,,a,b,mismatch,0.639780245051094,imagebind,winter2012/e2
+9,cuckoo-clock,,a,b,mismatch,0.90099882935534,imagebind,winter2012/e2
+10,rooster,,a,b,mismatch,0.7448252413230941,imagebind,winter2012/e2
+11,dog,,a,b,mismatch,0.7356523041630614,imagebind,winter2012/e2
+12,power drill,,a,b,mismatch,0.7447399773024796,imagebind,winter2012/e2
+13,hammer,,a,b,mismatch,0.6305763348079214,imagebind,winter2012/e2
+14,motorbike,,a,b,mismatch,0.6283564446691373,imagebind,winter2012/e2
+15,horse,,a,b,mismatch,0.7177353309615427,imagebind,winter2012/e2
+16,jackhammer,,a,b,mismatch,0.5944876313055856,imagebind,winter2012/e2
+17,door,,a,b,mismatch,0.6949144843157811,imagebind,winter2012/e2
+18,machine gun,,a,b,mismatch,0.6980435744658366,imagebind,winter2012/e2
+19,sheep,,a,b,mismatch,0.7813014450137235,imagebind,winter2012/e2
+20,frog,,a,b,mismatch,0.7431937693696479,imagebind,winter2012/e2
+21,toilet,,a,b,mismatch,0.7709388897080812,imagebind,winter2012/e2
+22,waterfall,,a,b,mismatch,0.802366705340837,imagebind,winter2012/e2
+23,can of soda,,a,b,mismatch,0.8113455506541525,imagebind,winter2012/e2
+24,branches,,a,b,mismatch,0.6438438084894981,imagebind,winter2012/e2
+1,handgun,,b,b,match,0.6594607199660875,imagebind,winter2012/e2
+2,baby,,b,b,match,0.5884748842304375,imagebind,winter2012/e2
+3,blender,,b,b,match,0.7011138334658754,imagebind,winter2012/e2
+4,cat,,b,b,match,0.6635489106596998,imagebind,winter2012/e2
+5,champagne bottle,,b,b,match,0.6392964044485834,imagebind,winter2012/e2
+6,church bells,,b,b,match,0.8407722937807458,imagebind,winter2012/e2
+7,cow,,b,b,match,0.7507816996409159,imagebind,winter2012/e2
+8,audience,,b,b,match,0.7036798329069831,imagebind,winter2012/e2
+9,cuckoo-clock,,b,b,match,0.7125037186171718,imagebind,winter2012/e2
+10,rooster,,b,b,match,0.6329718308818792,imagebind,winter2012/e2
+11,dog,,b,b,match,0.6316022883594097,imagebind,winter2012/e2
+12,power drill,,b,b,match,0.6110309093687508,imagebind,winter2012/e2
+13,hammer,,b,b,match,0.360197460948501,imagebind,winter2012/e2
+14,motorbike,,b,b,match,0.586191870227826,imagebind,winter2012/e2
+15,horse,,b,b,match,0.682332129507856,imagebind,winter2012/e2
+16,jackhammer,,b,b,match,0.7079037670123056,imagebind,winter2012/e2
+17,door,,b,b,match,0.6290800416699444,imagebind,winter2012/e2
+18,machine gun,,b,b,match,0.6337350567770071,imagebind,winter2012/e2
+19,sheep,,b,b,match,0.796126475901799,imagebind,winter2012/e2
+20,frog,,b,b,match,0.7603800642582383,imagebind,winter2012/e2
+21,toilet,,b,b,match,0.7158094197228919,imagebind,winter2012/e2
+22,waterfall,,b,b,match,0.7488951891918743,imagebind,winter2012/e2
+23,can of soda,,b,b,match,0.47364800452103895,imagebind,winter2012/e2
+24,branches,,b,b,match,0.596491898663237,imagebind,winter2012/e2
+1,handgun,,b,a,mismatch,0.6510743867007256,imagebind,winter2012/e2
+2,baby,,b,a,mismatch,0.5717943811113457,imagebind,winter2012/e2
+3,blender,,b,a,mismatch,0.7069645880675043,imagebind,winter2012/e2
+4,cat,,b,a,mismatch,0.6788899432233302,imagebind,winter2012/e2
+5,champagne bottle,,b,a,mismatch,0.6195742697310892,imagebind,winter2012/e2
+6,church bells,,b,a,mismatch,0.8475769975953864,imagebind,winter2012/e2
+7,cow,,b,a,mismatch,0.7299041462099299,imagebind,winter2012/e2
+8,audience,,b,a,mismatch,0.6991781941409129,imagebind,winter2012/e2
+9,cuckoo-clock,,b,a,mismatch,0.6835714541624719,imagebind,winter2012/e2
+10,rooster,,b,a,mismatch,0.6011497958546508,imagebind,winter2012/e2
+11,dog,,b,a,mismatch,0.673079947433098,imagebind,winter2012/e2
+12,power drill,,b,a,mismatch,0.6013841381303593,imagebind,winter2012/e2
+13,hammer,,b,a,mismatch,0.3709343179186626,imagebind,winter2012/e2
+14,motorbike,,b,a,mismatch,0.5952746106617702,imagebind,winter2012/e2
+15,horse,,b,a,mismatch,0.6521776268750169,imagebind,winter2012/e2
+16,jackhammer,,b,a,mismatch,0.7328750676429486,imagebind,winter2012/e2
+17,door,,b,a,mismatch,0.6411584009038599,imagebind,winter2012/e2
+18,machine gun,,b,a,mismatch,0.5948189723514467,imagebind,winter2012/e2
+19,sheep,,b,a,mismatch,0.767938189892602,imagebind,winter2012/e2
+20,frog,,b,a,mismatch,0.7482682348106664,imagebind,winter2012/e2
+21,toilet,,b,a,mismatch,0.721655806824722,imagebind,winter2012/e2
+22,waterfall,,b,a,mismatch,0.7275654716865043,imagebind,winter2012/e2
+23,can of soda,,b,a,mismatch,0.4569710676972998,imagebind,winter2012/e2
+24,branches,,b,a,mismatch,0.5963929873193513,imagebind,winter2012/e2

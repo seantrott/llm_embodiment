@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,axe,,a,a,match,0.3289136741799611,imagebind,muraki2021
+2,bat,,a,a,match,0.2265021586100444,imagebind,muraki2021
+3,book,,a,a,match,0.3248172159182019,imagebind,muraki2021
+4,bottle,,a,a,match,0.33015109840716295,imagebind,muraki2021
+5,bowl,,a,a,match,0.32306313899901706,imagebind,muraki2021
+6,broom,,a,a,match,0.304052868381798,imagebind,muraki2021
+7,brush,,a,a,match,0.3129919766133852,imagebind,muraki2021
+8,crayon,,a,a,match,0.2434945182032323,imagebind,muraki2021
+9,decoration,,a,a,match,0.1799828368308487,imagebind,muraki2021
+10,flashlight,,a,a,match,0.3591643372479416,imagebind,muraki2021
+11,fire extinguisher,,a,a,match,0.2639268163085422,imagebind,muraki2021
+12,glass,,a,a,match,0.3072428301338016,imagebind,muraki2021
+13,guitar,,a,a,match,0.32307962330315976,imagebind,muraki2021
+14,gun,,a,a,match,0.2726247582487701,imagebind,muraki2021
+15,iron,,a,a,match,0.3319499156727219,imagebind,muraki2021
+16,key,,a,a,match,0.3447239185947817,imagebind,muraki2021
+17,nail,,a,a,match,0.30697178688443905,imagebind,muraki2021
+18,pen,,a,a,match,0.2719405507535484,imagebind,muraki2021
+19,pencil,,a,a,match,0.2801077327913051,imagebind,muraki2021
+20,plate,,a,a,match,0.24394344226962072,imagebind,muraki2021
+21,salt shaker,,a,a,match,0.2547739561208042,imagebind,muraki2021
+22,pair of scissors,,a,a,match,0.35008461994787454,imagebind,muraki2021
+23,screw,,a,a,match,0.27093909763091595,imagebind,muraki2021
+24,wheel,,a,a,match,0.2243855880609713,imagebind,muraki2021
+1,axe,,a,b,mismatch,0.3237850394935331,imagebind,muraki2021
+2,bat,,a,b,mismatch,0.22212088117515605,imagebind,muraki2021
+3,book,,a,b,mismatch,0.26161597854449603,imagebind,muraki2021
+4,bottle,,a,b,mismatch,0.2969220416920135,imagebind,muraki2021
+5,bowl,,a,b,mismatch,0.29248207061895803,imagebind,muraki2021
+6,broom,,a,b,mismatch,0.2929957540041672,imagebind,muraki2021
+7,brush,,a,b,mismatch,0.3070505924136311,imagebind,muraki2021
+8,crayon,,a,b,mismatch,0.21937844494798875,imagebind,muraki2021
+9,decoration,,a,b,mismatch,0.18131572576364918,imagebind,muraki2021
+10,flashlight,,a,b,mismatch,0.3161471323808198,imagebind,muraki2021
+11,fire extinguisher,,a,b,mismatch,0.24888288989894924,imagebind,muraki2021
+12,glass,,a,b,mismatch,0.2674525844824356,imagebind,muraki2021
+13,guitar,,a,b,mismatch,0.29452291478602843,imagebind,muraki2021
+14,gun,,a,b,mismatch,0.25404667976849393,imagebind,muraki2021
+15,iron,,a,b,mismatch,0.3300966182665823,imagebind,muraki2021
+16,key,,a,b,mismatch,0.3257823978491349,imagebind,muraki2021
+17,nail,,a,b,mismatch,0.25950398439317346,imagebind,muraki2021
+18,pen,,a,b,mismatch,0.26119197888027046,imagebind,muraki2021
+19,pencil,,a,b,mismatch,0.23832635170468752,imagebind,muraki2021
+20,plate,,a,b,mismatch,0.18770392702356542,imagebind,muraki2021
+21,salt shaker,,a,b,mismatch,0.2909106241875822,imagebind,muraki2021
+22,pair of scissors,,a,b,mismatch,0.3304069935483541,imagebind,muraki2021
+23,screw,,a,b,mismatch,0.2658360558731383,imagebind,muraki2021
+24,wheel,,a,b,mismatch,0.2271200010074137,imagebind,muraki2021
+1,axe,,b,b,match,0.3273921276755569,imagebind,muraki2021
+2,bat,,b,b,match,0.24065557457097786,imagebind,muraki2021
+3,book,,b,b,match,0.2953881546385453,imagebind,muraki2021
+4,bottle,,b,b,match,0.3045020446140728,imagebind,muraki2021
+5,bowl,,b,b,match,0.3018877354673547,imagebind,muraki2021
+6,broom,,b,b,match,0.30174332561981654,imagebind,muraki2021
+7,brush,,b,b,match,0.31058188332724435,imagebind,muraki2021
+8,crayon,,b,b,match,0.22873604924712265,imagebind,muraki2021
+9,decoration,,b,b,match,0.17515065321045464,imagebind,muraki2021
+10,flashlight,,b,b,match,0.34099203223316055,imagebind,muraki2021
+11,fire extinguisher,,b,b,match,0.2658901999347921,imagebind,muraki2021
+12,glass,,b,b,match,0.25566544194033525,imagebind,muraki2021
+13,guitar,,b,b,match,0.28831534625687216,imagebind,muraki2021
+14,gun,,b,b,match,0.24111613646463304,imagebind,muraki2021
+15,iron,,b,b,match,0.31045572871033167,imagebind,muraki2021
+16,key,,b,b,match,0.3308114830399974,imagebind,muraki2021
+17,nail,,b,b,match,0.2659327626183361,imagebind,muraki2021
+18,pen,,b,b,match,0.26815030916482696,imagebind,muraki2021
+19,pencil,,b,b,match,0.26697567332995575,imagebind,muraki2021
+20,plate,,b,b,match,0.198763676411997,imagebind,muraki2021
+21,salt shaker,,b,b,match,0.2801425500700365,imagebind,muraki2021
+22,pair of scissors,,b,b,match,0.33428505953437804,imagebind,muraki2021
+23,screw,,b,b,match,0.29057147460506083,imagebind,muraki2021
+24,wheel,,b,b,match,0.22087001775865023,imagebind,muraki2021
+1,axe,,b,a,mismatch,0.2956037770480022,imagebind,muraki2021
+2,bat,,b,a,mismatch,0.18784253756739155,imagebind,muraki2021
+3,book,,b,a,mismatch,0.27398723217417587,imagebind,muraki2021
+4,bottle,,b,a,mismatch,0.2852348669156195,imagebind,muraki2021
+5,bowl,,b,a,mismatch,0.30823847121933734,imagebind,muraki2021
+6,broom,,b,a,mismatch,0.26944255196448885,imagebind,muraki2021
+7,brush,,b,a,mismatch,0.27254085572322273,imagebind,muraki2021
+8,crayon,,b,a,mismatch,0.17172583873585512,imagebind,muraki2021
+9,decoration,,b,a,mismatch,0.16892592204230095,imagebind,muraki2021
+10,flashlight,,b,a,mismatch,0.3340473574598868,imagebind,muraki2021
+11,fire extinguisher,,b,a,mismatch,0.23778703485825814,imagebind,muraki2021
+12,glass,,b,a,mismatch,0.2712322591569778,imagebind,muraki2021
+13,guitar,,b,a,mismatch,0.2970519404543964,imagebind,muraki2021
+14,gun,,b,a,mismatch,0.24849257147834214,imagebind,muraki2021
+15,iron,,b,a,mismatch,0.2806018004588261,imagebind,muraki2021
+16,key,,b,a,mismatch,0.3178877001349222,imagebind,muraki2021
+17,nail,,b,a,mismatch,0.25832779629810787,imagebind,muraki2021
+18,pen,,b,a,mismatch,0.23135702517792844,imagebind,muraki2021
+19,pencil,,b,a,mismatch,0.23114555571863327,imagebind,muraki2021
+20,plate,,b,a,mismatch,0.2409044929450309,imagebind,muraki2021
+21,salt shaker,,b,a,mismatch,0.21261119770190895,imagebind,muraki2021
+22,pair of scissors,,b,a,mismatch,0.315775303536904,imagebind,muraki2021
+23,screw,,b,a,mismatch,0.22897849176934804,imagebind,muraki2021
+24,wheel,,b,a,mismatch,0.2062521406841782,imagebind,muraki2021

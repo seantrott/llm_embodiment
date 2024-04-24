@@ -1,0 +1,94 @@
+You are here: Computational Linguistics > Announcement > Call for Papers for a Special Issue of Computational Linguistics on Language Learning, Representation, and Processing in Humans and Machines
+ 
+2nd Call for Papers: Special Issue of Computational Linguistics on Language Learning, Representation, and Processing in Humans and Machines
+Guest Editors
+Marianna Apidianaki (University of Pennsylvania)
+Abdellah Fourtassi (Aix Marseille University)
+Sebastian Padó (University of Stuttgart)
+
+Abstract submission deadline: November 10, 2023
+Paper submission deadline: December 17, 2023 (** deadline extended! **)
+Large language models (LLMs) acquire rich world knowledge from the data they are exposed to during training, in a way that appears to parallel how children learn from the language they hear around them. Indeed, since the introduction of these powerful models, there has been a general feeling among researchers in both NLP and cognitive science that a systematic understanding of how these models work and how they use the knowledge they encode, would shed light on the way humans acquire, represent, and process this same knowledge (and vice versa).
+
+Yet, despite the similarities, there are important differences between machines and humans that have prevented a direct translation of insights from the analysis of LLMs to a deeper understanding of human learning. Chief among these differences is that the size of data required to train LLMs far exceeds -- by several orders of magnitude -- the data children need to acquire sophisticated conceptual structures and meanings. Besides, the engineering-driven architectures of LLMs do not appear to have obvious equivalents in children's cognitive apparatus, at least as studied by standard methods in experimental psychology. Finally, children acquire world knowledge not only via exposure to language but also via sensory experience and social interaction.
+
+This edited volume aims to create a forum of exchange and debate between linguists, cognitive scientists and experts in deep learning, NLP and computational linguistics, on the broad topic of learning in humans and machines. Experts from these communities can contribute with empirical and theoretical papers that advance our understanding of this question. Submissions might address the acquisition of different types of linguistic and world knowledge. Additionally, we invite contributions that characterize and address challenges related to the mismatch between humans and LLMs in terms of the size and nature of input data, and the involved learning and processing mechanisms.
+
+Topics include, but are not limited to:
+Grounded learning: comparison of unimodal (e.g., text) vs multimodal (e.g., images and video) learning.
+Social learning: comparison of input-driven mechanisms vs. interaction-based learning.
+Exploration of different knowledge types (e.g., procedural / declarative); knowledge integration and inference in LLMs.
+Methods to characterize and quantify human-like language learning or processing in LLMs.
+Interpretability/probing methods addressing the linguistic and world knowledge encoded in LLM representations.
+Knowledge enrichment methods aimed at improving the quality and quantity of the knowledge encoded in LLMs.
+Semantic representation and processing in humans and machines in terms of, e.g., abstractions made, structure of the lexicon, property inheritance and generalization, geometrical approaches to meaning representation, mental associations, and meaning retrieval.
+Bilingualism in humans and machines; second language acquisition in children and adults; construction of multi-lingual spaces and cross-lingual correspondences.
+Exploration of language models that incorporate cognitively plausible mechanisms and reasonably-sized training data.
+Use of techniques from other disciplines (e.g., neuroscience or computer vision) for analyzing and evaluating LLMs.
+Open-source tools for analysis, visualization, or explanation.
+Submission Instructions
+Authors are strongly encouraged to submit a short (max 1 page) abstract of their paper by November 10. Abstracts will be sent to the Guest Editors (e-mails below). Minor modifications to the abstract will still be possible until final submission.
+
+Papers should be formatted according to the Computational Linguistics style guidelines: https://cljournal.org/
+
+We accept both long and short papers. Long papers are between 25 and 40 journal pages in length; short papers are between 15 and 25 pages in length.
+
+Papers for this special issue will be submitted through the CL electronic submission system, just like regular papers: https://cljournal.org/submissions.html
+
+Authors of special issue papers will need to select “Special Issue on LLRP” under the Journal Section heading in the CL submission system. Please note that papers submitted to a special issue undergo the same reviewing process as regular papers.
+
+Timeline
+Deadline for abstract submission	: November 10, 2023
+Deadline for paper submissions	: December 17, 2023 (** deadline extended! **)
+Notification after 1st round of reviewing	: February 10, 2024
+Revised versions of the papers	: April 30, 2024
+Final decisions	: June 10, 2024
+Final version of the papers	: July 1, 2024
+Inquiries
+All inquiries should be directed to the guest editors of this special issue.
+
+Guest Editors
+Marianna Apidianaki
+marapi@seas.upenn.edu
+
+Abdellah Fourtassi
+abdellah.fourtassi@gmail.com
+
+Sebastian Padó
+pado@ims.uni-stuttgart.de
+
+
+Reviewers
+Afra Alishahi, Tilburg University
+Rachel Bawden, INRIA
+Philippe Blache, Aix-Marseille University, CNRS
+Idan Blank, University of California, Los Angeles (UCLA)
+Gemma Boleda, Universitat Pompeu Fabra
+Marie-Catherine de Marneffe, UCLouvain, FNRS, The Ohio State University
+Katrin Erk, University of Texas at Austin
+Benoit Favre, Aix-Marseille University
+Richard Futrell, University of California, Irvine (UCI)
+Aina Garí Soler, Télécom-Paris
+Mario Giulianelli, University of Amsterdam
+Gabriel Grand, MIT
+Dieuwke Hupkes, META
+Anna Ivanova, MIT
+Jordan Kodner, Stony Brook University
+Andrew Lampinen, DeepMind
+Roger Levy, MIT
+Tal Linzen, New York University (NYU)
+Veronica Qing Lyu, University of Pennsylvania
+Barbara Plank, LMU Munich
+Christopher Potts, Stanford University
+Okko Räsänen, Tampere University
+Anna Rogers, IT University of Copenhagen
+Thomas Schatz, Aix-Marseille University
+Sebastian Schuster, Saarland University
+João Sedoc, New York University (NYU)
+Cory Shain, Stanford University
+Jörg Tiedemann, University of Helsinki
+Sean Trott, University of California, San Diego
+Ivan Vuliç, University of Cambridge
+Computational Linguistics is the longest-running flagship journal of the Association for Computational Linguistics. The journal has a high impact factor: 9.3 in 2022 and 7.778 in 2021. Average time to first decision of regular papers and full survey papers (excluding desk rejects) is 34 days for the period January to May 2023, and 47 days for the period January to December 2022.
+
+Please send comments or queries about this web site to contact@cljournal.org

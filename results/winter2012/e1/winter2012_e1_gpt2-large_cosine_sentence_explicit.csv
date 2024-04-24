@@ -1,0 +1,129 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,fire hydrant,prepositional,a,a,match,0.7905047620178044,gpt2-large,winter2012/e1
+2,bike,prepositional,a,a,match,0.7211695025628451,gpt2-large,winter2012/e1
+3,bowling ball,prepositional,a,a,match,0.7987247908382165,gpt2-large,winter2012/e1
+4,chair,prepositional,a,a,match,0.7428005173729754,gpt2-large,winter2012/e1
+5,police car,prepositional,a,a,match,0.7918989072845395,gpt2-large,winter2012/e1
+6,racing car,prepositional,a,a,match,0.724435500033198,gpt2-large,winter2012/e1
+7,stop sign,prepositional,a,a,match,0.7439849180058522,gpt2-large,winter2012/e1
+8,no-smoking sign,prepositional,a,a,match,0.7657801993878404,gpt2-large,winter2012/e1
+9,lawn-mower,prepositional,a,a,match,0.7946300812855345,gpt2-large,winter2012/e1
+10,basketball,prepositional,a,a,match,0.7294416910512542,gpt2-large,winter2012/e1
+11,water dispenser,prepositional,a,a,match,0.7908752001619868,gpt2-large,winter2012/e1
+12,Harley Davidson,prepositional,a,a,match,0.6845411448584908,gpt2-large,winter2012/e1
+13,Coke can,prepositional,a,a,match,0.7855083041192032,gpt2-large,winter2012/e1
+14,sunflower,prepositional,a,a,match,0.7409707428660607,gpt2-large,winter2012/e1
+15,park bench,prepositional,a,a,match,0.7299782122133479,gpt2-large,winter2012/e1
+16,wheelchair,prepositional,a,a,match,0.730440261663655,gpt2-large,winter2012/e1
+1,door,landmark,a,a,match,0.7679054926484744,gpt2-large,winter2012/e1
+2,cabinet,landmark,a,a,match,0.6744624050913062,gpt2-large,winter2012/e1
+3,bat,landmark,a,a,match,0.6872447316667637,gpt2-large,winter2012/e1
+4,milk bottle,landmark,a,a,match,0.8138997498156657,gpt2-large,winter2012/e1
+5,axe,landmark,a,a,match,0.5759983426783479,gpt2-large,winter2012/e1
+6,beer bottle,landmark,a,a,match,0.736230246699386,gpt2-large,winter2012/e1
+7,guitar,landmark,a,a,match,0.6767642772905956,gpt2-large,winter2012/e1
+8,violin,landmark,a,a,match,0.7725246352657261,gpt2-large,winter2012/e1
+9,iPod,landmark,a,a,match,0.613156419498567,gpt2-large,winter2012/e1
+10,frisbee,landmark,a,a,match,0.7702484884246549,gpt2-large,winter2012/e1
+11,shampoo bottle,landmark,a,a,match,0.7969857526804492,gpt2-large,winter2012/e1
+12,briefcase,landmark,a,a,match,0.7095971984983498,gpt2-large,winter2012/e1
+13,olive oil,landmark,a,a,match,0.8087878902247984,gpt2-large,winter2012/e1
+14,exit sign,landmark,a,a,match,0.6528062816151715,gpt2-large,winter2012/e1
+15,microphone,landmark,a,a,match,0.6644787106424938,gpt2-large,winter2012/e1
+16,golf ball,landmark,a,a,match,0.7686097731369902,gpt2-large,winter2012/e1
+1,fire hydrant,prepositional,a,b,mismatch,0.7857645193590014,gpt2-large,winter2012/e1
+2,bike,prepositional,a,b,mismatch,0.720716923130664,gpt2-large,winter2012/e1
+3,bowling ball,prepositional,a,b,mismatch,0.7980482492384338,gpt2-large,winter2012/e1
+4,chair,prepositional,a,b,mismatch,0.7420976516045539,gpt2-large,winter2012/e1
+5,police car,prepositional,a,b,mismatch,0.7900893361914795,gpt2-large,winter2012/e1
+6,racing car,prepositional,a,b,mismatch,0.7283346442975421,gpt2-large,winter2012/e1
+7,stop sign,prepositional,a,b,mismatch,0.7446468569377324,gpt2-large,winter2012/e1
+8,no-smoking sign,prepositional,a,b,mismatch,0.7636405149636664,gpt2-large,winter2012/e1
+9,lawn-mower,prepositional,a,b,mismatch,0.788968935814153,gpt2-large,winter2012/e1
+10,basketball,prepositional,a,b,mismatch,0.7275846571022834,gpt2-large,winter2012/e1
+11,water dispenser,prepositional,a,b,mismatch,0.7862758639104356,gpt2-large,winter2012/e1
+12,Harley Davidson,prepositional,a,b,mismatch,0.6845980963874722,gpt2-large,winter2012/e1
+13,Coke can,prepositional,a,b,mismatch,0.7816519328974328,gpt2-large,winter2012/e1
+14,sunflower,prepositional,a,b,mismatch,0.7420241848036956,gpt2-large,winter2012/e1
+15,park bench,prepositional,a,b,mismatch,0.7312303605980857,gpt2-large,winter2012/e1
+16,wheelchair,prepositional,a,b,mismatch,0.7254573445970608,gpt2-large,winter2012/e1
+1,door,landmark,a,b,mismatch,0.7701749940747087,gpt2-large,winter2012/e1
+2,cabinet,landmark,a,b,mismatch,0.6742165855967144,gpt2-large,winter2012/e1
+3,bat,landmark,a,b,mismatch,0.6852642200454256,gpt2-large,winter2012/e1
+4,milk bottle,landmark,a,b,mismatch,0.8116252942738018,gpt2-large,winter2012/e1
+5,axe,landmark,a,b,mismatch,0.5713379826131845,gpt2-large,winter2012/e1
+6,beer bottle,landmark,a,b,mismatch,0.7335349785985026,gpt2-large,winter2012/e1
+7,guitar,landmark,a,b,mismatch,0.6762614784760935,gpt2-large,winter2012/e1
+8,violin,landmark,a,b,mismatch,0.7671976540238717,gpt2-large,winter2012/e1
+9,iPod,landmark,a,b,mismatch,0.6089778054519207,gpt2-large,winter2012/e1
+10,frisbee,landmark,a,b,mismatch,0.7684954387881592,gpt2-large,winter2012/e1
+11,shampoo bottle,landmark,a,b,mismatch,0.7942585590945688,gpt2-large,winter2012/e1
+12,briefcase,landmark,a,b,mismatch,0.7029336425029169,gpt2-large,winter2012/e1
+13,olive oil,landmark,a,b,mismatch,0.8038519913091708,gpt2-large,winter2012/e1
+14,exit sign,landmark,a,b,mismatch,0.6495528788900816,gpt2-large,winter2012/e1
+15,microphone,landmark,a,b,mismatch,0.6618784671172948,gpt2-large,winter2012/e1
+16,golf ball,landmark,a,b,mismatch,0.7701821813425473,gpt2-large,winter2012/e1
+1,fire hydrant,prepositional,b,b,match,0.786820511811494,gpt2-large,winter2012/e1
+2,bike,prepositional,b,b,match,0.7435412464310784,gpt2-large,winter2012/e1
+3,bowling ball,prepositional,b,b,match,0.755718984105589,gpt2-large,winter2012/e1
+4,chair,prepositional,b,b,match,0.8028205937191466,gpt2-large,winter2012/e1
+5,police car,prepositional,b,b,match,0.8205322914877945,gpt2-large,winter2012/e1
+6,racing car,prepositional,b,b,match,0.7299944850981258,gpt2-large,winter2012/e1
+7,stop sign,prepositional,b,b,match,0.8016834178415344,gpt2-large,winter2012/e1
+8,no-smoking sign,prepositional,b,b,match,0.8216529063869447,gpt2-large,winter2012/e1
+9,lawn-mower,prepositional,b,b,match,0.8526642438982981,gpt2-large,winter2012/e1
+10,basketball,prepositional,b,b,match,0.8029503857181861,gpt2-large,winter2012/e1
+11,water dispenser,prepositional,b,b,match,0.8291493966706801,gpt2-large,winter2012/e1
+12,Harley Davidson,prepositional,b,b,match,0.7295827087002272,gpt2-large,winter2012/e1
+13,Coke can,prepositional,b,b,match,0.7881840327442798,gpt2-large,winter2012/e1
+14,sunflower,prepositional,b,b,match,0.7885360449660612,gpt2-large,winter2012/e1
+15,park bench,prepositional,b,b,match,0.6750539504914125,gpt2-large,winter2012/e1
+16,wheelchair,prepositional,b,b,match,0.8025765442252342,gpt2-large,winter2012/e1
+1,door,landmark,b,b,match,0.7577779059271202,gpt2-large,winter2012/e1
+2,cabinet,landmark,b,b,match,0.6876799195143903,gpt2-large,winter2012/e1
+3,bat,landmark,b,b,match,0.7308221158403815,gpt2-large,winter2012/e1
+4,milk bottle,landmark,b,b,match,0.7935835633886681,gpt2-large,winter2012/e1
+5,axe,landmark,b,b,match,0.7193349950282957,gpt2-large,winter2012/e1
+6,beer bottle,landmark,b,b,match,0.7786712206588324,gpt2-large,winter2012/e1
+7,guitar,landmark,b,b,match,0.7409109704920761,gpt2-large,winter2012/e1
+8,violin,landmark,b,b,match,0.766584957844787,gpt2-large,winter2012/e1
+9,iPod,landmark,b,b,match,0.7299774784082621,gpt2-large,winter2012/e1
+10,frisbee,landmark,b,b,match,0.7699658968224754,gpt2-large,winter2012/e1
+11,shampoo bottle,landmark,b,b,match,0.8032152194198108,gpt2-large,winter2012/e1
+12,briefcase,landmark,b,b,match,0.7589825143825008,gpt2-large,winter2012/e1
+13,olive oil,landmark,b,b,match,0.7989998161175206,gpt2-large,winter2012/e1
+14,exit sign,landmark,b,b,match,0.7603239612591152,gpt2-large,winter2012/e1
+15,microphone,landmark,b,b,match,0.7678410385707688,gpt2-large,winter2012/e1
+16,golf ball,landmark,b,b,match,0.7729173231082949,gpt2-large,winter2012/e1
+1,fire hydrant,prepositional,b,a,mismatch,0.7908776163614084,gpt2-large,winter2012/e1
+2,bike,prepositional,b,a,mismatch,0.743102575701083,gpt2-large,winter2012/e1
+3,bowling ball,prepositional,b,a,mismatch,0.7561881285152103,gpt2-large,winter2012/e1
+4,chair,prepositional,b,a,mismatch,0.8026828110971981,gpt2-large,winter2012/e1
+5,police car,prepositional,b,a,mismatch,0.819932045265377,gpt2-large,winter2012/e1
+6,racing car,prepositional,b,a,mismatch,0.7264465741385016,gpt2-large,winter2012/e1
+7,stop sign,prepositional,b,a,mismatch,0.7995842497718242,gpt2-large,winter2012/e1
+8,no-smoking sign,prepositional,b,a,mismatch,0.821603384069637,gpt2-large,winter2012/e1
+9,lawn-mower,prepositional,b,a,mismatch,0.85532858081815,gpt2-large,winter2012/e1
+10,basketball,prepositional,b,a,mismatch,0.8038178339165468,gpt2-large,winter2012/e1
+11,water dispenser,prepositional,b,a,mismatch,0.8325354718924121,gpt2-large,winter2012/e1
+12,Harley Davidson,prepositional,b,a,mismatch,0.7276768471994514,gpt2-large,winter2012/e1
+13,Coke can,prepositional,b,a,mismatch,0.7916533909882549,gpt2-large,winter2012/e1
+14,sunflower,prepositional,b,a,mismatch,0.7881592104746705,gpt2-large,winter2012/e1
+15,park bench,prepositional,b,a,mismatch,0.6770897653127117,gpt2-large,winter2012/e1
+16,wheelchair,prepositional,b,a,mismatch,0.8046290794682162,gpt2-large,winter2012/e1
+1,door,landmark,b,a,mismatch,0.75691587354649,gpt2-large,winter2012/e1
+2,cabinet,landmark,b,a,mismatch,0.6877606231393685,gpt2-large,winter2012/e1
+3,bat,landmark,b,a,mismatch,0.7300420738195227,gpt2-large,winter2012/e1
+4,milk bottle,landmark,b,a,mismatch,0.7953805952530179,gpt2-large,winter2012/e1
+5,axe,landmark,b,a,mismatch,0.7226081191336075,gpt2-large,winter2012/e1
+6,beer bottle,landmark,b,a,mismatch,0.7788896676893318,gpt2-large,winter2012/e1
+7,guitar,landmark,b,a,mismatch,0.7409264465903114,gpt2-large,winter2012/e1
+8,violin,landmark,b,a,mismatch,0.7705698202516583,gpt2-large,winter2012/e1
+9,iPod,landmark,b,a,mismatch,0.7344722265054259,gpt2-large,winter2012/e1
+10,frisbee,landmark,b,a,mismatch,0.7714399328073555,gpt2-large,winter2012/e1
+11,shampoo bottle,landmark,b,a,mismatch,0.8049486011522555,gpt2-large,winter2012/e1
+12,briefcase,landmark,b,a,mismatch,0.7636993707281822,gpt2-large,winter2012/e1
+13,olive oil,landmark,b,a,mismatch,0.8032523473807935,gpt2-large,winter2012/e1
+14,exit sign,landmark,b,a,mismatch,0.7644031884864023,gpt2-large,winter2012/e1
+15,microphone,landmark,b,a,mismatch,0.7696369569135295,gpt2-large,winter2012/e1
+16,golf ball,landmark,b,a,mismatch,0.7704696507991091,gpt2-large,winter2012/e1

@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Cameron Jones" />
+<meta name="author" content="Anonymous" />
 
 
 <title>Reproduction of Winter &amp; Bergen 2012 using LMEs</title>
@@ -1676,7 +1676,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Reproduction of Winter &amp; Bergen 2012
 using LMEs</h1>
-<h4 class="author">Cameron Jones</h4>
+<h4 class="author">Anonymous</h4>
 <h4 class="date">4/12/2023</h4>
 
 </div>
@@ -1894,7 +1894,39 @@ condition</h2>
 ## m.e1.ixn         7 9599.4 9631.1 -4792.7   9585.4 6.7261  1   0.009501 **
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e1.ixn)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e1.ixn.base)</span></code></pre></div>
+<pre><code>## Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite&#39;s
+##   method [lmerModLmerTest]
+## Formula: rt ~ 1 + sentence_type + image_type + (1 | ppt_id) + (1 | item_id)
+##    Data: e1.clean
+## 
+##      AIC      BIC   logLik deviance df.resid 
+##   9604.2   9631.3  -4796.1   9592.2      675 
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.2127 -0.5102 -0.1885  0.2571  7.5267 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  item_id  (Intercept) 13955    118.1   
+##  ppt_id   (Intercept) 13552    116.4   
+##  Residual             66529    257.9   
+## Number of obs: 681, groups:  item_id, 32; ppt_id, 22
+## 
+## Fixed effects:
+##                   Estimate Std. Error      df t value Pr(&gt;|t|)    
+## (Intercept)        674.527     36.842  54.956  18.309   &lt;2e-16 ***
+## sentence_typeNEAR    2.235     20.149 636.445   0.111    0.912    
+## image_typeSMALL    -14.404     20.190 637.394  -0.713    0.476    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##             (Intr) s_NEAR
+## sntnc_tNEAR -0.279       
+## img_tySMALL -0.279  0.021</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e1.ixn)</span></code></pre></div>
 <pre><code>## Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite&#39;s
 ##   method [lmerModLmerTest]
 ## Formula: rt ~ sentence_type * image_type + (1 | ppt_id) + (1 | item_id)
@@ -1940,48 +1972,48 @@ condition</h2>
 <h1><span class="header-section-number">3</span> Experiment 2</h1>
 <div id="preprocessing-1" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Preprocessing</h2>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>e2.ppt.ex.acc <span class="ot">&lt;-</span> e2.raw <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Subject) <span class="sc">%&gt;%</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">acc =</span> <span class="fu">mean</span>(SoundOut1.ACC)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(acc) <span class="sc">%&gt;%</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(acc <span class="sc">&lt;</span> <span class="fl">0.8</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Subject)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(e2.raw<span class="sc">$</span>FirstLanguage)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>e2.ppt.ex.acc <span class="ot">&lt;-</span> e2.raw <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Subject) <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">acc =</span> <span class="fu">mean</span>(SoundOut1.ACC)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(acc) <span class="sc">%&gt;%</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(acc <span class="sc">&lt;</span> <span class="fl">0.8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Subject)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(e2.raw<span class="sc">$</span>FirstLanguage)</span></code></pre></div>
 <pre><code>## [1] &quot;spanish&quot; &quot;English&quot; &quot;english&quot; &quot;Samoan&quot;</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>e2 <span class="ot">&lt;-</span> e2.raw <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    Type <span class="sc">==</span> <span class="st">&quot;CRITICAL&quot;</span>,</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span>Subject <span class="sc">%in%</span> e2.ppt.ex.acc,</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    FirstLanguage <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;English&quot;</span>, <span class="st">&quot;english&quot;</span>)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">match =</span> <span class="fu">recode</span>(SAME, <span class="st">&quot;SAME&quot;</span><span class="ot">=</span><span class="st">&quot;Match&quot;</span>, <span class="st">&quot;DIFF&quot;</span><span class="ot">=</span><span class="st">&quot;Mismatch&quot;</span>),</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">item_id =</span> ITEM</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    CONDITION, <span class="fu">c</span>(<span class="st">&quot;sentence_type&quot;</span>, <span class="st">&quot;sound_type&quot;</span>)</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">ppt_id =</span> Subject,</span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">block =</span> Block,</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">item =</span> ITEM,</span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">accuracy =</span> SoundOut1.ACC,</span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">rt =</span> SoundOut1.RT</span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    ppt_id, block, item_id, match, sentence_type, sound_type, accuracy, rt</span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>e2 <span class="ot">&lt;-</span> e2.raw <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    Type <span class="sc">==</span> <span class="st">&quot;CRITICAL&quot;</span>,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span>Subject <span class="sc">%in%</span> e2.ppt.ex.acc,</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    FirstLanguage <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;English&quot;</span>, <span class="st">&quot;english&quot;</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">match =</span> <span class="fu">recode</span>(SAME, <span class="st">&quot;SAME&quot;</span><span class="ot">=</span><span class="st">&quot;Match&quot;</span>, <span class="st">&quot;DIFF&quot;</span><span class="ot">=</span><span class="st">&quot;Mismatch&quot;</span>),</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">item_id =</span> ITEM</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    CONDITION, <span class="fu">c</span>(<span class="st">&quot;sentence_type&quot;</span>, <span class="st">&quot;sound_type&quot;</span>)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">ppt_id =</span> Subject,</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">block =</span> Block,</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">item =</span> ITEM,</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">accuracy =</span> SoundOut1.ACC,</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">rt =</span> SoundOut1.RT</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    ppt_id, block, item_id, match, sentence_type, sound_type, accuracy, rt</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 <div id="descriptive-1" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Descriptive</h2>
 <p>32 ppts did 24 items each (after exclusions for language &amp; sound
 verification accuracy)</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>e2 <span class="sc">%&gt;%</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ppt_id) <span class="sc">%&gt;%</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_items=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(n_items) <span class="sc">%&gt;%</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_ppts=</span><span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>e2 <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ppt_id) <span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_items=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(n_items) <span class="sc">%&gt;%</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_ppts=</span><span class="fu">n</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 2
 ##   n_items n_ppts
 ##     &lt;int&gt;  &lt;int&gt;
@@ -1989,19 +2021,19 @@ verification accuracy)</p>
 </div>
 <div id="preprocess-1" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Preprocess</h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>e2.clean <span class="ot">&lt;-</span> e2 <span class="sc">%&gt;%</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    accuracy <span class="sc">==</span> <span class="dv">1</span>,</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    rt <span class="sc">&gt;</span> <span class="dv">300</span>,</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    rt <span class="sc">&lt;</span> <span class="dv">3000</span></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>e2.clean <span class="ot">&lt;-</span> e2 <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    accuracy <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    rt <span class="sc">&gt;</span> <span class="dv">300</span>,</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    rt <span class="sc">&lt;</span> <span class="dv">3000</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 <div id="mean-rt-per-match-condition-1" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Mean RT per match
 condition</h2>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>e2.clean <span class="sc">%&gt;%</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match) <span class="sc">%&gt;%</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">mean</span>(rt))</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>e2.clean <span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(match) <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">mean</span>(rt))</span></code></pre></div>
 <pre><code>## # A tibble: 2 × 2
 ##   match    `mean(rt)`
 ##   &lt;chr&gt;         &lt;dbl&gt;
@@ -2012,7 +2044,7 @@ condition</h2>
 <h2><span class="header-section-number">3.5</span> ANOVA</h2>
 <div id="by-subject-1" class="section level3" number="3.5.1">
 <h3><span class="header-section-number">3.5.1</span> By subject</h3>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(rt <span class="sc">~</span> sentence_type <span class="sc">*</span> sound_type <span class="sc">+</span> <span class="fu">Error</span>(<span class="fu">factor</span>(ppt_id)), <span class="at">data=</span>e2.clean))</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(rt <span class="sc">~</span> sentence_type <span class="sc">*</span> sound_type <span class="sc">+</span> <span class="fu">Error</span>(<span class="fu">factor</span>(ppt_id)), <span class="at">data=</span>e2.clean))</span></code></pre></div>
 <pre><code>## 
 ## Error: factor(ppt_id)
 ##                          Df   Sum Sq Mean Sq F value Pr(&gt;F)  
@@ -2034,7 +2066,7 @@ condition</h2>
 </div>
 <div id="by-item-1" class="section level3" number="3.5.2">
 <h3><span class="header-section-number">3.5.2</span> By item</h3>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(rt <span class="sc">~</span> sentence_type <span class="sc">*</span> sound_type <span class="sc">+</span> <span class="fu">Error</span>(<span class="fu">factor</span>(item_id)), <span class="at">data=</span>e2.clean))</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(rt <span class="sc">~</span> sentence_type <span class="sc">*</span> sound_type <span class="sc">+</span> <span class="fu">Error</span>(<span class="fu">factor</span>(item_id)), <span class="at">data=</span>e2.clean))</span></code></pre></div>
 <pre><code>## 
 ## Error: factor(item_id)
 ##                          Df   Sum Sq Mean Sq F value Pr(&gt;F)
@@ -2057,13 +2089,13 @@ condition</h2>
 <h2><span class="header-section-number">3.6</span> Linear Model</h2>
 <div id="match-effect-1" class="section level3" number="3.6.1">
 <h3><span class="header-section-number">3.6.1</span> Match effect</h3>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>m.e2.base <span class="ot">&lt;-</span> <span class="fu">lmer</span>(rt <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span>  <span class="sc">|</span> ppt_id) <span class="sc">+</span> (<span class="dv">1</span>  <span class="sc">|</span> item_id),</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>e2.clean, <span class="at">REML=</span><span class="cn">FALSE</span>)</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>m.e2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(rt <span class="sc">~</span> match <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> ppt_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> item_id),</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>e2.clean, <span class="at">REML=</span><span class="cn">FALSE</span>)</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m.e2, m.e2.base)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>m.e2.base <span class="ot">&lt;-</span> <span class="fu">lmer</span>(rt <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span>  <span class="sc">|</span> ppt_id) <span class="sc">+</span> (<span class="dv">1</span>  <span class="sc">|</span> item_id),</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>e2.clean, <span class="at">REML=</span><span class="cn">FALSE</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>m.e2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(rt <span class="sc">~</span> match <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> ppt_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> item_id),</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>e2.clean, <span class="at">REML=</span><span class="cn">FALSE</span>)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m.e2, m.e2.base)</span></code></pre></div>
 <pre><code>## Data: e2.clean
 ## Models:
 ## m.e2.base: rt ~ 1 + (1 | ppt_id) + (1 | item_id)
@@ -2073,7 +2105,7 @@ condition</h2>
 ## m.e2         5 10454 10477 -5221.9    10444 7.3674  1   0.006642 **
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e2)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e2)</span></code></pre></div>
 <pre><code>## Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite&#39;s
 ##   method [lmerModLmerTest]
 ## Formula: rt ~ match + (1 | ppt_id) + (1 | item_id)
@@ -2106,15 +2138,15 @@ condition</h2>
 </div>
 <div id="interaction-1" class="section level3" number="3.6.2">
 <h3><span class="header-section-number">3.6.2</span> Interaction</h3>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>m.e2.ixn.base <span class="ot">&lt;-</span> <span class="fu">lmer</span>(rt <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> sentence_type <span class="sc">+</span> sound_type <span class="sc">+</span> </span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>                        (<span class="dv">1</span> <span class="sc">|</span> ppt_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> item_id),</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>e2.clean, <span class="at">REML=</span><span class="cn">FALSE</span>)</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>m.e2.ixn <span class="ot">&lt;-</span> <span class="fu">lmer</span>(rt <span class="sc">~</span> sentence_type <span class="sc">*</span> sound_type <span class="sc">+</span></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>                   (<span class="dv">1</span> <span class="sc">|</span> ppt_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> item_id),</span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>e2.clean, <span class="at">REML=</span><span class="cn">FALSE</span>)</span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m.e2.ixn, m.e2.ixn.base)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>m.e2.ixn.base <span class="ot">&lt;-</span> <span class="fu">lmer</span>(rt <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> sentence_type <span class="sc">+</span> sound_type <span class="sc">+</span> </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>                        (<span class="dv">1</span> <span class="sc">|</span> ppt_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> item_id),</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>e2.clean, <span class="at">REML=</span><span class="cn">FALSE</span>)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>m.e2.ixn <span class="ot">&lt;-</span> <span class="fu">lmer</span>(rt <span class="sc">~</span> sentence_type <span class="sc">*</span> sound_type <span class="sc">+</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>                   (<span class="dv">1</span> <span class="sc">|</span> ppt_id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> item_id),</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data=</span>e2.clean, <span class="at">REML=</span><span class="cn">FALSE</span>)</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(m.e2.ixn, m.e2.ixn.base)</span></code></pre></div>
 <pre><code>## Data: e2.clean
 ## Models:
 ## m.e2.ixn.base: rt ~ 1 + sentence_type + sound_type + (1 | ppt_id) + (1 | item_id)
@@ -2124,7 +2156,7 @@ condition</h2>
 ## m.e2.ixn         7 10426 10458 -5206.2    10412 7.4729  1   0.006264 **
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e2.ixn)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.e2.ixn)</span></code></pre></div>
 <pre><code>## Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite&#39;s
 ##   method [lmerModLmerTest]
 ## Formula: rt ~ sentence_type * sound_type + (1 | ppt_id) + (1 | item_id)

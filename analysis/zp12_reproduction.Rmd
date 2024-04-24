@@ -1,6 +1,6 @@
 ---
 title: "Reproduction of Zwaan & Pecher 2012 using LMEs"
-author: "Cameron Jones"
+author: "Anonymous"
 date: "29/11/2023"
 output:
   html_document: 

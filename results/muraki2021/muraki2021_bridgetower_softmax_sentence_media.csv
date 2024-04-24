@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,axe,,a,a,match,0.4438732862472534,bridgetower,muraki2021
+2,bat,,a,a,match,0.9647970199584961,bridgetower,muraki2021
+3,book,,a,a,match,0.6123258471488953,bridgetower,muraki2021
+4,bottle,,a,a,match,0.7443561553955078,bridgetower,muraki2021
+5,bowl,,a,a,match,0.724004864692688,bridgetower,muraki2021
+6,broom,,a,a,match,0.08092283457517624,bridgetower,muraki2021
+7,brush,,a,a,match,0.3115609288215637,bridgetower,muraki2021
+8,crayon,,a,a,match,0.04702756553888321,bridgetower,muraki2021
+9,decoration,,a,a,match,0.4958898425102234,bridgetower,muraki2021
+10,flashlight,,a,a,match,0.41572365164756775,bridgetower,muraki2021
+11,fire extinguisher,,a,a,match,0.3643888533115387,bridgetower,muraki2021
+12,glass,,a,a,match,0.9507339596748352,bridgetower,muraki2021
+13,guitar,,a,a,match,0.2584506571292877,bridgetower,muraki2021
+14,gun,,a,a,match,0.7859442830085754,bridgetower,muraki2021
+15,iron,,a,a,match,0.0014359334018081427,bridgetower,muraki2021
+16,key,,a,a,match,0.3995594382286072,bridgetower,muraki2021
+17,nail,,a,a,match,0.2988349199295044,bridgetower,muraki2021
+18,pen,,a,a,match,0.42958033084869385,bridgetower,muraki2021
+19,pencil,,a,a,match,0.43372371792793274,bridgetower,muraki2021
+20,plate,,a,a,match,0.5569701790809631,bridgetower,muraki2021
+21,salt shaker,,a,a,match,0.010510269552469254,bridgetower,muraki2021
+22,pair of scissors,,a,a,match,0.6064116954803467,bridgetower,muraki2021
+23,screw,,a,a,match,0.707659900188446,bridgetower,muraki2021
+24,wheel,,a,a,match,0.8068329095840454,bridgetower,muraki2021
+1,axe,,a,b,mismatch,0.5561266541481018,bridgetower,muraki2021
+2,bat,,a,b,mismatch,0.03520297259092331,bridgetower,muraki2021
+3,book,,a,b,mismatch,0.38767412304878235,bridgetower,muraki2021
+4,bottle,,a,b,mismatch,0.2556438744068146,bridgetower,muraki2021
+5,bowl,,a,b,mismatch,0.2759951055049896,bridgetower,muraki2021
+6,broom,,a,b,mismatch,0.9190770983695984,bridgetower,muraki2021
+7,brush,,a,b,mismatch,0.6884390711784363,bridgetower,muraki2021
+8,crayon,,a,b,mismatch,0.9529723525047302,bridgetower,muraki2021
+9,decoration,,a,b,mismatch,0.5041100978851318,bridgetower,muraki2021
+10,flashlight,,a,b,mismatch,0.5842763781547546,bridgetower,muraki2021
+11,fire extinguisher,,a,b,mismatch,0.6356111764907837,bridgetower,muraki2021
+12,glass,,a,b,mismatch,0.049266085028648376,bridgetower,muraki2021
+13,guitar,,a,b,mismatch,0.7415493726730347,bridgetower,muraki2021
+14,gun,,a,b,mismatch,0.21405570209026337,bridgetower,muraki2021
+15,iron,,a,b,mismatch,0.9985640645027161,bridgetower,muraki2021
+16,key,,a,b,mismatch,0.6004406213760376,bridgetower,muraki2021
+17,nail,,a,b,mismatch,0.7011650204658508,bridgetower,muraki2021
+18,pen,,a,b,mismatch,0.5704196691513062,bridgetower,muraki2021
+19,pencil,,a,b,mismatch,0.5662762522697449,bridgetower,muraki2021
+20,plate,,a,b,mismatch,0.44302985072135925,bridgetower,muraki2021
+21,salt shaker,,a,b,mismatch,0.989489734172821,bridgetower,muraki2021
+22,pair of scissors,,a,b,mismatch,0.3935883641242981,bridgetower,muraki2021
+23,screw,,a,b,mismatch,0.29234012961387634,bridgetower,muraki2021
+24,wheel,,a,b,mismatch,0.19316710531711578,bridgetower,muraki2021
+1,axe,,b,b,match,0.5417373776435852,bridgetower,muraki2021
+2,bat,,b,b,match,0.03905779495835304,bridgetower,muraki2021
+3,book,,b,b,match,0.3884027600288391,bridgetower,muraki2021
+4,bottle,,b,b,match,0.3400389552116394,bridgetower,muraki2021
+5,bowl,,b,b,match,0.3573715388774872,bridgetower,muraki2021
+6,broom,,b,b,match,0.9475588798522949,bridgetower,muraki2021
+7,brush,,b,b,match,0.8530017137527466,bridgetower,muraki2021
+8,crayon,,b,b,match,0.951489269733429,bridgetower,muraki2021
+9,decoration,,b,b,match,0.7195459604263306,bridgetower,muraki2021
+10,flashlight,,b,b,match,0.5898963809013367,bridgetower,muraki2021
+11,fire extinguisher,,b,b,match,0.8938677310943604,bridgetower,muraki2021
+12,glass,,b,b,match,0.07004664838314056,bridgetower,muraki2021
+13,guitar,,b,b,match,0.6846998333930969,bridgetower,muraki2021
+14,gun,,b,b,match,0.5444134473800659,bridgetower,muraki2021
+15,iron,,b,b,match,0.9993732571601868,bridgetower,muraki2021
+16,key,,b,b,match,0.6372207999229431,bridgetower,muraki2021
+17,nail,,b,b,match,0.780849814414978,bridgetower,muraki2021
+18,pen,,b,b,match,0.5810154676437378,bridgetower,muraki2021
+19,pencil,,b,b,match,0.8118871450424194,bridgetower,muraki2021
+20,plate,,b,b,match,0.49258917570114136,bridgetower,muraki2021
+21,salt shaker,,b,b,match,0.9977778792381287,bridgetower,muraki2021
+22,pair of scissors,,b,b,match,0.2529986500740051,bridgetower,muraki2021
+23,screw,,b,b,match,0.21699441969394684,bridgetower,muraki2021
+24,wheel,,b,b,match,0.20591557025909424,bridgetower,muraki2021
+1,axe,,b,a,mismatch,0.4582626521587372,bridgetower,muraki2021
+2,bat,,b,a,mismatch,0.9609421491622925,bridgetower,muraki2021
+3,book,,b,a,mismatch,0.6115971803665161,bridgetower,muraki2021
+4,bottle,,b,a,mismatch,0.6599610447883606,bridgetower,muraki2021
+5,bowl,,b,a,mismatch,0.6426284313201904,bridgetower,muraki2021
+6,broom,,b,a,mismatch,0.052441079169511795,bridgetower,muraki2021
+7,brush,,b,a,mismatch,0.14699827134609222,bridgetower,muraki2021
+8,crayon,,b,a,mismatch,0.04851076006889343,bridgetower,muraki2021
+9,decoration,,b,a,mismatch,0.28045400977134705,bridgetower,muraki2021
+10,flashlight,,b,a,mismatch,0.41010361909866333,bridgetower,muraki2021
+11,fire extinguisher,,b,a,mismatch,0.10613226145505905,bridgetower,muraki2021
+12,glass,,b,a,mismatch,0.9299533367156982,bridgetower,muraki2021
+13,guitar,,b,a,mismatch,0.31530022621154785,bridgetower,muraki2021
+14,gun,,b,a,mismatch,0.45558658242225647,bridgetower,muraki2021
+15,iron,,b,a,mismatch,0.0006267366115935147,bridgetower,muraki2021
+16,key,,b,a,mismatch,0.3627791404724121,bridgetower,muraki2021
+17,nail,,b,a,mismatch,0.21915017068386078,bridgetower,muraki2021
+18,pen,,b,a,mismatch,0.41898462176322937,bridgetower,muraki2021
+19,pencil,,b,a,mismatch,0.18811289966106415,bridgetower,muraki2021
+20,plate,,b,a,mismatch,0.5074107646942139,bridgetower,muraki2021
+21,salt shaker,,b,a,mismatch,0.002222092356532812,bridgetower,muraki2021
+22,pair of scissors,,b,a,mismatch,0.7470012903213501,bridgetower,muraki2021
+23,screw,,b,a,mismatch,0.7830055952072144,bridgetower,muraki2021
+24,wheel,,b,a,mismatch,0.7940844297409058,bridgetower,muraki2021

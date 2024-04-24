@@ -1,0 +1,241 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+35,airplane,original,a,a,match,0.36024895310401917,bridgetower,pecher2006
+53,apple,original,a,a,match,0.2692939043045044,bridgetower,pecher2006
+1,apple pie,new,a,a,match,0.8778347969055176,bridgetower,pecher2006
+21,avocado,new new,a,a,match,0.9889968633651733,bridgetower,pecher2006
+39,balloon,original,a,a,match,0.02185351587831974,bridgetower,pecher2006
+32,banana,new new,a,a,match,0.5651410222053528,bridgetower,pecher2006
+47,book,original,a,a,match,0.498653769493103,bridgetower,pecher2006
+40,bread,original,a,a,match,0.08596238493919373,bridgetower,pecher2006
+12,carrot,new,a,a,match,0.713286280632019,bridgetower,pecher2006
+28,cheesecake,new new,a,a,match,0.09243886172771454,bridgetower,pecher2006
+36,chicken,original,a,a,match,0.6419955492019653,bridgetower,pecher2006
+54,cigarette,original,a,a,match,0.7105240821838379,bridgetower,pecher2006
+7,coat,new,a,a,match,0.1730978935956955,bridgetower,pecher2006
+55,corn,original,a,a,match,0.96481853723526,bridgetower,pecher2006
+18,cucumber,new,a,a,match,0.05271846055984497,bridgetower,pecher2006
+56,eagle,original,a,a,match,0.4801137447357178,bridgetower,pecher2006
+41,egg,original,a,a,match,0.545625627040863,bridgetower,pecher2006
+48,fish,original,a,a,match,0.9565615057945251,bridgetower,pecher2006
+22,frog,new new,a,a,match,0.5369170308113098,bridgetower,pecher2006
+13,garbage bag,new,a,a,match,0.31330034136772156,bridgetower,pecher2006
+14,goose,new,a,a,match,0.4989522695541382,bridgetower,pecher2006
+37,hockey,original,a,a,match,0.40763264894485474,bridgetower,pecher2006
+2,horse,new,a,a,match,0.36440399289131165,bridgetower,pecher2006
+29,hose,new new,a,a,match,0.950534999370575,bridgetower,pecher2006
+15,ice,new,a,a,match,0.8334510922431946,bridgetower,pecher2006
+33,ketchup,new new,a,a,match,0.4385673701763153,bridgetower,pecher2006
+19,lamp,new,a,a,match,0.14247477054595947,bridgetower,pecher2006
+49,lemon,original,a,a,match,0.8464230895042419,bridgetower,pecher2006
+38,lime,original,a,a,match,0.6755141019821167,bridgetower,pecher2006
+57,lobster,original,a,a,match,0.7942194938659668,bridgetower,pecher2006
+20,map,new,a,a,match,0.19113999605178833,bridgetower,pecher2006
+8,match,new,a,a,match,0.49520617723464966,bridgetower,pecher2006
+42,mushroom,original,a,a,match,0.9951249957084656,bridgetower,pecher2006
+43,newspaper,original,a,a,match,0.5274029970169067,bridgetower,pecher2006
+50,onion,original,a,a,match,0.4764542579650879,bridgetower,pecher2006
+9,owl,new,a,a,match,0.15940189361572266,bridgetower,pecher2006
+23,paint,new new,a,a,match,0.022166816517710686,bridgetower,pecher2006
+44,pineapple,original,a,a,match,0.6879129409790039,bridgetower,pecher2006
+10,pumpkin,new,a,a,match,0.4298958480358124,bridgetower,pecher2006
+45,sailboat,original,a,a,match,0.6325604915618896,bridgetower,pecher2006
+3,scarf,new,a,a,match,0.7136465907096863,bridgetower,pecher2006
+58,shirt,original,a,a,match,0.7451449632644653,bridgetower,pecher2006
+4,shoelace,new,a,a,match,0.7781245708465576,bridgetower,pecher2006
+30,soap,new new,a,a,match,0.7634087204933167,bridgetower,pecher2006
+59,spaghetti,original,a,a,match,0.020681874826550484,bridgetower,pecher2006
+11,squid,new,a,a,match,0.9884759187698364,bridgetower,pecher2006
+5,staple,new,a,a,match,0.590940535068512,bridgetower,pecher2006
+26,sugar,new new,a,a,match,0.006804256699979305,bridgetower,pecher2006
+16,swiss knife,new,a,a,match,0.6915603876113892,bridgetower,pecher2006
+31,tape,new new,a,a,match,0.030385822057724,bridgetower,pecher2006
+27,tinfoil,new new,a,a,match,0.1947495937347412,bridgetower,pecher2006
+60,tissue,original,a,a,match,0.2208150029182434,bridgetower,pecher2006
+46,tomato,original,a,a,match,0.6662514805793762,bridgetower,pecher2006
+51,towel,original,a,a,match,0.047328319400548935,bridgetower,pecher2006
+17,umbrella,new,a,a,match,0.9513230919837952,bridgetower,pecher2006
+24,walnut,new new,a,a,match,0.4209195673465729,bridgetower,pecher2006
+52,watermelon,original,a,a,match,0.586584210395813,bridgetower,pecher2006
+6,wheat,new,a,a,match,0.6641204357147217,bridgetower,pecher2006
+34,wool,new new,a,a,match,0.5940239429473877,bridgetower,pecher2006
+25,zodiac,new new,a,a,match,0.18677984178066254,bridgetower,pecher2006
+35,airplane,original,a,b,mismatch,0.6397510766983032,bridgetower,pecher2006
+53,apple,original,a,b,mismatch,0.7307060956954956,bridgetower,pecher2006
+1,apple pie,new,a,b,mismatch,0.12216518819332123,bridgetower,pecher2006
+21,avocado,new new,a,b,mismatch,0.011003141291439533,bridgetower,pecher2006
+39,balloon,original,a,b,mismatch,0.978146493434906,bridgetower,pecher2006
+32,banana,new new,a,b,mismatch,0.4348589777946472,bridgetower,pecher2006
+47,book,original,a,b,mismatch,0.501346230506897,bridgetower,pecher2006
+40,bread,original,a,b,mismatch,0.9140376448631287,bridgetower,pecher2006
+12,carrot,new,a,b,mismatch,0.28671377897262573,bridgetower,pecher2006
+28,cheesecake,new new,a,b,mismatch,0.907561182975769,bridgetower,pecher2006
+36,chicken,original,a,b,mismatch,0.3580043911933899,bridgetower,pecher2006
+54,cigarette,original,a,b,mismatch,0.2894759178161621,bridgetower,pecher2006
+7,coat,new,a,b,mismatch,0.8269020318984985,bridgetower,pecher2006
+55,corn,original,a,b,mismatch,0.035181473940610886,bridgetower,pecher2006
+18,cucumber,new,a,b,mismatch,0.947281539440155,bridgetower,pecher2006
+56,eagle,original,a,b,mismatch,0.5198861956596375,bridgetower,pecher2006
+41,egg,original,a,b,mismatch,0.4543743133544922,bridgetower,pecher2006
+48,fish,original,a,b,mismatch,0.04343857616186142,bridgetower,pecher2006
+22,frog,new new,a,b,mismatch,0.4630829691886902,bridgetower,pecher2006
+13,garbage bag,new,a,b,mismatch,0.6866996884346008,bridgetower,pecher2006
+14,goose,new,a,b,mismatch,0.5010477900505066,bridgetower,pecher2006
+37,hockey,original,a,b,mismatch,0.5923673510551453,bridgetower,pecher2006
+2,horse,new,a,b,mismatch,0.635595977306366,bridgetower,pecher2006
+29,hose,new new,a,b,mismatch,0.04946507513523102,bridgetower,pecher2006
+15,ice,new,a,b,mismatch,0.16654887795448303,bridgetower,pecher2006
+33,ketchup,new new,a,b,mismatch,0.5614326000213623,bridgetower,pecher2006
+19,lamp,new,a,b,mismatch,0.8575251698493958,bridgetower,pecher2006
+49,lemon,original,a,b,mismatch,0.15357691049575806,bridgetower,pecher2006
+38,lime,original,a,b,mismatch,0.3244858682155609,bridgetower,pecher2006
+57,lobster,original,a,b,mismatch,0.20578056573867798,bridgetower,pecher2006
+20,map,new,a,b,mismatch,0.8088600039482117,bridgetower,pecher2006
+8,match,new,a,b,mismatch,0.5047938823699951,bridgetower,pecher2006
+42,mushroom,original,a,b,mismatch,0.004875015001744032,bridgetower,pecher2006
+43,newspaper,original,a,b,mismatch,0.4725970923900604,bridgetower,pecher2006
+50,onion,original,a,b,mismatch,0.5235456824302673,bridgetower,pecher2006
+9,owl,new,a,b,mismatch,0.8405980467796326,bridgetower,pecher2006
+23,paint,new new,a,b,mismatch,0.9778332114219666,bridgetower,pecher2006
+44,pineapple,original,a,b,mismatch,0.3120870292186737,bridgetower,pecher2006
+10,pumpkin,new,a,b,mismatch,0.57010418176651,bridgetower,pecher2006
+45,sailboat,original,a,b,mismatch,0.36743950843811035,bridgetower,pecher2006
+3,scarf,new,a,b,mismatch,0.2863534390926361,bridgetower,pecher2006
+58,shirt,original,a,b,mismatch,0.25485509634017944,bridgetower,pecher2006
+4,shoelace,new,a,b,mismatch,0.2218753695487976,bridgetower,pecher2006
+30,soap,new new,a,b,mismatch,0.2365913689136505,bridgetower,pecher2006
+59,spaghetti,original,a,b,mismatch,0.9793181419372559,bridgetower,pecher2006
+11,squid,new,a,b,mismatch,0.011524057947099209,bridgetower,pecher2006
+5,staple,new,a,b,mismatch,0.40905946493148804,bridgetower,pecher2006
+26,sugar,new new,a,b,mismatch,0.9931957721710205,bridgetower,pecher2006
+16,swiss knife,new,a,b,mismatch,0.3084396421909332,bridgetower,pecher2006
+31,tape,new new,a,b,mismatch,0.9696141481399536,bridgetower,pecher2006
+27,tinfoil,new new,a,b,mismatch,0.805250346660614,bridgetower,pecher2006
+60,tissue,original,a,b,mismatch,0.7791850566864014,bridgetower,pecher2006
+46,tomato,original,a,b,mismatch,0.3337484896183014,bridgetower,pecher2006
+51,towel,original,a,b,mismatch,0.9526717066764832,bridgetower,pecher2006
+17,umbrella,new,a,b,mismatch,0.04867690056562424,bridgetower,pecher2006
+24,walnut,new new,a,b,mismatch,0.5790804624557495,bridgetower,pecher2006
+52,watermelon,original,a,b,mismatch,0.4134158194065094,bridgetower,pecher2006
+6,wheat,new,a,b,mismatch,0.3358795940876007,bridgetower,pecher2006
+34,wool,new new,a,b,mismatch,0.4059760272502899,bridgetower,pecher2006
+25,zodiac,new new,a,b,mismatch,0.8132201433181763,bridgetower,pecher2006
+35,airplane,original,b,b,match,0.46409472823143005,bridgetower,pecher2006
+53,apple,original,b,b,match,0.596377968788147,bridgetower,pecher2006
+1,apple pie,new,b,b,match,0.5117393136024475,bridgetower,pecher2006
+21,avocado,new new,b,b,match,0.007770169526338577,bridgetower,pecher2006
+39,balloon,original,b,b,match,0.9960166811943054,bridgetower,pecher2006
+32,banana,new new,b,b,match,0.5943295955657959,bridgetower,pecher2006
+47,book,original,b,b,match,0.48911920189857483,bridgetower,pecher2006
+40,bread,original,b,b,match,0.6340376138687134,bridgetower,pecher2006
+12,carrot,new,b,b,match,0.6523959636688232,bridgetower,pecher2006
+28,cheesecake,new new,b,b,match,0.899780809879303,bridgetower,pecher2006
+36,chicken,original,b,b,match,0.9046477675437927,bridgetower,pecher2006
+54,cigarette,original,b,b,match,0.19887445867061615,bridgetower,pecher2006
+7,coat,new,b,b,match,0.9833241105079651,bridgetower,pecher2006
+55,corn,original,b,b,match,0.06300009042024612,bridgetower,pecher2006
+18,cucumber,new,b,b,match,0.9942597150802612,bridgetower,pecher2006
+56,eagle,original,b,b,match,0.9706950783729553,bridgetower,pecher2006
+41,egg,original,b,b,match,0.8044917583465576,bridgetower,pecher2006
+48,fish,original,b,b,match,0.40462997555732727,bridgetower,pecher2006
+22,frog,new new,b,b,match,0.471479594707489,bridgetower,pecher2006
+13,garbage bag,new,b,b,match,0.9138869047164917,bridgetower,pecher2006
+14,goose,new,b,b,match,0.5931347608566284,bridgetower,pecher2006
+37,hockey,original,b,b,match,0.9175994396209717,bridgetower,pecher2006
+2,horse,new,b,b,match,0.6894353628158569,bridgetower,pecher2006
+29,hose,new new,b,b,match,0.02028580941259861,bridgetower,pecher2006
+15,ice,new,b,b,match,0.7328083515167236,bridgetower,pecher2006
+33,ketchup,new new,b,b,match,0.9007613658905029,bridgetower,pecher2006
+19,lamp,new,b,b,match,0.937606930732727,bridgetower,pecher2006
+49,lemon,original,b,b,match,0.04918745532631874,bridgetower,pecher2006
+38,lime,original,b,b,match,0.7957724332809448,bridgetower,pecher2006
+57,lobster,original,b,b,match,0.7009982466697693,bridgetower,pecher2006
+20,map,new,b,b,match,0.7453792095184326,bridgetower,pecher2006
+8,match,new,b,b,match,0.43356671929359436,bridgetower,pecher2006
+42,mushroom,original,b,b,match,0.04281804338097572,bridgetower,pecher2006
+43,newspaper,original,b,b,match,0.6172083020210266,bridgetower,pecher2006
+50,onion,original,b,b,match,0.722051203250885,bridgetower,pecher2006
+9,owl,new,b,b,match,0.9118980169296265,bridgetower,pecher2006
+23,paint,new new,b,b,match,0.9985466599464417,bridgetower,pecher2006
+44,pineapple,original,b,b,match,0.8533533215522766,bridgetower,pecher2006
+10,pumpkin,new,b,b,match,0.4990900158882141,bridgetower,pecher2006
+45,sailboat,original,b,b,match,0.9058046340942383,bridgetower,pecher2006
+3,scarf,new,b,b,match,0.4376288652420044,bridgetower,pecher2006
+58,shirt,original,b,b,match,0.21652410924434662,bridgetower,pecher2006
+4,shoelace,new,b,b,match,0.1821000874042511,bridgetower,pecher2006
+30,soap,new new,b,b,match,0.2367810159921646,bridgetower,pecher2006
+59,spaghetti,original,b,b,match,0.9899674654006958,bridgetower,pecher2006
+11,squid,new,b,b,match,0.7353003621101379,bridgetower,pecher2006
+5,staple,new,b,b,match,0.6662022471427917,bridgetower,pecher2006
+26,sugar,new new,b,b,match,0.981408953666687,bridgetower,pecher2006
+16,swiss knife,new,b,b,match,0.1539672166109085,bridgetower,pecher2006
+31,tape,new new,b,b,match,0.9610021710395813,bridgetower,pecher2006
+27,tinfoil,new new,b,b,match,0.9818772077560425,bridgetower,pecher2006
+60,tissue,original,b,b,match,0.953317403793335,bridgetower,pecher2006
+46,tomato,original,b,b,match,0.8212143182754517,bridgetower,pecher2006
+51,towel,original,b,b,match,0.9875965118408203,bridgetower,pecher2006
+17,umbrella,new,b,b,match,0.21826009452342987,bridgetower,pecher2006
+24,walnut,new new,b,b,match,0.7008187770843506,bridgetower,pecher2006
+52,watermelon,original,b,b,match,0.6589257717132568,bridgetower,pecher2006
+6,wheat,new,b,b,match,0.2578551471233368,bridgetower,pecher2006
+34,wool,new new,b,b,match,0.5558896660804749,bridgetower,pecher2006
+25,zodiac,new new,b,b,match,0.7730680704116821,bridgetower,pecher2006
+35,airplane,original,b,a,mismatch,0.5359052419662476,bridgetower,pecher2006
+53,apple,original,b,a,mismatch,0.4036220908164978,bridgetower,pecher2006
+1,apple pie,new,b,a,mismatch,0.4882606565952301,bridgetower,pecher2006
+21,avocado,new new,b,a,mismatch,0.9922298789024353,bridgetower,pecher2006
+39,balloon,original,b,a,mismatch,0.003983319737017155,bridgetower,pecher2006
+32,banana,new new,b,a,mismatch,0.4056704044342041,bridgetower,pecher2006
+47,book,original,b,a,mismatch,0.5108808279037476,bridgetower,pecher2006
+40,bread,original,b,a,mismatch,0.365962415933609,bridgetower,pecher2006
+12,carrot,new,b,a,mismatch,0.34760400652885437,bridgetower,pecher2006
+28,cheesecake,new new,b,a,mismatch,0.1002192348241806,bridgetower,pecher2006
+36,chicken,original,b,a,mismatch,0.0953521728515625,bridgetower,pecher2006
+54,cigarette,original,b,a,mismatch,0.8011255264282227,bridgetower,pecher2006
+7,coat,new,b,a,mismatch,0.016675937920808792,bridgetower,pecher2006
+55,corn,original,b,a,mismatch,0.9369999170303345,bridgetower,pecher2006
+18,cucumber,new,b,a,mismatch,0.005740339867770672,bridgetower,pecher2006
+56,eagle,original,b,a,mismatch,0.02930494025349617,bridgetower,pecher2006
+41,egg,original,b,a,mismatch,0.1955082267522812,bridgetower,pecher2006
+48,fish,original,b,a,mismatch,0.5953699350357056,bridgetower,pecher2006
+22,frog,new new,b,a,mismatch,0.528520405292511,bridgetower,pecher2006
+13,garbage bag,new,b,a,mismatch,0.08611305803060532,bridgetower,pecher2006
+14,goose,new,b,a,mismatch,0.40686526894569397,bridgetower,pecher2006
+37,hockey,original,b,a,mismatch,0.08240048587322235,bridgetower,pecher2006
+2,horse,new,b,a,mismatch,0.31056469678878784,bridgetower,pecher2006
+29,hose,new new,b,a,mismatch,0.9797142148017883,bridgetower,pecher2006
+15,ice,new,b,a,mismatch,0.26719164848327637,bridgetower,pecher2006
+33,ketchup,new new,b,a,mismatch,0.09923864901065826,bridgetower,pecher2006
+19,lamp,new,b,a,mismatch,0.06239311769604683,bridgetower,pecher2006
+49,lemon,original,b,a,mismatch,0.9508125185966492,bridgetower,pecher2006
+38,lime,original,b,a,mismatch,0.20422756671905518,bridgetower,pecher2006
+57,lobster,original,b,a,mismatch,0.2990017533302307,bridgetower,pecher2006
+20,map,new,b,a,mismatch,0.25462082028388977,bridgetower,pecher2006
+8,match,new,b,a,mismatch,0.5664332509040833,bridgetower,pecher2006
+42,mushroom,original,b,a,mismatch,0.957181990146637,bridgetower,pecher2006
+43,newspaper,original,b,a,mismatch,0.3827916979789734,bridgetower,pecher2006
+50,onion,original,b,a,mismatch,0.277948796749115,bridgetower,pecher2006
+9,owl,new,b,a,mismatch,0.08810205012559891,bridgetower,pecher2006
+23,paint,new new,b,a,mismatch,0.0014533513458445668,bridgetower,pecher2006
+44,pineapple,original,b,a,mismatch,0.14664672315120697,bridgetower,pecher2006
+10,pumpkin,new,b,a,mismatch,0.5009099841117859,bridgetower,pecher2006
+45,sailboat,original,b,a,mismatch,0.09419530630111694,bridgetower,pecher2006
+3,scarf,new,b,a,mismatch,0.5623711347579956,bridgetower,pecher2006
+58,shirt,original,b,a,mismatch,0.7834758758544922,bridgetower,pecher2006
+4,shoelace,new,b,a,mismatch,0.8178998827934265,bridgetower,pecher2006
+30,soap,new new,b,a,mismatch,0.7632189393043518,bridgetower,pecher2006
+59,spaghetti,original,b,a,mismatch,0.010032571852207184,bridgetower,pecher2006
+11,squid,new,b,a,mismatch,0.2646996080875397,bridgetower,pecher2006
+5,staple,new,b,a,mismatch,0.333797812461853,bridgetower,pecher2006
+26,sugar,new new,b,a,mismatch,0.018590983003377914,bridgetower,pecher2006
+16,swiss knife,new,b,a,mismatch,0.8460327982902527,bridgetower,pecher2006
+31,tape,new new,b,a,mismatch,0.038997795432806015,bridgetower,pecher2006
+27,tinfoil,new new,b,a,mismatch,0.018122807145118713,bridgetower,pecher2006
+60,tissue,original,b,a,mismatch,0.04668262600898743,bridgetower,pecher2006
+46,tomato,original,b,a,mismatch,0.17878572642803192,bridgetower,pecher2006
+51,towel,original,b,a,mismatch,0.012403559871017933,bridgetower,pecher2006
+17,umbrella,new,b,a,mismatch,0.7817398309707642,bridgetower,pecher2006
+24,walnut,new new,b,a,mismatch,0.2991812229156494,bridgetower,pecher2006
+52,watermelon,original,b,a,mismatch,0.34107422828674316,bridgetower,pecher2006
+6,wheat,new,b,a,mismatch,0.7421448826789856,bridgetower,pecher2006
+34,wool,new new,b,a,mismatch,0.44411033391952515,bridgetower,pecher2006
+25,zodiac,new new,b,a,mismatch,0.22693191468715668,bridgetower,pecher2006

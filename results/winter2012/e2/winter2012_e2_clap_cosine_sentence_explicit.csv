@@ -1,0 +1,97 @@
+item,object,item_type,sent_condition,media_condition,match,similarity,model,dataset
+1,handgun,,a,a,match,0.6168504671748531,clap,winter2012/e2
+2,baby,,a,a,match,0.80250682192319,clap,winter2012/e2
+3,blender,,a,a,match,0.8796756369893767,clap,winter2012/e2
+4,cat,,a,a,match,0.778038572913063,clap,winter2012/e2
+5,champagne bottle,,a,a,match,0.6997845252498989,clap,winter2012/e2
+6,church bells,,a,a,match,0.8819571285324245,clap,winter2012/e2
+7,cow,,a,a,match,0.6501122004410735,clap,winter2012/e2
+8,audience,,a,a,match,0.5343167590962483,clap,winter2012/e2
+9,cuckoo-clock,,a,a,match,0.870146120475411,clap,winter2012/e2
+10,rooster,,a,a,match,0.768527814284319,clap,winter2012/e2
+11,dog,,a,a,match,0.7421179034627339,clap,winter2012/e2
+12,power drill,,a,a,match,0.8442224316575768,clap,winter2012/e2
+13,hammer,,a,a,match,0.7713753232797337,clap,winter2012/e2
+14,motorbike,,a,a,match,0.6710256782617635,clap,winter2012/e2
+15,horse,,a,a,match,0.548115943088282,clap,winter2012/e2
+16,jackhammer,,a,a,match,0.8048191841140016,clap,winter2012/e2
+17,door,,a,a,match,0.4945197026337589,clap,winter2012/e2
+18,machine gun,,a,a,match,0.6590399902767713,clap,winter2012/e2
+19,sheep,,a,a,match,0.7543801658201394,clap,winter2012/e2
+20,frog,,a,a,match,0.7843294887049324,clap,winter2012/e2
+21,toilet,,a,a,match,0.854412911813613,clap,winter2012/e2
+22,waterfall,,a,a,match,0.8824809806235742,clap,winter2012/e2
+23,can of soda,,a,a,match,0.8384766335960272,clap,winter2012/e2
+24,branches,,a,a,match,0.5033760156367001,clap,winter2012/e2
+1,handgun,,a,b,mismatch,0.6754482193513804,clap,winter2012/e2
+2,baby,,a,b,mismatch,0.6674138358753269,clap,winter2012/e2
+3,blender,,a,b,mismatch,0.8818988233603782,clap,winter2012/e2
+4,cat,,a,b,mismatch,0.7699428714923533,clap,winter2012/e2
+5,champagne bottle,,a,b,mismatch,0.7480580413495238,clap,winter2012/e2
+6,church bells,,a,b,mismatch,0.9039689604967843,clap,winter2012/e2
+7,cow,,a,b,mismatch,0.619046046829823,clap,winter2012/e2
+8,audience,,a,b,mismatch,0.22901416911840644,clap,winter2012/e2
+9,cuckoo-clock,,a,b,mismatch,0.8922392506596534,clap,winter2012/e2
+10,rooster,,a,b,mismatch,0.8180208967623614,clap,winter2012/e2
+11,dog,,a,b,mismatch,0.799279951798669,clap,winter2012/e2
+12,power drill,,a,b,mismatch,0.7917436572129457,clap,winter2012/e2
+13,hammer,,a,b,mismatch,0.7391494071469397,clap,winter2012/e2
+14,motorbike,,a,b,mismatch,0.6955475686331082,clap,winter2012/e2
+15,horse,,a,b,mismatch,0.49256636365513495,clap,winter2012/e2
+16,jackhammer,,a,b,mismatch,0.8467358774839172,clap,winter2012/e2
+17,door,,a,b,mismatch,0.5623092825918242,clap,winter2012/e2
+18,machine gun,,a,b,mismatch,0.6948227382366693,clap,winter2012/e2
+19,sheep,,a,b,mismatch,0.7563224433488867,clap,winter2012/e2
+20,frog,,a,b,mismatch,0.7231382649904227,clap,winter2012/e2
+21,toilet,,a,b,mismatch,0.8477600744842269,clap,winter2012/e2
+22,waterfall,,a,b,mismatch,0.8282464446148139,clap,winter2012/e2
+23,can of soda,,a,b,mismatch,0.8428537245348009,clap,winter2012/e2
+24,branches,,a,b,mismatch,0.5666683805709167,clap,winter2012/e2
+1,handgun,,b,b,match,0.710147699840137,clap,winter2012/e2
+2,baby,,b,b,match,0.5765980177782103,clap,winter2012/e2
+3,blender,,b,b,match,0.7144828148605992,clap,winter2012/e2
+4,cat,,b,b,match,0.7025830929316623,clap,winter2012/e2
+5,champagne bottle,,b,b,match,0.6290964640405181,clap,winter2012/e2
+6,church bells,,b,b,match,0.7952120773301184,clap,winter2012/e2
+7,cow,,b,b,match,0.7555909411908021,clap,winter2012/e2
+8,audience,,b,b,match,0.4891106568867396,clap,winter2012/e2
+9,cuckoo-clock,,b,b,match,0.6521460322789863,clap,winter2012/e2
+10,rooster,,b,b,match,0.7668506620777499,clap,winter2012/e2
+11,dog,,b,b,match,0.6590251205957831,clap,winter2012/e2
+12,power drill,,b,b,match,0.5056127547296179,clap,winter2012/e2
+13,hammer,,b,b,match,0.7129831721874372,clap,winter2012/e2
+14,motorbike,,b,b,match,0.6739023593876651,clap,winter2012/e2
+15,horse,,b,b,match,0.6529652101030771,clap,winter2012/e2
+16,jackhammer,,b,b,match,0.8241962729389846,clap,winter2012/e2
+17,door,,b,b,match,0.6439192101504628,clap,winter2012/e2
+18,machine gun,,b,b,match,0.6788373032081604,clap,winter2012/e2
+19,sheep,,b,b,match,0.8678741640213851,clap,winter2012/e2
+20,frog,,b,b,match,0.7291703229752863,clap,winter2012/e2
+21,toilet,,b,b,match,0.8182689819789397,clap,winter2012/e2
+22,waterfall,,b,b,match,0.9206247529327557,clap,winter2012/e2
+23,can of soda,,b,b,match,0.7637595525426154,clap,winter2012/e2
+24,branches,,b,b,match,0.5334410764613746,clap,winter2012/e2
+1,handgun,,b,a,mismatch,0.609066579066953,clap,winter2012/e2
+2,baby,,b,a,mismatch,0.6564297105341559,clap,winter2012/e2
+3,blender,,b,a,mismatch,0.7033477300774824,clap,winter2012/e2
+4,cat,,b,a,mismatch,0.7025519074080308,clap,winter2012/e2
+5,champagne bottle,,b,a,mismatch,0.5038710808448114,clap,winter2012/e2
+6,church bells,,b,a,mismatch,0.7744750059338644,clap,winter2012/e2
+7,cow,,b,a,mismatch,0.6343746694700446,clap,winter2012/e2
+8,audience,,b,a,mismatch,0.5491522802418849,clap,winter2012/e2
+9,cuckoo-clock,,b,a,mismatch,0.5127226381316963,clap,winter2012/e2
+10,rooster,,b,a,mismatch,0.7325067381864478,clap,winter2012/e2
+11,dog,,b,a,mismatch,0.5534754607747868,clap,winter2012/e2
+12,power drill,,b,a,mismatch,0.4465902078256021,clap,winter2012/e2
+13,hammer,,b,a,mismatch,0.6611465865854362,clap,winter2012/e2
+14,motorbike,,b,a,mismatch,0.6055193380452916,clap,winter2012/e2
+15,horse,,b,a,mismatch,0.5724669395976199,clap,winter2012/e2
+16,jackhammer,,b,a,mismatch,0.6953700996374089,clap,winter2012/e2
+17,door,,b,a,mismatch,0.5279449114513615,clap,winter2012/e2
+18,machine gun,,b,a,mismatch,0.6100066045999832,clap,winter2012/e2
+19,sheep,,b,a,mismatch,0.8200924647110275,clap,winter2012/e2
+20,frog,,b,a,mismatch,0.663096928963119,clap,winter2012/e2
+21,toilet,,b,a,mismatch,0.7713848250257807,clap,winter2012/e2
+22,waterfall,,b,a,mismatch,0.8858862622947599,clap,winter2012/e2
+23,can of soda,,b,a,mismatch,0.6845355685353695,clap,winter2012/e2
+24,branches,,b,a,mismatch,0.45914658623400184,clap,winter2012/e2
